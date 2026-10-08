@@ -74,7 +74,7 @@
    }
   },
   "Bloom": {
-   "comment": "Filter name (CameraRaw.bloom rawValue).",
+   "comment": "CameraRawGlowStyle.bloom rawValue. Also FilterName.bloom.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -86,7 +86,7 @@
    }
   },
   "Blur": {
-   "comment": "Filter name (SmudgeLiquify.blur rawValue).",
+   "comment": "Liquify / Blur / Smudge drawer: Blur mode (also SmudgeLiquify blur filter name).",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1766,7 +1766,7 @@
    }
   },
   "Custom": {
-   "comment": "GridAppearance.Preset.custom rawValue. Also Camera Raw Curve preset, also Layers panel custom canvas size.",
+   "comment": "CameraRawWhiteBalance.custom rawValue. Also CanvasPreset custom.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1814,7 +1814,7 @@
    }
   },
   "Pixels": {
-   "comment": "New Canvas sheet: units pill name when set to pixels.",
+   "comment": "CanvasSizeUnit.pixels rawValue. Also LevelsChannel.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1826,7 +1826,7 @@
    }
   },
   "Inches": {
-   "comment": "New Canvas sheet: units pill name when set to inches.",
+   "comment": "CanvasSizeUnit.inches rawValue. Also New Canvas unit.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1838,7 +1838,7 @@
    }
   },
   "Centimeters": {
-   "comment": "New Canvas sheet: units pill name when set to centimeters.",
+   "comment": "CanvasSizeUnit.centimeters rawValue. Also New Canvas unit.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1862,7 +1862,7 @@
    }
   },
   "Transparent canvas": {
-   "comment": "New Canvas sheet: background pill label for see-through background.",
+   "comment": "Already in catalog. Re-assert with comment for trim sheet context.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3194,7 +3194,7 @@
    }
   },
   "Auto": {
-   "comment": "Camera Raw: auto button (also Levels auto).",
+   "comment": "CameraRawWhiteBalance.auto rawValue. Also Levels auto. Also NewCanvasSheet unit.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3614,7 +3614,7 @@
    }
   },
   "Linear": {
-   "comment": "Camera Raw curve preset: straight line.",
+   "comment": "Camera Raw curve preset: straight line. Also Gradient kind.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3734,7 +3734,7 @@
    }
   },
   "Hue": {
-   "comment": "Color picker: hue slider label.",
+   "comment": "BlendMode.hue rawValue. Also Color Mixer tab.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3746,7 +3746,7 @@
    }
   },
   "Saturation": {
-   "comment": "Camera Raw color mixer: saturation slider.",
+   "comment": "BlendMode.saturation rawValue. Also Color Mixer tab.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -4778,7 +4778,7 @@
    }
   },
   "Color": {
-   "comment": "Color picker label.",
+   "comment": "BlendMode.color rawValue. Also Color Mixer tab.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5054,7 +5054,7 @@
    }
   },
   "Paint": {
-   "comment": "Brush: mask-paint mode picker.",
+   "comment": "BrushMode.paint rawValue. Also Brush paint mode.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5150,7 +5150,7 @@
    }
   },
   "Original": {
-   "comment": "Crop ratio picker option: original aspect ratio.",
+   "comment": "DitherReference.original rawValue. Also Camera Raw reference channel. Also Crop ratio Original.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5906,25 +5906,25 @@
    }
   },
   "Left": {
-   "comment": "Canvas Size sheet anchor + Trim sheet trim left.",
+   "comment": "TypeAlignment.left rawValue. Also CanvasSize anchor.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "左"
+      "value": "左对齐"
      }
     }
    }
   },
   "Right": {
-   "comment": "Canvas Size sheet anchor + Trim sheet trim right.",
+   "comment": "TypeAlignment.right rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "右"
+      "value": "右对齐"
      }
     }
    }
@@ -6074,7 +6074,7 @@
    }
   },
   "Bottom Right Pixel Color": {
-   "comment": "Trim sheet: based-on bottom-right pixel.",
+   "comment": "TrimBasedOn.bottomRightPixelColor rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6662,7 +6662,7 @@
    }
   },
   "New": {
-   "comment": "Project tabs '+' new label.",
+   "comment": "SelectionMode.replace rawValue (lasso replace mode label). Also Layer > New Blank Layer / New Adjustment Layer.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6914,7 +6914,7 @@
    }
   },
   "Contract": {
-   "comment": "Selection menu: contract.",
+   "comment": "SelectionAmountOperation.contract rawValue (lasso toolbar label). Also 'Select > Contract...' menu.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6926,7 +6926,7 @@
    }
   },
   "Expand": {
-   "comment": "Selection menu: expand.",
+   "comment": "SelectionAmountOperation.expand rawValue (lasso toolbar label). Also selection amount sheet header. Also 'Select > Expand...' menu.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7130,7 +7130,7 @@
    }
   },
   "Rectangle": {
-   "comment": "Shape tool: rectangle kind.",
+   "comment": "LassoKind.rectangle rawValue. Also Shape tool rectangle kind. WandSampleSize reference.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7142,7 +7142,7 @@
    }
   },
   "Ellipse": {
-   "comment": "Shape tool: ellipse kind.",
+   "comment": "LassoKind.ellipse rawValue. Also Shape tool ellipse kind.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7214,7 +7214,7 @@
    }
   },
   "Liquify": {
-   "comment": "Liquify filter name.",
+   "comment": "Liquify / Blur / Smudge drawer: Liquify mode.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7226,7 +7226,7 @@
    }
   },
   "Smudge": {
-   "comment": "Smudge filter name.",
+   "comment": "Liquify / Blur / Smudge drawer: Smudge mode.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7394,7 +7394,7 @@
    }
   },
   "Diffusion": {
-   "comment": "Camera Raw: glow style option.",
+   "comment": "CameraRawGlowStyle.diffusion rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7610,7 +7610,7 @@
    }
   },
   "Percent": {
-   "comment": "Generic percent label.",
+   "comment": "CanvasSizeUnit.percent rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -7718,13 +7718,13 @@
    }
   },
   "Center": {
-   "comment": "Center direction action.",
+   "comment": "TypeAlignment.center rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "居中"
+      "value": "居中对齐"
      }
     }
    }
@@ -10329,6 +10329,738 @@
      "stringUnit": {
       "state": "translated",
       "value": "清除穿过薄区域的雾霾"
+     }
+    }
+   }
+  },
+  "Freehand": {
+   "comment": "LassoKind.freehand rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "徒手"
+     }
+    }
+   }
+  },
+  "Polygonal": {
+   "comment": "LassoKind.polygonal rawValue. Also 'Polygonal Lasso' as the menu name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "多边形"
+     }
+    }
+   }
+  },
+  "Wand": {
+   "comment": "WandMode.wand rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "魔棒"
+     }
+    }
+   }
+  },
+  "Object": {
+   "comment": "WandMode.object rawValue. Also Object Selection tool name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "对象"
+     }
+    }
+   }
+  },
+  "Add": {
+   "comment": "SelectionMode.add rawValue (lasso add to selection).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加"
+     }
+    }
+   }
+  },
+  "Subtract": {
+   "comment": "SelectionMode.subtract rawValue (lasso subtract from selection).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "减去"
+     }
+    }
+   }
+  },
+  "Feather": {
+   "comment": "SelectionAmountOperation.feather rawValue (lasso toolbar label). Also 'Select > Feather...' menu.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "羽化"
+     }
+    }
+   }
+  },
+  "Point Sample": {
+   "comment": "WandSampleSize: 'point sample' (sample a single pixel).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点采样"
+     }
+    }
+   }
+  },
+  "3 by 3 Average": {
+   "comment": "WandSampleSize: average of a 3x3 region.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "3×3 平均"
+     }
+    }
+   }
+  },
+  "5 by 5 Average": {
+   "comment": "WandSampleSize: average of a 5x5 region.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "5×5 平均"
+     }
+    }
+   }
+  },
+  "Erase": {
+   "comment": "BrushMode.erase rawValue. Also Brush erase mode.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "擦除"
+     }
+    }
+   }
+  },
+  "Radial": {
+   "comment": "Gradient kind radial.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "径向"
+     }
+    }
+   }
+  },
+  "Halation": {
+   "comment": "CameraRawGlowStyle.halation rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "光渗"
+     }
+    }
+   }
+  },
+  "Off": {
+   "comment": "CameraRawGeometryUpright.off rawValue. Also Vignette priority off.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "关闭"
+     }
+    }
+   }
+  },
+  "Guided": {
+   "comment": "CameraRawGeometryUpright.guided rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "引导"
+     }
+    }
+   }
+  },
+  "Perspective": {
+   "comment": "CameraRawGeometryProjection.perspective rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "透视"
+     }
+    }
+   }
+  },
+  "Rectilinear": {
+   "comment": "CameraRawGeometryProjection.rectilinear rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "矩形"
+     }
+    }
+   }
+  },
+  "Normal": {
+   "comment": "BlendMode.normal rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正常"
+     }
+    }
+   }
+  },
+  "Darken": {
+   "comment": "BlendMode.darken rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "变暗"
+     }
+    }
+   }
+  },
+  "Multiply": {
+   "comment": "BlendMode.multiply rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正片叠底"
+     }
+    }
+   }
+  },
+  "Color Burn": {
+   "comment": "BlendMode.colorBurn rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色加深"
+     }
+    }
+   }
+  },
+  "Linear Burn": {
+   "comment": "BlendMode.linearBurn rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性加深"
+     }
+    }
+   }
+  },
+  "Lighten": {
+   "comment": "BlendMode.lighten rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "变亮"
+     }
+    }
+   }
+  },
+  "Screen": {
+   "comment": "BlendMode.screen rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "滤色"
+     }
+    }
+   }
+  },
+  "Color Dodge": {
+   "comment": "BlendMode.colorDodge rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色减淡"
+     }
+    }
+   }
+  },
+  "Linear Dodge (Add)": {
+   "comment": "BlendMode.linearDodge rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性减淡(添加)"
+     }
+    }
+   }
+  },
+  "Overlay": {
+   "comment": "BlendMode.overlay rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "叠加"
+     }
+    }
+   }
+  },
+  "Soft Light": {
+   "comment": "BlendMode.softLight rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "柔光"
+     }
+    }
+   }
+  },
+  "Hard Light": {
+   "comment": "BlendMode.hardLight rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "强光"
+     }
+    }
+   }
+  },
+  "Vivid Light": {
+   "comment": "BlendMode.vividLight rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "鲜光"
+     }
+    }
+   }
+  },
+  "Linear Light": {
+   "comment": "BlendMode.linearLight rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性光"
+     }
+    }
+   }
+  },
+  "Pin Light": {
+   "comment": "BlendMode.pinLight rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点光"
+     }
+    }
+   }
+  },
+  "Hard Mix": {
+   "comment": "BlendMode.hardMix rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "实色混合"
+     }
+    }
+   }
+  },
+  "Difference": {
+   "comment": "BlendMode.difference rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "差值"
+     }
+    }
+   }
+  },
+  "Exclusion": {
+   "comment": "BlendMode.exclusion rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "排除"
+     }
+    }
+   }
+  },
+  "Divide": {
+   "comment": "BlendMode.divide rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "划分"
+     }
+    }
+   }
+  },
+  "Luminosity": {
+   "comment": "BlendMode.luminosity rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度"
+     }
+    }
+   }
+  },
+  "Atkinson (Classic Mac)": {
+   "comment": "DitherStyle.atkinson rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Atkinson(经典 Mac)"
+     }
+    }
+   }
+  },
+  "Halftone Dots": {
+   "comment": "DitherStyle.dots rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "半调点阵"
+     }
+    }
+   }
+  },
+  "Halftone Lines": {
+   "comment": "DitherStyle.lines rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "半调线条"
+     }
+    }
+   }
+  },
+  "Halftone Diamonds": {
+   "comment": "DitherStyle.diamonds rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "半调菱形"
+     }
+    }
+   }
+  },
+  "Mac Patterns": {
+   "comment": "DitherStyle.patterns rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Mac 图案"
+     }
+    }
+   }
+  },
+  "ASCII": {
+   "comment": "DitherStyle.ascii rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "ASCII"
+     }
+    }
+   }
+  },
+  "Scanlines (CRT)": {
+   "comment": "DitherStyle.scanlines rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "扫描线(CRT)"
+     }
+    }
+   }
+  },
+  "Square": {
+   "comment": "DitherShape.square rawValue. Also CanvasSizeAnchor indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "方形"
+     }
+    }
+   }
+  },
+  "Dot": {
+   "comment": "DitherShape.dot rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点状"
+     }
+    }
+   }
+  },
+  "Version 1": {
+   "comment": "CameraRawProcessVersion.version1 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 1"
+     }
+    }
+   }
+  },
+  "Version 2": {
+   "comment": "CameraRawProcessVersion.version2 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 2"
+     }
+    }
+   }
+  },
+  "Version 3": {
+   "comment": "CameraRawProcessVersion.version3 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 3"
+     }
+    }
+   }
+  },
+  "Version 4": {
+   "comment": "CameraRawProcessVersion.version4 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 4"
+     }
+    }
+   }
+  },
+  "Version 5": {
+   "comment": "CameraRawProcessVersion.version5 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 5"
+     }
+    }
+   }
+  },
+  "Version 6": {
+   "comment": "CameraRawProcessVersion.version6 rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "版本 6"
+     }
+    }
+   }
+  },
+  "Top Left Pixel Color": {
+   "comment": "TrimBasedOn.topLeftPixelColor rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左上角像素颜色"
+     }
+    }
+   }
+  },
+  "Top Left": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左上"
+     }
+    }
+   }
+  },
+  "Top Right": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右上"
+     }
+    }
+   }
+  },
+  "Bottom Left": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左下"
+     }
+    }
+   }
+  },
+  "Bottom Right": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右下"
+     }
+    }
+   }
+  },
+  "Top Center": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "顶部中央"
+     }
+    }
+   }
+  },
+  "Bottom Center": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "底部中央"
+     }
+    }
+   }
+  },
+  "Middle Left": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左中"
+     }
+    }
+   }
+  },
+  "Middle Right": {
+   "comment": "Canvas Size anchor.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右中"
      }
     }
    }
