@@ -5556,6 +5556,726 @@
      }
     }
    }
+  },
+  "Colors": {
+   "comment": "Color palette: tab title and sidebar label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色"
+     }
+    }
+   }
+  },
+  "Default colors": {
+   "comment": "Color palette: default colors swatch row label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "默认颜色"
+     }
+    }
+   }
+  },
+  "Swap colors": {
+   "comment": "Color palette: foreground/background swap tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "交换颜色"
+     }
+    }
+   }
+  },
+  "Background for transparency": {
+   "comment": "Color palette: transparency background swatch label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "透明背景"
+     }
+    }
+   }
+  },
+  "Light on Dark": {
+   "comment": "Color palette: light-on-dark label for transparency grid.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮在暗底"
+     }
+    }
+   }
+  },
+  "Light": {
+   "comment": "Color palette: light theme option for transparency grid.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "浅色"
+     }
+    }
+   }
+  },
+  "Dark": {
+   "comment": "Color palette: dark theme option for transparency grid.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "深色"
+     }
+    }
+   }
+  },
+  "Document Colors": {
+   "comment": "Color palette: document colors group label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文档颜色"
+     }
+    }
+   }
+  },
+  "Add to document colors": {
+   "comment": "Color palette: add current color to document swatches tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加到文档颜色"
+     }
+    }
+   }
+  },
+  "Type": {
+   "comment": "Type tool header title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文字"
+     }
+    }
+   }
+  },
+  "Edit Text": {
+   "comment": "Type tool: edit text mode toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "编辑文字"
+     }
+    }
+   }
+  },
+  "Font": {
+   "comment": "Type tool: font picker label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "字体"
+     }
+    }
+   }
+  },
+  "Characters": {
+   "comment": "Type tool: character settings section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "字符"
+     }
+    }
+   }
+  },
+  "Alignment": {
+   "comment": "Type tool: text alignment picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "对齐方式"
+     }
+    }
+   }
+  },
+  "Leading": {
+   "comment": "Type tool: line spacing label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "行距"
+     }
+    }
+   }
+  },
+  "Tracking": {
+   "comment": "Type tool: letter spacing label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "字距"
+     }
+    }
+   }
+  },
+  "Shape": {
+   "comment": "Shape tool: section title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "形状"
+     }
+    }
+   }
+  },
+  "Fill": {
+   "comment": "Shape tool: fill section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "填充"
+     }
+    }
+   }
+  },
+  "Stroke ": {
+   "comment": "Shape tool: stroke section label (trailing space).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "描边 "
+     }
+    }
+   }
+  },
+  "Lock aspect ratio": {
+   "comment": "Shape tool: lock-aspect toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锁定宽高比"
+     }
+    }
+   }
+  },
+  "Quality": {
+   "comment": "Filter sheet: blur quality picker. JPEG Export: quality slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "质量"
+     }
+    }
+   }
+  },
+  "Gaussian": {
+   "comment": "Filter sheet: gaussian blur quality option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "高斯"
+     }
+    }
+   }
+  },
+  "Final dimensions must be 1–%lld pixels per side.": {
+   "comment": "Canvas Size / Image Size validation message.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "最终尺寸每边必须在 1–%lld 像素之间。"
+     }
+    }
+   }
+  },
+  "Resizes layer pixels and applies existing transforms. Undo restores the originals.": {
+   "comment": "Image Size sheet: tooltip on the Resize button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "会缩放图层像素并应用现有的变换。撤销可恢复原值。"
+     }
+    }
+   }
+  },
+  "Only print dimensions and resolution change. Pixels stay unchanged.": {
+   "comment": "Image Size sheet: tooltip on Resample option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅修改打印尺寸和分辨率,像素保持不变。"
+     }
+    }
+   }
+  },
+  "Relative to current dimensions": {
+   "comment": "Canvas Size sheet: relative mode tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "相对于当前尺寸"
+     }
+    }
+   }
+  },
+  "Keeps this point fixed. Artwork is not scaled; cropped content remains outside the canvas.": {
+   "comment": "Canvas Size sheet: anchor explanation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "固定此点;画布不被缩放,裁掉的内容留在画布外。"
+     }
+    }
+   }
+  },
+  "Top": {
+   "comment": "Canvas Size sheet anchor + Trim sheet trim top.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "顶部"
+     }
+    }
+   }
+  },
+  "Bottom": {
+   "comment": "Canvas Size sheet anchor + Trim sheet trim bottom.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "底部"
+     }
+    }
+   }
+  },
+  "Left": {
+   "comment": "Canvas Size sheet anchor + Trim sheet trim left.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左"
+     }
+    }
+   }
+  },
+  "Right": {
+   "comment": "Canvas Size sheet anchor + Trim sheet trim right.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右"
+     }
+    }
+   }
+  },
+  "Anchor": {
+   "comment": "Keyboard Shortcuts sheet: anchor label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锚点"
+     }
+    }
+   }
+  },
+  "Relative": {
+   "comment": "Canvas Size sheet: relative mode toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "相对"
+     }
+    }
+   }
+  },
+  "Canvas extension": {
+   "comment": "Canvas Size sheet: anchor explanation footer when anchor point sits on the canvas edge.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "画布扩展"
+     }
+    }
+   }
+  },
+  "Resize": {
+   "comment": "Image Size sheet: primary action.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整大小"
+     }
+    }
+   }
+  },
+  "Resample": {
+   "comment": "Image Size sheet: resample mode toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重新采样"
+     }
+    }
+   }
+  },
+  "Preserve Luminosity": {
+   "comment": "Image Size sheet: preserve brightness toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "保持亮度"
+     }
+    }
+   }
+  },
+  "Lock original aspect ratio": {
+   "comment": "Image Size sheet: aspect-ratio lock toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锁定原始宽高比"
+     }
+    }
+   }
+  },
+  "Current: %lld × %lld pixels": {
+   "comment": "Image Size sheet: current size read-out.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "当前:%lld × %lld 像素"
+     }
+    }
+   }
+  },
+  "New: %lld × %lld pixels · %@ uncompressed": {
+   "comment": "Image Size sheet: new size read-out.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新尺寸:%lld × %lld 像素 · 未压缩 %@"
+     }
+    }
+   }
+  },
+  "Trim Away": {
+   "comment": "Trim sheet: per-edge section title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "裁去"
+     }
+    }
+   }
+  },
+  "Based On": {
+   "comment": "Trim sheet: source picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "依据"
+     }
+    }
+   }
+  },
+  "Background color": {
+   "comment": "Trim sheet: based-on background color option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "背景颜色"
+     }
+    }
+   }
+  },
+  "Bottom Right Pixel Color": {
+   "comment": "Trim sheet: based-on bottom-right pixel.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右下角像素颜色"
+     }
+    }
+   }
+  },
+  "Bottom center": {
+   "comment": "Trim sheet: tooltip bottom-center.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "底部中央"
+     }
+    }
+   }
+  },
+  "Done": {
+   "comment": "JPEG Export sheet: top-right Done button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "完成"
+     }
+    }
+   }
+  },
+  "Export…": {
+   "comment": "JPEG Export sheet: Export button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "导出…"
+     }
+    }
+   }
+  },
+  "Updating…": {
+   "comment": "JPEG Export sheet: status when recomputing preview.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在更新…"
+     }
+    }
+   }
+  },
+  "Fuzziness": {
+   "comment": "Color Range sheet: fuzziness slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "容差"
+     }
+    }
+   }
+  },
+  "Hide the background behind a layer mask, keeping the foreground subjects. The pixels stay, so the background can be painted back at any time.": {
+   "comment": "Color Range sheet: Remove Background hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "隐藏图层蒙版后的背景,保留前景主体。像素保持不变,背景可随时重绘。"
+     }
+    }
+   }
+  },
+  "Fill the selection using surrounding pixels from this layer.": {
+   "comment": "Color Range sheet: Content-Aware Fill hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "用此图层周围像素填充选区。"
+     }
+    }
+   }
+  },
+  "Search shortcuts": {
+   "comment": "Keyboard Shortcuts sheet: search field placeholder.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "搜索快捷键"
+     }
+    }
+   }
+  },
+  "Contextual keys & mouse gestures": {
+   "comment": "Keyboard Shortcuts sheet: section title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "上下文键与鼠标手势"
+     }
+    }
+   }
+  },
+  "Text fields keep standard macOS editing keys. Dialogs share the Apply/Cancel assignments above. Numeric fields use Up/Down, with Shift for larger steps. Standard macOS commands include ⌘Q to quit and ⌃⌘F for full screen. The shortcut editor itself always uses Return to save and Esc to cancel when not recording.": {
+   "comment": "Keyboard Shortcuts sheet: contextual-keys info block.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文本字段保留标准 macOS 编辑键。对话框共用上方的应用/取消键位。数值字段用上下箭头调整,Shift 增加步长。标准 macOS 命令包括 ⌘Q 退出和 ⌃⌘F 全屏。快捷键编辑器本身在不录制时始终用 Return 保存、Esc 取消。"
+     }
+    }
+   }
+  },
+  "Click a shortcut, then press its new key combination. Changes apply when you save.": {
+   "comment": "Keyboard Shortcuts sheet: editing instructions.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击一个快捷键,然后按下新的组合键。保存后变更生效。"
+     }
+    }
+   }
+  },
+  "Reverse": {
+   "comment": "Keyboard Shortcuts sheet: reverse direction button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "反向"
+     }
+    }
+   }
+  },
+  "Fit": {
+   "comment": "Keyboard Shortcuts sheet: fit content.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "适应"
+     }
+    }
+   }
+  },
+  "Distribution": {
+   "comment": "Keyboard Shortcuts sheet: distribution label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "分布"
+     }
+    }
+   }
+  },
+  "Uniform": {
+   "comment": "Image Size sheet: uniform resample option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "均匀"
+     }
+    }
+   }
+  },
+  "Monochromatic": {
+   "comment": "Add Noise filter: monochromatic noise toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "单色"
+     }
+    }
+   }
   }
  },
  "version": "1.1"
