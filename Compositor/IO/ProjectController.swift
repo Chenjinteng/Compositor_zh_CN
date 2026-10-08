@@ -330,7 +330,7 @@ final class ProjectController {
         guard session.isModified, session.document != nil else { return true }
         let alert = NSAlert()
         let projectName = session.projectURL?.lastPathComponent ?? String(localized: "Untitled", comment: "Default project name when none is set.")
-        alert.messageText = String(localized: "Save changes to \(projectName)?", defaultValue: "Save changes to \(projectName)?", comment: "Title of the save-changes alert shown before closing a modified project.")
+        alert.messageText = String(format: String(localized: "Save changes to %@?", comment: "Title of the save-changes alert shown before closing a modified project."), projectName)
         alert.informativeText = String(localized: "Your changes will be lost if you don’t save them.", comment: "Informative text of the save-changes alert.")
         alert.addButton(withTitle: String(localized: "Save", comment: "Save-changes alert: save and continue."))
         alert.addButton(withTitle: String(localized: "Cancel", comment: "Save-changes alert: cancel and leave the document open."))
