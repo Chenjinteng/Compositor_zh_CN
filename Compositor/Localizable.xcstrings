@@ -134,7 +134,7 @@
    }
   },
   "Cancel": {
-   "comment": "Transform inspector: cancel button.",
+   "comment": "Generic cancel button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -158,7 +158,7 @@
    }
   },
   "Canvas Size": {
-   "comment": "Title of the Canvas Size sheet.",
+   "comment": "Canvas size sheet title.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -518,7 +518,7 @@
    }
   },
   "Deselect": {
-   "comment": "Select > Deselect (Cmd-D).",
+   "comment": "Lasso: deselect current selection button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -590,7 +590,7 @@
    }
   },
   "Export JPEG": {
-   "comment": "Title of the Save panel that saves the rendered raster as a JPEG file.",
+   "comment": "Export JPEG sheet title.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -794,7 +794,7 @@
    }
   },
   "Grid": {
-   "comment": "Title of the Grid Settings sheet; also View > Show Grid toggle label.",
+   "comment": "Grid settings sheet title.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -902,7 +902,7 @@
    }
   },
   "Image Size": {
-   "comment": "Title of the Image Size sheet.",
+   "comment": "Image size sheet title.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -950,7 +950,7 @@
    }
   },
   "Invert": {
-   "comment": "AdjustmentKind.invert rawValue.",
+   "comment": "Color range sheet invert toggle.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1190,7 +1190,7 @@
    }
   },
   "OK": {
-   "comment": "Generic confirmation button on error alerts.",
+   "comment": "Generic OK button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1394,7 +1394,7 @@
    }
   },
   "Save": {
-   "comment": "File > Save (Cmd-S); also save-changes alert button.",
+   "comment": "Generic save button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1598,7 +1598,7 @@
    }
   },
   "Trim": {
-   "comment": "Title of the Trim sheet.",
+   "comment": "Trim sheet title.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1778,7 +1778,7 @@
    }
   },
   "Size": {
-   "comment": "Layer Effects glow: blur size slider.",
+   "comment": "Generic size label. Shape stroke width.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1790,7 +1790,7 @@
    }
   },
   "Width": {
-   "comment": "New Canvas sheet: dimension field label and accessible name.",
+   "comment": "Generic width label. New canvas dimension. Shape stroke width.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1802,7 +1802,7 @@
    }
   },
   "Height": {
-   "comment": "New Canvas sheet: dimension field label and accessible name.",
+   "comment": "Generic height label. New canvas dimension.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -2030,13 +2030,13 @@
    }
   },
   "Blend": {
-   "comment": "Layer Appearance: blend mode label.",
+   "comment": "Layer Appearance: blend mode label. Also Geometry tab blend slider.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "混合模式"
+      "value": "混合"
      }
     }
    }
@@ -2330,7 +2330,7 @@
    }
   },
   "Auto Select": {
-   "comment": "Transform inspector: toggle label.",
+   "comment": "Transform inspector auto-select toggle (already).",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -2438,7 +2438,7 @@
    }
   },
   "Apply": {
-   "comment": "Transform inspector: commit button.",
+   "comment": "Generic apply button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -2822,7 +2822,7 @@
    }
   },
   "Hide": {
-   "comment": "Layers panel: accessibility verb when the layer is currently visible.",
+   "comment": "Mask hide option.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3194,7 +3194,7 @@
    }
   },
   "Auto": {
-   "comment": "Levels sheet: auto levels row label.",
+   "comment": "Camera Raw: auto button (also Levels auto).",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3218,7 +3218,7 @@
    }
   },
   "Reset": {
-   "comment": "Levels / Hue-Saturation sheet: reset to defaults.",
+   "comment": "Generic reset button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3338,7 +3338,7 @@
    }
   },
   "Apply outside this range instead": {
-   "comment": "Hue/Saturation sheet: invert-range toggle.",
+   "comment": "Color range sheet invert range toggle.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3974,7 +3974,7 @@
    }
   },
   "Style": {
-   "comment": "Camera Raw glow/vignette style picker.",
+   "comment": "Generic style picker label.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -4730,13 +4730,13 @@
    }
   },
   "Edit %@": {
-   "comment": "Camera Raw mixer: edit a per-color tooltip. %@ is the color name.",
+   "comment": "Camera Raw mixer edit tooltip. %@ is the color name.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "编辑 %@"
+      "value": ""
      }
     }
    }
@@ -4778,7 +4778,7 @@
    }
   },
   "Color": {
-   "comment": "Generic color picker label. Effects sheet: color overlay swatch label. Grid settings: grid color label.",
+   "comment": "Color picker label.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -4790,7 +4790,7 @@
    }
   },
   "Angle": {
-   "comment": "Layer Effects shadow/glow: angle slider.",
+   "comment": "Layer effects: angle slider.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -4802,7 +4802,7 @@
    }
   },
   "Distance": {
-   "comment": "Layer Effects shadow/glow: distance slider.",
+   "comment": "Layer effects: distance slider.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -4814,7 +4814,7 @@
    }
   },
   "Spread": {
-   "comment": "Layer Effects glow: spread slider.",
+   "comment": "Layer effects glow: spread slider.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5642,7 +5642,7 @@
    }
   },
   "Document Colors": {
-   "comment": "Color palette: document colors group label.",
+   "comment": "Color palette: document colors group.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5654,7 +5654,7 @@
    }
   },
   "Add to document colors": {
-   "comment": "Color palette: add current color to document swatches tooltip.",
+   "comment": "Color palette: add color to document colors.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -5666,13 +5666,13 @@
    }
   },
   "Type": {
-   "comment": "Type tool header title.",
+   "comment": "Generic type picker label. Also Type tool header.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
      "stringUnit": {
       "state": "translated",
-      "value": "文字"
+      "value": "类型"
      }
     }
    }
@@ -6110,7 +6110,7 @@
    }
   },
   "Export…": {
-   "comment": "JPEG Export sheet: Export button.",
+   "comment": "Export button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6134,7 +6134,7 @@
    }
   },
   "Fuzziness": {
-   "comment": "Color Range sheet: fuzziness slider.",
+   "comment": "Color Range sheet: fuzziness slider (already).",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6146,7 +6146,7 @@
    }
   },
   "Hide the background behind a layer mask, keeping the foreground subjects. The pixels stay, so the background can be painted back at any time.": {
-   "comment": "Color Range sheet: Remove Background hint.",
+   "comment": "Color Range: Remove Background hint (already).",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -6273,6 +6273,4062 @@
      "stringUnit": {
       "state": "translated",
       "value": "单色"
+     }
+    }
+   }
+  },
+  "Lasso": {
+   "comment": "Lasso tool header title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "套索"
+     }
+    }
+   }
+  },
+  "Anti-alias": {
+   "comment": "Lasso / Marquee tool: anti-alias edge toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抗锯齿"
+     }
+    }
+   }
+  },
+  "Empty selection": {
+   "comment": "Lasso: status text when there is no selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "空选区"
+     }
+    }
+   }
+  },
+  "Tolerance": {
+   "comment": "Magic wand: tolerance field label. Also Color Range sheet uses this.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "容差"
+     }
+    }
+   }
+  },
+  "Sample Size": {
+   "comment": "Magic wand / object select sample size picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "采样大小"
+     }
+    }
+   }
+  },
+  "Contiguous": {
+   "comment": "Magic wand: contiguous toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "连续"
+     }
+    }
+   }
+  },
+  "Edge": {
+   "comment": "Object select: edge offset field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "边缘"
+     }
+    }
+   }
+  },
+  "Amount": {
+   "comment": "Selection amount (expand/contract/feather) sheet: amount field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "宽度"
+     }
+    }
+   }
+  },
+  "Press M to switch between Rectangle and Ellipse": {
+   "comment": "Marquee tool: shape picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按 M 切换矩形和椭圆"
+     }
+    }
+   }
+  },
+  "Press Tab to switch between Wand and Object": {
+   "comment": "Magic wand / Object select: mode picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按 Tab 切换魔棒和对象选择"
+     }
+    }
+   }
+  },
+  "Press L to switch between Freehand and Polygonal": {
+   "comment": "Lasso tool: kind picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按 L 切换徒手和多边形"
+     }
+    }
+   }
+  },
+  "Hold Shift to add or Option to subtract for one outline": {
+   "comment": "Selection mode picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按住 Shift 加选,Option 减选,用于单次调整"
+     }
+    }
+   }
+  },
+  "Fade the edge of the selection by this many pixels": {
+   "comment": "Selection feather tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按此像素值羽化选区边缘"
+     }
+    }
+   }
+  },
+  "How far each color channel (0–255) can differ from the clicked color and still be selected": {
+   "comment": "Magic wand: tolerance tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "各颜色通道(0–255)与所点击颜色的差异在此范围内即被选中"
+     }
+    }
+   }
+  },
+  "Match the clicked pixel, or the average of the pixels around it": {
+   "comment": "Magic wand: sample size tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "匹配所点击像素,或周围像素的平均值"
+     }
+    }
+   }
+  },
+  "Read colors from the active layer only, or from every visible layer as shown": {
+   "comment": "Magic wand / Object select: sample scope tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅从当前图层读取颜色,或按显示从所有可见图层读取"
+     }
+    }
+   }
+  },
+  "Select only similar pixels connected to the one you click; off selects them everywhere": {
+   "comment": "Magic wand: contiguous tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅选择与点击像素相连的相似像素;关闭时选中所有相似像素"
+     }
+    }
+   }
+  },
+  "Analyze the active layer only, or every visible layer as shown": {
+   "comment": "Object select: sample scope tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅分析当前图层,或按显示分析所有可见图层"
+     }
+    }
+   }
+  },
+  "Positive values tighten the detected mask inward; negative values expand it outward": {
+   "comment": "Object select: edge tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正值向内收紧检测到的蒙版,负值向外扩展"
+     }
+    }
+   }
+  },
+  "Enter a whole number from 1 to %lld px.": {
+   "comment": "Selection amount (expand/contract/feather) sheet: validation hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "请输入 1 到 %lld 之间的整数像素值。"
+     }
+    }
+   }
+  },
+  "Selection amount": {
+   "comment": "Selection amount (expand/contract/feather) sheet header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选区宽度"
+     }
+    }
+   }
+  },
+  "Project tabs": {
+   "comment": "Project tabs accessibility label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "项目标签"
+     }
+    }
+   }
+  },
+  "Drop into new canvas": {
+   "comment": "Project tab drop zone accessibility label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "拖入新建画布"
+     }
+    }
+   }
+  },
+  "Unsaved changes": {
+   "comment": "Project tab unsaved-changes indicator accessibility label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "未保存修改"
+     }
+    }
+   }
+  },
+  "Drop to open in a new canvas": {
+   "comment": "Project tab drop zone tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "拖入以打开为新画布"
+     }
+    }
+   }
+  },
+  "Close %@": {
+   "comment": "Project tab close button tooltip/accessibility label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "关闭 %@"
+     }
+    }
+   }
+  },
+  "Search commands and tools": {
+   "comment": "Command palette: search field placeholder.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "搜索命令和工具"
+     }
+    }
+   }
+  },
+  "No commands match": {
+   "comment": "Command palette: empty state.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "没有匹配的命令"
+     }
+    }
+   }
+  },
+  "Reading the Photoshop file…": {
+   "comment": "PSD import sheet: loading state.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在读取 Photoshop 文件…"
+     }
+    }
+   }
+  },
+  "PSD import report": {
+   "comment": "PSD import sheet: report header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "PSD 导入报告"
+     }
+    }
+   }
+  },
+  "Delete": {
+   "comment": "Generic delete button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除"
+     }
+    }
+   }
+  },
+  "Save As": {
+   "comment": "Save as button or menu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "另存为"
+     }
+    }
+   }
+  },
+  "New": {
+   "comment": "Project tabs '+' new label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建"
+     }
+    }
+   }
+  },
+  "Help": {
+   "comment": "Help menu label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "帮助"
+     }
+    }
+   }
+  },
+  "Window": {
+   "comment": "Window menu.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "窗口"
+     }
+    }
+   }
+  },
+  "Services": {
+   "comment": "macOS Services menu label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "服务"
+     }
+    }
+   }
+  },
+  "Menus": {
+   "comment": "Keyboard Shortcuts section title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "菜单"
+     }
+    }
+   }
+  },
+  "Merge Layers": {
+   "comment": "Merge layers command.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "合并图层"
+     }
+    }
+   }
+  },
+  "Group Layers": {
+   "comment": "Group selected layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "分组图层"
+     }
+    }
+   }
+  },
+  "Effects": {
+   "comment": "Layer effects menu or section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "效果"
+     }
+    }
+   }
+  },
+  "Duplicate / Layer via Copy": {
+   "comment": "Edit menu section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "复制/通过拷贝新建"
+     }
+    }
+   }
+  },
+  "Move / Transform": {
+   "comment": "Move or transform tool menu section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动/变换"
+     }
+    }
+   }
+  },
+  "Toggle Clipping Mask": {
+   "comment": "Layer menu: toggle clipping for the active layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "切换剪贴蒙版"
+     }
+    }
+   }
+  },
+  "Toggle Levels preview": {
+   "comment": "Levels sheet preview shortcut.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "切换色阶预览"
+     }
+    }
+   }
+  },
+  "Mask": {
+   "comment": "Masking section title.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "蒙版"
+     }
+    }
+   }
+  },
+  "Masking": {
+   "comment": "Masking panel section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "蒙版处理"
+     }
+    }
+   }
+  },
+  "Mask background": {
+   "comment": "Mask section: mask background option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "遮罩背景"
+     }
+    }
+   }
+  },
+  "Mask foreground": {
+   "comment": "Mask section: mask foreground option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "遮罩前景"
+     }
+    }
+   }
+  },
+  "Fill with Foreground": {
+   "comment": "Edit menu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "用前景色填充"
+     }
+    }
+   }
+  },
+  "Fill with Background": {
+   "comment": "Edit menu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "用背景色填充"
+     }
+    }
+   }
+  },
+  "Inverse Selection": {
+   "comment": "Selection menu: invert selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "反选"
+     }
+    }
+   }
+  },
+  "Select All": {
+   "comment": "Selection menu: select all.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "全选"
+     }
+    }
+   }
+  },
+  "Select Subject": {
+   "comment": "Selection menu: select subject.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择主体"
+     }
+    }
+   }
+  },
+  "Contract": {
+   "comment": "Selection menu: contract.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "收缩"
+     }
+    }
+   }
+  },
+  "Expand": {
+   "comment": "Selection menu: expand.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "扩展"
+     }
+    }
+   }
+  },
+  "Invert Pixels / Mask": {
+   "comment": "Image menu: invert pixels or mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "反相像素/蒙版"
+     }
+    }
+   }
+  },
+  "Gradient": {
+   "comment": "Gradient tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "渐变"
+     }
+    }
+   }
+  },
+  "Gradient tool": {
+   "comment": "Toolbar gradient tool tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "渐变工具"
+     }
+    }
+   }
+  },
+  "Brush tool": {
+   "comment": "Toolbar brush tool tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "画笔工具"
+     }
+    }
+   }
+  },
+  "Eyedropper": {
+   "comment": "Eyedropper tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "吸管"
+     }
+    }
+   }
+  },
+  "Eyedropper tool": {
+   "comment": "Toolbar eyedropper tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "吸管工具"
+     }
+    }
+   }
+  },
+  "Hand": {
+   "comment": "Hand tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抓手"
+     }
+    }
+   }
+  },
+  "Hand tool": {
+   "comment": "Toolbar hand tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抓手工具"
+     }
+    }
+   }
+  },
+  "Pan": {
+   "comment": "Pan tool header / verb.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平移"
+     }
+    }
+   }
+  },
+  "Crop tool": {
+   "comment": "Toolbar crop tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "裁剪工具"
+     }
+    }
+   }
+  },
+  "Select tool": {
+   "comment": "Toolbar select tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择工具"
+     }
+    }
+   }
+  },
+  "Magic Wand": {
+   "comment": "Magic wand tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "魔棒"
+     }
+    }
+   }
+  },
+  "Magic": {
+   "comment": "Magic Wand tool picker option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "魔法"
+     }
+    }
+   }
+  },
+  "Polygonal Lasso": {
+   "comment": "Lasso kind picker option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "多边形套索"
+     }
+    }
+   }
+  },
+  "Rectangular Marquee": {
+   "comment": "Marquee kind picker option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "矩形选框"
+     }
+    }
+   }
+  },
+  "Elliptical Marquee": {
+   "comment": "Marquee kind picker option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "椭圆选框"
+     }
+    }
+   }
+  },
+  "Rectangle": {
+   "comment": "Shape tool: rectangle kind.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "矩形"
+     }
+    }
+   }
+  },
+  "Ellipse": {
+   "comment": "Shape tool: ellipse kind.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "椭圆"
+     }
+    }
+   }
+  },
+  "Line": {
+   "comment": "Shape tool: line kind.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "直线"
+     }
+    }
+   }
+  },
+  "Marquee": {
+   "comment": "Marquee tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选框"
+     }
+    }
+   }
+  },
+  "Object Selection": {
+   "comment": "Object Selection tool mode picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "对象选择"
+     }
+    }
+   }
+  },
+  "Shape tool": {
+   "comment": "Toolbar shape tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "形状工具"
+     }
+    }
+   }
+  },
+  "Type tool": {
+   "comment": "Toolbar type tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文字工具"
+     }
+    }
+   }
+  },
+  "Liquify": {
+   "comment": "Liquify filter name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "液化"
+     }
+    }
+   }
+  },
+  "Smudge": {
+   "comment": "Smudge filter name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "涂抹"
+     }
+    }
+   }
+  },
+  "Spot Healing Brush": {
+   "comment": "Spot Healing Brush tool header (alternate form).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "污点修复画笔"
+     }
+    }
+   }
+  },
+  "Zoom tool": {
+   "comment": "Toolbar zoom tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩放工具"
+     }
+    }
+   }
+  },
+  "Zoom": {
+   "comment": "Zoom tool header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩放"
+     }
+    }
+   }
+  },
+  "Distortion": {
+   "comment": "Geometry: distortion section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "畸变"
+     }
+    }
+   }
+  },
+  "Calibration": {
+   "comment": "Geometry: calibration section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "校准"
+     }
+    }
+   }
+  },
+  "Optics": {
+   "comment": "Camera Raw: optics section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "光学"
+     }
+    }
+   }
+  },
+  "Geometry": {
+   "comment": "Camera Raw: geometry section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "几何"
+     }
+    }
+   }
+  },
+  "Color Detail": {
+   "comment": "Camera Raw: color detail (defringe) section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "细节颜色"
+     }
+    }
+   }
+  },
+  "Color Grading": {
+   "comment": "Camera Raw: color grading section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色分级"
+     }
+    }
+   }
+  },
+  "Color Mixer": {
+   "comment": "Camera Raw: color mixer section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色彩混合"
+     }
+    }
+   }
+  },
+  "Detail": {
+   "comment": "Camera Raw / sharpening section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "细节"
+     }
+    }
+   }
+  },
+  "Tones": {
+   "comment": "Camera Raw tonal range section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色调"
+     }
+    }
+   }
+  },
+  "Vignetting": {
+   "comment": "Camera Raw: vignetting subsection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "暗角"
+     }
+    }
+   }
+  },
+  "Diffusion": {
+   "comment": "Camera Raw: glow style option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "漫射"
+     }
+    }
+   }
+  },
+  "Blend mode": {
+   "comment": "Layer Appearance: blend mode label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "混合模式"
+     }
+    }
+   }
+  },
+  "Foreground": {
+   "comment": "Color: Foreground color swatch label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "前景"
+     }
+    }
+   }
+  },
+  "Background": {
+   "comment": "Color: Background color swatch label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "背景"
+     }
+    }
+   }
+  },
+  "Extension color": {
+   "comment": "Color: extension color swatch label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "扩展色"
+     }
+    }
+   }
+  },
+  "Extension Color": {
+   "comment": "Color: extension color label variant.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "扩展色"
+     }
+    }
+   }
+  },
+  "Transparent": {
+   "comment": "Color/transparency option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "透明"
+     }
+    }
+   }
+  },
+  "Default colors (D)": {
+   "comment": "Color palette: default colors swatch tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "默认颜色(D)"
+     }
+    }
+   }
+  },
+  "Reset colors": {
+   "comment": "Color palette: reset colors button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重置颜色"
+     }
+    }
+   }
+  },
+  "Swap foreground/background": {
+   "comment": "Color palette: swap button tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "交换前景/背景"
+     }
+    }
+   }
+  },
+  "Swap foreground and background (X)": {
+   "comment": "Keyboard Shortcut: swap colors.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "交换前景和背景(X)"
+     }
+    }
+   }
+  },
+  "Command Palette": {
+   "comment": "View menu: command palette.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "命令面板"
+     }
+    }
+   }
+  },
+  "Keyboard Shortcuts": {
+   "comment": "Edit menu: keyboard shortcuts.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "键盘快捷键"
+     }
+    }
+   }
+  },
+  "Add to %@": {
+   "comment": "Color palette: add color to group. %@ is the group name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加到 %@"
+     }
+    }
+   }
+  },
+  "Resolution": {
+   "comment": "Generic resolution label. New canvas DPI. Image size sheet.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "分辨率"
+     }
+    }
+   }
+  },
+  "Units": {
+   "comment": "Generic units label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "像素"
+     }
+    }
+   }
+  },
+  "Aspect": {
+   "comment": "Generic aspect ratio label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "比例"
+     }
+    }
+   }
+  },
+  "Ratio": {
+   "comment": "Generic ratio label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "比例"
+     }
+    }
+   }
+  },
+  "Percent": {
+   "comment": "Generic percent label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "百分比"
+     }
+    }
+   }
+  },
+  "Mode": {
+   "comment": "Generic mode picker label. FilterSheet: blend mode.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "模式"
+     }
+    }
+   }
+  },
+  "Scale": {
+   "comment": "Transform inspector: scale field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩放"
+     }
+    }
+   }
+  },
+  "Rotate": {
+   "comment": "Transform rotate field. Also lens rotation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "旋转"
+     }
+    }
+   }
+  },
+  "Refine": {
+   "comment": "Object selection: refine mask button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "细化"
+     }
+    }
+   }
+  },
+  "Pixel Shape": {
+   "comment": "Filter Dither: pixel shape picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "像素形状"
+     }
+    }
+   }
+  },
+  "Pixel Size": {
+   "comment": "Camera Raw: pixel size picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "像素大小"
+     }
+    }
+   }
+  },
+  "Cell Size": {
+   "comment": "Filter Dither: cell size field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "单元格大小"
+     }
+    }
+   }
+  },
+  "Cell size": {
+   "comment": "Filter Dither: cell size label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "单元格大小"
+     }
+    }
+   }
+  },
+  "Center": {
+   "comment": "Center direction action.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "居中"
+     }
+    }
+   }
+  },
+  "Midpoint": {
+   "comment": "Filter vignette: midpoint slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "中点"
+     }
+    }
+   }
+  },
+  "Roundness": {
+   "comment": "Filter vignette: roundness slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "圆度"
+     }
+    }
+   }
+  },
+  "Roughness": {
+   "comment": "Filter vignette/blur: roughness slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "粗糙度"
+     }
+    }
+   }
+  },
+  "Offset": {
+   "comment": "Generic offset label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "距离"
+     }
+    }
+   }
+  },
+  "Offset X": {
+   "comment": "Filter offset X.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "X 偏移"
+     }
+    }
+   }
+  },
+  "Offset Y": {
+   "comment": "Filter offset Y.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Y 偏移"
+     }
+    }
+   }
+  },
+  "Clarity": {
+   "comment": "Camera Raw: clarity slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "清晰度"
+     }
+    }
+   }
+  },
+  "Dehaze": {
+   "comment": "Camera Raw: dehaze slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "去雾"
+     }
+    }
+   }
+  },
+  "Vibrance": {
+   "comment": "Camera Raw: vibrance slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "自然饱和度"
+     }
+    }
+   }
+  },
+  "Density": {
+   "comment": "Camera Raw: density slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "浓度"
+     }
+    }
+   }
+  },
+  "Texture": {
+   "comment": "Camera Raw: texture slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "质感"
+     }
+    }
+   }
+  },
+  "Warmth": {
+   "comment": "Camera Raw: warmth slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "暖度"
+     }
+    }
+   }
+  },
+  "Temperature": {
+   "comment": "Camera Raw: temperature slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色温"
+     }
+    }
+   }
+  },
+  "Tint": {
+   "comment": "Camera Raw: tint slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色调"
+     }
+    }
+   }
+  },
+  "Green Amount": {
+   "comment": "Camera Raw: green amount (color mixer).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿色数量"
+     }
+    }
+   }
+  },
+  "Green Hue": {
+   "comment": "Camera Raw: green hue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿色色相"
+     }
+    }
+   }
+  },
+  "Purple Amount": {
+   "comment": "Camera Raw: purple amount (defringe).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "紫色数量"
+     }
+    }
+   }
+  },
+  "Purple Hue": {
+   "comment": "Camera Raw: purple hue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "紫色色相"
+     }
+    }
+   }
+  },
+  "Wobble": {
+   "comment": "Camera Raw glow: wobble slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抖动"
+     }
+    }
+   }
+  },
+  "Boost": {
+   "comment": "Filter bloom: boost slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "提升"
+     }
+    }
+   }
+  },
+  "Shift Edge": {
+   "comment": "Magic wand / object select: shift edge.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "边缘偏移"
+     }
+    }
+   }
+  },
+  "Back": {
+   "comment": "Generic back button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "返回"
+     }
+    }
+   }
+  },
+  "Down": {
+   "comment": "Move down action direction.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "下"
+     }
+    }
+   }
+  },
+  "Input": {
+   "comment": "Curves sheet input field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输入"
+     }
+    }
+   }
+  },
+  "Output": {
+   "comment": "Curves sheet output field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输出"
+     }
+    }
+   }
+  },
+  "Remove": {
+   "comment": "Generic remove button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移除"
+     }
+    }
+   }
+  },
+  "Continue": {
+   "comment": "Generic continue button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "继续"
+     }
+    }
+   }
+  },
+  "Open": {
+   "comment": "Generic open button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "打开"
+     }
+    }
+   }
+  },
+  "Close": {
+   "comment": "Generic close button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "关闭"
+     }
+    }
+   }
+  },
+  "Reveal": {
+   "comment": "Mask reveal option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示"
+     }
+    }
+   }
+  },
+  "Lightness": {
+   "comment": "Camera Raw mix: luminance slider (already).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度"
+     }
+    }
+   }
+  },
+  "Cyan / Red": {
+   "comment": "Camera Raw: cyan/red primary section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "青色/红色"
+     }
+    }
+   }
+  },
+  "Yellow / Blue": {
+   "comment": "Camera Raw: yellow/blue primary section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "黄色/蓝色"
+     }
+    }
+   }
+  },
+  "Magenta / Green": {
+   "comment": "Camera Raw: magenta/green primary section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "洋红/绿色"
+     }
+    }
+   }
+  },
+  "Set Background Color": {
+   "comment": "Color picker: set background color button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置背景颜色"
+     }
+    }
+   }
+  },
+  "Set Foreground Color": {
+   "comment": "Color picker: set foreground color button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置前景颜色"
+     }
+    }
+   }
+  },
+  "Import": {
+   "comment": "Import button / menu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "导入"
+     }
+    }
+   }
+  },
+  "Working…": {
+   "comment": "Working indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在处理…"
+     }
+    }
+   }
+  },
+  "Applying…": {
+   "comment": "Applying indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在应用…"
+     }
+    }
+   }
+  },
+  "Importing…": {
+   "comment": "Importing indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在导入…"
+     }
+    }
+   }
+  },
+  "Reading the file to see what needs converting.": {
+   "comment": "PSD import: explanation footer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在读取文件以确定需要转换的内容。"
+     }
+    }
+   }
+  },
+  "Compositor will convert these Photoshop features. Nothing is applied until you continue.": {
+   "comment": "PSD import: conversion report header.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Compositor 将转换以下 Photoshop 特性。在你继续之前不会应用任何修改。"
+     }
+    }
+   }
+  },
+  "Develop %@": {
+   "comment": "Camera Raw: develop image. %@ is the URL last path component.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Develop %@"
+     }
+    }
+   }
+  },
+  "Open in a new project tab": {
+   "comment": "Project tab drop zone option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在新项目标签中打开"
+     }
+    }
+   }
+  },
+  "Press a shortcut": {
+   "comment": "Keyboard shortcut recorder: press a key.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按下快捷键"
+     }
+    }
+   }
+  },
+  "Press keys…": {
+   "comment": "Keyboard shortcut recorder placeholder.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "请按组合键…"
+     }
+    }
+   }
+  },
+  "Choose a single key with optional modifiers.": {
+   "comment": "Keyboard shortcut editor info.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择一个主键,可选修饰键。"
+     }
+    }
+   }
+  },
+  "Text-editing shortcuts need Command, Option, or Control so they do not replace normal typing.": {
+   "comment": "Keyboard shortcut editor text-editing info.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文字编辑快捷键必须包含 Command、Option 或 Control,以免替换正常输入。"
+     }
+    }
+   }
+  },
+  "Return": {
+   "comment": "Generic Return key label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "回车"
+     }
+    }
+   }
+  },
+  "Space": {
+   "comment": "Space key label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "空格"
+     }
+    }
+   }
+  },
+  "Tab": {
+   "comment": "Tab key label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Tab"
+     }
+    }
+   }
+  },
+  "Esc": {
+   "comment": "Esc key label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Esc"
+     }
+    }
+   }
+  },
+  "New Canvas": {
+   "comment": "Sheet title for the New Canvas sheet.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建画布"
+     }
+    }
+   }
+  },
+  "Drag or scroll to move around; double-click switches between Fit and 100%": {
+   "comment": "Canvas: zoom/pan hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "拖动或滚动以平移画面;双击在适应和 100% 之间切换"
+     }
+    }
+   }
+  },
+  "Show the whole image (⌘0)": {
+   "comment": "Footer hint when canvas zoomed in.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示整个图像(⌘0)"
+     }
+    }
+   }
+  },
+  "Zoom percentage (0.1–3200%). Press Return to apply.": {
+   "comment": "Zoom field input hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩放百分比(0.1–3200%)。按回车应用。"
+     }
+    }
+   }
+  },
+  "Zoom percentage": {
+   "comment": "Zoom field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩放百分比"
+     }
+    }
+   }
+  },
+  "Zoom in (⌘+), now %@. At 100% each pixel of the JPEG is one pixel of the screen, as on the canvas": {
+   "comment": "JPEG export zoom in hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "放大(⌘+),当前 %@。100% 时 JPEG 的每像素对应屏幕的一像素,与画布一致"
+     }
+    }
+   }
+  },
+  "Zoom out (⌘−), now %@": {
+   "comment": "JPEG export zoom out hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缩小(⌘−),当前 %@"
+     }
+    }
+   }
+  },
+  "Show Grid": {
+   "comment": "View menu toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示网格"
+     }
+    }
+   }
+  },
+  "Show Guides": {
+   "comment": "View menu toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示参考线"
+     }
+    }
+   }
+  },
+  "Show Rulers": {
+   "comment": "View menu toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示标尺"
+     }
+    }
+   }
+  },
+  "Canvas & Layers": {
+   "comment": "Sidebar tab/section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "画布与图层"
+     }
+    }
+   }
+  },
+  "Canvas Only: full screen on black, without panels": {
+   "comment": "Command palette command description.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅画布:全屏黑底,隐藏面板"
+     }
+    }
+   }
+  },
+  "Apply current canvas operation": {
+   "comment": "Command palette: commit canvas op.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用当前画布操作"
+     }
+    }
+   }
+  },
+  "Cancel current canvas operation": {
+   "comment": "Command palette: cancel canvas op.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "取消当前画布操作"
+     }
+    }
+   }
+  },
+  "Blacks": {
+   "comment": "Camera Raw tonal: blacks slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "黑色"
+     }
+    }
+   }
+  },
+  "Whites": {
+   "comment": "Camera Raw tonal: whites slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "白色"
+     }
+    }
+   }
+  },
+  "Converted": {
+   "comment": "PSD import report: converted section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "已转换"
+     }
+    }
+   }
+  },
+  "Rasterized": {
+   "comment": "PSD import report: rasterized section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "栅格化"
+     }
+    }
+   }
+  },
+  "Dropped": {
+   "comment": "PSD import report: dropped section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "已丢弃"
+     }
+    }
+   }
+  },
+  "Warnings": {
+   "comment": "PSD import report: warnings section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "警告"
+     }
+    }
+   }
+  },
+  "Apply distortion": {
+   "comment": "Camera Raw: apply distortion toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用畸变"
+     }
+    }
+   }
+  },
+  "Remove Distortion": {
+   "comment": "Camera Raw: remove distortion toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "去除畸变"
+     }
+    }
+   }
+  },
+  "Lens Corrections": {
+   "comment": "Camera Raw: lens corrections section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "镜头校正"
+     }
+    }
+   }
+  },
+  "Manual Lens Corrections": {
+   "comment": "Camera Raw: manual lens corrections subsection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "手动镜头校正"
+     }
+    }
+   }
+  },
+  "Adjusts the bright parts of the picture. Hold Option to see clipped highlights.": {
+   "comment": "Camera Raw: highlights tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整画面亮部。按住 Option 显示裁剪高光。"
+     }
+    }
+   }
+  },
+  "Adjusts the dark parts of the picture. Hold Option to see clipped shadows.": {
+   "comment": "Camera Raw: shadows tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整画面暗部。按住 Option 显示裁剪阴影。"
+     }
+    }
+   }
+  },
+  "Brightens or darkens the corners to counter lens falloff.": {
+   "comment": "Camera Raw: vignetting tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "提亮或压暗四角以抵消镜头暗角。"
+     }
+    }
+   }
+  },
+  "Brightens or darkens the whole picture, in stops of light. Hold Option to see clipped highlights.": {
+   "comment": "Camera Raw: exposure tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "按曝光档数整体提亮或压暗画面。按住 Option 显示裁剪高光。"
+     }
+    }
+   }
+  },
+  "Adds film grain, strongest in the middle tones.": {
+   "comment": "Camera Raw: grain tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加胶片颗粒,中间调最强。"
+     }
+    }
+   }
+  },
+  "Adds green or magenta to the darkest tones.": {
+   "comment": "Camera Raw: shadows tint tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "向最暗色调添加绿色或洋红。"
+     }
+    }
+   }
+  },
+  "Adds or softens contrast along broader shapes.": {
+   "comment": "Camera Raw: clarity tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "沿较大形状添加或减弱对比。"
+     }
+    }
+   }
+  },
+  "Adds or softens small detail.": {
+   "comment": "Camera Raw: texture tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加或减弱小细节。"
+     }
+    }
+   }
+  },
+  "Clears haze when raised, and adds haze when lowered.": {
+   "comment": "Camera Raw: dehaze tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调高消除雾霾,调低添加雾霾。"
+     }
+    }
+   }
+  },
+  "Emphasizes fine texture over broader edges.": {
+   "comment": "Camera Raw: sharpening detail tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在较宽边缘上突出细微纹理。"
+     }
+    }
+   }
+  },
+  "Keeps local contrast after luminance smoothing.": {
+   "comment": "Camera Raw: luma contrast tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在亮度降噪后保持局部对比。"
+     }
+    }
+   }
+  },
+  "Limits sharpening to stronger edges. Hold Option to see the mask.": {
+   "comment": "Camera Raw: sharpening mask tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将锐化限制在较强的边缘。按住 Option 查看蒙版。"
+     }
+    }
+   }
+  },
+  "Sets how far the glow reaches. Has no effect until Glow is raised.": {
+   "comment": "Camera Raw: glow range tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置光晕扩散范围。仅在 Glow 调高后生效。"
+     }
+    }
+   }
+  },
+  "Sets the brightest point. Hold Option to see clipped highlights.": {
+   "comment": "Camera Raw: whites tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置最亮端点。按住 Option 查看裁剪高光。"
+     }
+    }
+   }
+  },
+  "Sets the darkest point. Hold Option to see clipped shadows.": {
+   "comment": "Camera Raw: blacks tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置最暗端点。按住 Option 查看裁剪阴影。"
+     }
+    }
+   }
+  },
+  "Sets where the vignette begins, from the center outward.": {
+   "comment": "Camera Raw: vignette midpoint tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "设置暗角从中心向外的起始位置。"
+     }
+    }
+   }
+  },
+  "Softens the edge of the vignette.": {
+   "comment": "Camera Raw: vignette feather tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "柔化暗角的边缘。"
+     }
+    }
+   }
+  },
+  "Makes the vignette rounder or more square.": {
+   "comment": "Camera Raw: vignette roundness tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "让暗角更圆或更方。"
+     }
+    }
+   }
+  },
+  "Strengthens quiet colors more than colors that are already strong, and protects skin tones.": {
+   "comment": "Camera Raw: vibrance tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "对原本就较弱的颜色增强更明显,同时保护肤色。"
+     }
+    }
+   }
+  },
+  "Strengthens or weakens every color by the same amount.": {
+   "comment": "Camera Raw: saturation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "等比例增强或减弱所有颜色。"
+     }
+    }
+   }
+  },
+  "Strengthens or weakens the blue primary.": {
+   "comment": "Camera Raw: blue primary tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "增强或减弱蓝色原色。"
+     }
+    }
+   }
+  },
+  "Strengthens or weakens the green primary.": {
+   "comment": "Camera Raw: green primary tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "增强或减弱绿色原色。"
+     }
+    }
+   }
+  },
+  "Strengthens or weakens the red primary.": {
+   "comment": "Camera Raw: red primary tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "增强或减弱红色原色。"
+     }
+    }
+   }
+  },
+  "Spreads a glow from the bright areas.": {
+   "comment": "Camera Raw: bloom tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "从亮部扩散出光晕。"
+     }
+    }
+   }
+  },
+  "Light blooming around the lines, like a CRT's phosphors": {
+   "comment": "Camera Raw: halation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在曲线周围像 CRT 荧光屏那样发光"
+     }
+    }
+   }
+  },
+  "Break the lines into glowing beads": {
+   "comment": "Camera Raw: grain style 'beads' option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将线条打散成发光颗粒"
+     }
+    }
+   }
+  },
+  "Draw the marks for the light tones on the dark color, like a glowing screen": {
+   "comment": "Camera Raw: glow style 'screen' option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在暗底上画亮调标记,像发光的屏幕"
+     }
+    }
+   }
+  },
+  "Shifts how blue is interpreted.": {
+   "comment": "Camera Raw: blue primary hue tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整蓝色的诠释方式。"
+     }
+    }
+   }
+  },
+  "Shifts how green is interpreted.": {
+   "comment": "Camera Raw: green primary hue tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整绿色的诠释方式。"
+     }
+    }
+   }
+  },
+  "Shifts how red is interpreted.": {
+   "comment": "Camera Raw: red primary hue tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整红色的诠释方式。"
+     }
+    }
+   }
+  },
+  "Shifts the picture from blue to yellow.": {
+   "comment": "Camera Raw: temperature tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将画面从蓝色偏移到黄色。"
+     }
+    }
+   }
+  },
+  "Shifts the picture from green to mauve.": {
+   "comment": "Camera Raw: tint tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将画面从绿色偏移到紫红色。"
+     }
+    }
+   }
+  },
+  "Shifts the glow from cool to warm. Halation stays red. Has no effect until Glow is raised.": {
+   "comment": "Camera Raw: glow warmth tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将光晕从冷色偏移到暖色;Halation 保持红色。仅在 Glow 调高后生效。"
+     }
+    }
+   }
+  },
+  "How far from each edge the sharpening reaches, in pixels.": {
+   "comment": "Camera Raw: sharpening radius tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锐化从边缘向内的像素距离。"
+     }
+    }
+   }
+  },
+  "Controls how strong the sharpening is.": {
+   "comment": "Camera Raw: sharpening amount tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "控制锐化强度。"
+     }
+    }
+   }
+  },
+  "Preserves fine texture while luminance noise is reduced.": {
+   "comment": "Camera Raw: luminance detail tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在亮度降噪时保留细微纹理。"
+     }
+    }
+   }
+  },
+  "Smooths grain and noise in brightness.": {
+   "comment": "Camera Raw: luminance smoothing tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平滑亮度的颗粒和杂色。"
+     }
+    }
+   }
+  },
+  "Preserves colored edges while color noise is reduced.": {
+   "comment": "Camera Raw: color detail tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在色彩降噪时保留彩色边缘。"
+     }
+    }
+   }
+  },
+  "Smooths colored speckles.": {
+   "comment": "Camera Raw: color smoothing tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平滑彩色斑点。"
+     }
+    }
+   }
+  },
+  "Makes the grain coarser or finer.": {
+   "comment": "Camera Raw: grain size tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "让颗粒更粗或更细。"
+     }
+    }
+   }
+  },
+  "Makes the grain smoother or more uneven.": {
+   "comment": "Camera Raw: grain roughness tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "让颗粒更平滑或更不规则。"
+     }
+    }
+   }
+  },
+  "Lifts or lowers the brightest tones.": {
+   "comment": "Camera Raw: highlights tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抬升或压低最亮色调。"
+     }
+    }
+   }
+  },
+  "Lifts or lowers the light tones.": {
+   "comment": "Camera Raw: lights tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抬升或压低亮色调。"
+     }
+    }
+   }
+  },
+  "Lifts or lowers the dark tones.": {
+   "comment": "Camera Raw: darks tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抬升或压低暗色调。"
+     }
+    }
+   }
+  },
+  "Lifts or lowers the darkest tones.": {
+   "comment": "Camera Raw: shadows tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抬升或压低最暗色调。"
+     }
+    }
+   }
+  },
+  "Positive straightens lines that bow outward (barrel); negative, lines that bow inward (pincushion).": {
+   "comment": "Camera Raw: distortion tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正值校正桶形畸变(向外弯);负值校正枕形畸变(向内弯)。"
+     }
+    }
+   }
+  },
+  "Straightens barrel or pincushion bending.": {
+   "comment": "Camera Raw: distortion slider tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "校正桶形或枕形畸变。"
+     }
+    }
+   }
+  },
+  "Straightens horizontal lines toward the center.": {
+   "comment": "Camera Raw: horizontal perspective tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将水平线校正至中心。"
+     }
+    }
+   }
+  },
+  "Straightens vertical lines toward the center.": {
+   "comment": "Camera Raw: vertical perspective tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将垂直线校正至中心。"
+     }
+    }
+   }
+  },
+  "Moves the vignette correction inward or outward.": {
+   "comment": "Camera Raw: vignette scale tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将暗角校正向内或向外移动。"
+     }
+    }
+   }
+  },
+  "How much of the profile distortion correction is applied.": {
+   "comment": "Camera Raw: lens distortion scale.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用多少配置文件畸变校正。"
+     }
+    }
+   }
+  },
+  "How much of the profile vignetting correction is applied.": {
+   "comment": "Camera Raw: lens vignetting scale.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用多少配置文件暗角校正。"
+     }
+    }
+   }
+  },
+  "How much of each pixel's error spreads to its neighbors. Less gives flatter areas": {
+   "comment": "Filter Dither: error diffusion.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "各像素误差向相邻像素扩散的比例,越小区域越平滑。"
+     }
+    }
+   }
+  },
+  "Make each dithered pixel this many pixels across, for a chunky old-screen look": {
+   "comment": "Filter Dither: cell size tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "让每个抖动像素跨这么多像素,营造粗糙的老屏幕效果"
+     }
+    }
+   }
+  },
+  "More ink (darker) or less before dithering": {
+   "comment": "Filter Dither: amount tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "抖动前墨水更多(更暗)或更少"
+     }
+    }
+   }
+  },
+  "Draw each chunky pixel as a solid square, or as a round dot like a dot-matrix screen": {
+   "comment": "Filter Dither: shape tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将每个块状像素画为实心方块,或像点阵屏那样的圆点"
+     }
+    }
+   }
+  },
+  "Make the lines waver sideways down the screen, like a CRT losing sync": {
+   "comment": "Filter Bloom: CRT wobble tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "让线条像 CRT 失同步那样在屏幕两侧抖动"
+     }
+    }
+   }
+  },
+  "Linear runs along the line; Radial spreads out from the start point": {
+   "comment": "Gradient tool: gradient kind picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性沿渐变方向;径向从起点向外扩散"
+     }
+    }
+   }
+  },
+  "Shapes fill with the foreground color; click to change it": {
+   "comment": "Shape tool: fill tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "形状以前景色填充;点击可切换"
+     }
+    }
+   }
+  },
+  "Shift-U (or Tab) steps through Rectangle, Ellipse and Line": {
+   "comment": "Shape tool: tab shortcut.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Shift-U(或 Tab)在矩形、椭圆和直线之间循环"
+     }
+    }
+   }
+  },
+  "Cycle shape kind": {
+   "comment": "Shape tool: cycle shape keyboard.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "切换形状类型"
+     }
+    }
+   }
+  },
+  "Cycle tool mode": {
+   "comment": "Brush tool: cycle mode keyboard.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "切换工具模式"
+     }
+    }
+   }
+  },
+  "Lasso / cycle mode": {
+   "comment": "Lasso tool: cycle mode keyboard.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "套索/切换模式"
+     }
+    }
+   }
+  },
+  "Marquee / cycle shape": {
+   "comment": "Marquee tool: cycle shape keyboard.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选框/切换形状"
+     }
+    }
+   }
+  },
+  "Temporary Hand tool (hold)": {
+   "comment": "Hand tool temporary hold.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "临时抓手工具(按住)"
+     }
+    }
+   }
+  },
+  "Choose the dark color": {
+   "comment": "Curves dark anchor picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择深色"
+     }
+    }
+   }
+  },
+  "Choose the light color": {
+   "comment": "Curves light anchor picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择浅色"
+     }
+    }
+   }
+  },
+  "Choose the vignette color": {
+   "comment": "Vignette color picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择暗角颜色"
+     }
+    }
+   }
+  },
+  "Choose the %@ color": {
+   "comment": "Color Range: choose color. %@ is the color family.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择%@颜色"
+     }
+    }
+   }
+  },
+  "Linear histogram with automatic vertical scaling. Tall spikes may extend beyond the graph; all tones from 0 to 255 remain included.": {
+   "comment": "Camera Raw histogram tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性直方图,自动缩放纵轴。高尖峰可能超出图表;0 到 255 的所有色调仍包含在内。"
+     }
+    }
+   }
+  },
+  "Tones from black on the left to white on the right: blacks, shadows, midtones, highlights, whites. Control-click to show the vectorscope.": {
+   "comment": "Camera Raw tonal histogram tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "从左侧黑色到右侧白色的色调:黑色、阴影、中间调、高光、白色。按住 Control 切换矢量示波器。"
+     }
+    }
+   }
+  },
+  "Tones per channel: 2 is pure black and white": {
+   "comment": "Camera Raw per-channel histogram tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "每通道的色调:2 为纯黑和纯白"
+     }
+    }
+   }
+  },
+  "RGB histogram": {
+   "comment": "Camera Raw histogram scope mode label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "RGB 直方图"
+     }
+    }
+   }
+  },
+  "Hue around the wheel, saturation outward from the center. Control-click to show the histogram.": {
+   "comment": "Camera Raw vectorscope tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相沿色轮,饱和度从中心向外。按住 Control 显示直方图。"
+     }
+    }
+   }
+  },
+  "Color that fills transparent areas": {
+   "comment": "Color panel: transparent fill color description.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "填充透明区域的颜色"
+     }
+    }
+   }
+  },
+  "Color for the added canvas": {
+   "comment": "Color: color used when adding a new canvas.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新增画布的颜色"
+     }
+    }
+   }
+  },
+  "Click the image to add that color to the selection": {
+   "comment": "Color Range: add color to selection hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击图像将该颜色加入选区"
+     }
+    }
+   }
+  },
+  "Click the image to select that color": {
+   "comment": "Color Range: select color hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击图像选择该颜色"
+     }
+    }
+   }
+  },
+  "Click the image to take that color out of the selection": {
+   "comment": "Color Range: remove color from selection hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击图像从选区中移除该颜色"
+     }
+    }
+   }
+  },
+  "Click the image to pick the color to select.": {
+   "comment": "Color Range: pick color hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击图像选取要选择的颜色。"
+     }
+    }
+   }
+  },
+  "Select everything except those colors, such as all but a green screen": {
+   "comment": "Color Range: invert scope hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择除这些颜色之外的所有内容,例如绿幕之外的全部内容"
+     }
+    }
+   }
+  },
+  "How far a color may be from the picked ones and still be selected": {
+   "comment": "Color Range: fuzziness tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色与所选颜色的允许差距,在此范围内即被选中"
+     }
+    }
+   }
+  },
+  "Smooth selection edges; turn off for hard pixel edges": {
+   "comment": "Magic wand: anti-alias tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平滑选区边缘;关闭则保留硬边"
+     }
+    }
+   }
+  },
+  "Smooth the detected object outline; turn off for the raw pixel mask": {
+   "comment": "Object select: anti-alias tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平滑检测到的对象轮廓;关闭则保留原始像素蒙版"
+     }
+    }
+   }
+  },
+  "Shrink the mask to drop the rim of background color around the subject, or grow it": {
+   "comment": "Object select: shift edge tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "向内收缩以去掉主体边缘的背景色环,或向外扩展"
+     }
+    }
+   }
+  },
+  "Pull the mask onto the image's own edges, which recovers hair and fur": {
+   "comment": "Remove Background: pull mask hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将蒙版拉到图像本身的边缘,可恢复头发和毛发细节"
+     }
+    }
+   }
+  },
+  "Basic is quick; Advanced refines the mask against the layer's own detail, for hair and fur": {
+   "comment": "Remove Background: quality choice tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Basic 速度快;Advanced 针对图层自身细节细化蒙版,适合头发和毛发"
+     }
+    }
+   }
+  },
+  "Protect bright areas near the edge": {
+   "comment": "Vignette: highlight priority explanation.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "保护边缘附近的亮部区域"
+     }
+    }
+   }
+  },
+  "Protects bright pixels while a dark vignette is applied. Used by Highlight Priority.": {
+   "comment": "Vignette: protect bright.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用深色暗角时保护亮像素,Highlight Priority 用此模式。"
+     }
+    }
+   }
+  },
+  "Color the result while keeping its tones, for a sepia or a cyanotype": {
+   "comment": "Color filter: colorize explanation (already).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "保持明暗关系的同时为结果上色,可做棕褐色或蓝晒效果"
+     }
+    }
+   }
+  },
+  "Put each pixel's brightness back afterwards, so only the color moves": {
+   "comment": "Color filter: preserve luminosity.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "之后恢复每像素的亮度,只改变颜色"
+     }
+    }
+   }
+  },
+  "Click to select; double-click to edit; Option-drag to copy ": {
+   "comment": "NativeLayerList: layer thumbnail tooltip suffix.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "单击选择;双击编辑;Option-拖动复制"
+     }
+    }
+   }
+  },
+  "Select %@": {
+   "comment": "Layers panel: select thumbnail to open. %@ = native image (used in accessibility label).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择 %@"
+     }
+    }
+   }
+  },
+  "Drag on the picture to move the curve for the tone under the pointer.": {
+   "comment": "Camera Raw curve targeted adjustment.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在画面上拖动,移动指针所在色调的曲线。"
+     }
+    }
+   }
+  },
+  "Bottom left": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左下"
+     }
+    }
+   }
+  },
+  "Bottom right": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右下"
+     }
+    }
+   }
+  },
+  "Top left": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左上"
+     }
+    }
+   }
+  },
+  "Top right": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右上"
+     }
+    }
+   }
+  },
+  "Top center": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "顶部中央"
+     }
+    }
+   }
+  },
+  "Middle left": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "左中"
+     }
+    }
+   }
+  },
+  "Middle right": {
+   "comment": "Vignette anchor option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "右中"
+     }
+    }
+   }
+  },
+  "Horizontal": {
+   "comment": "Direction option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "水平"
+     }
+    }
+   }
+  },
+  "Vertical": {
+   "comment": "Direction option.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "垂直"
+     }
+    }
+   }
+  },
+  "Horizontal ruler": {
+   "comment": "Ruler mode option (already).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "水平标尺"
+     }
+    }
+   }
+  },
+  "Vertical ruler": {
+   "comment": "Ruler mode option (already).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "垂直标尺"
+     }
+    }
+   }
+  },
+  "Move selected pixels %@ 1 px": {
+   "comment": "Nudge selected pixels 1 px in direction. %@ is direction word.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动选中像素 %@ 1 像素"
+     }
+    }
+   }
+  },
+  "Move selected pixels %@ 10 px": {
+   "comment": "Nudge selected pixels 10 px in direction. %@ is direction word.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动选中像素 %@ 10 像素"
+     }
+    }
+   }
+  },
+  "Nudge %@ 1 px": {
+   "comment": "Nudge direction by 1 px.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "向 %@ 微移 1 像素"
+     }
+    }
+   }
+  },
+  "Nudge %@ 10 px": {
+   "comment": "Nudge direction by 10 px.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "向 %@ 微移 10 像素"
+     }
+    }
+   }
+  },
+  "Tool › %@": {
+   "comment": "Tool menu prefix for tool picker. %@ is tool name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "工具 › %@"
+     }
+    }
+   }
+  },
+  "Filter › Gaussian Blur…": {
+   "comment": "Filter menu: Gaussian Blur.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "滤镜 › 高斯模糊…"
+     }
+    }
+   }
+  },
+  "Layer › Add Layer Mask": {
+   "comment": "Layer menu: Add Layer Mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层 › 添加图层蒙版"
+     }
+    }
+   }
+  },
+  "Layer › Add Layer Mask (Hide All)": {
+   "comment": "Layer menu: Add Layer Mask Hide All.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层 › 添加图层蒙版(全隐藏)"
+     }
+    }
+   }
+  },
+  "Layer › Add Layer Mask Hiding Selection": {
+   "comment": "Layer menu: Add Layer Mask Hiding Selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层 › 添加图层蒙版(隐藏选区)"
+     }
+    }
+   }
+  },
+  "Layer › Add Layer Mask from Selection": {
+   "comment": "Layer menu: Add Layer Mask from Selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层 › 由选区添加图层蒙版"
+     }
+    }
+   }
+  },
+  "Layer › Rename Layer…": {
+   "comment": "Layer menu: rename layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层 › 重命名图层…"
+     }
+    }
+   }
+  },
+  "Luminance Detail": {
+   "comment": "Camera Raw: luminance detail slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度细节"
+     }
+    }
+   }
+  },
+  "Luminance Contrast": {
+   "comment": "Camera Raw: luminance contrast slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度对比"
+     }
+    }
+   }
+  },
+  "JPEG Background": {
+   "comment": "JPEG export: background color picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "遮挡背景"
+     }
+    }
+   }
+  },
+  "R %@   G %@   B %@": {
+   "comment": "Color picker reading RGB color. Each %@ is a value.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "R %@   G %@   B %@"
+     }
+    }
+   }
+  },
+  "R —   G —   B —": {
+   "comment": "Color picker placeholder.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "R —   G —   B —"
+     }
+    }
+   }
+  },
+  "Move / Transform tool": {
+   "comment": "Toolbar move/transform tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动/变换工具"
+     }
+    }
+   }
+  },
+  "Hide %@": {
+   "comment": "Layer effects section toggle: hide preview tooltip. %@ is the section name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "隐藏 %@"
+     }
+    }
+   }
+  },
+  "Show %@": {
+   "comment": "Layer effects section toggle: show preview tooltip. %@ is the section name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示 %@"
+     }
+    }
+   }
+  },
+  "How far apart the screen's lines are": {
+   "comment": "Camera Raw CRT: line distance.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "屏幕线的间距"
+     }
+    }
+   }
+  },
+  "Shift-click adds a color, Option-click takes one away.": {
+   "comment": "Color Range: modifier hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Shift-点击添加颜色,Option-点击移除颜色"
+     }
+    }
+   }
+  },
+  "How far in brightness the adjustment reaches.": {
+   "comment": "Camera Raw point color: luminance range tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整在亮度方向上的作用范围。"
+     }
+    }
+   }
+  },
+  "How far in hue the adjustment reaches.": {
+   "comment": "Camera Raw point color: hue range tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整在色相上的作用范围。"
+     }
+    }
+   }
+  },
+  "How far in saturation the adjustment reaches.": {
+   "comment": "Camera Raw point color: saturation range tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整在饱和度上的作用范围。"
+     }
+    }
+   }
+  },
+  "Weakens purple fringes inside the purple hue range.": {
+   "comment": "Camera Raw defringe: purple tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "减弱紫色色相范围内的紫色边缘。"
+     }
+    }
+   }
+  },
+  "Weakens green fringes inside the green hue range.": {
+   "comment": "Camera Raw defringe: green tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "减弱绿色色相范围内的绿色边缘。"
+     }
+    }
+   }
+  },
+  "Hue range where purple defringe runs.": {
+   "comment": "Camera Raw defringe: purple hue range.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "紫色去边的色相范围。"
+     }
+    }
+   }
+  },
+  "Hue range where green defringe runs.": {
+   "comment": "Camera Raw defringe: green hue range.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿色去边的色相范围。"
+     }
+    }
+   }
+  },
+  "Result: %lld × %lld pixels": {
+   "comment": "Trim sheet: result read-out.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "结果:%lld × %lld 像素"
+     }
+    }
+   }
+  },
+  "Use 1–%lld pixels per side, up to %lld megapixels, and 1–9,600 pixels/inch.": {
+   "comment": "New canvas validation hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "每边像素请使用 1–%lld,总像素不超过 %lld 兆,分辨率 1–9,600 像素/英寸。"
+     }
+    }
+   }
+  },
+  "Rotates the picture around its center.": {
+   "comment": "Camera Raw rotation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "围绕中心旋转图像。"
+     }
+    }
+   }
+  },
+  "Stretches width relative to height.": {
+   "comment": "Camera Raw scale tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "相对高度拉伸宽度。"
+     }
+    }
+   }
+  },
+  "Zooms the transformed picture within the frame.": {
+   "comment": "Camera Raw scale slider tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在画框内缩放变换后的图像。"
+     }
+    }
+   }
+  },
+  "Darkens or lightens the edges. The center does not change.": {
+   "comment": "Vignette: amount tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "压暗或提亮边缘,中心不变。"
+     }
+    }
+   }
+  },
+  "Blend the chosen color into the edges while keeping the center unchanged": {
+   "comment": "Vignette: color blend explanation.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将所选颜色融入边缘,中心不变。"
+     }
+    }
+   }
+  },
+  "Clear the haze that leaves background showing through thin areas": {
+   "comment": "Camera Raw dehaze: hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "清除穿过薄区域的雾霾"
      }
     }
    }
