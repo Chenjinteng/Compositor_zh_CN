@@ -88,10 +88,11 @@ extension ProjectController {
 
     private func askToRevert(in window: NSWindow) async -> Bool {
         let alert = NSAlert()
-        alert.messageText = "“\(session.projectURL?.lastPathComponent ?? "Untitled")” was changed on disk."
-        alert.informativeText = "Another app changed this project. You can revert to the version on disk, losing your unsaved changes, or keep what you have."
-        alert.addButton(withTitle: "Revert")
-        alert.addButton(withTitle: "Keep Mine")
+        let projectName = session.projectURL?.lastPathComponent ?? String(localized: "Untitled", comment: "Default project name when none is set.")
+        alert.messageText = String(localized: "“\(projectName)” was changed on disk.", defaultValue: "“\(projectName)” was changed on disk.", comment: "Title of the external-changes alert when another app has modified the project file.")
+        alert.informativeText = String(localized: "Another app changed this project. You can revert to the version on disk, losing your unsaved changes, or keep what you have.", comment: "Informative text of the external-changes alert.")
+        alert.addButton(withTitle: String(localized: "Revert", comment: "External-changes alert: replace the in-memory project with the on-disk version."))
+        alert.addButton(withTitle: String(localized: "Keep Mine", comment: "External-changes alert: keep the in-memory project and ignore the on-disk changes."))
         return await alert.beginSheetModal(for: window) == .alertFirstButtonReturn
     }
 }

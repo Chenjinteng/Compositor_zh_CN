@@ -1,0 +1,1758 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "About Compositor" : {
+      "comment" : "App > About menu title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于 Compositor"
+          }
+        }
+      }
+    },
+    "Actual Pixels" : {
+      "comment" : "View > Actual Pixels (Cmd-1).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "实际像素"
+          }
+        }
+      }
+    },
+    "Add Noise" : {
+      "comment" : "Filter menu name; raw value of FilterKind.addNoise.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加杂色"
+          }
+        }
+      }
+    },
+    "All" : {
+      "comment" : "Select > All (Cmd-A).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        }
+      }
+    },
+    "Black & White" : {
+      "comment" : "Filter name (FilterKind.blackWhite rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        }
+      }
+    },
+    "Bloom / Glow" : {
+      "comment" : "Filter name (FilterKind.bloomGlow rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "光晕/发光"
+          }
+        }
+      }
+    },
+    "Bloom" : {
+      "comment" : "Filter name (CameraRaw.bloom rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "光晕"
+          }
+        }
+      }
+    },
+    "Blur" : {
+      "comment" : "Filter name (SmudgeLiquify.blur rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模糊"
+          }
+        }
+      }
+    },
+    "Bake and Delete" : {
+      "comment" : "Live-mask deletion alert: bake the live mask into pixels and then delete the source layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "烘焙并删除"
+          }
+        }
+      }
+    },
+    "Bake keeps the current masked appearance in the dependent layers’ pixels. Remove Links reveals their pixels. You can undo either choice." : {
+      "comment" : "Live-mask deletion alert: informative text explaining the Bake vs. Remove Links choice.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「烘焙」会将当前蒙版效果保留到依赖图层的像素中;「断开链接」会显示依赖图层的全部像素。两种选择都可以撤销。"
+          }
+        }
+      }
+    },
+    "Camera Raw Filter" : {
+      "comment" : "Filter name (FilterKind.cameraRaw rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera Raw 滤镜"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "comment" : "Generic cancel button.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "Canvas Only (F)" : {
+      "comment" : "View > Canvas Only (Cmd-F).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅画布(F)"
+          }
+        }
+      }
+    },
+    "Canvas Size" : {
+      "comment" : "Title of the Canvas Size sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布大小"
+          }
+        }
+      }
+    },
+    "Canvas Size…" : {
+      "comment" : "Image > Canvas Size… (Opt-Cmd-C).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布大小…"
+          }
+        }
+      }
+    },
+    "Check for Updates…" : {
+      "comment" : "App > Check for Updates…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "检查更新…"
+          }
+        }
+      }
+    },
+    "Clear Guides" : {
+      "comment" : "View > Clear Guides.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除参考线"
+          }
+        }
+      }
+    },
+    "Clear Menu" : {
+      "comment" : "File > Open Recent > Clear Menu.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除菜单"
+          }
+        }
+      }
+    },
+    "Clear Selection Pixels" : {
+      "comment" : "Edit > Clear Selection Pixels.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除选区像素"
+          }
+        }
+      }
+    },
+    "Close Project" : {
+      "comment" : "File > Close Project (Cmd-W).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭项目"
+          }
+        }
+      }
+    },
+    "Color Balance" : {
+      "comment" : "Filter / Image adjustment name (FilterKind.colorBalance rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色彩平衡"
+          }
+        }
+      }
+    },
+    "Color Range…" : {
+      "comment" : "Select > Color Range…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色彩范围…"
+          }
+        }
+      }
+    },
+    "Command Palette…" : {
+      "comment" : "View > Command Palette… (Cmd-F).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "命令面板…"
+          }
+        }
+      }
+    },
+    "Compositor" : {
+      "comment" : "App name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compositor"
+          }
+        }
+      }
+    },
+    "Content-Aware Fill" : {
+      "comment" : "Filter name (FilterKind.contentAwareFill rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内容识别填充"
+          }
+        }
+      }
+    },
+    "Content-Aware Fill…" : {
+      "comment" : "Edit > Content-Aware Fill…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内容识别填充…"
+          }
+        }
+      }
+    },
+    "Contract…" : {
+      "comment" : "Select > Contract…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收缩…"
+          }
+        }
+      }
+    },
+    "Copy" : {
+      "comment" : "Edit > Copy (Cmd-C).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复制"
+          }
+        }
+      }
+    },
+    "Copy Merged" : {
+      "comment" : "Edit > Copy Merged (Shift-Cmd-C).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复制合并"
+          }
+        }
+      }
+    },
+    "Couldn’t change canvas size" : {
+      "comment" : "Title of an error alert when resizing the canvas fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法更改画布大小"
+          }
+        }
+      }
+    },
+    "Couldn’t export JPEG" : {
+      "comment" : "Title of an error alert when JPEG export fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法导出 JPEG"
+          }
+        }
+      }
+    },
+    "Couldn’t export PNG" : {
+      "comment" : "Title of an error alert when PNG export fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法导出 PNG"
+          }
+        }
+      }
+    },
+    "Couldn’t open the project" : {
+      "comment" : "Title of an error alert when opening a project fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开项目"
+          }
+        }
+      }
+    },
+    "Couldn’t resize the image" : {
+      "comment" : "Title of an error alert when resizing the image fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法调整图像大小"
+          }
+        }
+      }
+    },
+    "Couldn’t save the project" : {
+      "comment" : "Title of an error alert when saving fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法保存项目"
+          }
+        }
+      }
+    },
+    "Couldn’t trim image" : {
+      "comment" : "Title of an error alert when Trim fails.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法裁剪图像"
+          }
+        }
+      }
+    },
+    "Create Clipping Mask" : {
+      "comment" : "Layer > Create Clipping Mask.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "创建剪贴蒙版"
+          }
+        }
+      }
+    },
+    "Curves" : {
+      "comment" : "Image > Curves… filter name (FilterKind.curves rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "曲线"
+          }
+        }
+      }
+    },
+    "Curves…" : {
+      "comment" : "Image > Curves… (Cmd-M).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "曲线…"
+          }
+        }
+      }
+    },
+    "Cut" : {
+      "comment" : "Edit > Cut (Cmd-X).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "剪切"
+          }
+        }
+      }
+    },
+    "Delete Layer" : {
+      "comment" : "Layer > Delete Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除图层"
+          }
+        }
+      }
+    },
+    "Delete Layer Mask" : {
+      "comment" : "Layer > Delete Layer Mask.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除图层蒙版"
+          }
+        }
+      }
+    },
+    "Delete Layers" : {
+      "comment" : "Layer > Delete Layers (plural).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除图层"
+          }
+        }
+      }
+    },
+    "Deselect" : {
+      "comment" : "Select > Deselect (Cmd-D).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消选择"
+          }
+        }
+      }
+    },
+    "Document Bounds" : {
+      "comment" : "Snap To > Document Bounds.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文档边界"
+          }
+        }
+      }
+    },
+    "Don’t Save" : {
+      "comment" : "Save-changes alert: discard changes and close.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不保存"
+          }
+        }
+      }
+    },
+    "Duplicate Layer" : {
+      "comment" : "Layer > Duplicate Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复制图层"
+          }
+        }
+      }
+    },
+    "Edit Adjustment…" : {
+      "comment" : "Layer > Edit Adjustment…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑调整…"
+          }
+        }
+      }
+    },
+    "Expand…" : {
+      "comment" : "Select > Expand…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扩展…"
+          }
+        }
+      }
+    },
+    "Export JPEG" : {
+      "comment" : "Title of the Save panel that saves the rendered raster as a JPEG file.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出 JPEG"
+          }
+        }
+      }
+    },
+    "Export JPEG…" : {
+      "comment" : "File > Export JPEG… (Shift-Opt-Cmd-S).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出 JPEG…"
+          }
+        }
+      }
+    },
+    "Export PNG" : {
+      "comment" : "Title of the Save panel that saves the rendered raster as a PNG file.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出 PNG"
+          }
+        }
+      }
+    },
+    "Export PNG…" : {
+      "comment" : "File > Export PNG… (Shift-Cmd-E).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出 PNG…"
+          }
+        }
+      }
+    },
+    "Exposure" : {
+      "comment" : "Image adjustment name (FilterKind.exposure rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "曝光"
+          }
+        }
+      }
+    },
+    "Feather…" : {
+      "comment" : "Select > Feather…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "羽化…"
+          }
+        }
+      }
+    },
+    "Fill with Background Color" : {
+      "comment" : "Edit > Fill with Background Color (Cmd-Delete).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用背景色填充"
+          }
+        }
+      }
+    },
+    "Fill with Foreground Color" : {
+      "comment" : "Edit > Fill with Foreground Color (Opt-Delete).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用前景色填充"
+          }
+        }
+      }
+    },
+    "Filter" : {
+      "comment" : "Top-level menu name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "滤镜"
+          }
+        }
+      }
+    },
+    "Fit Canvas" : {
+      "comment" : "View > Fit Canvas (Cmd-0).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "适应画布"
+          }
+        }
+      }
+    },
+    "Flip Canvas Horizontal" : {
+      "comment" : "Image > Flip Canvas Horizontal.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "水平翻转画布"
+          }
+        }
+      }
+    },
+    "Flip Canvas Vertical" : {
+      "comment" : "Image > Flip Canvas Vertical.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "垂直翻转画布"
+          }
+        }
+      }
+    },
+    "Flip Layer Horizontal" : {
+      "comment" : "Layer > Flip Layer Horizontal.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "水平翻转图层"
+          }
+        }
+      }
+    },
+    "Flip Layer Vertical" : {
+      "comment" : "Layer > Flip Layer Vertical.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "垂直翻转图层"
+          }
+        }
+      }
+    },
+    "Gaussian Blur" : {
+      "comment" : "Filter name (FilterKind.gaussianBlur rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高斯模糊"
+          }
+        }
+      }
+    },
+    "Gradient Map" : {
+      "comment" : "Image adjustment name (FilterKind.gradientMap rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "渐变映射"
+          }
+        }
+      }
+    },
+    "Grain" : {
+      "comment" : "Image adjustment name (FilterKind.grain rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "颗粒"
+          }
+        }
+      }
+    },
+    "Grid" : {
+      "comment" : "Title of the Grid Settings sheet; also View > Show Grid toggle label.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "网格"
+          }
+        }
+      }
+    },
+    "Grid Settings…" : {
+      "comment" : "View > Grid Settings…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "网格设置…"
+          }
+        }
+      }
+    },
+    "Group Selected Layers" : {
+      "comment" : "Layer > Group Selected Layers.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将选中图层分组"
+          }
+        }
+      }
+    },
+    "Guides" : {
+      "comment" : "View > Show Guides toggle; also Snap To > Guides.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "参考线"
+          }
+        }
+      }
+    },
+    "Hide Compositor" : {
+      "comment" : "App > Hide Compositor.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏 Compositor"
+          }
+        }
+      }
+    },
+    "Hide Layer" : {
+      "comment" : "Layer > Hide Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏图层"
+          }
+        }
+      }
+    },
+    "Hide Others" : {
+      "comment" : "App > Hide Others (Opt-Cmd-H).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏其他"
+          }
+        }
+      }
+    },
+    "Hue/Saturation…" : {
+      "comment" : "Image > Hue/Saturation… (Cmd-U).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色相/饱和度…"
+          }
+        }
+      }
+    },
+    "Image" : {
+      "comment" : "Top-level menu name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图像"
+          }
+        }
+      }
+    },
+    "Image Size" : {
+      "comment" : "Title of the Image Size sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图像大小"
+          }
+        }
+      }
+    },
+    "Image Size…" : {
+      "comment" : "Image > Image Size… (Opt-Cmd-I).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图像大小…"
+          }
+        }
+      }
+    },
+    "Import Images…" : {
+      "comment" : "File > Import Images…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导入图像…"
+          }
+        }
+      }
+    },
+    "Inverse" : {
+      "comment" : "Select > Inverse (Shift-Cmd-I).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反选"
+          }
+        }
+      }
+    },
+    "Invert" : {
+      "comment" : "Image > Invert (Cmd-I).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反相"
+          }
+        }
+      }
+    },
+    "Invert Mask" : {
+      "comment" : "Image > Invert Mask when a mask is the active target.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反相蒙版"
+          }
+        }
+      }
+    },
+    "Keep Mine" : {
+      "comment" : "External-changes alert: keep the in-memory project and ignore the on-disk changes.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保留我的版本"
+          }
+        }
+      }
+    },
+    "Keyboard Shortcuts…" : {
+      "comment" : "Edit > Keyboard Shortcuts…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "键盘快捷键…"
+          }
+        }
+      }
+    },
+    "Layer" : {
+      "comment" : "Top-level menu name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图层"
+          }
+        }
+      }
+    },
+    "Layer via Copy" : {
+      "comment" : "Layer > Layer via Copy.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过拷贝的图层"
+          }
+        }
+      }
+    },
+    "Layers" : {
+      "comment" : "Panel/sidebar label.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图层"
+          }
+        }
+      }
+    },
+    "Layer's Pixels" : {
+      "comment" : "Select > Layer's Pixels.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图层像素"
+          }
+        }
+      }
+    },
+    "Lens Correction" : {
+      "comment" : "Filter name (FilterKind.lensCorrection rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "镜头校正"
+          }
+        }
+      }
+    },
+    "Levels" : {
+      "comment" : "Image > Levels… filter name (Cmd-L).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色阶"
+          }
+        }
+      }
+    },
+    "Levels…" : {
+      "comment" : "Image > Levels… (Cmd-L).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色阶…"
+          }
+        }
+      }
+    },
+    "Lock Guides" : {
+      "comment" : "View > Lock Guides (Opt-Cmd-;).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "锁定参考线"
+          }
+        }
+      }
+    },
+    "Mask's Black Areas" : {
+      "comment" : "Select > Mask's Black Areas.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蒙版黑色区域"
+          }
+        }
+      }
+    },
+    "Motion Blur" : {
+      "comment" : "Filter name (FilterKind.motionBlur rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动感模糊"
+          }
+        }
+      }
+    },
+    "Move Layer Down" : {
+      "comment" : "Layer > Move Layer Down.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下移图层"
+          }
+        }
+      }
+    },
+    "Move Layer Up" : {
+      "comment" : "Layer > Move Layer Up.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上移图层"
+          }
+        }
+      }
+    },
+    "Move Out of Folder" : {
+      "comment" : "Layer > Move Out of Folder.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移出文件夹"
+          }
+        }
+      }
+    },
+    "New Adjustment Layer" : {
+      "comment" : "Layer > New Adjustment Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建调整图层"
+          }
+        }
+      }
+    },
+    "New Blank Layer" : {
+      "comment" : "Layer > New Blank Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建空白图层"
+          }
+        }
+      }
+    },
+    "New Canvas…" : {
+      "comment" : "File > New Canvas… (Cmd-N).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建画布…"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "comment" : "Generic confirmation button on error alerts.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "好"
+          }
+        }
+      }
+    },
+    "Open one project at a time" : {
+      "comment" : "Title of an alert when the user asks to open another project while one is already loading.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次只能打开一个项目"
+          }
+        }
+      }
+    },
+    "Open Project" : {
+      "comment" : "Title of the Open panel that selects an existing project to open.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开项目"
+          }
+        }
+      }
+    },
+    "Open Project…" : {
+      "comment" : "File > Open Project… (Cmd-O).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开项目…"
+          }
+        }
+      }
+    },
+    "Open Recent" : {
+      "comment" : "File > Open Recent submenu.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最近打开"
+          }
+        }
+      }
+    },
+    "Paste" : {
+      "comment" : "Edit > Paste (Cmd-V).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粘贴"
+          }
+        }
+      }
+    },
+    "Pixel Grid (800% and above)" : {
+      "comment" : "View > Pixel Grid (800% and above).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "像素网格(800% 及以上)"
+          }
+        }
+      }
+    },
+    "Redo" : {
+      "comment" : "Edit > Redo (Shift-Cmd-Z).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重做"
+          }
+        }
+      }
+    },
+    "Redo %@" : {
+      "comment" : "Edit > Redo with action description. %@ is the action name (e.g. 'Canvas Size').",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重做 %@"
+          }
+        }
+      }
+    },
+    "Release Clipping Mask" : {
+      "comment" : "Layer > Release Clipping Mask.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "释放剪贴蒙版"
+          }
+        }
+      }
+    },
+    "Remove Background" : {
+      "comment" : "Filter name (FilterKind.removeBackground rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除背景"
+          }
+        }
+      }
+    },
+    "Remove Links and Delete" : {
+      "comment" : "Live-mask deletion alert: sever the live mask link and then delete the source layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "断开链接并删除"
+          }
+        }
+      }
+    },
+    "Rename Layer…" : {
+      "comment" : "Layer > Rename Layer…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重命名图层…"
+          }
+        }
+      }
+    },
+    "Revert" : {
+      "comment" : "External-changes alert: replace the in-memory project with the on-disk version.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "恢复到磁盘版本"
+          }
+        }
+      }
+    },
+    "Rotate Canvas 90° Clockwise" : {
+      "comment" : "Image > Rotate Canvas 90° Clockwise.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顺时针旋转画布 90°"
+          }
+        }
+      }
+    },
+    "Rotate Canvas 90° Counterclockwise" : {
+      "comment" : "Image > Rotate Canvas 90° Counterclockwise.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "逆时针旋转画布 90°"
+          }
+        }
+      }
+    },
+    "Rulers" : {
+      "comment" : "View > Rulers (Cmd-R).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标尺"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "comment" : "File > Save (Cmd-S); also save-changes alert button.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
+    },
+    "Save As…" : {
+      "comment" : "File > Save As… (Shift-Cmd-S).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "另存为…"
+          }
+        }
+      }
+    },
+    "Save Project" : {
+      "comment" : "Title of the Save panel when saving the current project.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存项目"
+          }
+        }
+      }
+    },
+    "Save Project As" : {
+      "comment" : "Title of the Save panel when saving to a new location.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "项目另存为"
+          }
+        }
+      }
+    },
+    "Select" : {
+      "comment" : "Top-level menu name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择"
+          }
+        }
+      }
+    },
+    "Show" : {
+      "comment" : "View > Show submenu (Grid / Guides).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示"
+          }
+        }
+      }
+    },
+    "Show All" : {
+      "comment" : "App > Show All.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示全部"
+          }
+        }
+      }
+    },
+    "Show Layer" : {
+      "comment" : "Layer > Show Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示图层"
+          }
+        }
+      }
+    },
+    "Show Transform Controls" : {
+      "comment" : "View > Show Transform Controls (Cmd-H when Move tool active).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示变换控件"
+          }
+        }
+      }
+    },
+    "Snap" : {
+      "comment" : "View > Snap (Shift-Cmd-;).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "对齐"
+          }
+        }
+      }
+    },
+    "Snap To" : {
+      "comment" : "View > Snap To submenu.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "对齐到"
+          }
+        }
+      }
+    },
+    "Subject" : {
+      "comment" : "Select > Subject (Opt-Cmd-A).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主体"
+          }
+        }
+      }
+    },
+    "This layer supplies a live mask" : {
+      "comment" : "Live-mask deletion alert: title when one source layer is being deleted.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此图层为依赖图层提供实时蒙版"
+          }
+        }
+      }
+    },
+    "These layers supply live masks" : {
+      "comment" : "Live-mask deletion alert: title when several source layers are being deleted.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这些图层为依赖图层提供实时蒙版"
+          }
+        }
+      }
+    },
+    "Tonal Contrast" : {
+      "comment" : "Filter name (FilterKind.tonalContrast rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色调对比度"
+          }
+        }
+      }
+    },
+    "Transform Layer" : {
+      "comment" : "Edit > Transform > Transform Layer.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "变换图层"
+          }
+        }
+      }
+    },
+    "Transform Selection" : {
+      "comment" : "Edit > Transform > Transform Selection.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "变换选区"
+          }
+        }
+      }
+    },
+    "Trim" : {
+      "comment" : "Title of the Trim sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裁剪"
+          }
+        }
+      }
+    },
+    "Trim…" : {
+      "comment" : "Image > Trim…",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裁剪…"
+          }
+        }
+      }
+    },
+    "Undo" : {
+      "comment" : "Edit > Undo (Cmd-Z).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撤销"
+          }
+        }
+      }
+    },
+    "Undo %@" : {
+      "comment" : "Edit > Undo with action description. %@ is the action name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撤销 %@"
+          }
+        }
+      }
+    },
+    "Ungroup Layers" : {
+      "comment" : "Layer > Ungroup Layers.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消图层分组"
+          }
+        }
+      }
+    },
+    "Untitled" : {
+      "comment" : "Default project name when none is set.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未命名"
+          }
+        }
+      }
+    },
+    "Vignette" : {
+      "comment" : "Filter name (FilterKind.vignette rawValue).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暗角"
+          }
+        }
+      }
+    },
+    "Zoom In" : {
+      "comment" : "View > Zoom In (Cmd-=).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大"
+          }
+        }
+      }
+    },
+    "Zoom Out" : {
+      "comment" : "View > Zoom Out (Cmd--).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缩小"
+          }
+        }
+      }
+    },
+    "“%@” was changed on disk." : {
+      "comment" : "Title of the external-changes alert when another app has modified the project file.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” 在磁盘上已被修改。"
+          }
+        }
+      }
+    },
+    "Another app changed this project. You can revert to the version on disk, losing your unsaved changes, or keep what you have." : {
+      "comment" : "Informative text of the external-changes alert.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "另一个应用修改了此项目。可以放弃未保存内容并恢复到磁盘上的版本,或保留当前内容。"
+          }
+        }
+      }
+    },
+    "Save changes to %@?" : {
+      "comment" : "Title of the save-changes alert shown before closing a modified project.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存对 %@ 的修改?"
+          }
+        }
+      }
+    },
+    "Your changes will be lost if you don’t save them." : {
+      "comment" : "Informative text of the save-changes alert.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果不保存,所做修改将会丢失。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

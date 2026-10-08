@@ -106,11 +106,13 @@ extension EditorSession {
         let targets = (document?.layers ?? []).filter { !removed.contains($0.id) && $0.maskSourceID.map(removed.contains) == true }.map(\.id)
         guard !targets.isEmpty else { return false }
         let alert = NSAlert()
-        alert.messageText = ids.count == 1 ? "This layer supplies a live mask" : "These layers supply live masks"
-        alert.informativeText = "Bake keeps the current masked appearance in the dependent layers’ pixels. Remove Links reveals their pixels. You can undo either choice."
-        alert.addButton(withTitle: "Bake and Delete")
-        alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: "Remove Links and Delete")
+        alert.messageText = ids.count == 1
+            ? String(localized: "This layer supplies a live mask", comment: "Live-mask deletion alert: title when one source layer is being deleted.")
+            : String(localized: "These layers supply live masks", comment: "Live-mask deletion alert: title when several source layers are being deleted.")
+        alert.informativeText = String(localized: "Bake keeps the current masked appearance in the dependent layers’ pixels. Remove Links reveals their pixels. You can undo either choice.", comment: "Live-mask deletion alert: informative text explaining the Bake vs. Remove Links choice.")
+        alert.addButton(withTitle: String(localized: "Bake and Delete", comment: "Live-mask deletion alert: bake the live mask into pixels and then delete the source layer."))
+        alert.addButton(withTitle: String(localized: "Cancel", comment: "Live-mask deletion alert: cancel the deletion."))
+        alert.addButton(withTitle: String(localized: "Remove Links and Delete", comment: "Live-mask deletion alert: sever the live mask link and then delete the source layer."))
         let response = alert.runModal()
         if response == .alertThirdButtonReturn { finishDeletingLayers(ids, baked: [:]); return true }
         guard response == .alertFirstButtonReturn, let snapshot = projectSnapshot() else { return true }
