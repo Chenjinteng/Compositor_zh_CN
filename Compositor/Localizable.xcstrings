@@ -26,7 +26,7 @@
    }
   },
   "Add Noise": {
-   "comment": "Filter menu name; raw value of FilterKind.addNoise.",
+   "comment": "AdjustmentKind.addNoise rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -50,7 +50,7 @@
    }
   },
   "Black & White": {
-   "comment": "Filter name (FilterKind.blackWhite rawValue).",
+   "comment": "AdjustmentKind.blackWhite rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -134,7 +134,7 @@
    }
   },
   "Cancel": {
-   "comment": "Generic cancel button.",
+   "comment": "Transform inspector: cancel button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -242,7 +242,7 @@
    }
   },
   "Color Balance": {
-   "comment": "Filter / Image adjustment name (FilterKind.colorBalance rawValue).",
+   "comment": "AdjustmentKind.colorBalance rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -434,7 +434,7 @@
    }
   },
   "Create Clipping Mask": {
-   "comment": "Layer > Create Clipping Mask.",
+   "comment": "Layers context menu: clip the layer to the layer below.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -446,7 +446,7 @@
    }
   },
   "Curves": {
-   "comment": "Image > Curves… filter name (FilterKind.curves rawValue).",
+   "comment": "AdjustmentKind.curves rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -482,7 +482,7 @@
    }
   },
   "Delete Layer": {
-   "comment": "Layer > Delete Layer.",
+   "comment": "Layers context menu: delete the selected layer.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -554,7 +554,7 @@
    }
   },
   "Duplicate Layer": {
-   "comment": "Layer > Duplicate Layer.",
+   "comment": "Layers context menu: duplicate the selected layer.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -638,7 +638,7 @@
    }
   },
   "Exposure": {
-   "comment": "Image adjustment name (FilterKind.exposure rawValue).",
+   "comment": "AdjustmentKind.exposure rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -758,7 +758,7 @@
    }
   },
   "Gaussian Blur": {
-   "comment": "Filter name (FilterKind.gaussianBlur rawValue).",
+   "comment": "AdjustmentKind.gaussianBlur rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -770,7 +770,7 @@
    }
   },
   "Gradient Map": {
-   "comment": "Image adjustment name (FilterKind.gradientMap rawValue).",
+   "comment": "AdjustmentKind.gradientMap rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -782,7 +782,7 @@
    }
   },
   "Grain": {
-   "comment": "Image adjustment name (FilterKind.grain rawValue).",
+   "comment": "AdjustmentKind.grain rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -818,7 +818,7 @@
    }
   },
   "Group Selected Layers": {
-   "comment": "Layer > Group Selected Layers.",
+   "comment": "Layers context menu: put selected layers into a folder.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -854,7 +854,7 @@
    }
   },
   "Hide Layer": {
-   "comment": "Layer > Hide Layer.",
+   "comment": "Layers context menu: hide the active layer.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -950,7 +950,7 @@
    }
   },
   "Invert": {
-   "comment": "Image > Invert (Cmd-I).",
+   "comment": "AdjustmentKind.invert rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1022,7 +1022,7 @@
    }
   },
   "Layers": {
-   "comment": "Panel/sidebar label.",
+   "comment": "Layers panel header.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1058,7 +1058,7 @@
    }
   },
   "Levels": {
-   "comment": "Image > Levels… filter name (Cmd-L).",
+   "comment": "AdjustmentKind.levels rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1106,7 +1106,7 @@
    }
   },
   "Motion Blur": {
-   "comment": "Filter name (FilterKind.motionBlur rawValue).",
+   "comment": "AdjustmentKind.motionBlur rawValue.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1142,7 +1142,7 @@
    }
   },
   "Move Out of Folder": {
-   "comment": "Layer > Move Out of Folder.",
+   "comment": "Layers context menu: move selected layers up one folder.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1298,7 +1298,7 @@
    }
   },
   "Release Clipping Mask": {
-   "comment": "Layer > Release Clipping Mask.",
+   "comment": "Layers context menu: release the active clipping mask.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1454,7 +1454,7 @@
    }
   },
   "Show": {
-   "comment": "View > Show submenu (Grid / Guides).",
+   "comment": "Layers panel: accessibility verb when the layer is currently hidden.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1478,7 +1478,7 @@
    }
   },
   "Show Layer": {
-   "comment": "Layer > Show Layer.",
+   "comment": "Layers context menu: show a hidden layer.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1646,7 +1646,7 @@
    }
   },
   "Ungroup Layers": {
-   "comment": "Layer > Ungroup Layers.",
+   "comment": "Layers context menu: dissolve the selected group.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -2025,6 +2025,1062 @@
      "stringUnit": {
       "state": "translated",
       "value": " · %@ DPI: %@ × %@ 像素"
+     }
+    }
+   }
+  },
+  "Blend": {
+   "comment": "Layer Appearance: blend mode label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "混合模式"
+     }
+    }
+   }
+  },
+  "Opacity": {
+   "comment": "Layer Appearance: opacity slider label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "不透明度"
+     }
+    }
+   }
+  },
+  "Opacity percent": {
+   "comment": "Layer Appearance: opacity text field accessible label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "不透明度百分比"
+     }
+    }
+   }
+  },
+  "No layers yet": {
+   "comment": "Layers panel: empty state heading when the document has no layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "还没有图层"
+     }
+    }
+   }
+  },
+  "Create a canvas or import an image.": {
+   "comment": "Layers panel: empty state body when there is no document.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建画布或导入图像。"
+     }
+    }
+   }
+  },
+  "Import an image or add a blank layer.": {
+   "comment": "Layers panel: empty state body when there is a document but no layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "导入图像或新增空白图层。"
+     }
+    }
+   }
+  },
+  "New blank layer (⇧⌘N)": {
+   "comment": "Layers panel footer: tooltip for the add-blank-layer button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建空白图层(⇧⌘N)"
+     }
+    }
+   }
+  },
+  "New blank layer": {
+   "comment": "Layers panel footer: accessibility label for the add-blank-layer button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建空白图层"
+     }
+    }
+   }
+  },
+  "Group selected layers (⌘G)": {
+   "comment": "Layers panel footer: tooltip for the group-layers button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将选中图层分组(⌘G)"
+     }
+    }
+   }
+  },
+  "New folder": {
+   "comment": "Layers panel footer: accessibility label for the group-layers button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建文件夹"
+     }
+    }
+   }
+  },
+  "Add layer mask (Option-click for a black mask)": {
+   "comment": "Layers panel footer: tooltip when there is no selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加图层蒙版(按住 Option 添加黑色蒙版)"
+     }
+    }
+   }
+  },
+  "Add layer mask revealing the selection (Option-click to hide it)": {
+   "comment": "Layers panel footer: tooltip when there is a selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加显示选区的图层蒙版(按住 Option 改为隐藏选区)"
+     }
+    }
+   }
+  },
+  "Add layer mask": {
+   "comment": "Layers panel footer: accessibility label for the add-mask button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加图层蒙版"
+     }
+    }
+   }
+  },
+  "Add layer effect": {
+   "comment": "Layers panel footer: tooltip for the layer effects menu.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加图层效果"
+     }
+    }
+   }
+  },
+  "Layer effects": {
+   "comment": "Layers panel footer: accessibility label for the layer effects menu.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层效果"
+     }
+    }
+   }
+  },
+  "New adjustment layer": {
+   "comment": "Layers panel footer: tooltip for the adjustment-layer menu.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "新建调整图层"
+     }
+    }
+   }
+  },
+  "Delete selected effect": {
+   "comment": "Layers panel footer: tooltip on the trash button when an effect is selected.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除选中的效果"
+     }
+    }
+   }
+  },
+  "Delete layer mask": {
+   "comment": "Layers panel footer: tooltip on the trash button when a mask is selected.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除图层蒙版"
+     }
+    }
+   }
+  },
+  "Delete selected layers": {
+   "comment": "Layers panel footer: tooltip on the trash button when multiple layers are selected.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除选中的图层"
+     }
+    }
+   }
+  },
+  "Delete selected layer": {
+   "comment": "Layers panel footer: tooltip on the trash button when a single layer is selected.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除选中的图层"
+     }
+    }
+   }
+  },
+  "Layer Mask": {
+   "comment": "MaskAloneBadge: title label shown while viewing a mask alone.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图层蒙版"
+     }
+    }
+   }
+  },
+  "Stop viewing the mask": {
+   "comment": "MaskAloneBadge: accessibility description for the close button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "停止查看蒙版"
+     }
+    }
+   }
+  },
+  "Show the image again (or Option-click the mask thumbnail)": {
+   "comment": "MaskAloneBadge: tooltip on the close button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重新显示图像(或按住 Option 点击蒙版缩略图)"
+     }
+    }
+   }
+  },
+  "Transform": {
+   "comment": "Transform inspector: title for the regular transform bar.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "变换"
+     }
+    }
+   }
+  },
+  "Transform Mask": {
+   "comment": "Transform inspector: title when transforming the mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "变换蒙版"
+     }
+    }
+   }
+  },
+  "Auto Select": {
+   "comment": "Transform inspector: toggle label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "自动选择"
+     }
+    }
+   }
+  },
+  "Select layers by clicking the canvas. Hold Command to turn it the other way while you click.": {
+   "comment": "Transform inspector: tooltip on the Auto Select toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击画布来选择图层。按住 Command 键可临时反转选择模式。"
+     }
+    }
+   }
+  },
+  "Show Controls": {
+   "comment": "Transform inspector: toggle label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示控件"
+     }
+    }
+   }
+  },
+  "Show the transform box and handles (⌘H). When hidden, drag anywhere to move the layer.": {
+   "comment": "Transform inspector: tooltip on the Show Controls toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "显示变换框和控制柄(⌘H)。隐藏时,拖动任意位置即可移动图层。"
+     }
+    }
+   }
+  },
+  "Lock aspect ratio. Hold Shift while dragging a handle to turn it the other way.": {
+   "comment": "Transform inspector: tooltip on the aspect-ratio lock button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锁定宽高比。拖动控制柄时按住 Shift 可临时反转锁定。"
+     }
+    }
+   }
+  },
+  "Scale width and height together, about the center": {
+   "comment": "Transform inspector: tooltip on the scale field.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "以中心为基准,等比缩放宽和高"
+     }
+    }
+   }
+  },
+  "Sampling": {
+   "comment": "Transform inspector: sampling picker label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "采样方式"
+     }
+    }
+   }
+  },
+  "Flip H": {
+   "comment": "Transform inspector: horizontal flip button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "水平翻转"
+     }
+    }
+   }
+  },
+  "Flip V": {
+   "comment": "Transform inspector: vertical flip button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "垂直翻转"
+     }
+    }
+   }
+  },
+  "Apply": {
+   "comment": "Transform inspector: commit button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "应用"
+     }
+    }
+   }
+  },
+  "Rename…": {
+   "comment": "Layers context menu: rename the selected layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重命名…"
+     }
+    }
+   }
+  },
+  "Delete Mask": {
+   "comment": "Layers context menu: delete the layer's mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除蒙版"
+     }
+    }
+   }
+  },
+  "Delete Selected Layers": {
+   "comment": "Layers context menu: delete all selected layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除选中的图层"
+     }
+    }
+   }
+  },
+  "Add Mask": {
+   "comment": "Layers context menu: submenu name for mask actions.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "添加蒙版"
+     }
+    }
+   }
+  },
+  "Reveal All (White)": {
+   "comment": "Layers context menu: add a white mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "全部显示(白色)"
+     }
+    }
+   }
+  },
+  "Hide All (Black)": {
+   "comment": "Layers context menu: add a black mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "全部隐藏(黑色)"
+     }
+    }
+   }
+  },
+  "Enable Mask": {
+   "comment": "Layers context menu: enable a disabled mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "启用蒙版"
+     }
+    }
+   }
+  },
+  "Disable Mask": {
+   "comment": "Layers context menu: disable the active mask.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "停用蒙版"
+     }
+    }
+   }
+  },
+  "Link Mask": {
+   "comment": "Layers context menu: link mask to layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "链接蒙版"
+     }
+    }
+   }
+  },
+  "Unlink Mask": {
+   "comment": "Layers context menu: unlink mask from layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "取消链接蒙版"
+     }
+    }
+   }
+  },
+  "Duplicate Layers": {
+   "comment": "Layers panel: undo action name when duplicating multiple layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "复制图层"
+     }
+    }
+   }
+  },
+  "Move Layers": {
+   "comment": "Layers panel: undo action name when moving multiple layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动图层"
+     }
+    }
+   }
+  },
+  "Move Layer": {
+   "comment": "Layers panel: undo action name when moving a single layer.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "移动图层"
+     }
+    }
+   }
+  },
+  "Release clipping mask": {
+   "comment": "Layers panel: accessibility description on the clipping indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "释放剪贴蒙版"
+     }
+    }
+   }
+  },
+  "Create clipping mask": {
+   "comment": "Layers panel: accessibility description on the clipping indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "创建剪贴蒙版"
+     }
+    }
+   }
+  },
+  "Show mask alone": {
+   "comment": "Layers panel: accessibility description on the mask thumbnail for text/image layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "单独查看蒙版"
+     }
+    }
+   }
+  },
+  "Linked": {
+   "comment": "Layers panel: accessibility description on the link indicator.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "已链接"
+     }
+    }
+   }
+  },
+  "Select layer; Cmd-click to select its pixels (Cmd-Shift adds, Cmd-Option subtracts)": {
+   "comment": "Layers panel: tooltip on a layer's image thumbnail.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择图层;按住 Cmd 选择像素(Shift 键加选,Option 键减选)"
+     }
+    }
+   }
+  },
+  "Expand or collapse folder": {
+   "comment": "Layers panel: accessibility description on the group disclosure chevron.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "展开或收起文件夹"
+     }
+    }
+   }
+  },
+  "Editable text": {
+   "comment": "Layers panel: accessibility description for text layer's image thumbnail.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "可编辑文字"
+     }
+    }
+   }
+  },
+  "Editable text layer": {
+   "comment": "Layers panel: tooltip for a text layer's image thumbnail.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "可编辑文字图层"
+     }
+    }
+   }
+  },
+  "Select image pixels": {
+   "comment": "Layers panel: tooltip for an image layer's thumbnail.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择图像像素"
+     }
+    }
+   }
+  },
+  "Link layer and mask so they move together": {
+   "comment": "Layers panel: tooltip on the link button when the link is broken.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "链接图层和蒙版,一起移动"
+     }
+    }
+   }
+  },
+  "Unlink layer and mask to move or transform them separately": {
+   "comment": "Layers panel: tooltip on the link button when the link is intact.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "取消链接,以分别移动或变换图层和蒙版"
+     }
+    }
+   }
+  },
+  "Select mask; Option-click to view it alone; Shift-click to enable/disable; Cmd-click to select its black areas (Cmd-Shift adds, Cmd-Option subtracts)": {
+   "comment": "Layers panel: tooltip on a layer's mask thumbnail.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择蒙版;按住 Option 单独查看;按住 Shift 启用/停用;按住 Cmd 选择黑色区域(Shift 加选,Option 减选)"
+     }
+    }
+   }
+  },
+  "Text · Double-click to edit": {
+   "comment": "Layers panel: subtitle shown for a text layer's row.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文字·双击编辑"
+     }
+    }
+   }
+  },
+  "Adjustment · Double-click to edit": {
+   "comment": "Layers panel: subtitle shown for an adjustment layer's row.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "调整·双击编辑"
+     }
+    }
+   }
+  },
+  "Folder": {
+   "comment": "Layers panel: subtitle shown for a group layer's row.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文件夹"
+     }
+    }
+   }
+  },
+  "Missing source": {
+   "comment": "Layers panel: subtitle shown when a clipping mask source is missing.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "缺少源图层"
+     }
+    }
+   }
+  },
+  "Clipped to %@": {
+   "comment": "Layers panel: subtitle shown for a clipped layer. %@ is the source layer name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "剪贴自%@"
+     }
+    }
+   }
+  },
+  "Clipping mask based on %@. Option-click the bottom of its row to release.": {
+   "comment": "Layers panel: tooltip on a clipped layer's subtitle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "基于%@的剪贴蒙版。在其行底按住 Option 点击可释放。"
+     }
+    }
+   }
+  },
+  "Hide": {
+   "comment": "Layers panel: accessibility verb when the layer is currently visible.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "隐藏"
+     }
+    }
+   }
+  },
+  "text": {
+   "comment": "Layers panel: word in accessibility label for text layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "文字"
+     }
+    }
+   }
+  },
+  "image": {
+   "comment": "Layers panel: word in accessibility label for image layers.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "图像"
+     }
+    }
+   }
+  },
+  "Select %@: %@": {
+   "comment": "Layers panel: accessibility label for a layer's thumbnail. First %@ is text/image, second is layer name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择%@:%@"
+     }
+    }
+   }
+  },
+  "Select mask: %@": {
+   "comment": "Layers panel: accessibility label for a layer's mask thumbnail. %@ is the layer name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择蒙版:%@"
+     }
+    }
+   }
+  },
+  "%@ %@": {
+   "comment": "Layers panel: accessibility verb + layer name for hide/show toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "%@%@"
+     }
+    }
+   }
+  },
+  "Hue/Saturation": {
+   "comment": "AdjustmentKind.hsv rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相/饱和度"
+     }
+    }
+   }
+  },
+  "Stroke": {
+   "comment": "LayerEffectKind.stroke rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "描边"
+     }
+    }
+   }
+  },
+  "Drop Shadow": {
+   "comment": "LayerEffectKind.shadow rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "投影"
+     }
+    }
+   }
+  },
+  "Color Overlay": {
+   "comment": "LayerEffectKind.colorOverlay rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色叠加"
+     }
+    }
+   }
+  },
+  "Inner Shadow": {
+   "comment": "LayerEffectKind.innerShadow rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "内阴影"
+     }
+    }
+   }
+  },
+  "Outer Glow": {
+   "comment": "LayerEffectKind.outerGlow rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "外发光"
+     }
+    }
+   }
+  },
+  "Inner Glow": {
+   "comment": "LayerEffectKind.innerGlow rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "内发光"
+     }
+    }
+   }
+  },
+  "Stroke…": {
+   "comment": "Layer effects menu: stroke submenu item, rawValue with trailing ellipsis.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "描边…"
+     }
+    }
+   }
+  },
+  "Drop Shadow…": {
+   "comment": "Layer effects menu: drop shadow submenu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "投影…"
+     }
+    }
+   }
+  },
+  "Color Overlay…": {
+   "comment": "Layer effects menu: color overlay submenu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色叠加…"
+     }
+    }
+   }
+  },
+  "Inner Shadow…": {
+   "comment": "Layer effects menu: inner shadow submenu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "内阴影…"
+     }
+    }
+   }
+  },
+  "Outer Glow…": {
+   "comment": "Layer effects menu: outer glow submenu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "外发光…"
+     }
+    }
+   }
+  },
+  "Inner Glow…": {
+   "comment": "Layer effects menu: inner glow submenu item.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "内发光…"
+     }
+    }
+   }
+  },
+  "Nearest": {
+   "comment": "LayerSampling.nearest rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "最近邻"
+     }
+    }
+   }
+  },
+  "Smooth": {
+   "comment": "LayerSampling.smooth rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平滑"
+     }
+    }
+   }
+  },
+  "High quality": {
+   "comment": "LayerSampling.high rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "高质量"
      }
     }
    }
