@@ -194,7 +194,7 @@
    }
   },
   "Clear Guides": {
-   "comment": "View > Clear Guides.",
+   "comment": "Camera Raw geometry: clear all guide lines button.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -782,7 +782,7 @@
    }
   },
   "Grain": {
-   "comment": "AdjustmentKind.grain rawValue.",
+   "comment": "Camera Raw effects: grain section.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -1670,7 +1670,7 @@
    }
   },
   "Vignette": {
-   "comment": "Filter name (FilterKind.vignette rawValue).",
+   "comment": "Camera Raw effects: vignette section.",
    "extractionState": "manual",
    "localizations": {
     "zh-Hans": {
@@ -3585,6 +3585,1158 @@
      "stringUnit": {
       "state": "translated",
       "value": "颜色 + 中性灰"
+     }
+    }
+   }
+  },
+  "Curve": {
+   "comment": "Camera Raw: parametric vs point curve picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "曲线"
+     }
+    }
+   }
+  },
+  "Preset": {
+   "comment": "Camera Raw curve: replace curve with preset.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "预设"
+     }
+    }
+   }
+  },
+  "Linear": {
+   "comment": "Camera Raw curve preset: straight line.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "线性"
+     }
+    }
+   }
+  },
+  "Medium Contrast": {
+   "comment": "Camera Raw curve preset.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "中等对比度"
+     }
+    }
+   }
+  },
+  "Strong Contrast": {
+   "comment": "Camera Raw curve preset.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "高对比度"
+     }
+    }
+   }
+  },
+  "Highlights": {
+   "comment": "Camera Raw parametric curve: brightest tones.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "高光"
+     }
+    }
+   }
+  },
+  "Lights": {
+   "comment": "Camera Raw parametric curve: light tones.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮调"
+     }
+    }
+   }
+  },
+  "Darks": {
+   "comment": "Camera Raw parametric curve: dark tones.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "暗调"
+     }
+    }
+   }
+  },
+  "Shadows": {
+   "comment": "Camera Raw parametric curve: darkest tones. Also Camera Raw color grading shadows wheel.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "阴影"
+     }
+    }
+   }
+  },
+  "Refine Saturation": {
+   "comment": "Camera Raw point-curve: saturation refine slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "饱和度微调"
+     }
+    }
+   }
+  },
+  "Mixer": {
+   "comment": "Camera Raw color mixer picker (HSL / Color / Point Color).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色彩混合"
+     }
+    }
+   }
+  },
+  "Component": {
+   "comment": "Camera Raw color mixer picker for Hue/Saturation/Luminance.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "组件"
+     }
+    }
+   }
+  },
+  "Hue": {
+   "comment": "Camera Raw color mixer: hue slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相"
+     }
+    }
+   }
+  },
+  "Saturation": {
+   "comment": "Camera Raw color mixer: saturation slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "饱和度"
+     }
+    }
+   }
+  },
+  "Luminance": {
+   "comment": "Camera Raw color mixer: luminance slider.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度"
+     }
+    }
+   }
+  },
+  "Hue Shift": {
+   "comment": "Camera Raw point color: shift hue around the wheel.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相偏移"
+     }
+    }
+   }
+  },
+  "Saturation Shift": {
+   "comment": "Camera Raw point color: make the picked color stronger or quieter.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "饱和度偏移"
+     }
+    }
+   }
+  },
+  "Luminance Shift": {
+   "comment": "Camera Raw point color: make the picked color lighter or darker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度偏移"
+     }
+    }
+   }
+  },
+  "Hue Range": {
+   "comment": "Camera Raw point color: how far in hue the adjustment reaches.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相范围"
+     }
+    }
+   }
+  },
+  "Saturation Range": {
+   "comment": "Camera Raw point color: how far in saturation the adjustment reaches.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "饱和度范围"
+     }
+    }
+   }
+  },
+  "Luminance Range": {
+   "comment": "Camera Raw point color: how far in brightness the adjustment reaches.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "亮度范围"
+     }
+    }
+   }
+  },
+  "Visualize Range": {
+   "comment": "Camera Raw point color: dim everything outside the picked color's range.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "可视化范围"
+     }
+    }
+   }
+  },
+  "Grading": {
+   "comment": "Camera Raw color grading picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色分级"
+     }
+    }
+   }
+  },
+  "Blending": {
+   "comment": "Camera Raw color grading: overlap between the three tonal wheels.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "混合"
+     }
+    }
+   }
+  },
+  "Balance": {
+   "comment": "Camera Raw color grading: shift wheels toward shadows or highlights.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "平衡"
+     }
+    }
+   }
+  },
+  "Midtones": {
+   "comment": "Camera Raw color grading: midtones wheel.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "中间调"
+     }
+    }
+   }
+  },
+  "Histogram": {
+   "comment": "Camera Raw scope button: histogram mode.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "直方图"
+     }
+    }
+   }
+  },
+  "Vectorscope": {
+   "comment": "Camera Raw scope button: vectorscope mode.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "矢量示波器"
+     }
+    }
+   }
+  },
+  "White Balance": {
+   "comment": "Camera Raw white balance section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "白平衡"
+     }
+    }
+   }
+  },
+  "White Balance Selector": {
+   "comment": "Camera Raw white balance eyedropper accessibility label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "白平衡选择器"
+     }
+    }
+   }
+  },
+  "Click the original layer. Click the eyedropper again to stop.": {
+   "comment": "Camera Raw white balance eyedropper hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在原图层上单击。再次单击吸管结束。"
+     }
+    }
+   }
+  },
+  "Glow": {
+   "comment": "Camera Raw effects: glow section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "光晕"
+     }
+    }
+   }
+  },
+  "Style": {
+   "comment": "Camera Raw glow/vignette style picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "样式"
+     }
+    }
+   }
+  },
+  "Sharpening": {
+   "comment": "Camera Raw detail: sharpening section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "锐化"
+     }
+    }
+   }
+  },
+  "Noise Reduction": {
+   "comment": "Camera Raw detail: noise reduction section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "降噪"
+     }
+    }
+   }
+  },
+  "Remove Chromatic Aberration": {
+   "comment": "Camera Raw detail toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "去除色差"
+     }
+    }
+   }
+  },
+  "Enable Lens Profile Corrections": {
+   "comment": "Camera Raw optics toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "启用镜头配置文件校正"
+     }
+    }
+   }
+  },
+  "No lens metadata on this layer. Profile sliders set generic correction strength.": {
+   "comment": "Camera Raw optics hint when no lens metadata is present.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "此图层无镜头元数据。配置文件滑块将使用通用校正强度。"
+     }
+    }
+   }
+  },
+  "Manual": {
+   "comment": "Camera Raw defringe section label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "手动"
+     }
+    }
+   }
+  },
+  "Defringe": {
+   "comment": "Camera Raw defringe section label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "去紫边"
+     }
+    }
+   }
+  },
+  "Click the fringe on the layer. Click the eyedropper again to stop.": {
+   "comment": "Camera Raw defringe eyedropper hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在图层边缘处单击。再次单击吸管结束。"
+     }
+    }
+   }
+  },
+  "Low": {
+   "comment": "Camera Raw defringe low-end label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "低"
+     }
+    }
+   }
+  },
+  "High": {
+   "comment": "Camera Raw defringe high-end label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "高"
+     }
+    }
+   }
+  },
+  "Start of the hue range, in degrees.": {
+   "comment": "Camera Raw defringe low tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相范围的起始角度。"
+     }
+    }
+   }
+  },
+  "End of the hue range, in degrees.": {
+   "comment": "Camera Raw defringe high tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相范围的结束角度。"
+     }
+    }
+   }
+  },
+  "Upright": {
+   "comment": "Camera Raw geometry: upright mode picker label and section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "校正"
+     }
+    }
+   }
+  },
+  "Draw Guides": {
+   "comment": "Camera Raw geometry: draw guide lines button.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绘制参考线"
+     }
+    }
+   }
+  },
+  "Drag on the layer to place a guide. Draw at least two lines.": {
+   "comment": "Camera Raw geometry: guided-upright hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在图层上拖动放置参考线,至少绘制两条。"
+     }
+    }
+   }
+  },
+  "Projection": {
+   "comment": "Camera Raw geometry: projection mode picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "投影"
+     }
+    }
+   }
+  },
+  "Constrain Crop": {
+   "comment": "Camera Raw geometry: constrain-crop toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "限制裁剪"
+     }
+    }
+   }
+  },
+  "Process": {
+   "comment": "Camera Raw geometry: calibration process version picker.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "处理"
+     }
+    }
+   }
+  },
+  "Red Primary": {
+   "comment": "Camera Raw geometry: red primary calibration section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "红色原色"
+     }
+    }
+   }
+  },
+  "Green Primary": {
+   "comment": "Camera Raw geometry: green primary calibration section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿色原色"
+     }
+    }
+   }
+  },
+  "Blue Primary": {
+   "comment": "Camera Raw geometry: blue primary calibration section.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "蓝色原色"
+     }
+    }
+   }
+  },
+  "Targeted Adjustment": {
+   "comment": "Camera Raw: targeted adjustment button (eyedropper icon, applies curve/mixer/grading to the tone under the pointer).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "定向调整"
+     }
+    }
+   }
+  },
+  "Parametric lifts tonal regions. Point places anchors on the curve.": {
+   "comment": "Camera Raw curve picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "参数化模式按色调区域调整;控制点模式在曲线上放置锚点。"
+     }
+    }
+   }
+  },
+  "RGB changes brightness. Red, green, and blue also shift the color.": {
+   "comment": "Camera Raw curve channel picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "RGB 调整亮度;红、绿、蓝还会偏移颜色。"
+     }
+    }
+   }
+  },
+  "Drag up or down to lift or lower those tones. Drag a divider along the bottom to change which tones each region covers.": {
+   "comment": "Camera Raw point curve: parametric-mode hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "上下拖动可抬升或压低对应色调;拖动底部分隔条可改变每段覆盖的色调。"
+     }
+    }
+   }
+  },
+  "Drag a point. Click to add one. Double-click a point to remove it.": {
+   "comment": "Camera Raw point curve: point-mode hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "拖动调整控制点;点击添加;双击删除。"
+     }
+    }
+   }
+  },
+  "Input and output of the selected curve point.": {
+   "comment": "Camera Raw curve read-out tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "所选曲线控制点的输入和输出值。"
+     }
+    }
+   }
+  },
+  "Replaces this curve with a straight line or a contrast curve.": {
+   "comment": "Camera Raw curve preset picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将曲线替换为直线或对比度曲线。"
+     }
+    }
+   }
+  },
+  "How much the curve also changes color strength. Zero matches Photoshop; lower keeps it to brightness, higher adds more color.": {
+   "comment": "Camera Raw curve refine-saturation tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "曲线对色彩强度的附加影响。0 匹配 Photoshop;负值仅影响亮度,正值增加色彩。"
+     }
+    }
+   }
+  },
+  "HSL lists every color. Color edits one family. Point Color adjusts a color you pick.": {
+   "comment": "Camera Raw mixer picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "HSL 列出所有颜色;Color 编辑单个色族;Point Color 调整所拾取的颜色。"
+     }
+    }
+   }
+  },
+  "Hue shifts the color, Saturation its strength, and Luminance its brightness.": {
+   "comment": "Camera Raw mixer component picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "色相偏移颜色,饱和度调整强度,亮度调整明暗。"
+     }
+    }
+   }
+  },
+  "Drag a color in the picture. Nearby color families move together.": {
+   "comment": "Camera Raw mixer targeted adjustment tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在画面上拖动颜色,附近的色族会一起移动。"
+     }
+    }
+   }
+  },
+  "Click the picture to save a color. Up to eight colors.": {
+   "comment": "Camera Raw point color hint.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击画面保存颜色,最多 8 个。"
+     }
+    }
+   }
+  },
+  "Select this picked color.": {
+   "comment": "Camera Raw point color: select saved color tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择此拾取的颜色。"
+     }
+    }
+   }
+  },
+  "Dims the picture outside this color's range. It is not kept when you press OK.": {
+   "comment": "Camera Raw point color: visualize range toggle tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将此颜色范围外的画面调暗。点击「好」后不会保留。"
+     }
+    }
+   }
+  },
+  "Three-Way shows shadows, midtones, and highlights. The other choices show one wheel.": {
+   "comment": "Camera Raw grading picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "三向模式显示阴影、中间调和高光;其他选项仅显示一个色轮。"
+     }
+    }
+   }
+  },
+  "Controls how much the three tonal wheels overlap.": {
+   "comment": "Camera Raw grading blending slider tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "控制三个色调色轮之间的重叠程度。"
+     }
+    }
+   }
+  },
+  "Shifts the wheels toward shadows or highlights.": {
+   "comment": "Camera Raw grading balance slider tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将色轮偏向阴影或高光方向。"
+     }
+    }
+   }
+  },
+  "Drag inside the wheel. Angle sets hue, distance sets saturation.": {
+   "comment": "Camera Raw grading wheel generic tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在色轮内拖动,角度决定色相,距离决定饱和度。"
+     }
+    }
+   }
+  },
+  "Hue and saturation of this wheel.": {
+   "comment": "Camera Raw grading wheel readout tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "此色轮的色相和饱和度。"
+     }
+    }
+   }
+  },
+  "Brightness added by this wheel.": {
+   "comment": "Camera Raw grading wheel luminance tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "此色轮增加的亮度。"
+     }
+    }
+   }
+  },
+  "Drag to set hue and saturation. Double-click to reset this wheel.": {
+   "comment": "Camera Raw grading wheel drag tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "拖动设置色相和饱和度。双击重置此色轮。"
+     }
+    }
+   }
+  },
+  "Red, green, and blue of the pixel under the pointer.": {
+   "comment": "Camera Raw histogram read-out tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "指针所在像素的红、绿、蓝值。"
+     }
+    }
+   }
+  },
+  "Show clipped shadows in blue on the preview.": {
+   "comment": "Camera Raw shadow clipping toggle tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在预览中以蓝色显示被裁剪的阴影。"
+     }
+    }
+   }
+  },
+  "Show clipped highlights in red on the preview.": {
+   "comment": "Camera Raw highlight clipping toggle tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在预览中以红色显示被裁剪的高光。"
+     }
+    }
+   }
+  },
+  "Auto balances the average color. Custom follows Temperature and Tint.": {
+   "comment": "Camera Raw white balance tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Auto 平均化整体色彩;Custom 按色温和色调调整。"
+     }
+    }
+   }
+  },
+  "Click a pixel that should be neutral.": {
+   "comment": "Camera Raw white balance eyedropper tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击应为中性的像素。"
+     }
+    }
+   }
+  },
+  "Diffusion is soft and wide, Bloom is tighter, and Halation is a red fringe.": {
+   "comment": "Camera Raw glow style picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Diffusion 柔和宽广,Bloom 更紧凑,Halation 是红色光晕。"
+     }
+    }
+   }
+  },
+  "Highlight Priority protects bright edges. Color Priority also reduces color. Paint Overlay covers the edges evenly.": {
+   "comment": "Camera Raw vignette style picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Highlight Priority 保护亮边;Color Priority 同时降低色彩;Paint Overlay 均匀覆盖边缘。"
+     }
+    }
+   }
+  },
+  "Pulls red and blue fringes apart toward the center to reduce color edging.": {
+   "comment": "Camera Raw chromatic aberration toggle tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "将红蓝边缘向中心分开以减弱色彩边缘。"
+     }
+    }
+   }
+  },
+  "Applies generic profile strength when camera metadata is not available.": {
+   "comment": "Camera Raw lens profile toggle tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "相机元数据不可用时,使用通用配置文件强度。"
+     }
+    }
+   }
+  },
+  "Click a purple or green fringe to set its hue range.": {
+   "comment": "Camera Raw defringe eyedropper tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击紫色或绿色边缘设置其色相范围。"
+     }
+    }
+   }
+  },
+  "Off leaves the picture as it is. Guided straightens from lines you draw on the picture.": {
+   "comment": "Camera Raw upright picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Off 保持原样;Guided 根据所绘参考线校正。"
+     }
+    }
+   }
+  },
+  "Draw two or more lines on the preview that should be level or vertical.": {
+   "comment": "Camera Raw draw-guides tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在预览上绘制两条或更多水平或垂直参考线。"
+     }
+    }
+   }
+  },
+  "Remove every guide line.": {
+   "comment": "Camera Raw clear-guides tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "清除所有参考线。"
+     }
+    }
+   }
+  },
+  "Perspective allows stronger keystone. Rectilinear keeps the warp gentler.": {
+   "comment": "Camera Raw projection picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Perspective 允许更大幅度的梯形校正;Rectilinear 保持较温和的畸变。"
+     }
+    }
+   }
+  },
+  "Crops empty edges after the transform and fits the result back into the frame.": {
+   "comment": "Camera Raw constrain-crop tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "变换后裁掉空白边缘,并将结果重新适配到画面中。"
+     }
+    }
+   }
+  },
+  "Chooses how strongly the calibration sliders below are applied. Version 6 is the current default.": {
+   "comment": "Camera Raw process picker tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "选择下方校准滑块的强度。Version 6 是当前默认值。"
+     }
+    }
+   }
+  },
+  "In %lld   Out %lld": {
+   "comment": "Camera Raw point curve: input/output read-out.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输入 %lld   输出 %lld"
+     }
+    }
+   }
+  },
+  "%lld°  %lld": {
+   "comment": "Camera Raw grading wheel: hue and saturation read-out.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "%lld°  %lld"
+     }
+    }
+   }
+  },
+  "Hide %@ in the preview": {
+   "comment": "Camera Raw section toggle: hide preview tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在预览中隐藏 %@"
+     }
+    }
+   }
+  },
+  "Show %@ in the preview": {
+   "comment": "Camera Raw section toggle: show preview tooltip.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在预览中显示 %@"
+     }
+    }
+   }
+  },
+  "Edit %@": {
+   "comment": "Camera Raw mixer: edit a per-color tooltip. %@ is the color name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "编辑 %@"
      }
     }
    }
