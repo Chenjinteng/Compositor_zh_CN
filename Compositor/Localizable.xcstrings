@@ -3084,6 +3084,510 @@
      }
     }
    }
+  },
+  "Channel": {
+   "comment": "Levels / Curves picker label for the channel (RGB/Red/Green/Blue).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "通道"
+     }
+    }
+   }
+  },
+  "Loading histogram…": {
+   "comment": "Levels sheet: placeholder shown while the histogram is still computing.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "正在加载直方图…"
+     }
+    }
+   }
+  },
+  "Input black": {
+   "comment": "Levels sheet: input range black field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输入黑场"
+     }
+    }
+   }
+  },
+  "Gamma": {
+   "comment": "Levels sheet: gamma field label (Photoshop keeps 'Gamma' untranslated).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "Gamma"
+     }
+    }
+   }
+  },
+  "Input white": {
+   "comment": "Levels sheet: input range white field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输入白场"
+     }
+    }
+   }
+  },
+  "Output black": {
+   "comment": "Levels sheet: output range black field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输出黑场"
+     }
+    }
+   }
+  },
+  "Output white": {
+   "comment": "Levels sheet: output range white field label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输出白场"
+     }
+    }
+   }
+  },
+  "Sample": {
+   "comment": "Levels sheet: eyedropper sample-mode row label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "取样"
+     }
+    }
+   }
+  },
+  "Click the original layer to set %@. Click the eyedropper again to stop.": {
+   "comment": "Levels sheet: hint shown when a sample mode is active. %@ is the lowercase mode name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "在原图层上单击设置%@。再次单击吸管结束取样。"
+     }
+    }
+   }
+  },
+  "Auto": {
+   "comment": "Levels sheet: auto levels row label.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "自动"
+     }
+    }
+   }
+  },
+  "Preview": {
+   "comment": "Levels / Hue-Saturation sheet: toggle to enable live preview.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "预览"
+     }
+    }
+   }
+  },
+  "Reset": {
+   "comment": "Levels / Hue-Saturation sheet: reset to defaults.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重置"
+     }
+    }
+   }
+  },
+  "Underlying pixels · alpha-weighted histogram": {
+   "comment": "Levels sheet: footer when an adjustment layer is being edited.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "底层像素 · 基于 alpha 加权的直方图"
+     }
+    }
+   }
+  },
+  "Original pixels · alpha-weighted histogram": {
+   "comment": "Levels sheet: footer when the underlying pixels are the document pixels and no selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "原始像素 · 基于 alpha 加权的直方图"
+     }
+    }
+   }
+  },
+  "Original pixels · selection and alpha-weighted histogram": {
+   "comment": "Levels sheet: footer when there is a selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "原始像素 · 基于选区和 alpha 加权的直方图"
+     }
+    }
+   }
+  },
+  "Original %@ histogram": {
+   "comment": "Levels sheet: accessibility label for the histogram view. %@ is the channel name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "原图%@直方图"
+     }
+    }
+   }
+  },
+  "Click to add a point. Drag to adjust.": {
+   "comment": "Curves sheet: hint shown under the curves canvas.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "点击添加控制点。拖动调整。"
+     }
+    }
+   }
+  },
+  "Input %lld · Output %lld": {
+   "comment": "Curves sheet: read-out for the currently selected control point.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "输入%lld · 输出%lld"
+     }
+    }
+   }
+  },
+  "Remove point": {
+   "comment": "Curves sheet: button to delete the selected control point.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "删除控制点"
+     }
+    }
+   }
+  },
+  "Reset curve": {
+   "comment": "Curves sheet: reset the active channel's curve to a straight line.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "重置曲线"
+     }
+    }
+   }
+  },
+  "Range": {
+   "comment": "Hue/Saturation sheet: picker for the color band (Master, Yellows, Blues, etc.).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "范围"
+     }
+    }
+   }
+  },
+  "Apply outside this range instead": {
+   "comment": "Hue/Saturation sheet: invert-range toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "改为作用于范围之外"
+     }
+    }
+   }
+  },
+  "Colorize": {
+   "comment": "Hue/Saturation sheet: colorize toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "着色"
+     }
+    }
+   }
+  },
+  "Limited to the selection": {
+   "comment": "Hue/Saturation sheet: subtitle when the canvas has an active selection.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "仅作用于选区"
+     }
+    }
+   }
+  },
+  "%@ color": {
+   "comment": "Hue/Saturation sheet: accessibility label for a per-band color swatch. %@ is the band name.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "%@颜色"
+     }
+    }
+   }
+  },
+  "Targeted adjustment": {
+   "comment": "Hue/Saturation sheet: accessibility label for the targeted range toggle.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "定向调整"
+     }
+    }
+   }
+  },
+  "RGB": {
+   "comment": "LevelsChannel.rgb rawValue (kept English).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "RGB"
+     }
+    }
+   }
+  },
+  "Red": {
+   "comment": "LevelsChannel.red rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "红"
+     }
+    }
+   }
+  },
+  "Green": {
+   "comment": "LevelsChannel.green rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿"
+     }
+    }
+   }
+  },
+  "Blue": {
+   "comment": "LevelsChannel.blue rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "蓝"
+     }
+    }
+   }
+  },
+  "Master": {
+   "comment": "ColorRange.master rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "全图"
+     }
+    }
+   }
+  },
+  "Reds": {
+   "comment": "ColorRange.reds rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "红色"
+     }
+    }
+   }
+  },
+  "Yellows": {
+   "comment": "ColorRange.yellows rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "黄色"
+     }
+    }
+   }
+  },
+  "Greens": {
+   "comment": "ColorRange.greens rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "绿色"
+     }
+    }
+   }
+  },
+  "Cyans": {
+   "comment": "ColorRange.cyans rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "青色"
+     }
+    }
+   }
+  },
+  "Blues": {
+   "comment": "ColorRange.blues rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "蓝色"
+     }
+    }
+   }
+  },
+  "Magentas": {
+   "comment": "ColorRange.magentas rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "洋红"
+     }
+    }
+   }
+  },
+  "Black": {
+   "comment": "LevelsSample.black rawValue (eyedropper black point).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "黑"
+     }
+    }
+   }
+  },
+  "Gray": {
+   "comment": "LevelsSample.gray rawValue (eyedropper midtone).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "灰"
+     }
+    }
+   }
+  },
+  "White": {
+   "comment": "LevelsSample.white rawValue (eyedropper white point).",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "白"
+     }
+    }
+   }
+  },
+  "Contrast": {
+   "comment": "LevelsAuto.contrast rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "对比度"
+     }
+    }
+   }
+  },
+  "Color + neutral midtones": {
+   "comment": "LevelsAuto.neutral rawValue.",
+   "extractionState": "manual",
+   "localizations": {
+    "zh-Hans": {
+     "stringUnit": {
+      "state": "translated",
+      "value": "颜色 + 中性灰"
+     }
+    }
+   }
   }
  },
  "version": "1.1"
