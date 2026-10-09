@@ -4,6 +4,13 @@
 > 英文版本见 [README_en_US.md](README_en_US.md)。
 
 > ⚠️ **声明**:本 fork 为个人自用分支,汉化借助 AI 工具辅助完成,本人并非专业本地化或开发者。译文如有不准确或不够地道之处,欢迎提交 issue 反馈指正;不接受挑刺式批评。
+>
+> **立场**:
+> - 本分支**仅供个人使用**,不会进行任何形式的传播、推广或商业化分发
+> - **不会**向上游 [robbietilton/Compositor](https://github.com/robbietilton/Compositor) 提交翻译 PR 或合并请求(尊重上游 README 关于 "translations are on hold" 的声明)
+> - 与原作者及其所属 [Wonder Assembly LLC](https://www.wonderassembly.com) **没有任何合作关系或授权**,所有商标、产品名归原作者所有
+>
+> **致谢**:感谢 [Robbie Tilton](https://github.com/robbietilton) 创作并开源了 Compositor。这个 fork 是站在他的肩膀上,翻译只是为了让他的出色工作也能用中文顺手一点。如果你是寻找官方版本,请访问 [robbietilton.com/compositor](https://robbietilton.com/compositor) 或 [上游 GitHub](https://github.com/robbietilton/Compositor)。
 
 Adobe Photoshop 太贵,GIMP 等工具又不够顺手,我没法靠它们保持心流。这正是我打造 Compositor 的原因。
 
