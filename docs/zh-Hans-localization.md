@@ -1,6 +1,6 @@
 # Compositor zh-Hans 本地化批次日志
 
-fork `Chenjinteng/Compositor_zh_CN.git` 的 `zh_cn` 分支基于上游 `fa41b9b` (Compositor 1.4.6)。`MARKETING_VERSION = 1.4.6_zh`,tag `1.4.6_zh` 指向当前 HEAD。
+fork `Chenjinteng/Compositor_zh_CN.git` 的 `zh_cn` 分支在 C-15 merge `af30c45` 后基于上游 `af30c45` (Compositor 1.4.7)。`MARKETING_VERSION = 1.4.7_zh`,tag `1.4.7_zh` 指向 C-15 后的 HEAD。
 
 每条 batch 是 fork 上一个独立 commit,保持单次审阅粒度。
 
@@ -90,14 +90,53 @@ fork `Chenjinteng/Compositor_zh_CN.git` 的 `zh_cn` 分支基于上游 `fa41b9b`
 - CropControls "Crop" / "Ratio" / "Cancel" / "Apply Crop" 全包 `L()`
 - 7 个比例选项 `Text(L($0))`,rawValue 保留英文供 `session.cropRatioChoice` 持久化 + `Crop.swift` switch
 
-## 当前状态
+## Batch C-15 — merge upstream 1.4.7 + 1.4.7 新命令字符串汉化 (`0e6de02`)
+
+合并上游 `af30c45` (Compositor 1.4.7) + 给 1.4.7 新增的命令/UI 字符串上 zh-Hans 翻译。先 merge commit `6095890` 解决冲突,再 C-15 commit 跑汉化。
+
+- `MARKETING_VERSION` 从 `1.4.6_zh` → `1.4.7_zh`(pbxproj 6 处)
+- bundle ID 仍是 `cn.jintengchen.compositor[.tests|.uitests]`(保留 fork 身份)
+
+### 合并冲突 8 处解决 (`6095890` Merge upstream 1.4.7 into zh_cn)
+
+- `project.pbxproj`:6 段 `MARKETING_VERSION` + `PRODUCT_BUNDLE_IDENTIFIER` 冲突,保留 fork 标识 + 改成 `1.4.7_zh`
+- `IO/CompositorApplicationDelegate.swift`:保留 fork 的 `UserDefaults["AppleLanguages"] = ["zh-Hans"]` 锁定,同时把内部 helper 从 `removeSystemTextItems` 改名为 `removeSystemExtras`(1.4.7 commit 的同步)
+- `IO/ProjectController.swift`:保留 fork 的 `String(localized: "Save changes to %@?", ...)` 包装,但补进 1.4.7 commit `283d360` 的 `dontSaveButton.hasDestructiveAction = true`
+- `UI/BrushControls.swift` / `UI/GradientControls.swift` / `UI/LassoControls.swift`:采纳 1.4.7 commit `68396ff` 的 `ScrollView(.horizontal)` 包裹让 tool header 窄窗滚动;picker Text 仍走 `.localizedName`(zh_cn 的 C-10 改成),title 仍走 zh_cn 的 `currentToolName(session:)` helper
+- `UI/LayersPanel.swift`:采纳 1.4.7 `790195f` / `7fb40a9` 的 `FooterIcon` helper,但保留 `L(...)` 包装 + `layersDeleteHelp(session:)` zh_cn helper
+- `README.md`:同步 1.4.7 README:命令面板 → 搜索命令,画布专屏(F)→ 切换全屏(F, Esc 也退出),新增"上次滤镜(⌃⌘F)"一行
+- `.gitignore`:加 `default.profraw` 和 `outputs/`(`.comp` 调试产物 + LLVM profile 文件)
+
+merge 后 `xcodebuild -scheme Compositor -destination 'platform=macOS' build` 已验证 `BUILD SUCCEEDED`。
+
+### 1.4.7 新字符串汉化 (`0e6de02` Batch C-15)
+
+`.xcstrings` 1140 → 1146 keys。新增 6 条:
+
+| key | zh-Hans | 说明 |
+| --- | --- | --- |
+| `Search Commands…` | `搜索命令…` | View 菜单的 Command Palette (⌘F),1.4.7 改名 |
+| `Search Commands` | `搜索命令` | KeyboardShortcuts sheet 行标题 |
+| `Toggle Fullscreen` | `切换全屏` | View 菜单的 Toggle (F) |
+| `Toggle Fullscreen: the canvas alone on black (Esc also leaves)` | `切换全屏:仅画布浮于黑底(Esc 也退出)` | KeyboardShortcuts sheet 描述 |
+| `Last Filter` | `上次滤镜` | Filter 菜单项,无 last filter 时 fallback |
+| `Last Filter: %@` | `上次滤镜:%@` | Filter 菜单项,有 last filter 时插名字 |
+
+源码改动 3 个文件:
+
+- `IO/CompositorApp.swift`(View 菜单 `Search Commands…` / `Toggle Fullscreen`):从 SwiftUI 字面量 (`Button("xxx")`) 改成 `Button(L("xxx"))`,zh_cn 的 helper 模式统一
+- `IO/CompositorApp.swift`(Filter 菜单 `Last Filter`):`session.lastFilter.map { "Last Filter: " + $0.rawValue }` 改成 `String(format: String(localized: "Last Filter: %@"), $0.localizedName)`,rawValue 直接喂 `\u003c0.placeholder\u003e`,`localizedName` 让插值也走 catalog
+- `UI/KeyboardShortcuts.swift`:`Text(definition.title)` → `Text(L(definition.title))`,以及 `Text(group)` → `Text(L(group))`,搜索过滤 `$0.title.localizedCaseInsensitiveContains(search)` → `L($0.title).localizedCaseInsensitiveContains(search)`
+- `UI/CommandPaletteView.swift`(1.4.7 全新文件,merge 进来的):`skipped: Set<String>` 在 static init 时对每个 key 做一次 `Bundle.main.localizedString(forKey:value:table:)`,让 skip 列表和 SwiftUI 在用户机器上实际渲染的 NSMenuItem.title 匹配(中文 fork 下 `"Search Commands…"` → `"搜索命令…"`)
+
+### 当前状态
 
 - fork: `git@github.com:Chenjinteng/Compositor_zh_CN.git`
-- branch: `zh_cn` HEAD = `e972751`
-- tag: `1.4.6_zh` → `e972751`
-- `MARKETING_VERSION = 1.4.6_zh`
-- `.xcstrings` 1140 keys,zh-Hans.lproj 编译产物 1140 entries
-- DMG: `dist/Compositor-1.4.6_zh.dmg` (6.8 MB)
+- branch: `zh_cn` HEAD = `0e6de02`
+- tag: `1.4.7_zh` → `0e6de02`
+- `MARKETING_VERSION = 1.4.7_zh`
+- `.xcstrings` 1146 keys(merge 后 + 1.4.7 新字符串汉化后)
+- DMG: `dist/Compositor-1.4.6_zh.dmg` (6.8 MB;1.4.7_zh DMG 尚未打)
 - 签名: Authority `Apple Development: chenjinteng_in_92@hotmail.com (FDQLLU43U7)` TeamIdentifier `FJYQT2JA5U`(Personal Team)
 
 ## 已知未本地化
