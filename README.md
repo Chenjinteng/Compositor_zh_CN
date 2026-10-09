@@ -60,7 +60,7 @@ brew install --cask robbietilton-compositor
 - Camera Raw 滤镜:光线、颜色、曲面级、混色器、调色、细节、光学和几何,面板置于画布旁
 - 色阶(带自动)、曲线、色相/饱和度、曝光、渐变映射、颗粒、黑白、色彩平衡和反相
 - 高斯模糊与动感模糊,可延伸超出图层边缘
-- 添加杂色、暗角、光晕/发光、色调对比度、镜头校正和移除背景
+- 添加杂色、暗角、光晕/发光、抖动、扫描线、色调对比度、镜头校正和移除背景
 - 实时预览,当选区存在时仅作用于选区
 - 上次滤镜(⌃⌘F)以相同参数再次执行上一次的滤镜
 
@@ -71,10 +71,11 @@ brew install --cask robbietilton-compositor
 - 标尺(⌘R)、从标尺拖出参考线、可调间距与细分数的布局网格,以及参考线/网格/图层/文档边界的对齐
 - 裁剪带吸附,提供 3:4、9:16 等比例,Option 开启对称裁剪;有选区时从选区开始裁剪
 - 画布大小、图像大小和裁剪
+- 300% 缩放以上时,在画布角落有一个 Navigator 缩略导航:全文档迷你视图,框出当前视野;点击或拖动直接定位(View › Navigator)
 - 缩小查看时的高质量降采样,放大查看时的像素网格
 - 支持导入 JPEG、PNG、HEIC、TIFF、SVG、相机 RAW(需先走 develop 一步)、Photoshop PSD 和 PSB(8 位 RGB,不支持 CMYK)。Photoshop 文件夹、蒙版、混合模式、填充矩形/椭圆,以及简单的水平文字保持可编辑;其他矢量和竖排文字转为像素。应用前会显示转换报告
 - 大文档:内存预算随 Mac 调整,过大的 Photoshop 文件将图层裁切到画布以保证可打开
-- JPEG 导出带实时预览(⇧⌥⌘S);复制合并
+- 导出 PNG(⇧⌘E)、导出 JPEG(⇧⌥⌘S),以及导出为(⇧⌥⌘W)PDF / PNG / JPEG,可选按打印尺寸缩放,带实时预览、JPEG 画质与文件大小;复制合并
 - 保存项目的同时可继续工作
 - 整体采用 Photoshop 风格快捷键,在 编辑 > 键盘快捷键 中可重映射
 - 拖动数字标签即可滑改数值,Photoshop 同款
@@ -89,6 +90,9 @@ brew install --cask robbietilton-compositor
 - Xcode 26 或更高版本(从源码构建时)
 
 ## 构建
+
+打开 `Compositor.xcodeproj`,运行 **Compositor** scheme。
+
 
 打开 `Compositor.xcodeproj`,运行 **Compositor** scheme。
 

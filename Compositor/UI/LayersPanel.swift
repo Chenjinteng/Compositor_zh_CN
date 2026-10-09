@@ -33,10 +33,10 @@ struct LayersPanel: View {
             // No spacing: each button's hit area supplies it (8 pt either side makes the 16 pt gap).
             HStack(spacing: 0) {
                 Button { session.addBlankLayer() } label: { FooterIcon(systemName: "plus.square") }
-                    .help(L("New blank layer (⇧⌘N)")).accessibilityLabel(L("New blank layer"))
-                    .accessibilityIdentifier("addBlankLayer").disabled(!session.canEditLayers)
+                    .help("New blank layer (⇧⌘N)").accessibilityLabel("New blank layer")
+                    .accessibilityIdentifier("addBlankLayer").disabled(!session.layersLookEditable)
                 Button { session.groupSelectedLayers() } label: { FooterIcon(systemName: "folder.badge.plus") }
-                    .help(L("Group selected layers (⌘G)")).accessibilityLabel(L("New folder")).disabled(!session.canEditLayers)
+                    .help("Group selected layers (⌘G)").accessibilityLabel("New folder").disabled(!session.layersLookEditable)
                 LayerMaskMenu(session: session)
                 Menu {
                     ForEach(LayerEffectKind.allCases, id: \.self) { kind in
@@ -44,20 +44,20 @@ struct LayersPanel: View {
                     }
                 } label: { FooterIcon(systemName: "sparkles") }
                     .menuStyle(.borderlessButton).fixedSize()
-                    .help(L("Add layer effect")).accessibilityLabel(L("Layer effects"))
-                    .accessibilityIdentifier("layerEffects").disabled(!session.canEditEffects)
+                    .help("Add layer effect").accessibilityLabel("Layer effects")
+                    .accessibilityIdentifier("layerEffects").disabled(!session.layersLookEditable || session.activeLayer?.isGroup != false || session.activeLayer?.asset == nil)
                 Menu {
                     ForEach(AdjustmentKind.allCases, id: \.self) { kind in
                         Button(kind.localizedName) { session.addAdjustment(kind) }
                     }
-                } label: { FooterIcon(systemName: "circle.lefthalf.filled") }
-                    .menuStyle(.borderlessButton).fixedSize().help(L("New adjustment layer")).disabled(!session.canEditLayers)
+                } label: { Image(systemName: "circle.lefthalf.filled").footerHitArea() }
+                    .menuStyle(.borderlessButton).fixedSize().help("New adjustment layer").disabled(!session.layersLookEditable)
                 Spacer()
                 Button { session.deleteLayerOrMask() } label: { FooterIcon(systemName: "trash") }
                     .help(layersDeleteHelp(session: session))
                     .accessibilityLabel(layersDeleteHelp(session: session))
                     .accessibilityIdentifier("deleteLayer")
-                    .disabled(!session.canEditLayers || session.activeLayer == nil)
+                    .disabled(!session.layersLookEditable || session.activeLayer == nil)
             }
             .buttonStyle(.plain).foregroundStyle(.secondary)
             .padding(.horizontal, 8).padding(.vertical, 4) // Plus the hit areas' 8 and 12: the original 16.

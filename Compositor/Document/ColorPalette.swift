@@ -187,9 +187,13 @@ extension EditorSession {
         guard let colorPicker, case .dialog = colorPicker.target else { return }
         dialogColorChange?(colorPicker.color)
     }
+    /// Dither's, or Scanlines', dark or light color.
     func openDitherColorPicker(light: Bool) {
-        guard canEditPalette, colorPicker == nil, let edit = filterEdit, edit.kind == .dither, !edit.committing else { return }
-        let value = light ? edit.settings.dither.light : edit.settings.dither.dark
+        guard canEditPalette, colorPicker == nil, let edit = filterEdit, edit.kind == .dither || edit.kind == .scanlines,
+              !edit.committing else { return }
+        let colors = edit.kind == .scanlines ? (edit.settings.scanlines.dark, edit.settings.scanlines.light)
+                                             : (edit.settings.dither.dark, edit.settings.dither.light)
+        let value = light ? colors.1 : colors.0
         colorPicker = ColorPickerState(target: .dither(light: light),
                                        original: PaletteColor(red: value.red, green: value.green, blue: value.blue))
     }
@@ -198,9 +202,11 @@ extension EditorSession {
         setDitherColor(colorPicker.color, light: light)
     }
     private func setDitherColor(_ color: PaletteColor, light: Bool) {
-        guard let edit = filterEdit, edit.kind == .dither, !edit.committing else { return }
+        guard let edit = filterEdit, edit.kind == .dither || edit.kind == .scanlines, !edit.committing else { return }
         var settings = edit.settings
-        if light { settings.dither.light = AdjustmentColor(color) } else { settings.dither.dark = AdjustmentColor(color) }
+        if edit.kind == .scanlines {
+            if light { settings.scanlines.light = AdjustmentColor(color) } else { settings.scanlines.dark = AdjustmentColor(color) }
+        } else if light { settings.dither.light = AdjustmentColor(color) } else { settings.dither.dark = AdjustmentColor(color) }
         guard settings != edit.settings else { return }
         updateFilter(settings, preview: edit.preview)
     }
@@ -273,19 +279,13 @@ enum ColorPickerTarget: Equatable {
         let prefix = Bundle.main.localizedString(forKey: "Color Picker", value: "Color Picker", table: nil)
         let label: String
         switch self {
-        case .text: label = Bundle.main.localizedString(forKey: "Text Color", value: "Text Color", table: nil)
-        case .effect(let kind): label = "\(kind.localizedName) " + Bundle.main.localizedString(forKey: "Color", value: "Color", table: nil)
-        case .palette(let background): label = background
-            ? Bundle.main.localizedString(forKey: "Background Color", value: "Background Color", table: nil)
-            : Bundle.main.localizedString(forKey: "Foreground Color", value: "Foreground Color", table: nil)
-        case .gradientMap(let highlights): label = highlights
-            ? Bundle.main.localizedString(forKey: "Gradient Map Highlights", value: "Gradient Map Highlights", table: nil)
-            : Bundle.main.localizedString(forKey: "Gradient Map Shadows", value: "Gradient Map Shadows", table: nil)
-        case .vignette: label = Bundle.main.localizedString(forKey: "Vignette Color", value: "Vignette Color", table: nil)
-        case .dither(let light): label = light
-            ? Bundle.main.localizedString(forKey: "Dither Light Color", value: "Dither Light Color", table: nil)
-            : Bundle.main.localizedString(forKey: "Dither Dark Color", value: "Dither Dark Color", table: nil)
-        case .dialog(let title): label = title
+        case .text: return "Color Picker (Text Color)"
+        case .effect(let kind): return "Color Picker (\(kind.rawValue) Color)"
+        case .palette(let background): return background ? "Color Picker (Background Color)" : "Color Picker (Foreground Color)"
+        case .gradientMap(let highlights): return highlights ? "Color Picker (Gradient Map Highlights)" : "Color Picker (Gradient Map Shadows)"
+        case .vignette: return "Color Picker (Vignette Color)"
+        case .dither(let light): return light ? "Color Picker (Light Color)" : "Color Picker (Dark Color)"
+        case .dialog(let title): return "Color Picker (\(title))"
         }
         return "\(prefix) (\(label))"
     }

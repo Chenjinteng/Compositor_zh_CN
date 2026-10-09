@@ -103,6 +103,8 @@ struct FilterSheet: View {
                 Toggle(L("Monochromatic"), isOn: flag(\.monochromatic))
             case .dither:
                 ditherControls
+            case .scanlines:
+                scanlinesControls
             case .vignette:
                 HStack(spacing: 8) {
                     Text(L("Color")).frame(width: 95, alignment: .leading)
@@ -186,7 +188,7 @@ struct FilterSheet: View {
         Picker(L("Style"), selection: Binding(get: { dither.style }, set: { new in update { $0.dither.style = new } })) {
             ForEach(DitherStyle.groups.indices, id: \.self) { group in
                 if group > 0 { Divider() }
-                ForEach(DitherStyle.groups[group], id: \.self) { Text($0.localizedName).tag($0) }
+                ForEach(DitherStyle.groups[group], id: \.self) { Text(L($0.rawValue)).tag($0) }
             }
         }
         if dither.style.usesPixelSize {
@@ -196,16 +198,6 @@ struct FilterSheet: View {
         if dither.style == .ascii {
             control(L("Text Size"), \.dither.textSize, range: DitherSettings.textSizeRange, unit: "px", decimals: 0, logarithmic: false)
                 .help(L("The height of each line of characters"))
-        }
-        if dither.style == .scanlines {
-            control(L("Line Spacing"), \.dither.lineSpacing, range: DitherSettings.lineSpacingRange, unit: "px", decimals: 0, logarithmic: false)
-                .help(L("How far apart the screen's lines are"))
-            control(L("Glow"), \.dither.glow, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
-                .help(L("Light blooming around the lines, like a CRT's phosphors"))
-            control(L("Dots"), \.dither.dots, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
-                .help(L("Break the lines into glowing beads"))
-            control(L("Wobble"), \.dither.wobble, range: DitherSettings.wobbleRange, unit: "px", decimals: 0, logarithmic: false)
-                .help(L("Make the lines waver sideways down the screen, like a CRT losing sync"))
         }
         if dither.style.isHalftone {
             control(L("Cell Size"), \.dither.cellSize, range: DitherSettings.cellSizeRange, unit: "px", decimals: 0, logarithmic: false)
@@ -257,6 +249,46 @@ struct FilterSheet: View {
         if dither.style.drawsMarks {
             Toggle(L("Light on Dark"), isOn: flag(\.dither.lightOnDark))
                 .help(L("Draw the marks for the light tones on the dark color, like a glowing screen"))
+        }
+    }
+
+    @ViewBuilder private var scanlinesControls: some View {
+        let lines = settings.scanlines
+        control("Line Spacing", \.scanlines.lineSpacing, range: ScanlinesSettings.lineSpacingRange, unit: "px", decimals: 0, logarithmic: false)
+            .help("How far apart the screen's lines are")
+        control("Thickness", \.scanlines.thickness, range: 5...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("How much of the gap a bright line fills; dimmer parts draw it thinner")
+        control("Glow", \.scanlines.glow, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("Light blooming around the lines, like a CRT's phosphors")
+        control("Dots", \.scanlines.dots, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("Break the lines into beads where the picture is darker than this, blending into solid lines where it's brighter")
+        control("Displace", \.scanlines.displace, range: ScanlinesSettings.displaceRange, unit: "px", decimals: 0, logarithmic: false)
+            .help("Lift the lines where the picture is bright, or lower them when negative, so they swell into its shapes")
+        control("Smoothness", \.scanlines.smoothness, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("How far the brightness is smoothed before it displaces the lines, from sharp ridges to rounded hills")
+        control("Threshold", \.scanlines.threshold, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("Draw no line where the picture is darker than this, leaving the screen dark")
+        control("Wobble", \.scanlines.wobble, range: ScanlinesSettings.wobbleRange, unit: "px", decimals: 0, logarithmic: false)
+            .help("Make the lines waver sideways down the screen, like a CRT losing sync")
+        control("Color Split", \.scanlines.split, range: ScanlinesSettings.splitRange, unit: "px", decimals: 0, logarithmic: false)
+            .help("Move the red and blue apart, for colored fringes on the lines")
+        control("Density", \.scanlines.density, range: -100...100, unit: "", decimals: 0, logarithmic: false)
+            .help("Darker or lighter before the lines are drawn")
+        control("Contrast", \.scanlines.contrast, range: -100...100, unit: "", decimals: 0, logarithmic: false)
+        control("Black Level", \.scanlines.blackLevel, range: 0...100, unit: "%", decimals: 0, logarithmic: false)
+            .help("How bright the lines are where the picture is black, so they show even over black")
+        Picker("Colors", selection: Binding(get: { lines.colors }, set: { new in update { $0.scanlines.colors = new } })) {
+            ForEach(DitherColors.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+        }
+        .fixedSize()
+        if lines.colors == .twoColors {
+            HStack(spacing: 8) {
+                Text("Dark")
+                swatch(lines.dark, help: "Choose the screen's color") { session.openDitherColorPicker(light: false) }
+                Text("Light").padding(.leading, 10)
+                swatch(lines.light, help: "Choose the lines' color") { session.openDitherColorPicker(light: true) }
+                Spacer()
+            }
         }
     }
 
