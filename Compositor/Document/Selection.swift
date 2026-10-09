@@ -82,6 +82,11 @@ nonisolated enum LassoKind: String, CaseIterable, Sendable {
     /// The Marquee's outlines; not offered in the Lasso's Freehand/Polygonal choice.
     case rectangle = "Rectangle"
     case ellipse = "Ellipse"
+    /// User-visible name resolved through the String Catalog. Shared by both the Marquee picker
+    /// (Rectangle / Ellipse) and the Lasso picker (Freehand / Polygonal).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     static let lassoChoices: [LassoKind] = [.freehand, .polygonal]
     static let marqueeChoices: [LassoKind] = [.rectangle, .ellipse]
 }

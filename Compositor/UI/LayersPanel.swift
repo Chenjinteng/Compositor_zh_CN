@@ -9,7 +9,7 @@ struct LayersPanel: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text("Layers").font(.system(size: 12, weight: .semibold))
+                Text(L("Layers")).font(.system(size: 12, weight: .semibold))
                 Spacer()
                 Text("\(session.document?.layers.count ?? 0)").font(.caption.monospacedDigit()).foregroundStyle(.tertiary)
                     .accessibilityIdentifier("layerCount")
@@ -22,8 +22,8 @@ struct LayersPanel: View {
             } else {
                 VStack(spacing: 10) {
                     Image(systemName: "square.3.layers.3d").font(.system(size: 25, weight: .light))
-                    Text("No layers yet").font(.callout.weight(.medium))
-                    Text(session.document == nil ? "Create a canvas or import an image." : "Import an image or add a blank layer.")
+                    Text(L("No layers yet")).font(.callout.weight(.medium))
+                    Text(session.document == nil ? L("Create a canvas or import an image.") : L("Import an image or add a blank layer."))
                         .font(.caption).multilineTextAlignment(.center)
                 }
                 .foregroundStyle(.secondary).padding(16)
@@ -33,29 +33,29 @@ struct LayersPanel: View {
             // No spacing: each button's hit area supplies it (8 pt either side makes the 16 pt gap).
             HStack(spacing: 0) {
                 Button { session.addBlankLayer() } label: { Image(systemName: "plus.square").footerHitArea() }
-                    .help("New blank layer (⇧⌘N)").accessibilityLabel("New blank layer")
+                    .help(L("New blank layer (⇧⌘N)")).accessibilityLabel(L("New blank layer"))
                     .accessibilityIdentifier("addBlankLayer").disabled(!session.canEditLayers)
                 Button { session.groupSelectedLayers() } label: { Image(systemName: "folder.badge.plus").footerHitArea() }
-                    .help("Group selected layers (⌘G)").accessibilityLabel("New folder").disabled(!session.canEditLayers)
+                    .help(L("Group selected layers (⌘G)")).accessibilityLabel(L("New folder")).disabled(!session.canEditLayers)
                 LayerMaskMenu(session: session)
                 Menu {
                     ForEach(LayerEffectKind.allCases, id: \.self) { kind in
-                        Button(kind.rawValue + "…") { session.addEffect(kind) }
+                        Button(kind.localizedName + "…") { session.addEffect(kind) }
                     }
                 } label: { Image(systemName: "sparkles").footerHitArea() }
                     .menuStyle(.borderlessButton).fixedSize()
-                    .help("Add layer effect").accessibilityLabel("Layer effects")
+                    .help(L("Add layer effect")).accessibilityLabel(L("Layer effects"))
                     .accessibilityIdentifier("layerEffects").disabled(!session.canEditEffects)
                 Menu {
                     ForEach(AdjustmentKind.allCases, id: \.self) { kind in
-                        Button(kind.rawValue) { session.addAdjustment(kind) }
+                        Button(kind.localizedName) { session.addAdjustment(kind) }
                     }
                 } label: { Image(systemName: "circle.lefthalf.filled").footerHitArea() }
-                    .menuStyle(.borderlessButton).fixedSize().help("New adjustment layer").disabled(!session.canEditLayers)
+                    .menuStyle(.borderlessButton).fixedSize().help(L("New adjustment layer")).disabled(!session.canEditLayers)
                 Spacer()
                 Button { session.deleteLayerOrMask() } label: { Image(systemName: "trash").footerHitArea() }
-                    .help(session.selectedEffect != nil ? "Delete selected effect" : session.isMaskSelected ? "Delete layer mask" : session.selectedLayerIDs.count > 1 ? "Delete selected layers" : "Delete selected layer")
-                    .accessibilityLabel(session.selectedEffect != nil ? "Delete selected effect" : session.isMaskSelected ? "Delete layer mask" : session.selectedLayerIDs.count > 1 ? "Delete selected layers" : "Delete selected layer")
+                    .help(layersDeleteHelp(session: session))
+                    .accessibilityLabel(layersDeleteHelp(session: session))
                     .accessibilityIdentifier("deleteLayer")
                     .disabled(!session.canEditLayers || session.activeLayer == nil)
             }
@@ -80,5 +80,21 @@ extension View {
         padding(.horizontal, 8).padding(.vertical, 12)
             .contentShape(Rectangle())
     }
+}
+
+/// Resolves the trash button's help and accessibility label, which depends on what is selected.
+/// Each branch goes through the String Catalog so the wording stays consistent with other menus.
+private func layersDeleteHelp(session: EditorSession) -> String {
+    let key: String
+    if session.selectedEffect != nil {
+        key = "Delete selected effect"
+    } else if session.isMaskSelected {
+        key = "Delete layer mask"
+    } else if session.selectedLayerIDs.count > 1 {
+        key = "Delete selected layers"
+    } else {
+        key = "Delete selected layer"
+    }
+    return Bundle.main.localizedString(forKey: key, value: key, table: nil)
 }
 

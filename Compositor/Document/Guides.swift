@@ -69,6 +69,10 @@ struct GridAppearance: Equatable {
              mediumBlue = "Medium Blue", yellow = "Yellow", magenta = "Magenta", cyan = "Cyan", black = "Black",
              custom = "Custom"
         var id: Self { self }
+        /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+        var localizedName: String {
+            Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+        }
 
         /// Nil for Custom, which uses the appearance's own color.
         var color: PaletteColor? {
@@ -91,6 +95,10 @@ struct GridAppearance: Equatable {
     enum Style: String, CaseIterable, Identifiable {
         case lines = "Lines", dashedLines = "Dashed Lines", dots = "Dots"
         var id: Self { self }
+        /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+        var localizedName: String {
+            Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+        }
 
         /// On and off lengths in screen points; empty for a solid line.
         var dashes: [CGFloat] {

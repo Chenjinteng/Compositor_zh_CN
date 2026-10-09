@@ -7082,13 +7082,13 @@
       }
     },
     "Magic": {
-      "comment": "Magic Wand tool picker option.",
+      "comment": "Magic Wand tool header title (uses '魔棒' to match the Wand mode label).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "魔法"
+            "value": "魔棒"
           }
         }
       }
@@ -12885,6 +12885,414 @@
           "stringUnit": {
             "state": "translated",
             "value": "调整已找到颜色的去饱和度"
+          }
+        }
+      }
+    },
+    "Create a canvas or import an image.": {
+      "comment": "Layers panel empty state when no document is open.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新建画布或导入图像"
+          }
+        }
+      }
+    },
+    "Import an image or add a blank layer.": {
+      "comment": "Layers panel empty state when a document is open but has no layers.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导入图像或新建空白图层"
+          }
+        }
+      }
+    },
+    "New blank layer (⇧⌘N)": {
+      "comment": "Layers panel add-blank-layer button tooltip (shows the ⇧⌘N shortcut).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新建空白图层(⇧⌘N)"
+          }
+        }
+      }
+    },
+    "Group selected layers (⌘G)": {
+      "comment": "Layers panel group-selected-layers button tooltip (shows the ⌘G shortcut).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将所选图层编组(⌘G)"
+          }
+        }
+      }
+    },
+    "Delete selected effect": {
+      "comment": "Layers panel trash button help/a11y with an effect selected.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除所选效果"
+          }
+        }
+      }
+    },
+    "Delete selected layers": {
+      "comment": "Layers panel trash button help/a11y with multiple layers selected.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除所选图层"
+          }
+        }
+      }
+    },
+    "Delete selected layer": {
+      "comment": "Layers panel trash button help/a11y with a single layer selected.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除所选图层"
+          }
+        }
+      }
+    },
+    "Expand or collapse folder": {
+      "comment": "Native layer list folder disclosure triangle accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "展开或折叠文件夹"
+          }
+        }
+      }
+    },
+    "Text · Double-click to edit": {
+      "comment": "Native layer list dimensions cell for text layers.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字 · 双击编辑"
+          }
+        }
+      }
+    },
+    "Adjustment · Double-click to edit": {
+      "comment": "Native layer list dimensions cell for adjustment layers.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "调整图层 · 双击编辑"
+          }
+        }
+      }
+    },
+    "Click to select; double-click to edit; Option-drag to copy": {
+      "comment": "Native layer list effect-row tooltip (effect name follows).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "单击选择;双击编辑;按住 Option 拖动以复制"
+          }
+        }
+      }
+    },
+    " effect": {
+      "comment": "Native layer list effect-row accessibility label suffix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " 效果"
+          }
+        }
+      }
+    },
+    " color": {
+      "comment": "Layer effect sheet color swatch tooltip / a11y suffix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " 颜色"
+          }
+        }
+      }
+    },
+    "Atkinson (Classic Mac)": {
+      "comment": "DitherStyle.atkinson rawValue (error diffusion dither used by classic Mac OS).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atkinson(经典 Mac)"
+          }
+        }
+      }
+    },
+    "Floyd–Steinberg": {
+      "comment": "DitherStyle.floydSteinberg rawValue (error diffusion dither).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floyd–Steinberg"
+          }
+        }
+      }
+    },
+    "Bayer 2 × 2": {
+      "comment": "DitherStyle.bayer2 rawValue (ordered dither).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayer 2 × 2"
+          }
+        }
+      }
+    },
+    "Bayer 4 × 4": {
+      "comment": "DitherStyle.bayer4 rawValue (ordered dither).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayer 4 × 4"
+          }
+        }
+      }
+    },
+    "Bayer 8 × 8": {
+      "comment": "DitherStyle.bayer8 rawValue (ordered dither).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayer 8 × 8"
+          }
+        }
+      }
+    },
+    "Scanlines (CRT)": {
+      "comment": "DitherStyle.scanlines rawValue (CRT scanline dither).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描线(CRT)"
+          }
+        }
+      }
+    },
+    "Square": {
+      "comment": "DitherPixelShape.square rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "方块"
+          }
+        }
+      }
+    },
+    "Dot": {
+      "comment": "DitherPixelShape.dot rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "圆点"
+          }
+        }
+      }
+    },
+    "Two Colors": {
+      "comment": "DitherColors.twoColors rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "两色"
+          }
+        }
+      }
+    },
+    "Parametric": {
+      "comment": "CameraRawCurvePage.parametric rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "参数曲线"
+          }
+        }
+      }
+    },
+    "Point Color": {
+      "comment": "CameraRawMixerPage.point rawValue (HSL/Color/Point Color mixer pages).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点颜色"
+          }
+        }
+      }
+    },
+    "Three-Way": {
+      "comment": "CameraRawGradePage.threeWay rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三向"
+          }
+        }
+      }
+    },
+    "Global": {
+      "comment": "CameraRawGradePage.global rawValue (color-grading global tone curve).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全局"
+          }
+        }
+      }
+    },
+    "Highlight Priority": {
+      "comment": "CameraRawVignetteStyle.highlightPriority rawValue (preserves bright pixels).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高光优先"
+          }
+        }
+      }
+    },
+    "Color Priority": {
+      "comment": "CameraRawVignetteStyle.colorPriority rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色优先"
+          }
+        }
+      }
+    },
+    "Paint Overlay": {
+      "comment": "CameraRawVignetteStyle.paintOverlay rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色叠加"
+          }
+        }
+      }
+    },
+    "Transparent Pixels": {
+      "comment": "TrimBasedOn.transparentPixels rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "透明像素"
+          }
+        }
+      }
+    },
+    "HSL": {
+      "comment": "CameraRawMixerPage.hsl rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HSL"
+          }
+        }
+      }
+    },
+    "Point": {
+      "comment": "CameraRawCurvePage.point rawValue (parametric vs point curve).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点"
+          }
+        }
+      }
+    },
+    "Basic": {
+      "comment": "BackgroundQuality.basic rawValue (Remove Background's basic subject mask).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基础"
+          }
+        }
+      }
+    },
+    "Advanced": {
+      "comment": "BackgroundQuality.advanced rawValue (Remove Background refined against layer detail).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高级"
           }
         }
       }

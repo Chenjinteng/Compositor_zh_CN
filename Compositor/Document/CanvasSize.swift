@@ -3,6 +3,10 @@ import CoreGraphics
 
 nonisolated enum CanvasUnit: String, CaseIterable, Sendable {
     case pixels = "Pixels", percent = "Percent", inches = "Inches", centimeters = "Centimeters"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated struct CanvasSizeDraft {

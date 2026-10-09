@@ -16,6 +16,9 @@ nonisolated enum NewCanvasUnit: String, CaseIterable, Sendable {
         case .millimeters: Bundle.main.localizedString(forKey: "Millimeters", value: "Millimeters", table: nil)
         }
     }
+    /// User-visible name shown in the picker, using the same translated unit names as `name`
+    /// but called `.localizedName` for consistency with the other picker-bound enums.
+    var localizedName: String { name }
     /// The next unit, for the pill: px → in → cm → mm → px.
     var next: NewCanvasUnit { Self.allCases[(Self.allCases.firstIndex(of: self)! + 1) % Self.allCases.count] }
     private var perInch: Double? {
@@ -218,7 +221,7 @@ struct NewCanvasSheet: View {
                 TextField(title, text: text).textFieldStyle(.plain)
                     .focused($focusedField, equals: field)
                     .accessibilityIdentifier(title.lowercased() + "Input")
-                Text(unit.rawValue).foregroundStyle(.secondary)
+                Text(unit.localizedName).foregroundStyle(.secondary)
             }
             .padding(12).background(.quaternary.opacity(0.5), in: RoundedRectangle(cornerRadius: 7))
         }

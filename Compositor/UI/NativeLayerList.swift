@@ -151,7 +151,7 @@ struct NativeLayerList: NSViewRepresentable {
             menu.addItem(clippingItem)
 
             // 5. Group Selected Layers
-            let groupItem = NSMenuItem(title: "Group Selected Layers", action: #selector(groupSelectedLayersAction), keyEquivalent: "")
+            let groupItem = NSMenuItem(title: L("Group Selected Layers"), action: #selector(groupSelectedLayersAction), keyEquivalent: "")
             groupItem.target = self
             groupItem.isEnabled = validateMenuItem(groupItem)
             menu.addItem(groupItem)
@@ -914,7 +914,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         indentation.constant = CGFloat(min(depth, 8)) * 24 + (layer.maskSourceID == nil ? 0 : 24)
         disclosure.isHidden = !layer.isGroup
         disclosure.isEnabled = enabled
-        disclosure.image = NSImage(systemSymbolName: session.collapsedGroupIDs.contains(layer.id) ? "chevron.right" : "chevron.down", accessibilityDescription: "Expand or collapse folder")
+        disclosure.image = NSImage(systemSymbolName: session.collapsedGroupIDs.contains(layer.id) ? "chevron.right" : "chevron.down", accessibilityDescription: L("Expand or collapse folder"))
         // Pixel layers and masks show the whole canvas with their pixels where they sit, as Photoshop does;
         // editable text, adjustments and folders keep a square icon. Pictures redraw only when what they show changes.
         let canvas = session.document?.size ?? CGSize(width: 1, height: 1)
@@ -925,7 +925,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         thumbnailHeight.constant = layerSize.height
         let key = ThumbnailKey(image: layer.asset.map { ObjectIdentifier($0.thumbnail) }, transform: layer.transform, canvas: canvas, editableText: editableText)
         if layerID != layer.id || thumbnailKey != key {
-            thumbnail.image = layer.adjustment.map { Self.adjustmentIcon($0.kind.symbol, description: $0.kind.rawValue, quarterTurnClockwise: $0.kind == .curves) }
+            thumbnail.image = layer.adjustment.map { Self.adjustmentIcon($0.kind.symbol, description: $0.kind.localizedName, quarterTurnClockwise: $0.kind == .curves) }
                 ?? (layer.isGroup ? Self.folderIcon
                     : editableText ? Self.adjustmentIcon("textformat", description: "Editable text")
                     : CanvasThumbnail.layer(layer.asset?.thumbnail, transform: layer.transform, canvas: canvas, box: 36))
@@ -963,7 +963,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         // A reused cell must not carry another row's half-finished rename.
         if renaming, layerID != layer.id { restoreLabel() }
         if !renaming { nameLabel.stringValue = (layer.maskSourceID == nil ? "" : "↳ ") + layer.name }
-        dimensions.stringValue = layer.liveText != nil ? "Text · Double-click to edit" : layer.adjustment != nil ? "Adjustment · Double-click to edit" : layer.isGroup ? "Folder" : layer.sizeLabel
+        dimensions.stringValue = layer.liveText != nil ? L("Text · Double-click to edit") : layer.adjustment != nil ? L("Adjustment · Double-click to edit") : layer.isGroup ? L("Folder") : layer.sizeLabel
         if let source = layer.maskSourceID {
             let sourceName = session.document?.layers.first(where: { $0.id == source })?.name ?? "Missing source"
             dimensions.stringValue = "Clipped to \(sourceName)"
@@ -1082,7 +1082,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
     private static var adjustmentIcons: [String: NSImage] = [:]
     /// The folder symbol at 80% of the size it would fill the thumbnail slot with.
     private static let folderIcon: NSImage? = {
-        guard let symbol = NSImage(systemSymbolName: "folder", accessibilityDescription: "Folder") else { return nil }
+        guard let symbol = NSImage(systemSymbolName: "folder", accessibilityDescription: L("Folder")) else { return nil }
         let fit = 36 * 0.8 / max(symbol.size.width, symbol.size.height)
         let size = NSSize(width: symbol.size.width * fit, height: symbol.size.height * fit)
         let icon = NSImage(size: NSSize(width: 36, height: 36), flipped: false) { bounds in
@@ -1090,7 +1090,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
             return true
         }
         icon.isTemplate = true
-        icon.accessibilityDescription = "Folder"
+        icon.accessibilityDescription = L("Folder")
         return icon
     }()
     private static func adjustmentIcon(_ symbolName: String, description: String, quarterTurnClockwise: Bool = false) -> NSImage? {
@@ -1123,7 +1123,7 @@ private final class LayerEffectRow: NSView, NSDraggingSource {
     private let label: NSTextField
     init(session: EditorSession, layerID: UUID, kind: LayerEffectKind, enabled: Bool, indent: CGFloat) {
         self.session = session; self.layerID = layerID; self.kind = kind
-        label = NSTextField(labelWithString: kind.rawValue)
+        label = NSTextField(labelWithString: kind.localizedName)
         super.init(frame: .zero)
         wantsLayer = true
         translatesAutoresizingMaskIntoConstraints = false
@@ -1134,7 +1134,7 @@ private final class LayerEffectRow: NSView, NSDraggingSource {
         eye.contentTintColor = .secondaryLabelColor
         eye.target = self; eye.action = #selector(toggle)
         eye.isEnabled = session.canEditLayers
-        eye.setAccessibilityLabel((enabled ? "Hide " : "Show ") + kind.rawValue)
+        eye.setAccessibilityLabel((enabled ? Bundle.main.localizedString(forKey: "Hide", value: "Hide", table: nil) + " " : Bundle.main.localizedString(forKey: "Show", value: "Show", table: nil) + " ") + kind.localizedName)
         label.font = .systemFont(ofSize: 11)
         label.textColor = enabled ? .labelColor : .secondaryLabelColor
         label.lineBreakMode = .byTruncatingTail
@@ -1147,10 +1147,10 @@ private final class LayerEffectRow: NSView, NSDraggingSource {
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         ])
-        toolTip = "Click to select; double-click to edit; Option-drag to copy " + kind.rawValue.lowercased()
+        toolTip = Bundle.main.localizedString(forKey: "Click to select; double-click to edit; Option-drag to copy", value: "Click to select; double-click to edit; Option-drag to copy", table: nil) + " " + kind.localizedName
         setAccessibilityElement(true)
         setAccessibilityRole(.group)
-        setAccessibilityLabel(kind.rawValue + " effect")
+        setAccessibilityLabel(kind.localizedName + Bundle.main.localizedString(forKey: " effect", value: " effect", table: nil))
         updateSelection()
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }

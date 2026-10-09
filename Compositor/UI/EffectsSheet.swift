@@ -31,27 +31,27 @@ struct EffectsSheet: View {
     @ViewBuilder private var stroke: some View {
         let effect = session.editingEffects.stroke
         HStack {
-            Text("Stroke").font(.headline)
+            Text(L("Stroke")).font(.headline)
             Spacer()
             if let effect {
-                Picker("Position", selection: Binding(get: { effect.inside }, set: { inside in
+                Picker(L("Position"), selection: Binding(get: { effect.inside }, set: { inside in
                     session.changeEffects { $0.stroke?.inside = inside }
                 })) {
-                    Text("Outside").tag(false)
-                    Text("Inside").tag(true)
+                    Text(L("Outside")).tag(false)
+                    Text(L("Inside")).tag(true)
                 }.pickerStyle(.segmented).labelsHidden().fixedSize()
             }
         }
         if let effect {
             HStack {
-                Text("Color").frame(width: 64, alignment: .leading)
+                Text(L("Color")).frame(width: 64, alignment: .leading)
                 swatch(.stroke)
                 Spacer()
             }
-            slider("Size", value: Binding(get: { effect.size }, set: { size in
+            slider(L("Size"), value: Binding(get: { effect.size }, set: { size in
                 session.changeEffects { $0.stroke?.size = size }
             }), range: 0...20, inputRange: 0...StrokeEffect.maxSize, unit: "px")
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.stroke?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
         }
@@ -60,21 +60,21 @@ struct EffectsSheet: View {
     @ViewBuilder private var shadow: some View {
         let effect = session.editingEffects.shadow
         HStack {
-            Text("Drop Shadow").font(.headline)
+            Text(L("Drop Shadow")).font(.headline)
             Spacer()
             if effect != nil { swatch(.shadow) }
         }
         if let effect {
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.shadow?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
-            slider("Angle", value: Binding(get: { effect.angle }, set: { angle in
+            slider(L("Angle"), value: Binding(get: { effect.angle }, set: { angle in
                 session.changeEffects { $0.shadow?.angle = angle }
             }), range: -180...180, unit: "°")
-            slider("Distance", value: Binding(get: { effect.distance }, set: { distance in
+            slider(L("Distance"), value: Binding(get: { effect.distance }, set: { distance in
                 session.changeEffects { $0.shadow?.distance = distance }
             }), range: 0...100, inputRange: 0...5000, unit: "px")
-            slider("Blur", value: Binding(get: { effect.blur }, set: { blur in
+            slider(L("Blur"), value: Binding(get: { effect.blur }, set: { blur in
                 session.changeEffects { $0.shadow?.blur = blur }
             }), range: 0...100, inputRange: 0...500, unit: "px")
         }
@@ -83,12 +83,12 @@ struct EffectsSheet: View {
     @ViewBuilder private var colorOverlay: some View {
         let effect = session.editingEffects.colorOverlay
         HStack {
-            Text("Color Overlay").font(.headline)
+            Text(L("Color Overlay")).font(.headline)
             Spacer()
             if effect != nil { swatch(.colorOverlay) }
         }
         if let effect {
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.colorOverlay?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
         }
@@ -97,21 +97,21 @@ struct EffectsSheet: View {
     @ViewBuilder private var innerShadow: some View {
         let effect = session.editingEffects.innerShadow
         HStack {
-            Text("Inner Shadow").font(.headline)
+            Text(L("Inner Shadow")).font(.headline)
             Spacer()
             if effect != nil { swatch(.innerShadow) }
         }
         if let effect {
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.innerShadow?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
-            slider("Angle", value: Binding(get: { effect.angle }, set: { angle in
+            slider(L("Angle"), value: Binding(get: { effect.angle }, set: { angle in
                 session.changeEffects { $0.innerShadow?.angle = angle }
             }), range: -180...180, unit: "°")
-            slider("Distance", value: Binding(get: { effect.distance }, set: { distance in
+            slider(L("Distance"), value: Binding(get: { effect.distance }, set: { distance in
                 session.changeEffects { $0.innerShadow?.distance = distance }
             }), range: 0...50, inputRange: 0...5000, unit: "px")
-            slider("Blur", value: Binding(get: { effect.blur }, set: { blur in
+            slider(L("Blur"), value: Binding(get: { effect.blur }, set: { blur in
                 session.changeEffects { $0.innerShadow?.blur = blur }
             }), range: 0...100, inputRange: 0...500, unit: "px")
         }
@@ -120,15 +120,15 @@ struct EffectsSheet: View {
     @ViewBuilder private var outerGlow: some View {
         let effect = session.editingEffects.outerGlow
         HStack {
-            Text("Outer Glow").font(.headline)
+            Text(L("Outer Glow")).font(.headline)
             Spacer()
             if effect != nil { swatch(.outerGlow) }
         }
         if let effect {
-            slider("Size", value: Binding(get: { effect.size }, set: { size in
+            slider(L("Size"), value: Binding(get: { effect.size }, set: { size in
                 session.changeEffects { $0.outerGlow?.size = size }
             }), range: 0...100, inputRange: 0...500, unit: "px")
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.outerGlow?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
         }
@@ -137,15 +137,15 @@ struct EffectsSheet: View {
     @ViewBuilder private var innerGlow: some View {
         let effect = session.editingEffects.innerGlow
         HStack {
-            Text("Inner Glow").font(.headline)
+            Text(L("Inner Glow")).font(.headline)
             Spacer()
             if effect != nil { swatch(.innerGlow) }
         }
         if let effect {
-            slider("Size", value: Binding(get: { effect.size }, set: { size in
+            slider(L("Size"), value: Binding(get: { effect.size }, set: { size in
                 session.changeEffects { $0.innerGlow?.size = size }
             }), range: 0...100, inputRange: 0...500, unit: "px")
-            slider("Opacity", value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
+            slider(L("Opacity"), value: Binding(get: { CGFloat(effect.opacity * 100) }, set: { value in
                 session.changeEffects { $0.innerGlow?.opacity = Double(value) / 100 }
             }), range: 0...100, unit: "%")
         }
@@ -163,8 +163,8 @@ struct EffectsSheet: View {
                 .contentShape(shape)
         }
         .buttonStyle(.plain)
-        .help(kind.rawValue + " color")
-        .accessibilityLabel(kind.rawValue + " color")
+        .help(kind.localizedName + L(" color"))
+        .accessibilityLabel(kind.localizedName + L(" color"))
     }
 
     private func slider(_ title: String, value: Binding<CGFloat>, range: ClosedRange<CGFloat>,

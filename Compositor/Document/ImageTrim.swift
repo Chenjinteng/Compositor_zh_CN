@@ -5,6 +5,10 @@ public enum TrimBasedOn: String, CaseIterable, Identifiable, Sendable {
     case transparentPixels = "Transparent Pixels"
     case topLeftPixelColor = "Top Left Pixel Color"
     case bottomRightPixelColor = "Bottom Right Pixel Color"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    public var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 
     public var id: String { rawValue }
 }

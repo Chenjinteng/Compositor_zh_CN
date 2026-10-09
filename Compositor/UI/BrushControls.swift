@@ -30,8 +30,8 @@ struct BrushControls: View {
                 Toggle("Aligned", isOn: $session.cloneSettings.aligned)
                     .help("Keep the source moving with the brush between strokes; off starts every stroke at the source point")
                 Picker("Sample", selection: $session.cloneSettings.sampleAllLayers) {
-                    Text("This Layer").tag(false)
-                    Text("All Layers").tag(true)
+                    Text(L("This Layer")).tag(false)
+                    Text(L("All Layers")).tag(true)
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
                 .help("Copy from the active layer only, or from every visible layer as shown")
@@ -148,13 +148,16 @@ struct CloneStampToolIcon: View {
 
 /// The tool name shown in the tool header (was an inline ternary with hardcoded English strings).
 /// Each key matches a `Localizable.xcstrings` entry; Bundle lookup supplies the localized form.
-private func currentToolName(session: EditorSession) -> String {
+func currentToolName(session: EditorSession) -> String {
     let key: String
     switch session.tool {
     case .spotHealing: key = "Spot Healing"
     case .cloneStamp: key = "Clone Stamp"
     case .blur: key = "Smear"
     case .brush: key = session.brushMode == .erase ? "Eraser" : "Brush"
+    case .marquee: key = "Marquee"
+    case .wand: key = "Magic"
+    case .lasso: key = "Lasso"
     default: key = ""
     }
     return Bundle.main.localizedString(forKey: key, value: key, table: nil)

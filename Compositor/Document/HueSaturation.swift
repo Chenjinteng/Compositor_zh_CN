@@ -5,6 +5,10 @@ import CoreImage
 nonisolated enum ColorRange: String, CaseIterable, Sendable, Hashable, Codable {
     case master = "Master", reds = "Reds", yellows = "Yellows", greens = "Greens"
     case cyans = "Cyans", blues = "Blues", magentas = "Magentas"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 
     /// Photoshop's starting hue band: falloff start, range start, range end, falloff end.
     var defaultBand: HueBand {

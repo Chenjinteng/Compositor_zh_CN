@@ -5,6 +5,10 @@ nonisolated enum LayerSampling: String, CaseIterable, Codable, Sendable {
     case nearest = "Nearest"
     case smooth = "Smooth"
     case high = "High quality"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     var quality: CGInterpolationQuality {
         switch self {
         case .nearest: return .none

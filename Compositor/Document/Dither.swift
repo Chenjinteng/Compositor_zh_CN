@@ -15,6 +15,10 @@ nonisolated enum DitherStyle: String, CaseIterable, Sendable {
     case patterns = "Mac Patterns"
     case ascii = "ASCII"
     case scanlines = "Scanlines (CRT)"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 
     static let groups: [[DitherStyle]] = [
         [.atkinson, .floydSteinberg],
@@ -39,12 +43,20 @@ nonisolated enum DitherStyle: String, CaseIterable, Sendable {
 nonisolated enum DitherPixelShape: String, CaseIterable, Sendable {
     case square = "Square"
     case dot = "Dot"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated enum DitherColors: String, CaseIterable, Sendable {
     case blackWhite = "Black & White"
     case twoColors = "Two Colors"
     case original = "Original"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated struct DitherSettings: Equatable, Sendable {

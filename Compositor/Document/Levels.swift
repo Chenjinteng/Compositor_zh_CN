@@ -4,6 +4,10 @@ import Observation
 nonisolated enum LevelsChannel: String, CaseIterable, Sendable, Codable {
     case rgb = "RGB", red = "Red", green = "Green", blue = "Blue"
     var index: Int { Self.allCases.firstIndex(of: self)! }
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 nonisolated struct LevelRange: Equatable, Sendable, Codable {
     var black: Double = 0

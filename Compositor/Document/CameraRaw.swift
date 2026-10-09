@@ -5,6 +5,10 @@ import AppKit
 nonisolated enum CameraRawWhiteBalance: String, CaseIterable, Sendable {
     case custom = "Custom"
     case auto = "Auto"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// Glow's three looks. Warmth tints Diffusion and Bloom from cool to warm; Halation's fringe stays red.
@@ -19,6 +23,10 @@ nonisolated enum CameraRawGlowStyle: String, CaseIterable, Sendable {
         case .halation: return 2
         }
     }
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// Post-crop vignette. Highlight Priority is the style whose Highlights slider protects bright pixels.
@@ -32,6 +40,10 @@ nonisolated enum CameraRawVignetteStyle: String, CaseIterable, Sendable {
         case .colorPriority: return 1
         case .paintOverlay: return 2
         }
+    }
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
     }
 }
 

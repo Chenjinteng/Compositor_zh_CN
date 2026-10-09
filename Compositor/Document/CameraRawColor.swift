@@ -1,11 +1,35 @@
 import AppKit
 
-nonisolated enum CameraRawCurvePage: String, CaseIterable, Sendable { case parametric = "Parametric", point = "Point" }
-nonisolated enum CameraRawPointChannel: String, CaseIterable, Sendable { case rgb = "RGB", red = "Red", green = "Green", blue = "Blue" }
-nonisolated enum CameraRawMixerPage: String, CaseIterable, Sendable { case hsl = "HSL", color = "Color", point = "Point Color" }
-nonisolated enum CameraRawMixerTab: String, CaseIterable, Sendable { case hue = "Hue", saturation = "Saturation", luminance = "Luminance" }
+nonisolated enum CameraRawCurvePage: String, CaseIterable, Sendable { case parametric = "Parametric", point = "Point"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+}
+nonisolated enum CameraRawPointChannel: String, CaseIterable, Sendable { case rgb = "RGB", red = "Red", green = "Green", blue = "Blue"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+}
+nonisolated enum CameraRawMixerPage: String, CaseIterable, Sendable { case hsl = "HSL", color = "Color", point = "Point Color"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+}
+nonisolated enum CameraRawMixerTab: String, CaseIterable, Sendable { case hue = "Hue", saturation = "Saturation", luminance = "Luminance"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+}
 nonisolated enum CameraRawGradePage: String, CaseIterable, Sendable {
     case threeWay = "Three-Way", shadows = "Shadows", midtones = "Midtones", highlights = "Highlights", global = "Global"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 struct CameraRawDrag {

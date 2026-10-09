@@ -44,6 +44,10 @@ nonisolated enum FilterKind: String, CaseIterable, Sendable {
 nonisolated enum BackgroundQuality: String, CaseIterable, Sendable {
     case basic = "Basic"
     case advanced = "Advanced"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// Every filter's settings; each filter reads only its own.

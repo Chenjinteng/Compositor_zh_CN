@@ -4,11 +4,19 @@ import CoreImage
 nonisolated enum CameraRawUprightMode: String, CaseIterable, Sendable {
     case off = "Off"
     case guided = "Guided"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated enum CameraRawProjection: String, CaseIterable, Sendable {
     case perspective = "Perspective"
     case rectilinear = "Rectilinear"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// A guide line in normalized image coordinates, 0…1 from the lower-left of the pixel grid.
@@ -179,6 +187,10 @@ nonisolated enum CameraRawProcessVersion: String, CaseIterable, Sendable {
     case version4 = "Version 4"
     case version5 = "Version 5"
     case version6 = "Version 6"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     var kernelValue: Int32 {
         switch self {
         case .version1: return 1

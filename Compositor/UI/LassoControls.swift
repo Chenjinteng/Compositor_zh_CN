@@ -5,13 +5,13 @@ struct LassoControls: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Text(session.tool == .marquee ? "Marquee" : session.tool == .wand ? "Magic" : "Lasso").font(ToolHeaderStyle.titleFont)
+            Text(currentToolName(session: session)).font(ToolHeaderStyle.titleFont)
             if session.tool == .marquee {
                 Picker("Shape", selection: Binding(get: { session.marqueeKind }, set: { kind in
                     session.cancelLasso()
                     session.marqueeKind = kind
                 })) {
-                    ForEach(LassoKind.marqueeChoices, id: \.self) { Text($0.rawValue).tag($0) }
+                    ForEach(LassoKind.marqueeChoices, id: \.self) { Text($0.localizedName).tag($0) }
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
                 .help("Press M to switch between Rectangle and Ellipse")
@@ -31,7 +31,7 @@ struct LassoControls: View {
                     session.cancelLasso()
                     session.lassoKind = kind
                 })) {
-                    ForEach(LassoKind.lassoChoices, id: \.self) { Text($0.rawValue).tag($0) }
+                    ForEach(LassoKind.lassoChoices, id: \.self) { Text($0.localizedName).tag($0) }
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
                 .help("Press L to switch between Freehand and Polygonal")
@@ -101,8 +101,8 @@ struct LassoControls: View {
             .labelsHidden().fixedSize()
             .help("Match the clicked pixel, or the average of the pixels around it")
             Picker("Sample", selection: $session.wandSettings.sampleAllLayers) {
-                Text("This Layer").tag(false)
-                Text("All Layers").tag(true)
+                Text(L("This Layer")).tag(false)
+                Text(L("All Layers")).tag(true)
             }
             .pickerStyle(.segmented).labelsHidden().fixedSize()
             .help("Read colors from the active layer only, or from every visible layer as shown")
@@ -114,8 +114,8 @@ struct LassoControls: View {
     private var objectSelectionControls: some View {
         HStack(spacing: 12) {
             Picker("Sample", selection: $session.objectSelectionSettings.sampleAllLayers) {
-                Text("This Layer").tag(false)
-                Text("All Layers").tag(true)
+                Text(L("This Layer")).tag(false)
+                Text(L("All Layers")).tag(true)
             }
             .pickerStyle(.segmented).labelsHidden().fixedSize()
             .help("Analyze the active layer only, or every visible layer as shown")
