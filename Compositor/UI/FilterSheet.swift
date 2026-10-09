@@ -339,11 +339,11 @@ struct GradientMapControls: View {
                 .overlay { RoundedRectangle(cornerRadius: 4, style: .continuous).strokeBorder(.black.opacity(0.35)) }
                 .accessibilityHidden(true)
             HStack(spacing: 20) {
-                swatch("Shadows", settings.shadows) { pick(false) }
-                swatch("Highlights", settings.highlights) { pick(true) }
+                swatch(L("Shadows"), settings.shadows) { pick(false) }
+                swatch(L("Highlights"), settings.highlights) { pick(true) }
                 Spacer()
             }
-            Toggle("Reverse", isOn: $settings.reversed)
+            Toggle(L("Reverse"), isOn: $settings.reversed)
         }
     }
 
@@ -351,6 +351,7 @@ struct GradientMapControls: View {
 
     private func swatch(_ title: String, _ value: AdjustmentColor, action: @escaping () -> Void) -> some View {
         let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        let colorLabel = L("Choose the") + " " + title.lowercased() + " " + L("color")
         return HStack(spacing: 8) {
             Button(action: action) {
                 shape
@@ -361,8 +362,8 @@ struct GradientMapControls: View {
                     .contentShape(shape)
             }
             .buttonStyle(.plain)
-            .help("Choose the \(title.lowercased()) color")
-            .accessibilityLabel("\(title) color")
+            .help(colorLabel)
+            .accessibilityLabel("\(title) " + L("color"))
             Text(title)
         }
     }

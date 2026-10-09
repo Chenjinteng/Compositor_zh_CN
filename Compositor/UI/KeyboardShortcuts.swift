@@ -154,7 +154,7 @@ final class ShortcutSettings {
         return chord(definition)
     }
     func show() {
-        panel.show(title: "Keyboard Shortcuts", content: KeyboardShortcutsSheet(settings: self))
+        panel.show(title: L("Keyboard Shortcuts"), content: KeyboardShortcutsSheet(settings: self))
     }
     func close() { panel.close() }
     func save(_ values: [String: ShortcutChord]) {

@@ -147,12 +147,18 @@ nonisolated enum HueSampleMode: String, CaseIterable, Sendable {
         case .remove: "minus.circle.fill"
         }
     }
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     var help: String {
+        let key: String
         switch self {
-        case .replace: "Click the image to center this range on that color"
-        case .add: "Click the image to widen this range to include that color"
-        case .remove: "Click the image to narrow this range to exclude that color"
+        case .replace: key = "Click the image to center this range on that color"
+        case .add: key = "Click the image to widen this range to include that color"
+        case .remove: key = "Click the image to narrow this range to exclude that color"
         }
+        return Bundle.main.localizedString(forKey: key, value: key, table: nil)
     }
 }
 

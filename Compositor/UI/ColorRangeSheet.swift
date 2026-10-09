@@ -15,32 +15,32 @@ struct ColorRangeSheet: View {
                         .background(edit?.effectiveMode == mode ? Color.accentColor.opacity(0.25) : .clear,
                                     in: RoundedRectangle(cornerRadius: 4))
                         .help(help(mode))
-                        .accessibilityLabel("\(mode.rawValue) color")
+                        .accessibilityLabel("\(mode.localizedName) " + L("color"))
                 }
                 Spacer()
             }
             preview
-            Text(edit?.hasColors == true ? "Shift-click adds a color, Option-click takes one away."
-                                         : "Click the image to pick the color to select.")
+            Text(edit?.hasColors == true ? L("Shift-click adds a color, Option-click takes one away.")
+                                         : L("Click the image to pick the color to select."))
                 .font(.callout).foregroundStyle(.secondary)
             HStack(spacing: 10) {
-                Text("Fuzziness").fixedSize()
+                Text(L("Fuzziness")).fixedSize()
                     .scrubbable(sensitivity: 1, value: fuzziness, range: ColorRangeEdit.fuzzinessRange)
                 Slider(value: fuzziness, in: ColorRangeEdit.fuzzinessRange)
-                TextField("Fuzziness", value: fuzziness, format: .number.precision(.fractionLength(0)))
+                TextField(L("Fuzziness"), value: fuzziness, format: .number.precision(.fractionLength(0)))
                     .frame(width: 48).textFieldStyle(.roundedBorder).multilineTextAlignment(.trailing)
             }
-            .help("How far a color may be from the picked ones and still be selected")
-            Toggle("Invert", isOn: Binding(get: { edit?.invert ?? false }, set: { edit?.invert = $0; session.updateColorRange() }))
-                .help("Select everything except those colors, such as all but a green screen")
+            .help(L("How far a color may be from the picked ones and still be selected"))
+            Toggle(L("Invert"), isOn: Binding(get: { edit?.invert ?? false }, set: { edit?.invert = $0; session.updateColorRange() }))
+                .help(L("Select everything except those colors, such as all but a green screen"))
             if let error = edit?.error {
                 Text(error).foregroundStyle(.orange).fixedSize(horizontal: false, vertical: true)
             }
             Divider()
             HStack {
-                Button("Cancel") { session.cancelColorRange() }.configuredNativeShortcut(.escape)
+                Button(L("Cancel")) { session.cancelColorRange() }.configuredNativeShortcut(.escape)
                 Spacer()
-                Button("OK") { session.commitColorRange() }
+                Button(L("OK")) { session.commitColorRange() }
                     .configuredNativeShortcut(.return).buttonStyle(.borderedProminent)
             }
         }
@@ -71,11 +71,13 @@ struct ColorRangeSheet: View {
     }
 
     private func help(_ mode: HueSampleMode) -> String {
+        let key: String
         switch mode {
-        case .replace: "Click the image to select that color"
-        case .add: "Click the image to add that color to the selection"
-        case .remove: "Click the image to take that color out of the selection"
+        case .replace: key = "Click the image to select that color"
+        case .add: key = "Click the image to add that color to the selection"
+        case .remove: key = "Click the image to take that color out of the selection"
         }
+        return Bundle.main.localizedString(forKey: key, value: key, table: nil)
     }
 
     /// The eyedropper, with a plus or minus badge for Add and Remove, as Hue/Saturation's.

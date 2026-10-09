@@ -1,8 +1,18 @@
 import AppKit
 
-nonisolated enum LevelsSample: String, CaseIterable { case black = "Black", gray = "Gray", white = "White" }
+nonisolated enum LevelsSample: String, CaseIterable {
+    case black = "Black", gray = "Gray", white = "White"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+}
 nonisolated enum LevelsAuto: String, CaseIterable {
     case contrast = "Contrast", color = "Color", neutral = "Color + neutral midtones"
+    /// User-visible name resolved through the String Catalog (rawValue is the catalog key).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     func settings(histogram: [[Double]]) -> LevelsSettings {
         var result = LevelsSettings()
         func endpoints(_ bins: [Double]) -> (Double, Double)? {

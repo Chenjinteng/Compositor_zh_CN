@@ -13884,6 +13884,366 @@
           }
         }
       }
+    },
+    "Color Range": {
+      "comment": "ColorRangeSheet panel title and Select > Color Range menu title.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "色彩范围"
+          }
+        }
+      }
+    },
+    "Selection": {
+      "comment": "Suffix for the Expand/Contract/Feather Selection dialog titles.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选区"
+          }
+        }
+      }
+    },
+    "Input black": {
+      "comment": "Levels sheet: minimum input tone label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入黑场"
+          }
+        }
+      }
+    },
+    "Input white": {
+      "comment": "Levels sheet: maximum input tone label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入白场"
+          }
+        }
+      }
+    },
+    "Output black": {
+      "comment": "Levels sheet: minimum output tone label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输出黑场"
+          }
+        }
+      }
+    },
+    "Output white": {
+      "comment": "Levels sheet: maximum output tone label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输出白场"
+          }
+        }
+      }
+    },
+    "Loading histogram…": {
+      "comment": "Levels sheet placeholder while the histogram is still being computed.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直方图加载中…"
+          }
+        }
+      }
+    },
+    "Click the original layer to set": {
+      "comment": "Levels sheet sample-eyedropper hint prefix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击原始图层设置"
+          }
+        }
+      }
+    },
+    "Click the eyedropper again to stop.": {
+      "comment": "Levels sheet sample-eyedropper hint suffix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再次点击吸管以停止。"
+          }
+        }
+      }
+    },
+    "Underlying pixels · alpha-weighted histogram": {
+      "comment": "Levels sheet caption when editing an adjustment layer (input comes from below).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "底层像素 · 基于 alpha 加权的直方图"
+          }
+        }
+      }
+    },
+    "Original pixels · alpha-weighted histogram": {
+      "comment": "Levels sheet caption when no selection is active.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "原始像素 · 基于 alpha 加权的直方图"
+          }
+        }
+      }
+    },
+    "Original pixels · selection and alpha-weighted histogram": {
+      "comment": "Levels sheet caption when a selection is active.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "原始像素 · 选区与 alpha 加权的直方图"
+          }
+        }
+      }
+    },
+    "Original": {
+      "comment": "Levels histogram a11y label prefix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "原始"
+          }
+        }
+      }
+    },
+    "histogram": {
+      "comment": "Levels histogram a11y label suffix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直方图"
+          }
+        }
+      }
+    },
+    "Linear histogram with automatic vertical scaling. Tall spikes may extend beyond the graph; all tones from 0 to 255 remain included.": {
+      "comment": "Levels histogram tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "线性直方图,自动纵向缩放。高峰可能超出图区,但所有 0–255 灰度都已计入。"
+          }
+        }
+      }
+    },
+    "Apply outside this range instead": {
+      "comment": "Hue/Saturation sheet invert-range toggle.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "反之,只作用于该范围之外"
+          }
+        }
+      }
+    },
+    "Targeted adjustment": {
+      "comment": "Hue/Saturation sheet hand-button a11y label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "定向调整"
+          }
+        }
+      }
+    },
+    "Targeted adjustment: drag on the image to change that color's saturation, or its hue with Command held": {
+      "comment": "Hue/Saturation sheet hand-button tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "定向调整:在图像上拖动以改变该颜色的饱和度;按住 Command 时改变其色相"
+          }
+        }
+      }
+    },
+    "Click the image to center this range on that color": {
+      "comment": "HueSampleMode.replace tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像把当前色域中心定位到该颜色"
+          }
+        }
+      }
+    },
+    "Click the image to widen this range to include that color": {
+      "comment": "HueSampleMode.add tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像扩大当前色域以包含该颜色"
+          }
+        }
+      }
+    },
+    "Click the image to narrow this range to exclude that color": {
+      "comment": "HueSampleMode.remove tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像收窄当前色域以排除该颜色"
+          }
+        }
+      }
+    },
+    "Shift-click adds a color, Option-click takes one away.": {
+      "comment": "ColorRangeSheet helper text when a color has already been picked.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按住 Shift 点击加入颜色;按住 Option 点击移除颜色。"
+          }
+        }
+      }
+    },
+    "Click the image to pick the color to select.": {
+      "comment": "ColorRangeSheet helper text when no color has been picked yet.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像选择要纳入选区的颜色。"
+          }
+        }
+      }
+    },
+    "How far a color may be from the picked ones and still be selected": {
+      "comment": "ColorRangeSheet Fuzziness slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色与所选颜色相差多远时仍被纳入选区"
+          }
+        }
+      }
+    },
+    "Select everything except those colors, such as all but a green screen": {
+      "comment": "ColorRangeSheet Invert toggle tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "反选:选中这些颜色之外的所有像素(例如除绿幕以外的全部)"
+          }
+        }
+      }
+    },
+    "Click the image to select that color": {
+      "comment": "ColorRangeSheet sampleMode.replace tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像选中该颜色"
+          }
+        }
+      }
+    },
+    "Click the image to add that color to the selection": {
+      "comment": "ColorRangeSheet sampleMode.add tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像把该颜色加入选区"
+          }
+        }
+      }
+    },
+    "Click the image to take that color out of the selection": {
+      "comment": "ColorRangeSheet sampleMode.remove tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击图像把该颜色从选区中移除"
+          }
+        }
+      }
+    },
+    "Click to add a point. Drag to adjust.": {
+      "comment": "CurvesControls helper text below the curve canvas.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击添加一个控制点;拖动以调整。"
+          }
+        }
+      }
+    },
+    "Choose the": {
+      "comment": "GradientMapControls swatch tooltip prefix ('Choose the shadows color' / 'Choose the highlights color').",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择"
+          }
+        }
+      }
     }
   },
   "version": "1.1"
