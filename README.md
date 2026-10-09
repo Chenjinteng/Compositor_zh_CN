@@ -3,6 +3,8 @@
 > 这是 [robbietilton/Compositor](https://github.com/robbietilton/Compositor) 的中文本地化分支。
 > 英文版本见 [README_en_US.md](README_en_US.md)。
 
+> ⚠️ **声明**:本 fork 为个人自用分支,汉化借助 AI 工具辅助完成,本人并非专业本地化或开发者。译文如有不准确或不够地道之处,欢迎提交 issue 反馈指正;不接受挑刺式批评。
+
 Adobe Photoshop 太贵,GIMP 等工具又不够顺手,我没法靠它们保持心流。这正是我打造 Compositor 的原因。
 
 目标是打造一款完全免费且开源的全功能图像编辑器。我过去常用 Photoshop 做合成与后期,所以 Compositor 的设计以这套工作流为核心 —— 提供创作像素级完美成图所需的全部工具。
