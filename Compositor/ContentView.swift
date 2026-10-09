@@ -261,7 +261,7 @@ struct ContentView: View {
             else {
                 filterPanel.onClose = { session.cancelFilter() }
                 let placement: FloatingPanelPlacement = session.filterEdit?.kind == .cameraRaw ? .dockedToMainWindowRight : .automatic
-                filterPanel.show(title: session.filterEdit?.kind.rawValue ?? "Filter", content: FilterSheet(session: session),
+                filterPanel.show(title: session.filterEdit?.kind.localizedName ?? L("Filter"), content: FilterSheet(session: session),
                                  placement: placement)
             }
         }

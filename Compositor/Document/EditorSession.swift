@@ -663,10 +663,12 @@ final class EditorSession {
 
     func addBlankLayer() {
         guard canEditLayers, let document else { return }
+        let format = Bundle.main.localizedString(forKey: "Layer %lld", value: "Layer %lld", table: nil)
+        let baseName = String(format: format, Int64(1))
         let names = Set(document.layers.map(\.name))
         var number = 1
-        while names.contains("Layer \(number)") { number += 1 }
-        var layer = ImageLayer(name: "Layer \(number)", blankSize: document.size)
+        while names.contains(String(format: format, Int64(number))) { number += 1 }
+        var layer = ImageLayer(name: String(format: format, Int64(number)), blankSize: document.size)
         layer.parentID = activeLayer?.isGroup == true ? activeLayerID : activeLayer?.parentID
         if let parent = layer.parentID { collapsedGroupIDs.remove(parent) }
         var insertion = document.layers.firstIndex { $0.id == activeLayerID }.map { $0 + 1 } ?? document.layers.count
@@ -982,14 +984,16 @@ final class EditorSession {
     /// A new canvas's layer: empty, or filled with the background color in full-size pixels, so painting on it keeps
     /// every pixel's detail.
     private static func firstLayer(size: CGSize, background: CGColor?) -> ImageLayer {
+        let layerFormat = Bundle.main.localizedString(forKey: "Layer %lld", value: "Layer %lld", table: nil)
+        let backgroundName = Bundle.main.localizedString(forKey: "Background", value: "Background", table: nil)
         guard let background, let context = try? BrushRaster.context(width: Int(size.width), height: Int(size.height), mask: false)
-        else { return ImageLayer(name: "Layer 1", blankSize: size) }
+        else { return ImageLayer(name: String(format: layerFormat, Int64(1)), blankSize: size) }
         context.setFillColor(background)
         context.fill(CGRect(origin: .zero, size: size))
         guard let image = context.makeImage(), let thumbnail = try? PixelAdjust.thumbnail(of: image)
-        else { return ImageLayer(name: "Layer 1", blankSize: size) }
-        var layer = ImageLayer(name: "Background", blankSize: size)
-        layer.asset = ImportedImage(image: image, thumbnail: thumbnail, name: "Background")
+        else { return ImageLayer(name: String(format: layerFormat, Int64(1)), blankSize: size) }
+        var layer = ImageLayer(name: backgroundName, blankSize: size)
+        layer.asset = ImportedImage(image: image, thumbnail: thumbnail, name: backgroundName)
         return layer
     }
 

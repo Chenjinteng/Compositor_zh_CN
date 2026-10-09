@@ -266,16 +266,28 @@ enum ColorPickerTarget: Equatable {
     case text(draftID: UUID?)
     /// A dialog's own color, such as Export JPEG's background for transparency. The dialog is told as it changes.
     case dialog(title: String)
+    /// The picker panel's title bar, resolved through the String Catalog. The "Color Picker" prefix
+    /// and each per-target label keep their English rawValue as the catalog key, so a fallback or a
+    /// missing translation still reads naturally.
     var title: String {
+        let prefix = Bundle.main.localizedString(forKey: "Color Picker", value: "Color Picker", table: nil)
+        let label: String
         switch self {
-        case .text: return "Color Picker (Text Color)"
-        case .effect(let kind): return "Color Picker (\(kind.rawValue) Color)"
-        case .palette(let background): return background ? "Color Picker (Background Color)" : "Color Picker (Foreground Color)"
-        case .gradientMap(let highlights): return highlights ? "Color Picker (Gradient Map Highlights)" : "Color Picker (Gradient Map Shadows)"
-        case .vignette: return "Color Picker (Vignette Color)"
-        case .dither(let light): return light ? "Color Picker (Dither Light Color)" : "Color Picker (Dither Dark Color)"
-        case .dialog(let title): return "Color Picker (\(title))"
+        case .text: label = Bundle.main.localizedString(forKey: "Text Color", value: "Text Color", table: nil)
+        case .effect(let kind): label = "\(kind.localizedName) " + Bundle.main.localizedString(forKey: "Color", value: "Color", table: nil)
+        case .palette(let background): label = background
+            ? Bundle.main.localizedString(forKey: "Background Color", value: "Background Color", table: nil)
+            : Bundle.main.localizedString(forKey: "Foreground Color", value: "Foreground Color", table: nil)
+        case .gradientMap(let highlights): label = highlights
+            ? Bundle.main.localizedString(forKey: "Gradient Map Highlights", value: "Gradient Map Highlights", table: nil)
+            : Bundle.main.localizedString(forKey: "Gradient Map Shadows", value: "Gradient Map Shadows", table: nil)
+        case .vignette: label = Bundle.main.localizedString(forKey: "Vignette Color", value: "Vignette Color", table: nil)
+        case .dither(let light): label = light
+            ? Bundle.main.localizedString(forKey: "Dither Light Color", value: "Dither Light Color", table: nil)
+            : Bundle.main.localizedString(forKey: "Dither Dark Color", value: "Dither Dark Color", table: nil)
+        case .dialog(let title): label = title
         }
+        return "\(prefix) (\(label))"
     }
 }
 

@@ -13296,6 +13296,594 @@
           }
         }
       }
+    },
+    "Content-Aware": {
+      "comment": "SpotHealingMode.contentAware rawValue (Spot Healing picker option).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内容识别"
+          }
+        }
+      }
+    },
+    "Create Texture": {
+      "comment": "SpotHealingMode.createTexture rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "创建纹理"
+          }
+        }
+      }
+    },
+    "Proximity Match": {
+      "comment": "SpotHealingMode.proximityMatch rawValue.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "近似匹配"
+          }
+        }
+      }
+    },
+    "Color Picker": {
+      "comment": "ColorPickerTarget.title prefix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色选择器"
+          }
+        }
+      }
+    },
+    "Text Color": {
+      "comment": "ColorPickerTarget.title for .text picker.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字颜色"
+          }
+        }
+      }
+    },
+    "Foreground Color": {
+      "comment": "ColorPickerTarget.title for foreground palette swatch picker.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前景颜色"
+          }
+        }
+      }
+    },
+    "Background Color": {
+      "comment": "ColorPickerTarget.title for background palette swatch picker.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "背景颜色"
+          }
+        }
+      }
+    },
+    "Vignette Color": {
+      "comment": "ColorPickerTarget.title for the Vignette filter's color.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暗角颜色"
+          }
+        }
+      }
+    },
+    "Gradient Map Highlights": {
+      "comment": "ColorPickerTarget.title for Gradient Map highlights endpoint.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "渐变映射高光"
+          }
+        }
+      }
+    },
+    "Gradient Map Shadows": {
+      "comment": "ColorPickerTarget.title for Gradient Map shadows endpoint.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "渐变映射阴影"
+          }
+        }
+      }
+    },
+    "Dither Light Color": {
+      "comment": "ColorPickerTarget.title for Dither two-colors light endpoint.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "抖动亮色"
+          }
+        }
+      }
+    },
+    "Dither Dark Color": {
+      "comment": "ColorPickerTarget.title for Dither two-colors dark endpoint.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "抖动暗色"
+          }
+        }
+      }
+    },
+    "Click the canvas to sample": {
+      "comment": "Color picker hint when not in a dialog (the canvas itself can be clicked).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击画布以取色"
+          }
+        }
+      }
+    },
+    "New color": {
+      "comment": "Color picker preview swatch accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新颜色"
+          }
+        }
+      }
+    },
+    "Saturation and brightness": {
+      "comment": "Color picker saturation/brightness field accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "饱和度与亮度"
+          }
+        }
+      }
+    },
+    "Hex color": {
+      "comment": "Color picker hex input field accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "十六进制颜色"
+          }
+        }
+      }
+    },
+    "degrees": {
+      "comment": "Hue strip accessibility value unit suffix.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "度"
+          }
+        }
+      }
+    },
+    "Text Size": {
+      "comment": "Dither filter (ASCII) character height in pixels.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字大小"
+          }
+        }
+      }
+    },
+    "Line Spacing": {
+      "comment": "Dither filter (Scanlines) CRT scan-line spacing.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "行距"
+          }
+        }
+      }
+    },
+    "Positive straightens lines that bow outward (barrel); negative, lines that bow inward (pincushion).": {
+      "comment": "Lens Correction filter helper text under the Remove Distortion slider.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正值修正外凸的桶形畸变;负值修正内凹的枕形畸变"
+          }
+        }
+      }
+    },
+    "Fill the selection using surrounding pixels from this layer.": {
+      "comment": "Content-Aware Fill filter sheet helper text.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用本图层周围像素填充选区。"
+          }
+        }
+      }
+    },
+    "Hide the background behind a layer mask, keeping the foreground subjects. The pixels stay, so the background can be painted back at any time.": {
+      "comment": "Remove Background filter sheet helper text.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用图层蒙版把背景藏起来,保留前景主体。像素没动,以后随时可以把背景画回来。"
+          }
+        }
+      }
+    },
+    "Basic is quick; Advanced refines the mask against the layer's own detail, for hair and fur": {
+      "comment": "Remove Background filter quality picker tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基础模式快速;高级模式结合图层细节细化蒙版,适合毛发和皮毛"
+          }
+        }
+      }
+    },
+    "Pull the mask onto the image's own edges, which recovers hair and fur": {
+      "comment": "Remove Background Refine slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将蒙版拉向图像自身的边缘,以恢复毛发和皮毛细节"
+          }
+        }
+      }
+    },
+    "Clear the haze that leaves background showing through thin areas": {
+      "comment": "Remove Background Contrast slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清除薄处透出背景的朦胧感"
+          }
+        }
+      }
+    },
+    "Shrink the mask to drop the rim of background color around the subject, or grow it": {
+      "comment": "Remove Background Shift Edge slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "收缩蒙版以去掉主体边缘的背景色,或扩展蒙版以保留更多"
+          }
+        }
+      }
+    },
+    "Color the result while keeping its tones, for a sepia or a cyanotype": {
+      "comment": "Black & White filter Tint toggle tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保留色调的同时给结果上色,可做棕褐色或蓝晒效果"
+          }
+        }
+      }
+    },
+    "Put each pixel's brightness back afterwards, so only the color moves": {
+      "comment": "Color Balance Preserve Luminosity toggle tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "调整后还原每个像素的亮度,只让颜色变化"
+          }
+        }
+      }
+    },
+    "Make each dithered pixel this many pixels across, for a chunky old-screen look": {
+      "comment": "Dither Pixel Size slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每个抖动像素的边长(像素),得到粗粒度的旧屏效果"
+          }
+        }
+      }
+    },
+    "The height of each line of characters": {
+      "comment": "Dither (ASCII) Text Size slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每行字符的高度"
+          }
+        }
+      }
+    },
+    "How far apart the screen's lines are": {
+      "comment": "Dither (Scanlines) Line Spacing slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描线之间的间距"
+          }
+        }
+      }
+    },
+    "Light blooming around the lines, like a CRT's phosphors": {
+      "comment": "Dither (Scanlines) Glow slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描线周围的光晕,类似 CRT 荧光粉"
+          }
+        }
+      }
+    },
+    "Break the lines into glowing beads": {
+      "comment": "Dither (Scanlines) Dots slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把扫描线断成一串发光的小珠"
+          }
+        }
+      }
+    },
+    "Make the lines waver sideways down the screen, like a CRT losing sync": {
+      "comment": "Dither (Scanlines) Wobble slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让扫描线沿屏幕向下左右抖动,像 CRT 失同步"
+          }
+        }
+      }
+    },
+    "The characters to draw with, in any order: each spot gets the one whose ink best matches its tone": {
+      "comment": "Dither (ASCII) Characters input tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用来绘制的字符(任意顺序):每个像素取墨色最接近其色调的那个字符"
+          }
+        }
+      }
+    },
+    "Tones per channel: 2 is pure black and white": {
+      "comment": "Dither Tones slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每通道的色调数:2 即纯黑与纯白"
+          }
+        }
+      }
+    },
+    "How much of each pixel's error spreads to its neighbors. Less gives flatter areas": {
+      "comment": "Dither Diffusion slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每个像素的误差向邻近像素扩散的程度,数值越小平坦区域越明显"
+          }
+        }
+      }
+    },
+    "More ink (darker) or less before dithering": {
+      "comment": "Dither Density slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "抖动前调高(更暗)或调低(更亮)的墨量"
+          }
+        }
+      }
+    },
+    "Draw each chunky pixel as a solid square, or as a round dot like a dot-matrix screen": {
+      "comment": "Dither Pixel Shape picker tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把粗粒度像素画成实心方块,或圆点(类似点阵屏)"
+          }
+        }
+      }
+    },
+    "Draw the marks for the light tones on the dark color, like a glowing screen": {
+      "comment": "Dither Light on Dark toggle tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在暗色背景上画亮调标记,像发光的屏幕"
+          }
+        }
+      }
+    },
+    "Choose the vignette color": {
+      "comment": "Vignette filter color swatch tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择暗角颜色"
+          }
+        }
+      }
+    },
+    "Choose the dark color": {
+      "comment": "Dither two-color dark swatch tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择暗色"
+          }
+        }
+      }
+    },
+    "Choose the light color": {
+      "comment": "Dither two-color light swatch tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择亮色"
+          }
+        }
+      }
+    },
+    "Blend the chosen color into the edges while keeping the center unchanged": {
+      "comment": "Vignette Amount slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将所选颜色混合到边缘,中央保持不变"
+          }
+        }
+      }
+    },
+    "Protect bright areas near the edge": {
+      "comment": "Vignette Highlights slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保护边缘附近的亮部区域"
+          }
+        }
+      }
+    },
+    "Applying…": {
+      "comment": "Filter sheet progress text while committing.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在应用…"
+          }
+        }
+      }
+    },
+    "Working…": {
+      "comment": "Filter sheet progress text while preparing the preview.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在处理…"
+          }
+        }
+      }
+    },
+    "Layer %lld": {
+      "comment": "Default name for a new blank layer ('图层 N'). Used by addBlankLayer() and File > New's first layer.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图层 %lld"
+          }
+        }
+      }
+    },
+    "Folder %lld": {
+      "comment": "Default name for a new group/folder ('文件夹 N'). Used by groupSelectedLayers() and addGroup().",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文件夹 %lld"
+          }
+        }
+      }
     }
   },
   "version": "1.1"
