@@ -61,7 +61,7 @@ struct CommandPaletteTests {
         }
         let listed = entries()
         let titles = Set(listed.map(\.title))
-        #expect(titles.contains("Filter › Gaussian Blur…") && !titles.contains("View › Command Palette…"))
+        #expect(titles.contains("Filter › Gaussian Blur…") && !titles.contains("View › Search Commands…"))
         // The test host has no document open, so Zoom In is disabled: listed, greyed.
         let zoom = try #require(listed.first { $0.title == "View › Zoom In" })
         #expect(!zoom.isEnabled)

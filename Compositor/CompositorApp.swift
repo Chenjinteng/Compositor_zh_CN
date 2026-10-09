@@ -96,15 +96,16 @@ struct CompositorApp: App {
                         Button("Check for Updates…") { applicationDelegate.updater.checkForUpdates(nil) }
                     }
                     CommandGroup(after: .toolbar) {
-                        Button("Command Palette…") {
+                        Button("Search Commands…") {
                             CommandPaletteController.shared.toggle(session: session, over: applicationDelegate.projects.window)
                         }
                         .configuredKeyboardShortcut("f", modifiers: [.command])
-                        // F, handled by the app rather than as the menu's key: a plain letter here would fire while
-                        // typing too.
-                        Toggle("Canvas Only (F)", isOn: Binding(get: { session.canvasOnly },
-                                                                set: { _ in applicationDelegate.toggleCanvasOnly() }))
-                            .disabled(session.document == nil)
+                        // A plain F, shown as menus show keys; the app hands an F meant for a text field to the field
+                        // first (see CompositorApplicationDelegate).
+                        Toggle("Toggle Fullscreen", isOn: Binding(get: { session.canvasOnly },
+                                                            set: { _ in applicationDelegate.toggleCanvasOnly() }))
+                            .keyboardShortcut("f", modifiers: [])
+                            .disabled(!session.canToggleCanvasOnly)
                         Divider()
                         // With a dialog's preview open (Export JPEG), these zoom that preview rather than the canvas.
                         Button("Fit Canvas") {
@@ -293,6 +294,12 @@ struct CompositorApp: App {
                     }
                 }
                 CommandMenu("Filter") {
+                    Button(session.lastFilter.map { "Last Filter: " + $0.rawValue } ?? "Last Filter") {
+                        Task { await session.repeatLastFilter() }
+                    }
+                        // ⌃⌘F, as in Photoshop; ⌘F is the command palette.
+                        .configuredKeyboardShortcut("f", modifiers: [.command, .control]).disabled(!session.canRepeatLastFilter)
+                    Divider()
                     ForEach(FilterKind.allCases.filter { $0 != .contentAwareFill && !$0.isImageAdjustment }, id: \.self) { kind in
                         Button(kind.localizedName + "…") { session.beginFilter(kind) }
                             .disabled(!(kind == .vignette ? session.canVignette : session.canAdjustColors) || session.hueSaturation != nil)

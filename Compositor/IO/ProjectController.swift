@@ -335,6 +335,8 @@ final class ProjectController {
         alert.addButton(withTitle: String(localized: "Save", comment: "Save-changes alert: save and continue."))
         alert.addButton(withTitle: String(localized: "Cancel", comment: "Save-changes alert: cancel and leave the document open."))
         alert.addButton(withTitle: String(localized: "Don’t Save", comment: "Save-changes alert: discard changes and close."))
+        let dontSaveButton = alert.buttons.last!
+        dontSaveButton.hasDestructiveAction = true
         let response = await show(alert)
         if response == .alertFirstButtonReturn { return await saveCurrent() }
         return response == .alertThirdButtonReturn

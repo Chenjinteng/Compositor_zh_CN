@@ -32,17 +32,17 @@ struct LayersPanel: View {
             Divider()
             // No spacing: each button's hit area supplies it (8 pt either side makes the 16 pt gap).
             HStack(spacing: 0) {
-                Button { session.addBlankLayer() } label: { Image(systemName: "plus.square").footerHitArea() }
+                Button { session.addBlankLayer() } label: { FooterIcon(systemName: "plus.square") }
                     .help(L("New blank layer (⇧⌘N)")).accessibilityLabel(L("New blank layer"))
                     .accessibilityIdentifier("addBlankLayer").disabled(!session.canEditLayers)
-                Button { session.groupSelectedLayers() } label: { Image(systemName: "folder.badge.plus").footerHitArea() }
+                Button { session.groupSelectedLayers() } label: { FooterIcon(systemName: "folder.badge.plus") }
                     .help(L("Group selected layers (⌘G)")).accessibilityLabel(L("New folder")).disabled(!session.canEditLayers)
                 LayerMaskMenu(session: session)
                 Menu {
                     ForEach(LayerEffectKind.allCases, id: \.self) { kind in
                         Button(kind.localizedName + "…") { session.addEffect(kind) }
                     }
-                } label: { Image(systemName: "sparkles").footerHitArea() }
+                } label: { FooterIcon(systemName: "sparkles") }
                     .menuStyle(.borderlessButton).fixedSize()
                     .help(L("Add layer effect")).accessibilityLabel(L("Layer effects"))
                     .accessibilityIdentifier("layerEffects").disabled(!session.canEditEffects)
@@ -50,10 +50,10 @@ struct LayersPanel: View {
                     ForEach(AdjustmentKind.allCases, id: \.self) { kind in
                         Button(kind.localizedName) { session.addAdjustment(kind) }
                     }
-                } label: { Image(systemName: "circle.lefthalf.filled").footerHitArea() }
+                } label: { FooterIcon(systemName: "circle.lefthalf.filled") }
                     .menuStyle(.borderlessButton).fixedSize().help(L("New adjustment layer")).disabled(!session.canEditLayers)
                 Spacer()
-                Button { session.deleteLayerOrMask() } label: { Image(systemName: "trash").footerHitArea() }
+                Button { session.deleteLayerOrMask() } label: { FooterIcon(systemName: "trash") }
                     .help(layersDeleteHelp(session: session))
                     .accessibilityLabel(layersDeleteHelp(session: session))
                     .accessibilityIdentifier("deleteLayer")
@@ -69,6 +69,21 @@ struct LayersPanel: View {
         }
     }
 
+}
+
+/// A footer button's icon: full strength when the button can be used, and as dim as the footer's menus (Effects,
+/// Adjustments) when it can't. A plain button with its own color doesn't dim when disabled, so the footer looked
+/// uneven, some disabled icons barely fading and others nearly gone.
+struct FooterIcon: View {
+    let systemName: String
+    @Environment(\.isEnabled) private var isEnabled
+    var body: some View {
+        // Disabled, as dim as the menus' icons (a quarter-strength white, measured): SwiftUI halves a disabled
+        // button's own color again, so the button asks for half-strength white.
+        Image(systemName: systemName)
+            .foregroundStyle(isEnabled ? AnyShapeStyle(.primary) : AnyShapeStyle(Color.white.opacity(0.5)))
+            .footerHitArea()
+    }
 }
 
 extension View {
