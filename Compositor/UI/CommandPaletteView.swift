@@ -71,8 +71,13 @@ struct CommandPaletteView: View {
 @MainActor
 final class CommandPaletteController {
     static let shared = CommandPaletteController()
-    /// Left out of the palette: the palette itself and the system menus.
-    static let skipped: Set<String> = ["Search Commands…", "Window", "Help", "Services"]
+    /// Left out of the palette: the palette itself and the system menus. The set is built at static
+    /// init by looking each key up through the String Catalog (zh-Hans on this fork), so the
+    /// skip list matches whatever NSMenuItem titles SwiftUI has actually resolved to.
+    static let skipped: Set<String> = {
+        let keys = ["Search Commands…", "Window", "Help", "Services"]
+        return Set(keys.map { Bundle.main.localizedString(forKey: $0, value: $0, table: nil) })
+    }()
 
     private(set) var panel: PalettePanel?
     private weak var window: NSWindow?

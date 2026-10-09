@@ -96,13 +96,13 @@ struct CompositorApp: App {
                         Button("Check for Updates…") { applicationDelegate.updater.checkForUpdates(nil) }
                     }
                     CommandGroup(after: .toolbar) {
-                        Button("Search Commands…") {
+                        Button(L("Search Commands…")) {
                             CommandPaletteController.shared.toggle(session: session, over: applicationDelegate.projects.window)
                         }
                         .configuredKeyboardShortcut("f", modifiers: [.command])
                         // A plain F, shown as menus show keys; the app hands an F meant for a text field to the field
                         // first (see CompositorApplicationDelegate).
-                        Toggle("Toggle Fullscreen", isOn: Binding(get: { session.canvasOnly },
+                        Toggle(L("Toggle Fullscreen"), isOn: Binding(get: { session.canvasOnly },
                                                             set: { _ in applicationDelegate.toggleCanvasOnly() }))
                             .keyboardShortcut("f", modifiers: [])
                             .disabled(!session.canToggleCanvasOnly)
@@ -294,7 +294,7 @@ struct CompositorApp: App {
                     }
                 }
                 CommandMenu("Filter") {
-                    Button(session.lastFilter.map { "Last Filter: " + $0.rawValue } ?? "Last Filter") {
+                    Button(session.lastFilter.map { String(format: String(localized: "Last Filter: %@", comment: "Filter menu title showing which filter Last Filter will run again."), $0.localizedName) } ?? L("Last Filter")) {
                         Task { await session.repeatLastFilter() }
                     }
                         // ⌃⌘F, as in Photoshop; ⌘F is the command palette.

@@ -2078,31 +2078,31 @@
       }
     },
     "Create a canvas or import an image.": {
-      "comment": "Layers panel: empty state body when there is no document.",
+      "comment": "Layers panel empty state when no document is open.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "新建画布或导入图像。"
+            "value": "新建画布或导入图像"
           }
         }
       }
     },
     "Import an image or add a blank layer.": {
-      "comment": "Layers panel: empty state body when there is a document but no layers.",
+      "comment": "Layers panel empty state when a document is open but has no layers.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "导入图像或新增空白图层。"
+            "value": "导入图像或新建空白图层"
           }
         }
       }
     },
     "New blank layer (⇧⌘N)": {
-      "comment": "Layers panel footer: tooltip for the add-blank-layer button.",
+      "comment": "Layers panel add-blank-layer button tooltip (shows the ⇧⌘N shortcut).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -2126,13 +2126,13 @@
       }
     },
     "Group selected layers (⌘G)": {
-      "comment": "Layers panel footer: tooltip for the group-layers button.",
+      "comment": "Layers panel group-selected-layers button tooltip (shows the ⌘G shortcut).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将选中图层分组(⌘G)"
+            "value": "将所选图层编组(⌘G)"
           }
         }
       }
@@ -2222,13 +2222,13 @@
       }
     },
     "Delete selected effect": {
-      "comment": "Layers panel footer: tooltip on the trash button when an effect is selected.",
+      "comment": "Layers panel trash button help/a11y with an effect selected.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "删除选中的效果"
+            "value": "删除所选效果"
           }
         }
       }
@@ -2246,25 +2246,25 @@
       }
     },
     "Delete selected layers": {
-      "comment": "Layers panel footer: tooltip on the trash button when multiple layers are selected.",
+      "comment": "Layers panel trash button help/a11y with multiple layers selected.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "删除选中的图层"
+            "value": "删除所选图层"
           }
         }
       }
     },
     "Delete selected layer": {
-      "comment": "Layers panel footer: tooltip on the trash button when a single layer is selected.",
+      "comment": "Layers panel trash button help/a11y with a single layer selected.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "删除选中的图层"
+            "value": "删除所选图层"
           }
         }
       }
@@ -2666,13 +2666,13 @@
       }
     },
     "Expand or collapse folder": {
-      "comment": "Layers panel: accessibility description on the group disclosure chevron.",
+      "comment": "Native layer list folder disclosure triangle accessibility label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "展开或收起文件夹"
+            "value": "展开或折叠文件夹"
           }
         }
       }
@@ -2750,25 +2750,25 @@
       }
     },
     "Text · Double-click to edit": {
-      "comment": "Layers panel: subtitle shown for a text layer's row.",
+      "comment": "Native layer list dimensions cell for text layers.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "文字·双击编辑"
+            "value": "文字 · 双击编辑"
           }
         }
       }
     },
     "Adjustment · Double-click to edit": {
-      "comment": "Layers panel: subtitle shown for an adjustment layer's row.",
+      "comment": "Native layer list dimensions cell for adjustment layers.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "调整·双击编辑"
+            "value": "调整图层 · 双击编辑"
           }
         }
       }
@@ -3098,19 +3098,19 @@
       }
     },
     "Loading histogram…": {
-      "comment": "Levels sheet: placeholder shown while the histogram is still computing.",
+      "comment": "Levels sheet placeholder while the histogram is still being computed.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "正在加载直方图…"
+            "value": "直方图加载中…"
           }
         }
       }
     },
     "Input black": {
-      "comment": "Levels sheet: input range black field label.",
+      "comment": "Levels sheet: minimum input tone label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3134,7 +3134,7 @@
       }
     },
     "Input white": {
-      "comment": "Levels sheet: input range white field label.",
+      "comment": "Levels sheet: maximum input tone label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3146,7 +3146,7 @@
       }
     },
     "Output black": {
-      "comment": "Levels sheet: output range black field label.",
+      "comment": "Levels sheet: minimum output tone label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3158,7 +3158,7 @@
       }
     },
     "Output white": {
-      "comment": "Levels sheet: output range white field label.",
+      "comment": "Levels sheet: maximum output tone label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3230,7 +3230,7 @@
       }
     },
     "Underlying pixels · alpha-weighted histogram": {
-      "comment": "Levels sheet: footer when an adjustment layer is being edited.",
+      "comment": "Levels sheet caption when editing an adjustment layer (input comes from below).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3242,7 +3242,7 @@
       }
     },
     "Original pixels · alpha-weighted histogram": {
-      "comment": "Levels sheet: footer when the underlying pixels are the document pixels and no selection.",
+      "comment": "Levels sheet caption when no selection is active.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -3254,13 +3254,13 @@
       }
     },
     "Original pixels · selection and alpha-weighted histogram": {
-      "comment": "Levels sheet: footer when there is a selection.",
+      "comment": "Levels sheet caption when a selection is active.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "原始像素 · 基于选区和 alpha 加权的直方图"
+            "value": "原始像素 · 选区与 alpha 加权的直方图"
           }
         }
       }
@@ -3278,13 +3278,13 @@
       }
     },
     "Click to add a point. Drag to adjust.": {
-      "comment": "Curves sheet: hint shown under the curves canvas.",
+      "comment": "CurvesControls helper text below the curve canvas.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点击添加控制点。拖动调整。"
+            "value": "点击添加一个控制点;拖动以调整。"
           }
         }
       }
@@ -3338,13 +3338,13 @@
       }
     },
     "Apply outside this range instead": {
-      "comment": "Color range sheet invert range toggle.",
+      "comment": "Hue/Saturation sheet invert-range toggle.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "改为作用于范围之外"
+            "value": "反之,只作用于该范围之外"
           }
         }
       }
@@ -3386,7 +3386,7 @@
       }
     },
     "Targeted adjustment": {
-      "comment": "Hue/Saturation sheet: accessibility label for the targeted range toggle.",
+      "comment": "Hue/Saturation sheet hand-button a11y label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -4298,7 +4298,7 @@
       }
     },
     "Input and output of the selected curve point.": {
-      "comment": "Camera Raw curve read-out tooltip.",
+      "comment": "Camera Raw Curve > Point > selected-point readout tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -4694,7 +4694,7 @@
       }
     },
     "%lld°  %lld": {
-      "comment": "Camera Raw grading wheel: hue and saturation read-out.",
+      "comment": "Camera Raw Color Grading > wheel readout (hue, saturation).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -5150,7 +5150,7 @@
       }
     },
     "Original": {
-      "comment": "DitherReference.original rawValue. Also Camera Raw reference channel. Also Crop ratio Original.",
+      "comment": "Levels histogram a11y label prefix.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -5294,7 +5294,7 @@
       }
     },
     "Click the canvas to sample": {
-      "comment": "Color picker: eyedropper hint.",
+      "comment": "Color picker hint when not in a dialog (the canvas itself can be clicked).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -5306,7 +5306,7 @@
       }
     },
     "Saturation and brightness": {
-      "comment": "Color picker: 2D picker accessibility label.",
+      "comment": "Color picker saturation/brightness field accessibility label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -5318,19 +5318,19 @@
       }
     },
     "Hex color": {
-      "comment": "Color picker: hex field accessibility label.",
+      "comment": "Color picker hex input field accessibility label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hex 颜色值"
+            "value": "十六进制颜色"
           }
         }
       }
     },
     "New color": {
-      "comment": "Color picker: new swatch accessibility label.",
+      "comment": "Color picker preview swatch accessibility label.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -6146,25 +6146,25 @@
       }
     },
     "Hide the background behind a layer mask, keeping the foreground subjects. The pixels stay, so the background can be painted back at any time.": {
-      "comment": "Color Range: Remove Background hint (already).",
+      "comment": "Remove Background filter sheet helper text.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "隐藏图层蒙版后的背景,保留前景主体。像素保持不变,背景可随时重绘。"
+            "value": "用图层蒙版把背景藏起来,保留前景主体。像素没动,以后随时可以把背景画回来。"
           }
         }
       }
     },
     "Fill the selection using surrounding pixels from this layer.": {
-      "comment": "Color Range sheet: Content-Aware Fill hint.",
+      "comment": "Content-Aware Fill filter sheet helper text.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "用此图层周围像素填充选区。"
+            "value": "使用本图层周围像素填充选区。"
           }
         }
       }
@@ -8174,7 +8174,7 @@
       }
     },
     "Working…": {
-      "comment": "Working indicator.",
+      "comment": "Filter sheet progress text while preparing the preview.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -8186,7 +8186,7 @@
       }
     },
     "Applying…": {
-      "comment": "Applying indicator.",
+      "comment": "Filter sheet progress text while committing.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -8930,37 +8930,37 @@
       }
     },
     "Light blooming around the lines, like a CRT's phosphors": {
-      "comment": "Camera Raw: halation tooltip.",
+      "comment": "Dither (Scanlines) Glow slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在曲线周围像 CRT 荧光屏那样发光"
+            "value": "扫描线周围的光晕,类似 CRT 荧光粉"
           }
         }
       }
     },
     "Break the lines into glowing beads": {
-      "comment": "Camera Raw: grain style 'beads' option.",
+      "comment": "Dither (Scanlines) Dots slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将线条打散成发光颗粒"
+            "value": "把扫描线断成一串发光的小珠"
           }
         }
       }
     },
     "Draw the marks for the light tones on the dark color, like a glowing screen": {
-      "comment": "Camera Raw: glow style 'screen' option.",
+      "comment": "Dither Light on Dark toggle tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在暗底上画亮调标记,像发光的屏幕"
+            "value": "在暗色背景上画亮调标记,像发光的屏幕"
           }
         }
       }
@@ -9182,13 +9182,13 @@
       }
     },
     "Positive straightens lines that bow outward (barrel); negative, lines that bow inward (pincushion).": {
-      "comment": "Camera Raw: distortion tooltip.",
+      "comment": "Lens Correction filter helper text under the Remove Distortion slider.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "正值校正桶形畸变(向外弯);负值校正枕形畸变(向内弯)。"
+            "value": "正值修正外凸的桶形畸变;负值修正内凹的枕形畸变"
           }
         }
       }
@@ -9266,61 +9266,61 @@
       }
     },
     "How much of each pixel's error spreads to its neighbors. Less gives flatter areas": {
-      "comment": "Filter Dither: error diffusion.",
+      "comment": "Dither Diffusion slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "各像素误差向相邻像素扩散的比例,越小区域越平滑。"
+            "value": "每个像素的误差向邻近像素扩散的程度,数值越小平坦区域越明显"
           }
         }
       }
     },
     "Make each dithered pixel this many pixels across, for a chunky old-screen look": {
-      "comment": "Filter Dither: cell size tooltip.",
+      "comment": "Dither Pixel Size slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "让每个抖动像素跨这么多像素,营造粗糙的老屏幕效果"
+            "value": "每个抖动像素的边长(像素),得到粗粒度的旧屏效果"
           }
         }
       }
     },
     "More ink (darker) or less before dithering": {
-      "comment": "Filter Dither: amount tooltip.",
+      "comment": "Dither Density slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "抖动前墨水更多(更暗)或更少"
+            "value": "抖动前调高(更暗)或调低(更亮)的墨量"
           }
         }
       }
     },
     "Draw each chunky pixel as a solid square, or as a round dot like a dot-matrix screen": {
-      "comment": "Filter Dither: shape tooltip.",
+      "comment": "Dither Pixel Shape picker tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将每个块状像素画为实心方块,或像点阵屏那样的圆点"
+            "value": "把粗粒度像素画成实心方块,或圆点(类似点阵屏)"
           }
         }
       }
     },
     "Make the lines waver sideways down the screen, like a CRT losing sync": {
-      "comment": "Filter Bloom: CRT wobble tooltip.",
+      "comment": "Dither (Scanlines) Wobble slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "让线条像 CRT 失同步那样在屏幕两侧抖动"
+            "value": "让扫描线沿屏幕向下左右抖动,像 CRT 失同步"
           }
         }
       }
@@ -9422,31 +9422,31 @@
       }
     },
     "Choose the dark color": {
-      "comment": "Curves dark anchor picker.",
+      "comment": "Dither two-color dark swatch tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "选择深色"
+            "value": "选择暗色"
           }
         }
       }
     },
     "Choose the light color": {
-      "comment": "Curves light anchor picker.",
+      "comment": "Dither two-color light swatch tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "选择浅色"
+            "value": "选择亮色"
           }
         }
       }
     },
     "Choose the vignette color": {
-      "comment": "Vignette color picker.",
+      "comment": "Vignette filter color swatch tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -9470,13 +9470,13 @@
       }
     },
     "Linear histogram with automatic vertical scaling. Tall spikes may extend beyond the graph; all tones from 0 to 255 remain included.": {
-      "comment": "Camera Raw histogram tooltip.",
+      "comment": "Levels histogram tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "线性直方图,自动缩放纵轴。高尖峰可能超出图表;0 到 255 的所有色调仍包含在内。"
+            "value": "线性直方图,自动纵向缩放。高峰可能超出图区,但所有 0–255 灰度都已计入。"
           }
         }
       }
@@ -9494,13 +9494,13 @@
       }
     },
     "Tones per channel: 2 is pure black and white": {
-      "comment": "Camera Raw per-channel histogram tooltip.",
+      "comment": "Dither Tones slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "每通道的色调:2 为纯黑和纯白"
+            "value": "每通道的色调数:2 即纯黑与纯白"
           }
         }
       }
@@ -9554,73 +9554,73 @@
       }
     },
     "Click the image to add that color to the selection": {
-      "comment": "Color Range: add color to selection hint.",
+      "comment": "ColorRangeSheet sampleMode.add tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点击图像将该颜色加入选区"
+            "value": "点击图像把该颜色加入选区"
           }
         }
       }
     },
     "Click the image to select that color": {
-      "comment": "Color Range: select color hint.",
+      "comment": "ColorRangeSheet sampleMode.replace tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点击图像选择该颜色"
+            "value": "点击图像选中该颜色"
           }
         }
       }
     },
     "Click the image to take that color out of the selection": {
-      "comment": "Color Range: remove color from selection hint.",
+      "comment": "ColorRangeSheet sampleMode.remove tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点击图像从选区中移除该颜色"
+            "value": "点击图像把该颜色从选区中移除"
           }
         }
       }
     },
     "Click the image to pick the color to select.": {
-      "comment": "Color Range: pick color hint.",
+      "comment": "ColorRangeSheet helper text when no color has been picked yet.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点击图像选取要选择的颜色。"
+            "value": "点击图像选择要纳入选区的颜色。"
           }
         }
       }
     },
     "Select everything except those colors, such as all but a green screen": {
-      "comment": "Color Range: invert scope hint.",
+      "comment": "ColorRangeSheet Invert toggle tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "选择除这些颜色之外的所有内容,例如绿幕之外的全部内容"
+            "value": "反选:选中这些颜色之外的所有像素(例如除绿幕以外的全部)"
           }
         }
       }
     },
     "How far a color may be from the picked ones and still be selected": {
-      "comment": "Color Range: fuzziness tooltip.",
+      "comment": "ColorRangeSheet Fuzziness slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "颜色与所选颜色的允许差距,在此范围内即被选中"
+            "value": "颜色与所选颜色相差多远时仍被纳入选区"
           }
         }
       }
@@ -9650,43 +9650,43 @@
       }
     },
     "Shrink the mask to drop the rim of background color around the subject, or grow it": {
-      "comment": "Object select: shift edge tooltip.",
+      "comment": "Remove Background Shift Edge slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "向内收缩以去掉主体边缘的背景色环,或向外扩展"
+            "value": "收缩蒙版以去掉主体边缘的背景色,或扩展蒙版以保留更多"
           }
         }
       }
     },
     "Pull the mask onto the image's own edges, which recovers hair and fur": {
-      "comment": "Remove Background: pull mask hint.",
+      "comment": "Remove Background Refine slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将蒙版拉到图像本身的边缘,可恢复头发和毛发细节"
+            "value": "将蒙版拉向图像自身的边缘,以恢复毛发和皮毛细节"
           }
         }
       }
     },
     "Basic is quick; Advanced refines the mask against the layer's own detail, for hair and fur": {
-      "comment": "Remove Background: quality choice tooltip.",
+      "comment": "Remove Background filter quality picker tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Basic 速度快;Advanced 针对图层自身细节细化蒙版,适合头发和毛发"
+            "value": "基础模式快速;高级模式结合图层细节细化蒙版,适合毛发和皮毛"
           }
         }
       }
     },
     "Protect bright areas near the edge": {
-      "comment": "Vignette: highlight priority explanation.",
+      "comment": "Vignette Highlights slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -9710,25 +9710,25 @@
       }
     },
     "Color the result while keeping its tones, for a sepia or a cyanotype": {
-      "comment": "Color filter: colorize explanation (already).",
+      "comment": "Black & White filter Tint toggle tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "保持明暗关系的同时为结果上色,可做棕褐色或蓝晒效果"
+            "value": "保留色调的同时给结果上色,可做棕褐色或蓝晒效果"
           }
         }
       }
     },
     "Put each pixel's brightness back afterwards, so only the color moves": {
-      "comment": "Color filter: preserve luminosity.",
+      "comment": "Color Balance Preserve Luminosity toggle tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "之后恢复每像素的亮度,只改变颜色"
+            "value": "调整后还原每个像素的亮度,只让颜色变化"
           }
         }
       }
@@ -10130,25 +10130,25 @@
       }
     },
     "How far apart the screen's lines are": {
-      "comment": "Camera Raw CRT: line distance.",
+      "comment": "Dither (Scanlines) Line Spacing slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "屏幕线的间距"
+            "value": "扫描线之间的间距"
           }
         }
       }
     },
     "Shift-click adds a color, Option-click takes one away.": {
-      "comment": "Color Range: modifier hint.",
+      "comment": "ColorRangeSheet helper text when a color has already been picked.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shift-点击添加颜色,Option-点击移除颜色"
+            "value": "按住 Shift 点击加入颜色;按住 Option 点击移除颜色。"
           }
         }
       }
@@ -10310,25 +10310,25 @@
       }
     },
     "Blend the chosen color into the edges while keeping the center unchanged": {
-      "comment": "Vignette: color blend explanation.",
+      "comment": "Vignette Amount slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将所选颜色融入边缘,中心不变。"
+            "value": "将所选颜色混合到边缘,中央保持不变"
           }
         }
       }
     },
     "Clear the haze that leaves background showing through thin areas": {
-      "comment": "Camera Raw dehaze: hint.",
+      "comment": "Remove Background Contrast slider tooltip.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "清除穿过薄区域的雾霾"
+            "value": "清除薄处透出背景的朦胧感"
           }
         }
       }
@@ -10778,7 +10778,7 @@
       }
     },
     "Atkinson (Classic Mac)": {
-      "comment": "DitherStyle.atkinson rawValue.",
+      "comment": "DitherStyle.atkinson rawValue (error diffusion dither used by classic Mac OS).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -10850,7 +10850,7 @@
       }
     },
     "Scanlines (CRT)": {
-      "comment": "DitherStyle.scanlines rawValue.",
+      "comment": "DitherStyle.scanlines rawValue (CRT scanline dither).",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
@@ -10862,25 +10862,25 @@
       }
     },
     "Square": {
-      "comment": "DitherShape.square rawValue. Also CanvasSizeAnchor indicator.",
+      "comment": "DitherPixelShape.square rawValue.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "方形"
+            "value": "方块"
           }
         }
       }
     },
     "Dot": {
-      "comment": "DitherShape.dot rawValue.",
+      "comment": "DitherPixelShape.dot rawValue.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "点状"
+            "value": "圆点"
           }
         }
       }
@@ -12889,126 +12889,6 @@
         }
       }
     },
-    "Create a canvas or import an image.": {
-      "comment": "Layers panel empty state when no document is open.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新建画布或导入图像"
-          }
-        }
-      }
-    },
-    "Import an image or add a blank layer.": {
-      "comment": "Layers panel empty state when a document is open but has no layers.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "导入图像或新建空白图层"
-          }
-        }
-      }
-    },
-    "New blank layer (⇧⌘N)": {
-      "comment": "Layers panel add-blank-layer button tooltip (shows the ⇧⌘N shortcut).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新建空白图层(⇧⌘N)"
-          }
-        }
-      }
-    },
-    "Group selected layers (⌘G)": {
-      "comment": "Layers panel group-selected-layers button tooltip (shows the ⌘G shortcut).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "将所选图层编组(⌘G)"
-          }
-        }
-      }
-    },
-    "Delete selected effect": {
-      "comment": "Layers panel trash button help/a11y with an effect selected.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除所选效果"
-          }
-        }
-      }
-    },
-    "Delete selected layers": {
-      "comment": "Layers panel trash button help/a11y with multiple layers selected.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除所选图层"
-          }
-        }
-      }
-    },
-    "Delete selected layer": {
-      "comment": "Layers panel trash button help/a11y with a single layer selected.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除所选图层"
-          }
-        }
-      }
-    },
-    "Expand or collapse folder": {
-      "comment": "Native layer list folder disclosure triangle accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "展开或折叠文件夹"
-          }
-        }
-      }
-    },
-    "Text · Double-click to edit": {
-      "comment": "Native layer list dimensions cell for text layers.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "文字 · 双击编辑"
-          }
-        }
-      }
-    },
-    "Adjustment · Double-click to edit": {
-      "comment": "Native layer list dimensions cell for adjustment layers.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "调整图层 · 双击编辑"
-          }
-        }
-      }
-    },
     "Click to select; double-click to edit; Option-drag to copy": {
       "comment": "Native layer list effect-row tooltip (effect name follows).",
       "extractionState": "manual",
@@ -13041,18 +12921,6 @@
           "stringUnit": {
             "state": "translated",
             "value": " 颜色"
-          }
-        }
-      }
-    },
-    "Atkinson (Classic Mac)": {
-      "comment": "DitherStyle.atkinson rawValue (error diffusion dither used by classic Mac OS).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atkinson(经典 Mac)"
           }
         }
       }
@@ -13101,42 +12969,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bayer 8 × 8"
-          }
-        }
-      }
-    },
-    "Scanlines (CRT)": {
-      "comment": "DitherStyle.scanlines rawValue (CRT scanline dither).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "扫描线(CRT)"
-          }
-        }
-      }
-    },
-    "Square": {
-      "comment": "DitherPixelShape.square rawValue.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "方块"
-          }
-        }
-      }
-    },
-    "Dot": {
-      "comment": "DitherPixelShape.dot rawValue.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "圆点"
           }
         }
       }
@@ -13441,54 +13273,6 @@
         }
       }
     },
-    "Click the canvas to sample": {
-      "comment": "Color picker hint when not in a dialog (the canvas itself can be clicked).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击画布以取色"
-          }
-        }
-      }
-    },
-    "New color": {
-      "comment": "Color picker preview swatch accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新颜色"
-          }
-        }
-      }
-    },
-    "Saturation and brightness": {
-      "comment": "Color picker saturation/brightness field accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "饱和度与亮度"
-          }
-        }
-      }
-    },
-    "Hex color": {
-      "comment": "Color picker hex input field accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "十六进制颜色"
-          }
-        }
-      }
-    },
     "degrees": {
       "comment": "Hue strip accessibility value unit suffix.",
       "extractionState": "manual",
@@ -13525,126 +13309,6 @@
         }
       }
     },
-    "Positive straightens lines that bow outward (barrel); negative, lines that bow inward (pincushion).": {
-      "comment": "Lens Correction filter helper text under the Remove Distortion slider.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正值修正外凸的桶形畸变;负值修正内凹的枕形畸变"
-          }
-        }
-      }
-    },
-    "Fill the selection using surrounding pixels from this layer.": {
-      "comment": "Content-Aware Fill filter sheet helper text.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "使用本图层周围像素填充选区。"
-          }
-        }
-      }
-    },
-    "Hide the background behind a layer mask, keeping the foreground subjects. The pixels stay, so the background can be painted back at any time.": {
-      "comment": "Remove Background filter sheet helper text.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "用图层蒙版把背景藏起来,保留前景主体。像素没动,以后随时可以把背景画回来。"
-          }
-        }
-      }
-    },
-    "Basic is quick; Advanced refines the mask against the layer's own detail, for hair and fur": {
-      "comment": "Remove Background filter quality picker tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "基础模式快速;高级模式结合图层细节细化蒙版,适合毛发和皮毛"
-          }
-        }
-      }
-    },
-    "Pull the mask onto the image's own edges, which recovers hair and fur": {
-      "comment": "Remove Background Refine slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "将蒙版拉向图像自身的边缘,以恢复毛发和皮毛细节"
-          }
-        }
-      }
-    },
-    "Clear the haze that leaves background showing through thin areas": {
-      "comment": "Remove Background Contrast slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "清除薄处透出背景的朦胧感"
-          }
-        }
-      }
-    },
-    "Shrink the mask to drop the rim of background color around the subject, or grow it": {
-      "comment": "Remove Background Shift Edge slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "收缩蒙版以去掉主体边缘的背景色,或扩展蒙版以保留更多"
-          }
-        }
-      }
-    },
-    "Color the result while keeping its tones, for a sepia or a cyanotype": {
-      "comment": "Black & White filter Tint toggle tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "保留色调的同时给结果上色,可做棕褐色或蓝晒效果"
-          }
-        }
-      }
-    },
-    "Put each pixel's brightness back afterwards, so only the color moves": {
-      "comment": "Color Balance Preserve Luminosity toggle tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "调整后还原每个像素的亮度,只让颜色变化"
-          }
-        }
-      }
-    },
-    "Make each dithered pixel this many pixels across, for a chunky old-screen look": {
-      "comment": "Dither Pixel Size slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "每个抖动像素的边长(像素),得到粗粒度的旧屏效果"
-          }
-        }
-      }
-    },
     "The height of each line of characters": {
       "comment": "Dither (ASCII) Text Size slider tooltip.",
       "extractionState": "manual",
@@ -13657,54 +13321,6 @@
         }
       }
     },
-    "How far apart the screen's lines are": {
-      "comment": "Dither (Scanlines) Line Spacing slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "扫描线之间的间距"
-          }
-        }
-      }
-    },
-    "Light blooming around the lines, like a CRT's phosphors": {
-      "comment": "Dither (Scanlines) Glow slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "扫描线周围的光晕,类似 CRT 荧光粉"
-          }
-        }
-      }
-    },
-    "Break the lines into glowing beads": {
-      "comment": "Dither (Scanlines) Dots slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "把扫描线断成一串发光的小珠"
-          }
-        }
-      }
-    },
-    "Make the lines waver sideways down the screen, like a CRT losing sync": {
-      "comment": "Dither (Scanlines) Wobble slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "让扫描线沿屏幕向下左右抖动,像 CRT 失同步"
-          }
-        }
-      }
-    },
     "The characters to draw with, in any order: each spot gets the one whose ink best matches its tone": {
       "comment": "Dither (ASCII) Characters input tooltip.",
       "extractionState": "manual",
@@ -13713,150 +13329,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "用来绘制的字符(任意顺序):每个像素取墨色最接近其色调的那个字符"
-          }
-        }
-      }
-    },
-    "Tones per channel: 2 is pure black and white": {
-      "comment": "Dither Tones slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "每通道的色调数:2 即纯黑与纯白"
-          }
-        }
-      }
-    },
-    "How much of each pixel's error spreads to its neighbors. Less gives flatter areas": {
-      "comment": "Dither Diffusion slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "每个像素的误差向邻近像素扩散的程度,数值越小平坦区域越明显"
-          }
-        }
-      }
-    },
-    "More ink (darker) or less before dithering": {
-      "comment": "Dither Density slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "抖动前调高(更暗)或调低(更亮)的墨量"
-          }
-        }
-      }
-    },
-    "Draw each chunky pixel as a solid square, or as a round dot like a dot-matrix screen": {
-      "comment": "Dither Pixel Shape picker tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "把粗粒度像素画成实心方块,或圆点(类似点阵屏)"
-          }
-        }
-      }
-    },
-    "Draw the marks for the light tones on the dark color, like a glowing screen": {
-      "comment": "Dither Light on Dark toggle tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在暗色背景上画亮调标记,像发光的屏幕"
-          }
-        }
-      }
-    },
-    "Choose the vignette color": {
-      "comment": "Vignette filter color swatch tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "选择暗角颜色"
-          }
-        }
-      }
-    },
-    "Choose the dark color": {
-      "comment": "Dither two-color dark swatch tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "选择暗色"
-          }
-        }
-      }
-    },
-    "Choose the light color": {
-      "comment": "Dither two-color light swatch tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "选择亮色"
-          }
-        }
-      }
-    },
-    "Blend the chosen color into the edges while keeping the center unchanged": {
-      "comment": "Vignette Amount slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "将所选颜色混合到边缘,中央保持不变"
-          }
-        }
-      }
-    },
-    "Protect bright areas near the edge": {
-      "comment": "Vignette Highlights slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "保护边缘附近的亮部区域"
-          }
-        }
-      }
-    },
-    "Applying…": {
-      "comment": "Filter sheet progress text while committing.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在应用…"
-          }
-        }
-      }
-    },
-    "Working…": {
-      "comment": "Filter sheet progress text while preparing the preview.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在处理…"
           }
         }
       }
@@ -13909,66 +13381,6 @@
         }
       }
     },
-    "Input black": {
-      "comment": "Levels sheet: minimum input tone label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输入黑场"
-          }
-        }
-      }
-    },
-    "Input white": {
-      "comment": "Levels sheet: maximum input tone label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输入白场"
-          }
-        }
-      }
-    },
-    "Output black": {
-      "comment": "Levels sheet: minimum output tone label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输出黑场"
-          }
-        }
-      }
-    },
-    "Output white": {
-      "comment": "Levels sheet: maximum output tone label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输出白场"
-          }
-        }
-      }
-    },
-    "Loading histogram…": {
-      "comment": "Levels sheet placeholder while the histogram is still being computed.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "直方图加载中…"
-          }
-        }
-      }
-    },
     "Click the original layer to set": {
       "comment": "Levels sheet sample-eyedropper hint prefix.",
       "extractionState": "manual",
@@ -13993,54 +13405,6 @@
         }
       }
     },
-    "Underlying pixels · alpha-weighted histogram": {
-      "comment": "Levels sheet caption when editing an adjustment layer (input comes from below).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "底层像素 · 基于 alpha 加权的直方图"
-          }
-        }
-      }
-    },
-    "Original pixels · alpha-weighted histogram": {
-      "comment": "Levels sheet caption when no selection is active.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "原始像素 · 基于 alpha 加权的直方图"
-          }
-        }
-      }
-    },
-    "Original pixels · selection and alpha-weighted histogram": {
-      "comment": "Levels sheet caption when a selection is active.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "原始像素 · 选区与 alpha 加权的直方图"
-          }
-        }
-      }
-    },
-    "Original": {
-      "comment": "Levels histogram a11y label prefix.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "原始"
-          }
-        }
-      }
-    },
     "histogram": {
       "comment": "Levels histogram a11y label suffix.",
       "extractionState": "manual",
@@ -14049,42 +13413,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "直方图"
-          }
-        }
-      }
-    },
-    "Linear histogram with automatic vertical scaling. Tall spikes may extend beyond the graph; all tones from 0 to 255 remain included.": {
-      "comment": "Levels histogram tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "线性直方图,自动纵向缩放。高峰可能超出图区,但所有 0–255 灰度都已计入。"
-          }
-        }
-      }
-    },
-    "Apply outside this range instead": {
-      "comment": "Hue/Saturation sheet invert-range toggle.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "反之,只作用于该范围之外"
-          }
-        }
-      }
-    },
-    "Targeted adjustment": {
-      "comment": "Hue/Saturation sheet hand-button a11y label.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "定向调整"
           }
         }
       }
@@ -14133,102 +13461,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "点击图像收窄当前色域以排除该颜色"
-          }
-        }
-      }
-    },
-    "Shift-click adds a color, Option-click takes one away.": {
-      "comment": "ColorRangeSheet helper text when a color has already been picked.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "按住 Shift 点击加入颜色;按住 Option 点击移除颜色。"
-          }
-        }
-      }
-    },
-    "Click the image to pick the color to select.": {
-      "comment": "ColorRangeSheet helper text when no color has been picked yet.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击图像选择要纳入选区的颜色。"
-          }
-        }
-      }
-    },
-    "How far a color may be from the picked ones and still be selected": {
-      "comment": "ColorRangeSheet Fuzziness slider tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "颜色与所选颜色相差多远时仍被纳入选区"
-          }
-        }
-      }
-    },
-    "Select everything except those colors, such as all but a green screen": {
-      "comment": "ColorRangeSheet Invert toggle tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "反选:选中这些颜色之外的所有像素(例如除绿幕以外的全部)"
-          }
-        }
-      }
-    },
-    "Click the image to select that color": {
-      "comment": "ColorRangeSheet sampleMode.replace tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击图像选中该颜色"
-          }
-        }
-      }
-    },
-    "Click the image to add that color to the selection": {
-      "comment": "ColorRangeSheet sampleMode.add tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击图像把该颜色加入选区"
-          }
-        }
-      }
-    },
-    "Click the image to take that color out of the selection": {
-      "comment": "ColorRangeSheet sampleMode.remove tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击图像把该颜色从选区中移除"
-          }
-        }
-      }
-    },
-    "Click to add a point. Drag to adjust.": {
-      "comment": "CurvesControls helper text below the curve canvas.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击添加一个控制点;拖动以调整。"
           }
         }
       }
@@ -14365,18 +13597,6 @@
         }
       }
     },
-    "Input and output of the selected curve point.": {
-      "comment": "Camera Raw Curve > Point > selected-point readout tooltip.",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所选曲线控制点的输入和输出值。"
-          }
-        }
-      }
-    },
     "%@ of %@.": {
       "comment": "Camera Raw Color Mixer > HSL > per-family slider tooltip ('Hue of Reds.' etc).",
       "extractionState": "manual",
@@ -14397,18 +13617,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "编辑 %@。"
-          }
-        }
-      }
-    },
-    "%lld°  %lld": {
-      "comment": "Camera Raw Color Grading > wheel readout (hue, saturation).",
-      "extractionState": "manual",
-      "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld°  %lld"
           }
         }
       }
@@ -14469,6 +13677,78 @@
           "stringUnit": {
             "state": "translated",
             "value": "让颜色平滑处理更柔或更紧。"
+          }
+        }
+      }
+    },
+    "Search Commands…": {
+      "comment": "View menu: command palette.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索命令…"
+          }
+        }
+      }
+    },
+    "Search Commands": {
+      "comment": "Keyboard Shortcuts sheet: command palette entry title.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索命令"
+          }
+        }
+      }
+    },
+    "Toggle Fullscreen": {
+      "comment": "View menu: full-screen toggle.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "切换全屏"
+          }
+        }
+      }
+    },
+    "Toggle Fullscreen: the canvas alone on black (Esc also leaves)": {
+      "comment": "Keyboard Shortcuts sheet: full-screen toggle description.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "切换全屏:仅画布浮于黑底(Esc 也退出)"
+          }
+        }
+      }
+    },
+    "Last Filter": {
+      "comment": "Filter menu: last filter (no prior filter yet).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次滤镜"
+          }
+        }
+      }
+    },
+    "Last Filter: %@": {
+      "comment": "Filter menu: last filter name with the filter applied last.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次滤镜:%@"
           }
         }
       }
