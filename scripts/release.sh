@@ -17,7 +17,7 @@ set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP=Compositor
-TEAM=FDQLLU43U7
+TEAM=FJYQT2JA5U
 IDENTITY="Apple Development"
 # Personal Team re-signs expire after 7 days, so give the work dir a fork-specific
 # name and keep it under the user's cache dir, not the upstream path.
@@ -37,7 +37,6 @@ xcodebuild archive -quiet \
   -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release \
   -destination "generic/platform=macOS" \
   -archivePath "$WORK/$APP.xcarchive" -derivedDataPath "$WORK/DerivedData" \
-  CODE_SIGN_STYLE=Automatic CODE_SIGN_IDENTITY="$IDENTITY" DEVELOPMENT_TEAM="$TEAM"
 
 # The archive already runs codesign during `xcodebuild archive`; just verify and
 # copy out. We deliberately do not use `xcodebuild -exportArchive` here — its

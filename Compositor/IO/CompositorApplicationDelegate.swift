@@ -32,6 +32,11 @@ final class CompositorApplicationDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillFinishLaunching(_ notification: Notification) {
+        // Lock AppleLanguages to zh-Hans for this fork. Writing into UserDefaults here (before any
+        // bundle lookup happens) makes the main bundle pick zh-Hans.lproj regardless of the Mac's
+        // system language setting, so the String Catalog keys resolved through `LocalizedStringKey`
+        // get their Chinese translations on every machine the fork is run on.
+        UserDefaults.standard.set(["zh-Hans"], forKey: "AppleLanguages")
         // AppKit's own switches for two of the Edit menu's text extras (see `removeSystemTextItems`).
         UserDefaults.standard.register(defaults: ["NSDisabledDictationMenuItem": true, "NSDisabledCharacterPaletteMenuItem": true])
         // Always dark, alerts and open/save panels included, whatever the Mac is set to.

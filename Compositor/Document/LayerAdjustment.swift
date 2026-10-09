@@ -26,6 +26,12 @@ nonisolated enum AdjustmentKind: String, Codable, CaseIterable, Sendable {
     /// The filter panel that edits this kind; Levels and Hue/Saturation have panels of their own.
     /// Every kind but Invert opens an editor when its layer is double-clicked.
     var isEditable: Bool { self != .invert }
+    /// User-visible name, resolved through the String Catalog. rawValue stays English so persisted
+    /// .comp files keep their stable identifiers; the catalog entry keyed on the rawValue supplies
+    /// the localized form for menu display.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
     var filterKind: FilterKind? {
         switch self {
         case .curves: return .curves

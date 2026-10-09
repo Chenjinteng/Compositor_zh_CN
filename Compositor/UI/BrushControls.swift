@@ -4,24 +4,24 @@ struct BrushControls: View {
     @Bindable var session: EditorSession
     var body: some View {
         HStack(spacing: 12) {
-            Text(session.tool == .spotHealing ? "Spot Healing" : session.tool == .cloneStamp ? "Clone Stamp" : session.tool == .blur ? "Smear" : session.brushMode == .erase ? "Eraser" : "Brush").font(ToolHeaderStyle.titleFont)
+            Text(currentToolName(session: session)).font(ToolHeaderStyle.titleFont)
             if session.tool == .brush {
                 Picker("Mode", selection: $session.brushMode) {
-                    ForEach(BrushToolMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                    ForEach(BrushToolMode.allCases, id: \.self) { Text($0.localizedName).tag($0) }
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
                 .help("Paint with the foreground color (B), or erase pixels away (E)")
             }
             if session.tool == .blur {
                 Picker("Mode", selection: $session.blurMode) {
-                    ForEach(BlurToolMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                    ForEach(BlurToolMode.allCases, id: \.self) { Text($0.localizedName).tag($0) }
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
-                .help("Liquify pushes pixels · Blur softens · Smudge drags color along")
+                .help(L("Liquify pushes pixels · Blur softens · Smudge drags color along"))
             }
             if session.tool == .spotHealing {
                 Picker("Type", selection: $session.spotHealingMode) {
-                    ForEach(SpotHealingMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                    ForEach(SpotHealingMode.allCases, id: \.self) { Text($0.localizedName).tag($0) }
                 }
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
                 .accessibilityIdentifier("spotHealingType")
@@ -144,4 +144,18 @@ struct CloneStampToolIcon: View {
         }
         .accessibilityHidden(true)
     }
+}
+
+/// The tool name shown in the tool header (was an inline ternary with hardcoded English strings).
+/// Each key matches a `Localizable.xcstrings` entry; Bundle lookup supplies the localized form.
+private func currentToolName(session: EditorSession) -> String {
+    let key: String
+    switch session.tool {
+    case .spotHealing: key = "Spot Healing"
+    case .cloneStamp: key = "Clone Stamp"
+    case .blur: key = "Smear"
+    case .brush: key = session.brushMode == .erase ? "Eraser" : "Brush"
+    default: key = ""
+    }
+    return Bundle.main.localizedString(forKey: key, value: key, table: nil)
 }

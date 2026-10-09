@@ -211,6 +211,12 @@ nonisolated struct LayerEffects: Codable, Equatable, Sendable {
 
 nonisolated enum LayerEffectKind: String, CaseIterable, Sendable {
     case stroke = "Stroke", shadow = "Drop Shadow", colorOverlay = "Color Overlay", innerShadow = "Inner Shadow", outerGlow = "Outer Glow", innerGlow = "Inner Glow"
+    /// User-visible name, resolved through the String Catalog. rawValue stays English so persisted
+    /// .comp files keep their stable identifiers; the catalog entry keyed on the rawValue supplies
+    /// the localized form for menu display.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 struct LayerEffectSelection: Equatable {

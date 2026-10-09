@@ -28,6 +28,15 @@ nonisolated enum FilterKind: String, CaseIterable, Sendable {
         self == .curves || self == .exposure || self == .gradientMap || self == .grain
             || self == .blackWhite || self == .colorBalance
     }
+    /// User-visible name, resolved through the String Catalog. rawValue stays English so persisted
+    /// .comp files and undo names keep their stable identifiers; the catalog entry keyed on the
+    /// rawValue supplies the localized form for menu display.
+    var localizedName: String {
+        // String(localized:defaultValue:) is compile-time-only (StaticString), so for a runtime
+        // key we go through Bundle.localizedString, which finds the catalog entry compiled into
+        // <locale>.lproj/Localizable.strings and falls back to rawValue.
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// Remove Background's two ways of working: Apple's own subject mask on its own, or that mask refined against the

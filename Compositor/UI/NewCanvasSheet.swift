@@ -6,13 +6,14 @@ import ImageIO
 nonisolated enum NewCanvasUnit: String, CaseIterable, Sendable {
     case pixels = "px", inches = "in", centimeters = "cm", millimeters = "mm"
 
-    /// The unit written out, for the summary line's pill.
+    /// The unit written out, for the summary line's pill. Resolved through the String Catalog
+    /// so this fork shows "像素" / "英寸" / "厘米" / "毫米" in zh-Hans.
     var name: String {
         switch self {
-        case .pixels: "Pixels"
-        case .inches: "Inches"
-        case .centimeters: "Centimeters"
-        case .millimeters: "Millimeters"
+        case .pixels: Bundle.main.localizedString(forKey: "Pixels", value: "Pixels", table: nil)
+        case .inches: Bundle.main.localizedString(forKey: "Inches", value: "Inches", table: nil)
+        case .centimeters: Bundle.main.localizedString(forKey: "Centimeters", value: "Centimeters", table: nil)
+        case .millimeters: Bundle.main.localizedString(forKey: "Millimeters", value: "Millimeters", table: nil)
         }
     }
     /// The next unit, for the pill: px → in → cm → mm → px.
@@ -44,7 +45,17 @@ nonisolated enum NewCanvasUnit: String, CaseIterable, Sendable {
 /// What a new canvas starts as: see-through, or a Background layer of white or black.
 nonisolated enum NewCanvasBackground: String, CaseIterable, Sendable {
     case transparent, white, black
-    var title: String { "\(rawValue.capitalized) canvas" }
+    /// The pill label like "Transparent canvas" / "White canvas" / "Black canvas". Resolved through
+    /// the String Catalog so this fork shows "透明画布" etc. in zh-Hans.
+    var title: String {
+        let key: String
+        switch self {
+        case .transparent: key = "Transparent canvas"
+        case .white: key = "White canvas"
+        case .black: key = "Black canvas"
+        }
+        return Bundle.main.localizedString(forKey: key, value: key, table: nil)
+    }
     var next: NewCanvasBackground { Self.allCases[(Self.allCases.firstIndex(of: self)! + 1) % Self.allCases.count] }
     var color: CGColor? {
         switch self {
@@ -98,7 +109,7 @@ struct NewCanvasSheet: View {
                     // Preset sizes, tucked into a More button; the size in use is checked.
                     Menu {
                         Picker("Size", selection: preset) {
-                            Text("Custom").tag(CanvasPreset?.none)
+                            Text(L("Custom")).tag(CanvasPreset?.none)
                             ForEach(CanvasPreset.groups.indices, id: \.self) { group in
                                 Divider()
                                 ForEach(CanvasPreset.groups[group]) { Text($0.title).tag(CanvasPreset?.some($0)) }
@@ -140,7 +151,7 @@ struct NewCanvasSheet: View {
                 Text("·")
                 // In print units the pixels follow the DPI; in pixels, the DPI is just stored with the file. The pixel
                 // size it makes is in the pill's hover text, out of the way until it's wanted.
-                CyclePill("\(Int(resolution)) DPI", help: resolutionHelp) {
+                CyclePill("\(Int(resolution)) \(Bundle.main.localizedString(forKey: "DPI", value: "DPI", table: nil))", help: resolutionHelp) {
                     resolution = resolution == 300 ? 72 : 300
                 }
                 .accessibilityIdentifier("canvasResolution")
@@ -236,29 +247,40 @@ private struct CyclePill: View {
 
 /// New Canvas sizes: common screens and resolutions, in pixels, upright as the device is usually held.
 struct CanvasPreset: Identifiable, Hashable {
-    let title: String
+    /// The user-visible title resolved through the String Catalog (`Bundle.localizedString` against
+    /// the String Catalog key in `catalogKey`), so this fork shows "Instagram 正方形" / "4K" etc.
+    /// in zh-Hans. Aspect-ratio menu items that have no Chinese equivalent (like "4K" / "1080p")
+    /// fall back to the original title.
+    var title: String {
+        Bundle.main.localizedString(forKey: catalogKey, value: fallbackTitle, table: nil)
+    }
+    /// Catalog key: equals `fallbackTitle` in this fork; the String Catalog stores Chinese values
+    /// under these exact English strings.
+    let catalogKey: String
+    /// Original English title, used as the Bundle lookup fallback when no translation exists.
+    let fallbackTitle: String
     let width: Int
     let height: Int
-    var id: String { title }
+    var id: String { catalogKey }
     /// Resolutions, Apple screens, then social formats; the menu divides them.
     static let groups: [[CanvasPreset]] = [
         [
-            CanvasPreset(title: "4K", width: 3840, height: 2160),
-            CanvasPreset(title: "1440p", width: 2560, height: 1440),
-            CanvasPreset(title: "1080p", width: 1920, height: 1080),
+            CanvasPreset(catalogKey: "4K", fallbackTitle: "4K", width: 3840, height: 2160),
+            CanvasPreset(catalogKey: "1440p", fallbackTitle: "1440p", width: 2560, height: 1440),
+            CanvasPreset(catalogKey: "1080p", fallbackTitle: "1080p", width: 1920, height: 1080),
         ],
         [
-            CanvasPreset(title: "iPhone 18 Pro", width: 1206, height: 2622),
-            CanvasPreset(title: "iPhone 18 Pro Max", width: 1320, height: 2868),
-            CanvasPreset(title: "MacBook Pro 14\"", width: 3024, height: 1964),
-            CanvasPreset(title: "MacBook Pro 16\"", width: 3456, height: 2234),
-            CanvasPreset(title: "Studio Display", width: 5120, height: 2880),
+            CanvasPreset(catalogKey: "iPhone 18 Pro", fallbackTitle: "iPhone 18 Pro", width: 1206, height: 2622),
+            CanvasPreset(catalogKey: "iPhone 18 Pro Max", fallbackTitle: "iPhone 18 Pro Max", width: 1320, height: 2868),
+            CanvasPreset(catalogKey: "MacBook Pro 14\"", fallbackTitle: "MacBook Pro 14\"", width: 3024, height: 1964),
+            CanvasPreset(catalogKey: "MacBook Pro 16\"", fallbackTitle: "MacBook Pro 16\"", width: 3456, height: 2234),
+            CanvasPreset(catalogKey: "Studio Display", fallbackTitle: "Studio Display", width: 5120, height: 2880),
         ],
         [
-            CanvasPreset(title: "Instagram Square", width: 1080, height: 1080),
-            CanvasPreset(title: "Instagram Portrait", width: 1080, height: 1350),
-            CanvasPreset(title: "Instagram Story", width: 1080, height: 1920),
-            CanvasPreset(title: "YouTube Thumb", width: 1080, height: 608),
+            CanvasPreset(catalogKey: "Instagram Square", fallbackTitle: "Instagram Square", width: 1080, height: 1080),
+            CanvasPreset(catalogKey: "Instagram Portrait", fallbackTitle: "Instagram Portrait", width: 1080, height: 1350),
+            CanvasPreset(catalogKey: "Instagram Story", fallbackTitle: "Instagram Story", width: 1080, height: 1920),
+            CanvasPreset(catalogKey: "YouTube Thumb", fallbackTitle: "YouTube Thumb", width: 1080, height: 608),
         ],
     ]
     static let all = groups.flatMap { $0 }

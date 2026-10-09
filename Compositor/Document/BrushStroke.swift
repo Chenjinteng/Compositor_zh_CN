@@ -4,6 +4,10 @@ nonisolated enum SpotHealingMode: String, CaseIterable, Sendable, Hashable {
     case contentAware = "Content-Aware"
     case createTexture = "Create Texture"
     case proximityMatch = "Proximity Match"
+    /// User-visible name resolved through the String Catalog.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated struct BrushSettings: Sendable {

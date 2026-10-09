@@ -5,12 +5,21 @@ import AppKit
 nonisolated enum BrushToolMode: String, CaseIterable, Sendable {
     case paint = "Paint"
     case erase = "Erase"
+    /// User-visible name resolved through the String Catalog (Bundle lookup), so the segmented
+    /// Picker shows "画笔" / "橡皮擦" in zh-Hans instead of the rawValue.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated enum BlurToolMode: String, CaseIterable, Sendable {
     case liquify = "Liquify"
     case blur = "Blur"
     case smudge = "Smudge"
+    /// User-visible name resolved through the String Catalog.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// A Smudge or Liquify stroke in progress. It works on the active layer as the canvas shows it, at document size,

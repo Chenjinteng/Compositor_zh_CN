@@ -70,6 +70,10 @@ nonisolated struct SelectionClip: @unchecked Sendable {
 nonisolated enum WandMode: String, CaseIterable, Sendable {
     case wand = "Wand"
     case object = "Object"
+    /// User-visible name resolved through the String Catalog.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 nonisolated enum LassoKind: String, CaseIterable, Sendable {
@@ -86,6 +90,11 @@ nonisolated enum SelectionMode: String, CaseIterable, Sendable {
     case replace = "New"
     case add = "Add"
     case subtract = "Subtract"
+    /// User-visible name resolved through the String Catalog (rawValue "New" / "Add" / "Subtract"
+    /// is the catalog key, not the Swift case name).
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
 }
 
 /// The box a drag from `anchor` to `point` spans, in whole pixels. `square` evens the sides;
@@ -294,6 +303,10 @@ extension EditorSession {
 
     enum SelectionAmountOperation: String {
         case expand = "Expand", contract = "Contract", feather = "Feather"
+        /// User-visible name resolved through the String Catalog.
+        var localizedName: String {
+            Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+        }
     }
 
     /// Menu commands ask for an amount; the tool header applies its input directly.

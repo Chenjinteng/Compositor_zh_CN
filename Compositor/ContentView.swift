@@ -52,7 +52,7 @@ struct ContentView: View {
             if session.tool == .eyedropper {
                 HStack(spacing: 16) {
                     Text("Eyedropper").font(ToolHeaderStyle.titleFont)
-                    Toggle("Sample Ring", isOn: $session.showsSampleRing).toggleStyle(.checkbox)
+                    Toggle(L("Sample Ring"), isOn: $session.showsSampleRing).toggleStyle(.checkbox)
                     Spacer()
                 }.padding(.horizontal, 18).toolHeaderBar()
                 Divider()
@@ -344,18 +344,85 @@ struct ContentView: View {
             Spacer()
             if session.showsBusy {
                 ProgressView().controlSize(.mini)
-                Text("Working…")
+                Text(L("Working…"))
             } else if session.isImporting {
                 ProgressView().controlSize(.mini)
-                Text("Importing images…")
+                Text(L("Importing images…"))
             } else {
-                Text(session.tool == .marquee ? (session.marqueeKind == .ellipse ? "Drag an ellipse · Shift add · Option subtract · Shift again mid-drag circle · Drag inside to move · Delete clears · ⌘D deselect" : "Drag a rectangle · Shift add · Option subtract · Shift again mid-drag square · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect") : session.tool == .wand ? (session.wandMode == .object ? "Click an object to select its outline · Tab for Wand · Shift add · Option subtract · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect" : "Click to select similar colors · Tab for Object · Shift add · Option subtract · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect") : session.tool == .lasso ? (session.lassoKind == .freehand ? "Drag to select · Drag inside to move · Shift add · Option subtract · Delete clears · ⌥⌫/⌘⌫ fill · ⌘D deselect" : "Click corners · Click start, double-click or Enter to close · Delete removes corner · Escape cancel") : session.tool == .brush ? (session.brushMode == .erase ? "Drag to erase" : "Drag to paint") + " · [ ] size · Shift-[ ] hardness · 1–0 opacity · Escape cancel · Space to pan" : session.tool == .blur ? (session.blurMode == .blur ? "Drag to soften" : session.blurMode == .smudge ? "Drag to smudge" : "Drag to push pixels") + " · [ ] size · Shift-[ ] hardness · 1–0 strength · Space to pan" : session.tool == .cloneStamp ? "Option-click to set the source · Drag to clone · [ ] size · Shift-[ ] hardness · 1–0 opacity · Space to pan" : session.tool == .spotHealing ? "Drag over blemishes to heal · [ ] size · Shift-[ ] hardness · Escape cancel · Space to pan" : session.tool == .type ? "Drag a text box · Click text to edit · Drag box handles to resize · ⌘Return finish · Escape cancel" : session.tool == .shape ? "Drag to draw a shape on a new layer · Shift \(session.shapeKind == .line ? "45°" : session.shapeKind == .rectangle ? "square" : "circle") · Option from center · Shift-U or Tab for the next shape · Escape cancel · Space to pan" : session.tool == .gradient ? "Drag to draw · Drag ends to adjust · Shift 45° · 1–0 opacity · Enter apply · Escape cancel" : session.tool == .crop ? "Drag to crop · Enter apply · Escape cancel · Space to pan" : session.tool == .move ? "Drag to move · Handles to resize · Circle to rotate · 1–0 layer opacity · Space to pan" : session.tool == .hand ? "Drag to pan · Pinch to zoom" : session.tool == .idle ? "No tool selected · Press a tool's key to pick one · Space to pan" : "Click to zoom in · Option-click to zoom out · Drag right or left to zoom smoothly · Space to pan")
+                Text(statusBarText(session: session))
             }
         }
         .font(.system(size: 11).monospacedDigit()).foregroundStyle(.secondary)
         .padding(.horizontal, 18).frame(height: 30)
         .accessibilityElement(children: .contain)
     }
+}
+
+/// Resolves the bottom status bar's hint text through the String Catalog. Each tool/mode combination
+/// has a single full-string key (the exact English phrase in the catalog) that Bundle lookup turns
+/// into the zh-Hans version for this fork. Returns the key itself if no translation is present.
+private func statusBarText(session: EditorSession) -> String {
+    let key: String
+    switch session.tool {
+    case .marquee:
+        key = session.marqueeKind == .ellipse
+            ? "Drag an ellipse · Shift add · Option subtract · Shift again mid-drag circle · Drag inside to move · Delete clears · ⌘D deselect"
+            : "Drag a rectangle · Shift add · Option subtract · Shift again mid-drag square · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect"
+    case .wand:
+        key = session.wandMode == .object
+            ? "Click an object to select its outline · Tab for Wand · Shift add · Option subtract · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect"
+            : "Click to select similar colors · Tab for Object · Shift add · Option subtract · Drag inside to move · ⌘-drag moves pixels · Delete clears · ⌘D deselect"
+    case .lasso:
+        key = session.lassoKind == .freehand
+            ? "Drag to select · Drag inside to move · Shift add · Option subtract · Delete clears · ⌥⌫/⌘⌫ fill · ⌘D deselect"
+            : "Click corners · Click start, double-click or Enter to close · Delete removes corner · Escape cancel"
+    case .brush:
+        let action = session.brushMode == .erase ? "Drag to erase" : "Drag to paint"
+        key = action + " · [ ] size · Shift-[ ] hardness · 1–0 opacity · Escape cancel · Space to pan"
+    case .blur:
+        let action: String
+        switch session.blurMode {
+        case .blur: action = "Drag to soften"
+        case .smudge: action = "Drag to smudge"
+        case .liquify: action = "Drag to push pixels"
+        }
+        key = action + " · [·] size · Shift+[] hardness · 1—0 strength · Space to pan"
+    case .cloneStamp:
+        key = "Option-click to set the source · Drag to clone · [ ] size · Shift-[ ] hardness · 1–0 opacity · Space to pan"
+    case .spotHealing:
+        key = "Drag over blemishes to heal · [ ] size · Shift-[ ] hardness · Escape cancel · Space to pan"
+    case .type:
+        key = "Drag a text box · Click text to edit · Drag box handles to resize · ⌘Return finish · Escape cancel"
+    case .shape:
+        let modifier: String
+        switch session.shapeKind {
+        case .line: modifier = "45°"
+        case .rectangle: modifier = L("square")
+        case .ellipse: modifier = L("circle")
+        }
+        key = "Drag to draw a shape on a new layer · Shift \(modifier) · Option from center · Shift-U or Tab for the next shape · Escape cancel · Space to pan"
+    case .gradient:
+        key = "Drag to draw · Drag ends to adjust · Shift 45° · 1–0 opacity · Enter apply · Escape cancel"
+    case .crop:
+        key = "Drag to crop · Enter apply · Escape cancel · Space to pan"
+    case .move:
+        key = "Drag to move · Handles to resize · Circle to rotate · 1–0 layer opacity · Space to pan"
+    case .hand:
+        key = "Drag to pan · Pinch to zoom"
+    case .eyedropper:
+        key = "Click a color to make it the foreground"
+    case .idle:
+        key = "No tool selected · Press a tool's key to pick one · Space to pan"
+    case .zoom:
+        key = "Click to zoom in · Option-click to zoom out · Drag right or left to zoom smoothly · Space to pan"
+    }
+    return Bundle.main.localizedString(forKey: key, value: key, table: nil)
+}
+
+/// Bundle lookup for non-button text. Returns the value from the String Catalog (zh-Hans.lproj
+/// for this fork) or the key itself if no translation is present.
+func L(_ key: String) -> String {
+    Bundle.main.localizedString(forKey: key, value: key, table: nil)
 }
 
 /// A panel's divider that resizes the panel to its right: drag left to widen, right to narrow, within `range`.

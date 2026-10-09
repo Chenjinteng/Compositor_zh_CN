@@ -265,7 +265,7 @@ struct CompositorApp: App {
                     Button("Hue/Saturation…") { session.beginHueSaturation() }
                         .configuredKeyboardShortcut("u").disabled(!session.canAdjustColors)
                     ForEach([FilterKind.blackWhite, .colorBalance, .exposure, .gradientMap, .grain], id: \.self) { kind in
-                        Button("\(kind.rawValue)…") { session.beginFilter(kind) }
+                        Button(kind.localizedName + "…") { session.beginFilter(kind) }
                             .disabled(!session.canAdjustColors || session.hueSaturation != nil)
                     }
                     Button(session.isMaskSelected ? "Invert Mask" : "Invert") { Task { await session.invertPixels() } }
@@ -294,14 +294,14 @@ struct CompositorApp: App {
                 }
                 CommandMenu("Filter") {
                     ForEach(FilterKind.allCases.filter { $0 != .contentAwareFill && !$0.isImageAdjustment }, id: \.self) { kind in
-                        Button("\(kind.rawValue)…") { session.beginFilter(kind) }
+                        Button(kind.localizedName + "…") { session.beginFilter(kind) }
                             .disabled(!(kind == .vignette ? session.canVignette : session.canAdjustColors) || session.hueSaturation != nil)
                     }
                 }
                 CommandMenu("Layer") {
                     Menu("New Adjustment Layer") {
                         ForEach(AdjustmentKind.allCases, id: \.self) { kind in
-                            Button(kind.rawValue + (kind.isEditable ? "…" : "")) { session.addAdjustment(kind) }
+                            Button(kind.localizedName + (kind.isEditable ? "…" : "")) { session.addAdjustment(kind) }
                         }
                     }.disabled(!session.canEditLayers || session.document == nil)
                     Button("Edit Adjustment…") {
@@ -347,11 +347,29 @@ struct CompositorApp: App {
                             .disabled(!session.canTransform)
                     }
                     Divider()
-                    Button(session.selectedEffect != nil ? "Delete " + session.selectedEffect!.kind.rawValue : session.isMaskSelected && session.activeLayer?.mask != nil ? "Delete Layer Mask" : session.selectedLayerIDs.count > 1 ? "Delete Layers" : "Delete Layer") {
+                    Button(deleteLabel(session: session)) {
                         session.deleteLayerOrMask()
                     }
                         .disabled(!session.canEditLayers || session.activeLayer == nil)
                 }
             }
     }
+}
+
+/// Resolves the four possible Delete-button titles through Bundle lookup. String Catalog can't localize
+/// runtime-concatenated keys, and `String(localized:defaultValue:)` only accepts StaticString literals,
+/// so each branch's key must match a `Localizable.xcstrings` entry that the compiler writes into
+/// `<locale>.lproj/Localizable.strings`.
+private func deleteLabel(session: EditorSession) -> String {
+    if let effect = session.selectedEffect {
+        let key = "Delete " + effect.kind.rawValue
+        return Bundle.main.localizedString(forKey: key, value: key, table: nil)
+    }
+    if session.isMaskSelected && session.activeLayer?.mask != nil {
+        return Bundle.main.localizedString(forKey: "Delete Layer Mask", value: "Delete Layer Mask", table: nil)
+    }
+    if session.selectedLayerIDs.count > 1 {
+        return Bundle.main.localizedString(forKey: "Delete Layers", value: "Delete Layers", table: nil)
+    }
+    return Bundle.main.localizedString(forKey: "Delete Layer", value: "Delete Layer", table: nil)
 }

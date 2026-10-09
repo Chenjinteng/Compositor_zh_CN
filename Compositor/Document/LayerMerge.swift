@@ -27,7 +27,12 @@ extension EditorSession {
     }
 
     var canMergeLayers: Bool { mergePlan() != nil }
-    var mergeTitle: String { mergePlan()?.action ?? "Merge Down" }
+    /// Resolves through the String Catalog so the menu button shows "向下合并" / "合并图层"
+    /// instead of the raw "Merge Down" / "Merge Layers".
+    var mergeTitle: String {
+        let key = mergePlan()?.action ?? "Merge Down"
+        return Bundle.main.localizedString(forKey: key, value: key, table: nil)
+    }
 
     /// ⌘E: the layers composited as the canvas shows them — blend modes, opacity, masks, clipping and adjustments
     /// baked in — into one pixel layer, trimmed to what is there, in their place, as one undo step.

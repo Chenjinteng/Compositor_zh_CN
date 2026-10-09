@@ -11,23 +11,23 @@ struct TransformInspector: View {
           Text(session.transformTargetsMask ? "Transform Mask" : "Transform").font(ToolHeaderStyle.titleFont)
               .padding(.leading, 18)
           // Command flips Auto Select while it's held, and the box shows it flipped (see HeldModifiers).
-          Toggle("Auto Select", isOn: Binding(get: { session.transformAutoSelect != held.contains(.command) },
+          Toggle(L("Auto Select"), isOn: Binding(get: { session.transformAutoSelect != held.contains(.command) },
                                               set: { session.transformAutoSelect = $0 != held.contains(.command) }))
               .help("Select layers by clicking the canvas. Hold Command to turn it the other way while you click.")
               .accessibilityIdentifier("transformAutoSelect")
-          Toggle("Show Controls", isOn: $session.showsTransformControls)
+          Toggle(L("Show Controls"), isOn: $session.showsTransformControls)
               .help("Show the transform box and handles (⌘H). When hidden, drag anywhere to move the layer.")
           ScrollView(.horizontal) {
             HStack(spacing: 12) {
-                field("X", value: value.origin.x) { $0.origin.x = $1 }.frame(width: 85)
-                field("Y", value: value.origin.y) { $0.origin.y = $1 }.frame(width: 85)
-                TransformValueField(label: "W", value: value.size.width, range: 1...30_000, finish: finish) { resize($0, width: true) }.frame(width: 85)
-                TransformValueField(label: "H", value: value.size.height, range: 1...30_000, finish: finish) { resize($0, width: false) }.frame(width: 85)
+                field(L("X"), value: value.origin.x) { $0.origin.x = $1 }.frame(width: 85)
+                field(L("Y"), value: value.origin.y) { $0.origin.y = $1 }.frame(width: 85)
+                TransformValueField(label: L("W"), value: value.size.width, range: 1...30_000, finish: finish) { resize($0, width: true) }.frame(width: 85)
+                TransformValueField(label: L("H"), value: value.size.height, range: 1...30_000, finish: finish) { resize($0, width: false) }.frame(width: 85)
                 // Shift flips the lock while dragging a handle, and the button shows it flipped.
                 Toggle(isOn: Binding(get: { session.locksTransformRatio != held.contains(.shift) },
                                      set: { session.locksTransformRatio = $0 != held.contains(.shift) })) { Image(systemName: "link") }
                     .toggleStyle(.button).help("Lock aspect ratio. Hold Shift while dragging a handle to turn it the other way.")
-                TransformValueField(label: "Scale", suffix: "%", value: value.scalePercent(pixelSize: pixelSize), range: 0.1...30_000, finish: finish) { number in
+                TransformValueField(label: L("Scale"), suffix: "%", value: value.scalePercent(pixelSize: pixelSize), range: 0.1...30_000, finish: finish) { number in
                     change { value in
                         guard number > 0 else { return }
                         value = value.scaled(toPercent: number, pixelSize: pixelSize)
