@@ -1,5 +1,15 @@
 # Compositor
 
+> This document is the **original English** README from [robbietilton/Compositor](https://github.com/robbietilton/Compositor), kept verbatim inside this fork so future readers can see the upstream text in context.
+>
+> **Fork notice**:
+> - This is a **personal-use, AI-assisted Chinese localization** of Compositor's text and UI; it is **not an official release** from the author.
+> - The fork is **not** distributed, promoted, or sold; see the Chinese `README.md` at the fork root for the full Chinese-language position statement.
+> - No translation pull requests or merges will be opened against the upstream repository, in deference to upstream's "translations are on hold" stance.
+> - The fork has **no affiliation with** or **authorization from** [Robbie Tilton](https://github.com/robbietilton) or [Wonder Assembly LLC](https://www.wonderassembly.com); all trademarks and product names belong to the original author.
+>
+> **Credits**: thanks to Robbie Tilton for creating and open-sourcing Compositor — the Chinese fork only exists because his work was worth reading in your own language. For the official build, see [robbietilton.com/compositor](https://robbietilton.com/compositor) or [the upstream GitHub Releases page](https://github.com/robbietilton/Compositor/releases).
+
 Adobe Photoshop costs too much and tools like GIMP don’t feel familiar enough for me to stay in flow. That’s why I built Compositor.
 
 The goal was to create a full-featured image editor that is completely free and open source. I used to use Photoshop for compositing and post-processing, so Compositor is built around that workflow - with the tools needed to create a pixel-perfect final image.
