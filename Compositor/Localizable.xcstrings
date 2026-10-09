@@ -13752,6 +13752,354 @@
           }
         }
       }
+    },
+    "Navigator": {
+      "comment": "Navigator panel / menu command.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导航"
+          }
+        }
+      }
+    },
+    "Navigator (300% and above)": {
+      "comment": "View menu toggle to show the Navigator panel for high-zoom views.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导航(300% 及以上)"
+          }
+        }
+      }
+    },
+    "Export As": {
+      "comment": "Export As sheet title (and File › Export As).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出为"
+          }
+        }
+      }
+    },
+    "Export As…": {
+      "comment": "File menu item for Export As with ellipsis.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出为…"
+          }
+        }
+      }
+    },
+    "Export Background": {
+      "comment": "Export As sheet: dialog swatch title for the transparent-area background color.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出背景"
+          }
+        }
+      }
+    },
+    "Format": {
+      "comment": "Export As sheet row label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "格式"
+          }
+        }
+      }
+    },
+    "Page": {
+      "comment": "Export As sheet row label for the PDF page size readout.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "页面"
+          }
+        }
+      }
+    },
+    "Width in pixels; the height follows, keeping the proportions": {
+      "comment": "Export As sheet: width field help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "像素宽度;高度按比例自动调整"
+          }
+        }
+      }
+    },
+    "Height in pixels; the width follows, keeping the proportions": {
+      "comment": "Export As sheet: height field help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "像素高度;宽度按比例自动调整"
+          }
+        }
+      }
+    },
+    "Zoom in (⌘+), now %@. At 100% each pixel of the export is one pixel of the screen": {
+      "comment": "Export As sheet: zoom in button help with interpolated percent.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "放大(⌘+),当前 %@。100% 时导出的每个像素对应屏幕一个像素"
+          }
+        }
+      }
+    },
+    "Scale the export: the document stays as it is": {
+      "comment": "Export As sheet: scale menu help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按此比例导出:文档本身保持不变"
+          }
+        }
+      }
+    },
+    "Transparency kept · sRGB": {
+      "comment": "Export As sheet: PNG footer info.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保留透明度 · sRGB"
+          }
+        }
+      }
+    },
+    "sRGB": {
+      "comment": "Export As sheet: JPEG/PDF footer info.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sRGB"
+          }
+        }
+      }
+    },
+    "%@ × %@ in at %d DPI": {
+      "comment": "Export As sheet: PDF page size readout.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ × %@ 英寸,%d DPI"
+          }
+        }
+      }
+    },
+    "Thickness": {
+      "comment": "Scanlines filter: how much of the gap a bright line fills.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "线条粗细"
+          }
+        }
+      }
+    },
+    "Displace": {
+      "comment": "Scanlines filter: lift or lower the lines with the picture's brightness.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "形变幅度"
+          }
+        }
+      }
+    },
+    "Smoothness": {
+      "comment": "Scanlines filter: how far the brightness is smoothed before displacing lines.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平滑度"
+          }
+        }
+      }
+    },
+    "Threshold": {
+      "comment": "Scanlines filter: tones darker than this draw no line.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暗部阈值"
+          }
+        }
+      }
+    },
+    "Color Split": {
+      "comment": "Scanlines filter: how far red and blue are moved apart.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "色散距离"
+          }
+        }
+      }
+    },
+    "Black Level": {
+      "comment": "Scanlines filter: how bright the lines are over black.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "底色亮度"
+          }
+        }
+      }
+    },
+    "How much of the gap a bright line fills; dimmer parts draw it thinner": {
+      "comment": "Scanlines Thickness help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "亮线占间隙的多少;暗部画得更细"
+          }
+        }
+      }
+    },
+    "Break the lines into beads where the picture is darker than this, blending into solid lines where it's brighter": {
+      "comment": "Scanlines Dots help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "比这更暗的部分把线条断成圆点,更亮的位置就连成实线"
+          }
+        }
+      }
+    },
+    "Lift the lines where the picture is bright, or lower them when negative, so they swell into its shapes": {
+      "comment": "Scanlines Displace help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画面亮的地方把线抬起来,负值往下沉,让线条鼓进画面的轮廓"
+          }
+        }
+      }
+    },
+    "How far the brightness is smoothed before it displaces the lines, from sharp ridges to rounded hills": {
+      "comment": "Scanlines Smoothness help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "形变前亮度的平滑程度,从锐利的山脊到圆润的土丘"
+          }
+        }
+      }
+    },
+    "Draw no line where the picture is darker than this, leaving the screen dark": {
+      "comment": "Scanlines Threshold help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "比这更暗的位置不画线,保持画面成暗屏"
+          }
+        }
+      }
+    },
+    "Move the red and blue apart, for colored fringes on the lines": {
+      "comment": "Scanlines Color Split help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把红蓝通道左右分开,在扫描线上形成彩色边缘"
+          }
+        }
+      }
+    },
+    "Darker or lighter before the lines are drawn": {
+      "comment": "Scanlines Density help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描线绘制前的整体明暗"
+          }
+        }
+      }
+    },
+    "How bright the lines are where the picture is black, so they show even over black": {
+      "comment": "Scanlines Black Level help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "纯黑处扫描线的亮度,这样黑画面也能看到线"
+          }
+        }
+      }
+    },
+    "Scanlines": {
+      "comment": "FilterKind case 'scanlines' (Filter › Scanlines).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描线"
+          }
+        }
+      }
     }
   },
   "version": "1.1"
