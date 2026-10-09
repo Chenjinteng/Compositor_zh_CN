@@ -14244,6 +14244,234 @@
           }
         }
       }
+    },
+    "Shadow Clipping Indicator": {
+      "comment": "Camera Raw histogram: accessibility label for the shadow-clipping triangle.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "阴影裁切指示器"
+          }
+        }
+      }
+    },
+    "Highlight Clipping Indicator": {
+      "comment": "Camera Raw histogram: accessibility label for the highlight-clipping triangle.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高光裁切指示器"
+          }
+        }
+      }
+    },
+    "R %lld   G %lld   B %lld": {
+      "comment": "Camera Raw histogram: RGB readout format template.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "R %lld   G %lld   B %lld"
+          }
+        }
+      }
+    },
+    "Chooses how bright an area must be to glow. Has no effect until Glow is raised.": {
+      "comment": "Camera Raw Effects > Glow > Range slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设定区域达到多亮才开始发光,在 Glow 提高之前不起作用。"
+          }
+        }
+      }
+    },
+    "Makes light and dark tones more or less different, mostly around the middle.": {
+      "comment": "Camera Raw Light > Contrast slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加大或减小亮调与暗调的差异,主要作用于中间调。"
+          }
+        }
+      }
+    },
+    "Shifts the picked color around the color wheel.": {
+      "comment": "Camera Raw Color Mixer > Point Color > Hue Shift tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将所选取的颜色在色环上移动。"
+          }
+        }
+      }
+    },
+    "Makes the picked color stronger or quieter.": {
+      "comment": "Camera Raw Color Mixer > Point Color > Saturation Shift tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让所选颜色的饱和度增强或减弱。"
+          }
+        }
+      }
+    },
+    "Makes the picked color lighter or darker.": {
+      "comment": "Camera Raw Color Mixer > Point Color > Luminance Shift tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让所选颜色的明度变亮或变暗。"
+          }
+        }
+      }
+    },
+    "Moves the picture left or right.": {
+      "comment": "Camera Raw Geometry > Offset X tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将画面水平移动。"
+          }
+        }
+      }
+    },
+    "Moves the picture up or down.": {
+      "comment": "Camera Raw Geometry > Offset Y tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将画面垂直移动。"
+          }
+        }
+      }
+    },
+    "Input and output of the selected curve point.": {
+      "comment": "Camera Raw Curve > Point > selected-point readout tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所选曲线控制点的输入和输出值。"
+          }
+        }
+      }
+    },
+    "%@ of %@.": {
+      "comment": "Camera Raw Color Mixer > HSL > per-family slider tooltip ('Hue of Reds.' etc).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 的 %@。"
+          }
+        }
+      }
+    },
+    "Edit %@.": {
+      "comment": "Camera Raw Color Mixer > Color > swatch tooltip ('Edit Reds.' etc).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "编辑 %@。"
+          }
+        }
+      }
+    },
+    "%lld°  %lld": {
+      "comment": "Camera Raw Color Grading > wheel readout (hue, saturation).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld°  %lld"
+          }
+        }
+      }
+    },
+    "Shifts the selected color family around the wheel.": {
+      "comment": "Camera Raw Color Mixer > Color > Hue slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将所选颜色族在色环上移动。"
+          }
+        }
+      }
+    },
+    "Makes the selected color family stronger or quieter.": {
+      "comment": "Camera Raw Color Mixer > Color > Saturation slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让所选颜色族的饱和度增强或减弱。"
+          }
+        }
+      }
+    },
+    "Makes the selected color family lighter or darker.": {
+      "comment": "Camera Raw Color Mixer > Color > Luminance slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让所选颜色族的明度变亮或变暗。"
+          }
+        }
+      }
+    },
+    "Color Smoothness": {
+      "comment": "Camera Raw Detail > Noise Reduction > Color Smoothness slider label.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色平滑度"
+          }
+        }
+      }
+    },
+    "Makes the color smoothing softer or tighter.": {
+      "comment": "Camera Raw Detail > Noise Reduction > Color Smoothness slider tooltip.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让颜色平滑处理更柔或更紧。"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

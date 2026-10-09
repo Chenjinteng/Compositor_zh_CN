@@ -12,6 +12,13 @@ nonisolated enum LayerBlendMode: String, Codable, CaseIterable, Sendable {
     case difference = "Difference", exclusion = "Exclusion", subtract = "Subtract", divide = "Divide"
     case hue = "Hue", saturation = "Saturation", color = "Color", luminosity = "Luminosity"
 
+    /// User-visible name resolved through the String Catalog. rawValue stays English so it's a
+    /// stable identifier for .comp files, undo names, the AppKit pop-up's representedObject, and
+    /// lookup-by-name in the BlendModePicker coordinator.
+    var localizedName: String {
+        Bundle.main.localizedString(forKey: rawValue, value: rawValue, table: nil)
+    }
+
     /// Photoshop's grouping: darkening modes together, then lightening, then contrast, then the
     /// comparative ones, then the component modes. The menu draws a line between each group.
     static let groups: [[LayerBlendMode]] = [

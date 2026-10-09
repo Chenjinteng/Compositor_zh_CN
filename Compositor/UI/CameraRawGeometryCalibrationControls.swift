@@ -8,46 +8,46 @@ struct CameraRawGeometryControls: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Upright").font(.subheadline)
-            Picker("Upright", selection: uprightBinding) {
+            Text(L("Upright")).font(.subheadline)
+            Picker(L("Upright"), selection: uprightBinding) {
                 ForEach(CameraRawUprightMode.allCases, id: \.self) { Text($0.localizedName).tag($0) }
             }
             .labelsHidden()
             .pickerStyle(.segmented)
-            .help("Off leaves the picture as it is. Guided straightens from lines you draw on the picture.")
+            .help(L("Off leaves the picture as it is. Guided straightens from lines you draw on the picture."))
             if raw.geometry.upright == .guided {
                 Button {
                     session.filterEdit?.drawingCameraRawGeometryGuide.toggle()
                     session.brushRevision += 1
                 } label: {
-                    Label("Draw Guides", systemImage: "line.diagonal")
+                    Label(L("Draw Guides"), systemImage: "line.diagonal")
                 }
-                .help("Draw two or more lines on the preview that should be level or vertical.")
+                .help(L("Draw two or more lines on the preview that should be level or vertical."))
                 .tint(session.filterEdit?.drawingCameraRawGeometryGuide == true ? Color.accentColor : Color.secondary)
                 if session.filterEdit?.drawingCameraRawGeometryGuide == true {
-                    Text("Drag on the layer to place a guide. Draw at least two lines.")
+                    Text(L("Drag on the layer to place a guide. Draw at least two lines."))
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 if !raw.geometry.guides.isEmpty {
-                    Button("Clear Guides") {
+                    Button(L("Clear Guides")) {
                         update { $0.cameraRaw.geometry.guides = [] }
                     }
-                    .help("Remove every guide line.")
+                    .help(L("Remove every guide line."))
                 }
             }
-            Picker("Projection", selection: binding(\.projection)) {
+            Picker(L("Projection"), selection: binding(\.projection)) {
                 ForEach(CameraRawProjection.allCases, id: \.self) { Text($0.localizedName).tag($0) }
             }
-            .help("Perspective allows stronger keystone. Rectilinear keeps the warp gentler.")
-            geometrySlider("Vertical", \.vertical, help: "Straightens vertical lines toward the center.")
-            geometrySlider("Horizontal", \.horizontal, help: "Straightens horizontal lines toward the center.")
-            geometrySlider("Rotate", \.rotate, range: CameraRawGeometrySettings.rotateRange, help: "Rotates the picture around its center.")
-            geometrySlider("Aspect", \.aspect, help: "Stretches width relative to height.")
-            geometrySlider("Scale", \.scale, help: "Zooms the transformed picture within the frame.")
-            geometrySlider("Offset X", \.offsetX, help: "Moves the picture left or right.")
-            geometrySlider("Offset Y", \.offsetY, help: "Moves the picture up or down.")
-            Toggle("Constrain Crop", isOn: binding(\.constrainCrop))
-                .help("Crops empty edges after the transform and fits the result back into the frame.")
+            .help(L("Perspective allows stronger keystone. Rectilinear keeps the warp gentler."))
+            geometrySlider(L("Vertical"), \.vertical, help: L("Straightens vertical lines toward the center."))
+            geometrySlider(L("Horizontal"), \.horizontal, help: L("Straightens horizontal lines toward the center."))
+            geometrySlider(L("Rotate"), \.rotate, range: CameraRawGeometrySettings.rotateRange, help: L("Rotates the picture around its center."))
+            geometrySlider(L("Aspect"), \.aspect, help: L("Stretches width relative to height."))
+            geometrySlider(L("Scale"), \.scale, help: L("Zooms the transformed picture within the frame."))
+            geometrySlider(L("Offset X"), \.offsetX, help: L("Moves the picture left or right."))
+            geometrySlider(L("Offset Y"), \.offsetY, help: L("Moves the picture up or down."))
+            Toggle(L("Constrain Crop"), isOn: binding(\.constrainCrop))
+                .help(L("Crops empty edges after the transform and fits the result back into the frame."))
         }
     }
 
@@ -94,26 +94,26 @@ struct CameraRawCalibrationControls: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Picker("Process", selection: binding(\.process)) {
+            Picker(L("Process"), selection: binding(\.process)) {
                 ForEach(CameraRawProcessVersion.allCases, id: \.self) { Text($0.localizedName).tag($0) }
             }
-            .help("Chooses how strongly the calibration sliders below are applied. Version 6 is the current default.")
+            .help(L("Chooses how strongly the calibration sliders below are applied. Version 6 is the current default."))
             Text(raw.calibration.process.summary)
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .help(raw.calibration.process.summary)
-            Text("Shadows").font(.subheadline)
-            calibrationSlider("Tint", \.shadowTint, help: "Adds green or magenta to the darkest tones.")
-            Text("Red Primary").font(.subheadline)
-            calibrationSlider("Hue", \.redHue, help: "Shifts how red is interpreted.")
-            calibrationSlider("Saturation", \.redSaturation, help: "Strengthens or weakens the red primary.")
-            Text("Green Primary").font(.subheadline)
-            calibrationSlider("Hue", \.greenHue, help: "Shifts how green is interpreted.")
-            calibrationSlider("Saturation", \.greenSaturation, help: "Strengthens or weakens the green primary.")
-            Text("Blue Primary").font(.subheadline)
-            calibrationSlider("Hue", \.blueHue, help: "Shifts how blue is interpreted.")
-            calibrationSlider("Saturation", \.blueSaturation, help: "Strengthens or weakens the blue primary.")
+            Text(L("Shadows")).font(.subheadline)
+            calibrationSlider(L("Tint"), \.shadowTint, help: L("Adds green or magenta to the darkest tones."))
+            Text(L("Red Primary")).font(.subheadline)
+            calibrationSlider(L("Hue"), \.redHue, help: L("Shifts how red is interpreted."))
+            calibrationSlider(L("Saturation"), \.redSaturation, help: L("Strengthens or weakens the red primary."))
+            Text(L("Green Primary")).font(.subheadline)
+            calibrationSlider(L("Hue"), \.greenHue, help: L("Shifts how green is interpreted."))
+            calibrationSlider(L("Saturation"), \.greenSaturation, help: L("Strengthens or weakens the green primary."))
+            Text(L("Blue Primary")).font(.subheadline)
+            calibrationSlider(L("Hue"), \.blueHue, help: L("Shifts how blue is interpreted."))
+            calibrationSlider(L("Saturation"), \.blueSaturation, help: L("Strengthens or weakens the blue primary."))
         }
     }
 
