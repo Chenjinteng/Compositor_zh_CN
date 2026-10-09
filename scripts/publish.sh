@@ -1,22 +1,28 @@
 #!/bin/zsh
-# Publishes the DMG that release.sh built: a GitHub Release (v<version>) holding Compositor.dmg, then the Sparkle
-# update feed (appcast.xml, committed to main) pointing at it.
+# Publishes the DMG that release.sh built: a GitHub Release (tag = $VERSION, no v
+# prefix — this fork uses 1.4.7_zh-style tags rather than v1.4.7) on
+# Chenjinteng/Compositor_zh_CN holding Compositor.dmg, then commits an
+# appcast.xml pointing at it so Sparkle can auto-update installed copies.
 #
-# Run release.sh first. Needs the Sparkle signing key in the login keychain and `gh` signed in.
+# Run release.sh first. Needs the Sparkle signing key in the login keychain and
+# `gh` signed in.
 # Release notes: RELEASE_NOTES="…" ./scripts/publish.sh
 set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP=Compositor
-REPO=robbietilton/Compositor
-WORK="$HOME/Library/Caches/CompositorRelease"
+REPO=Chenjinteng/Compositor_zh_CN
+WORK="$HOME/Library/Caches/CompositorRelease-zh-CN"
 SIGN_UPDATE="$WORK/DerivedData/SourcePackages/artifacts/sparkle/Sparkle/bin/sign_update"
 
 settings=$(xcodebuild -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release -showBuildSettings 2>/dev/null)
 VERSION=$(print -r -- "$settings" | awk -F' = ' '/ MARKETING_VERSION = /{print $2; exit}')
 BUILD=$(print -r -- "$settings" | awk -F' = ' '/ CURRENT_PROJECT_VERSION = /{print $2; exit}')
 MINIMUM=$(print -r -- "$settings" | awk -F' = ' '/ MACOSX_DEPLOYMENT_TARGET = /{print $2; exit}')
-TAG="v$VERSION"
+# This fork tags Personal Team releases without the leading "v" that the
+# upstream repo uses, to keep 1.4.7_zh visually distinct from upstream's
+# v1.4.6 / v1.4.7.
+TAG="$VERSION"
 SOURCE="$PROJECT_DIR/dist/$APP-$VERSION.dmg"
 [[ -f "$SOURCE" ]] || { echo "No $SOURCE — run scripts/release.sh first."; exit 1; }
 [[ -x "$SIGN_UPDATE" ]] || { echo "Sparkle's sign_update isn't built — run scripts/release.sh first."; exit 1; }

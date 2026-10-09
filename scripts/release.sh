@@ -1,22 +1,27 @@
 #!/bin/zsh
-# Builds a signed, notarized Compositor DMG that opens without warnings on any Mac.
+# Builds a Compositor DMG signed with the user's Personal Team.
+#
+# Personal Team cannot notarize (that requires a Developer ID Application
+# certificate), so the DMG will install cleanly on the build machine and on
+# any Mac the user signs in to with the same Apple ID, but other Macs will
+# see a Gatekeeper "from an unidentified developer" warning unless they
+# right-click → Open once.
 #
 # Needs, all kept out of this repository:
-#   - a "Developer ID Application" certificate in the login keychain
-#   - notarization credentials saved once with:
-#       xcrun notarytool store-credentials "compositor-notary" --apple-id "…" --team-id 3E4X3B9Z9T
+#   - an "Apple Development" certificate in the login keychain
+#     for Team ID FDQLLU43U7
 #   - create-dmg (brew install create-dmg)
-# The DMG window background is scripts/dmg/dmg-bg.jpg (600 × 380, the window's exact size) plus
-# dmg-bg-retina.jpg (1200 × 760) for Retina displays.
+# The DMG window background is scripts/dmg/dmg-bg.jpg (600 × 380, the window's
+# exact size) plus dmg-bg-retina.jpg (1200 × 760) for Retina displays.
 set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP=Compositor
-TEAM=3E4X3B9Z9T
-IDENTITY="Developer ID Application"
-NOTARY_PROFILE=compositor-notary
-# Built outside Dropbox: the extended attributes it adds to files make code signing fail.
-WORK="$HOME/Library/Caches/CompositorRelease"
+TEAM=FDQLLU43U7
+IDENTITY="Apple Development"
+# Personal Team re-signs expire after 7 days, so give the work dir a fork-specific
+# name and keep it under the user's cache dir, not the upstream path.
+WORK="$HOME/Library/Caches/CompositorRelease-zh-CN"
 DIST="$PROJECT_DIR/dist"
 
 settings=$(xcodebuild -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release -showBuildSettings 2>/dev/null)
@@ -27,25 +32,19 @@ echo "==> $APP $VERSION ($BUILD)"
 rm -rf "$WORK"
 mkdir -p "$WORK" "$DIST"
 
-echo "==> Archiving a Release build"
+echo "==> Archiving a Release build (Personal Team automatic signing)"
 xcodebuild archive -quiet \
   -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release \
   -destination "generic/platform=macOS" \
   -archivePath "$WORK/$APP.xcarchive" -derivedDataPath "$WORK/DerivedData" \
-  CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="$IDENTITY" DEVELOPMENT_TEAM="$TEAM"
+  CODE_SIGN_STYLE=Automatic CODE_SIGN_IDENTITY="$IDENTITY" DEVELOPMENT_TEAM="$TEAM"
 
-echo "==> Exporting, signed with Developer ID"
-xcodebuild -exportArchive -quiet \
-  -archivePath "$WORK/$APP.xcarchive" \
-  -exportOptionsPlist "$PROJECT_DIR/scripts/ExportOptions.plist" \
-  -exportPath "$WORK/export"
-APP_PATH="$WORK/export/$APP.app"
+# The archive already runs codesign during `xcodebuild archive`; just verify and
+# copy out. We deliberately do not use `xcodebuild -exportArchive` here — its
+# only valid signing methods for macOS are app-store / developer-id / package,
+# none of which accept a Personal Team signing identity.
+APP_PATH="$WORK/$APP.xcarchive/Products/Applications/$APP.app"
 codesign --verify --deep --strict --verbose=2 "$APP_PATH"
-
-echo "==> Notarizing the app"
-ditto -c -k --keepParent "$APP_PATH" "$WORK/$APP.zip"
-xcrun notarytool submit "$WORK/$APP.zip" --keychain-profile "$NOTARY_PROFILE" --wait
-xcrun stapler staple "$APP_PATH"
 
 echo "==> Building the DMG window"
 STAGE="$WORK/dmg"
@@ -78,12 +77,15 @@ create-dmg \
   "${background[@]}" \
   "$DMG" "$STAGE"
 
-echo "==> Signing and notarizing the DMG"
+# Sign the DMG with the same Personal Team identity. No stapling: there's no
+# notarization ticket to staple.
+echo "==> Signing the DMG"
 codesign --sign "$IDENTITY" --timestamp "$DMG"
-xcrun notarytool submit "$DMG" --keychain-profile "$NOTARY_PROFILE" --wait
-xcrun stapler staple "$DMG"
 
-echo "==> What Gatekeeper will say on another Mac"
-spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG"
-spctl --assess --type execute --verbose=2 "$APP_PATH"
+# spctl on a Personal-Team-signed DMG is informational only — it will likely
+# say "rejected" because the build is not notarized. Run it anyway so the
+# user can see what Gatekeeper will say on their own machine.
+echo "==> What spctl will say on the build machine"
+spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG" || true
+spctl --assess --type execute --verbose=2 "$APP_PATH" || true
 echo "==> Done: $DMG"
