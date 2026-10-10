@@ -224,8 +224,10 @@ final class CompositorApplicationDelegate: NSObject, NSApplicationDelegate {
             .foregroundColor: NSColor.labelColor
         ]
         body.append(NSAttributedString(string: "原版 GitHub: ", attributes: label))
+        // Display the short @owner/repo form so the credits line doesn't wrap on the standard About
+        // panel width; the .link attribute still points at the full URL, so a click goes upstream.
         body.append(NSAttributedString(
-            string: upstreamURL.absoluteString,
+            string: "@robbietilton/Compositor",
             attributes: [
                 .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
                 .foregroundColor: NSColor.linkColor,

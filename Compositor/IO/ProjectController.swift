@@ -336,11 +336,17 @@ final class ProjectController {
         await finishWriting()
         guard session.isModified, session.document != nil else { return true }
         let alert = NSAlert()
-        alert.messageText = "Save changes to \(session.projectURL?.lastPathComponent ?? "Untitled")?"
-        alert.informativeText = "Your changes will be lost if you don’t save them."
-        alert.addButton(withTitle: "Save")
-        alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: "Don’t Save")
+        let projectName = session.projectURL?.lastPathComponent
+            ?? String(localized: "Untitled", comment: "Default project name when none is set.")
+        alert.messageText = String(
+            format: String(localized: "Save changes to %@?", comment: "Title of the save-changes alert shown before closing a modified project."),
+            projectName)
+        alert.informativeText = String(
+            localized: "Your changes will be lost if you don’t save them.",
+            comment: "Informative text of the save-changes alert.")
+        alert.addButton(withTitle: String(localized: "Save", comment: "Generic save button."))
+        alert.addButton(withTitle: String(localized: "Cancel", comment: "Generic cancel button."))
+        alert.addButton(withTitle: String(localized: "Don’t Save", comment: "Save-changes alert: discard changes and close."))
         let response = await show(alert)
         if response == .alertFirstButtonReturn { return await saveCurrent() }
         return response == .alertThirdButtonReturn
