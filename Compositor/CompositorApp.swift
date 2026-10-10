@@ -99,7 +99,13 @@ struct CompositorApp: App {
                 // Grouped: a commands builder takes at most ten items.
                 Group {
                     CommandGroup(after: .appInfo) {
-                        Button("Check for Updates…") { applicationDelegate.updater.checkForUpdates() }
+                        // No Sparkle auto-update: this fork is personal-use, the user follows
+                        // @Chenjinteng/Compositor_zh_CN on GitHub for new DMGs. The feed stays
+                        // empty (see appcast.xml) so "Check for Updates" wouldn't 404 on a stale
+                        // upstream signature; instead the menu opens the Releases page directly.
+                        Button("自取更新…") {
+                            NSWorkspace.shared.open(URL(string: "https://github.com/Chenjinteng/Compositor_zh_CN/releases")!)
+                        }
                     }
                     CommandGroup(after: .toolbar) {
                         Button(L("Search Commands…")) {
