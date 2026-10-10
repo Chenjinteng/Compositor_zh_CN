@@ -51,6 +51,14 @@ final class CompositorApplicationDelegate: NSObject, NSApplicationDelegate {
         // beside Canvas Only (F), which does the same job without the slow slide into a new space. Taken out once the menus exist, and again whenever the
         // menu bar is opened, in case SwiftUI has rebuilt them since.
         DispatchQueue.main.async { Self.removeSystemExtras() }
+        // The default About menu item points at NSApp.orderFrontStandardAboutPanel, which uses CFBundleName
+        // ("Compositor") and shows no fork attribution. Swap its target/action for a custom panel that names
+        // the zh-Hans fork and links back to upstream's GitHub. SwiftUI builds the App menu lazily on first
+        // open, so the replacement also runs from the menu-tracking notification below.
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            Self.replaceAboutMenuItem(target: self, action: #selector(self.showAboutPanel))
+        }
         // View › Canvas Only's key is a plain F, and the menu takes a plain letter even while something is being
         // typed. So an F meant for a text field (the palette's search, a layer's name, a number) goes straight to it,
         // before the menu sees it.
@@ -70,8 +78,12 @@ final class CompositorApplicationDelegate: NSObject, NSApplicationDelegate {
             return nil
         }
         // Run as the menu opens (no queue), before it's drawn.
-        NotificationCenter.default.addObserver(forName: NSMenu.didBeginTrackingNotification, object: nil, queue: nil) { _ in
-            MainActor.assumeIsolated { Self.removeSystemExtras() }
+        NotificationCenter.default.addObserver(forName: NSMenu.didBeginTrackingNotification, object: nil, queue: nil) { [weak self] _ in
+            MainActor.assumeIsolated {
+                Self.removeSystemExtras()
+                guard let self else { return }
+                Self.replaceAboutMenuItem(target: self, action: #selector(self.showAboutPanel))
+            }
         }
         // Writing Tools and AutoFill are put back each time the Edit menu opens, so they're taken out again as they're
         // added, before the menu is drawn.
@@ -180,6 +192,55 @@ final class CompositorApplicationDelegate: NSObject, NSApplicationDelegate {
         where menu.items[index].isSeparatorItem && menu.items[index - 1].isSeparatorItem {
             menu.removeItem(at: index)
         }
+    }
+
+    /// Walks the menu bar once and rewires any item whose action is the default `orderFrontStandardAboutPanel:`
+    /// to call `showAboutPanel` instead. Cheap on a normal menu bar (one top-level App menu, ~12 items);
+    /// only the first match per top-level menu is rewired because there is only ever one About item.
+    @MainActor private static func replaceAboutMenuItem(target: AnyObject, action: Selector) {
+        for top in NSApp.mainMenu?.items ?? [] {
+            guard let menu = top.submenu else { continue }
+            for item in menu.items where item.action == #selector(NSApplication.orderFrontStandardAboutPanel(_:)) {
+                item.target = target
+                item.action = action
+                return
+            }
+        }
+    }
+
+    /// The zh-Hans fork's About panel: name as "Compositor 汉化版", version read from the bundle, and a
+    /// credits line with a clickable link back to the original robbietilton/Compositor GitHub repo so users
+    /// can find upstream, file issues there, or read the original English README.
+    @objc func showAboutPanel() {
+        let info = Bundle.main.infoDictionary
+        let marketing = info?["CFBundleShortVersionString"] as? String ?? "?"
+        let build = info?["CFBundleVersion"] as? String ?? "?"
+        let versionString = "\(marketing) (\(build))"
+
+        let upstreamURL = URL(string: "https://github.com/robbietilton/Compositor")!
+        let body = NSMutableAttributedString()
+        let label: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+            .foregroundColor: NSColor.labelColor
+        ]
+        body.append(NSAttributedString(string: "原版 GitHub: ", attributes: label))
+        body.append(NSAttributedString(
+            string: upstreamURL.absoluteString,
+            attributes: [
+                .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+                .foregroundColor: NSColor.linkColor,
+                .link: upstreamURL
+            ]))
+        body.append(NSAttributedString(
+            string: "\n本 fork 仅为个人学习使用,汉化借助 AI 工具辅助完成。",
+            attributes: label))
+
+        NSApp.orderFrontStandardAboutPanel(options: [
+            .applicationName: "Compositor 汉化版",
+            .applicationIcon: NSApp.applicationIconImage ?? NSImage(),
+            .version: versionString,
+            .credits: body
+        ])
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
