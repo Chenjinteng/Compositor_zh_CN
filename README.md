@@ -115,6 +115,38 @@ brew install --cask robbietilton-compositor
 - 通过 `xcrun notarytool store-credentials "compositor-notary" …` 保存的公证凭据
 - [`create-dmg`](https://github.com/create-dmg/create-dmg)(`brew install create-dmg`)
 
+## 多机发布与个人使用
+
+本 fork 为个人自用,日常在两台 Mac 间切换使用,所以 `scripts/release.sh` 改为
+**按架构分别构建 DMG**(arm64 + x86_64 各一个),而不是打包成一个 universal DMG。
+
+### 两台机器
+
+| 设备 | 系统 | 架构 | 对应 DMG |
+|---|---|---|---|
+| Mac mini(开发机,本仓库所在) | macOS 27.0.1 | arm64 | `dist/Compositor-<version>-arm64.dmg` |
+| MacBook Pro 13-inch, 2018 | macOS 15.7.7(Sequoia)¹ | x86_64 | `dist/Compositor-<version>-x86_64.dmg` |
+
+¹ 2018 MBP 13 通过 OpenCore Legacy Patcher 升级到 Sequoia;它也是 Intel 阵营
+最后一代能跑到 macOS 26 (Tahoe) 的机器,但这台没升到 Tahoe。
+
+### 部署目标的覆盖
+
+工程文件 `project.pbxproj` 仍然写 `arm64 only` + `macOS 26.0` 的默认值。脚本层
+在 `xcodebuild archive` 时显式把 `MACOSX_DEPLOYMENT_TARGET` 覆盖到 `15.0`,
+让 x86_64 DMG 能在 MBP 2018(15.7.7)上跑;`scripts/publish.sh` 的
+`xcodebuild -showBuildSettings` 也同步加这个 override,保证 appcast 里的
+`minimumSystemVersion` 跟实际产物对齐。
+
+### 跑 release.sh
+
+```sh
+./scripts/release.sh
+```
+
+跑完 `dist/` 下出两个 DMG,各自单一架构、各自 Personal Team 签名。`spctl` 报
+`rejected` 是因为没 notarize,预期内 informational noise。
+
 ## 许可证
 
 MIT —— 见 [LICENSE](LICENSE)。
