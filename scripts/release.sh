@@ -32,59 +32,71 @@ echo "==> $APP $VERSION ($BUILD)"
 rm -rf "$WORK"
 mkdir -p "$WORK" "$DIST"
 
-echo "==> Archiving a Release build (Personal Team automatic signing)"
-xcodebuild archive -quiet \
-  -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release \
-  -destination "generic/platform=macOS" \
-  -archivePath "$WORK/$APP.xcarchive" -derivedDataPath "$WORK/DerivedData" \
+# Per-architecture DMGs (arm64 + x86_64). The project's deployment target
+# (26.0) is overridden to 15.0 so the x86_64 slice runs on the MBP 2018
+# (Sequoia 15.7.7). publish.sh must mirror this override to keep the appcast
+# in sync with the DMG.
+for arch in arm64 x86_64; do
+  WORK_ARCH="$WORK/$arch"
+  rm -rf "$WORK_ARCH"
+  mkdir -p "$WORK_ARCH"
 
-# The archive already runs codesign during `xcodebuild archive`; just verify and
-# copy out. We deliberately do not use `xcodebuild -exportArchive` here — its
-# only valid signing methods for macOS are app-store / developer-id / package,
-# none of which accept a Personal Team signing identity.
-APP_PATH="$WORK/$APP.xcarchive/Products/Applications/$APP.app"
-codesign --verify --deep --strict --verbose=2 "$APP_PATH"
+  echo "==> Archiving a Release build (Personal Team automatic signing) [$arch]"
+  xcodebuild archive -quiet \
+    -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release \
+    -destination "generic/platform=macOS" \
+    -archivePath "$WORK_ARCH/$APP.xcarchive" -derivedDataPath "$WORK_ARCH/DerivedData" \
+    ARCHS="$arch" \
+    MACOSX_DEPLOYMENT_TARGET=15.0
 
-echo "==> Building the DMG window"
-STAGE="$WORK/dmg"
-mkdir -p "$STAGE"
-cp -R "$APP_PATH" "$STAGE/"
-DMG="$DIST/$APP-$VERSION.dmg"
-rm -f "$DMG"
-# Icon centers in the DMG window, in points from its top-left.
-APP_X=160
-APPLICATIONS_X=440
-ICON_Y=180
-background=()
-LOW="$PROJECT_DIR/scripts/dmg/dmg-bg.jpg"
-HIGH="$PROJECT_DIR/scripts/dmg/dmg-bg-retina.jpg"
-if [[ -f "$LOW" && -f "$HIGH" ]]; then
-  # Finder takes one background file; a TIFF holding both sizes stays sharp on Retina displays.
-  sips -s format png -s dpiWidth 72 -s dpiHeight 72 "$LOW" --out "$WORK/background.png" >/dev/null
-  sips -s format png -s dpiWidth 144 -s dpiHeight 144 "$HIGH" --out "$WORK/background@2x.png" >/dev/null
-  tiffutil -cathidpicheck "$WORK/background.png" "$WORK/background@2x.png" -out "$WORK/background.tiff" >/dev/null
-  background=(--background "$WORK/background.tiff")
-elif [[ -f "$LOW" ]]; then
-  background=(--background "$LOW")
-fi
-create-dmg \
-  --volname "$APP" \
-  --window-pos 200 120 --window-size 600 380 \
-  --icon-size 128 --text-size 13 \
-  --icon "$APP.app" "$APP_X" "$ICON_Y" --hide-extension "$APP.app" \
-  --app-drop-link "$APPLICATIONS_X" "$ICON_Y" \
-  "${background[@]}" \
-  "$DMG" "$STAGE"
+  # The archive already runs codesign during `xcodebuild archive`; just verify and
+  # copy out. We deliberately do not use `xcodebuild -exportArchive` here — its
+  # only valid signing methods for macOS are app-store / developer-id / package,
+  # none of which accept a Personal Team signing identity.
+  APP_PATH="$WORK_ARCH/$APP.xcarchive/Products/Applications/$APP.app"
+  codesign --verify --deep --strict --verbose=2 "$APP_PATH"
 
-# Sign the DMG with the same Personal Team identity. No stapling: there's no
-# notarization ticket to staple.
-echo "==> Signing the DMG"
-codesign --sign "$IDENTITY" --timestamp "$DMG"
+  echo "==> Building the DMG window [$arch]"
+  STAGE="$WORK_ARCH/dmg"
+  mkdir -p "$STAGE"
+  cp -R "$APP_PATH" "$STAGE/"
+  DMG="$DIST/$APP-$VERSION-$arch.dmg"
+  rm -f "$DMG"
+  # Icon centers in the DMG window, in points from its top-left.
+  APP_X=160
+  APPLICATIONS_X=440
+  ICON_Y=180
+  background=()
+  LOW="$PROJECT_DIR/scripts/dmg/dmg-bg.jpg"
+  HIGH="$PROJECT_DIR/scripts/dmg/dmg-bg-retina.jpg"
+  if [[ -f "$LOW" && -f "$HIGH" ]]; then
+    # Finder takes one background file; a TIFF holding both sizes stays sharp on Retina displays.
+    sips -s format png -s dpiWidth 72 -s dpiHeight 72 "$LOW" --out "$WORK_ARCH/background.png" >/dev/null
+    sips -s format png -s dpiWidth 144 -s dpiHeight 144 "$HIGH" --out "$WORK_ARCH/background@2x.png" >/dev/null
+    tiffutil -cathidpicheck "$WORK_ARCH/background.png" "$WORK_ARCH/background@2x.png" -out "$WORK_ARCH/background.tiff" >/dev/null
+    background=(--background "$WORK_ARCH/background.tiff")
+  elif [[ -f "$LOW" ]]; then
+    background=(--background "$LOW")
+  fi
+  create-dmg \
+    --volname "$APP" \
+    --window-pos 200 120 --window-size 600 380 \
+    --icon-size 128 --text-size 13 \
+    --icon "$APP.app" "$APP_X" "$ICON_Y" --hide-extension "$APP.app" \
+    --app-drop-link "$APPLICATIONS_X" "$ICON_Y" \
+    "${background[@]}" \
+    "$DMG" "$STAGE"
 
-# spctl on a Personal-Team-signed DMG is informational only — it will likely
-# say "rejected" because the build is not notarized. Run it anyway so the
-# user can see what Gatekeeper will say on their own machine.
-echo "==> What spctl will say on the build machine"
-spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG" || true
-spctl --assess --type execute --verbose=2 "$APP_PATH" || true
-echo "==> Done: $DMG"
+  # Sign the DMG with the same Personal Team identity. No stapling: there's no
+  # notarization ticket to staple.
+  echo "==> Signing the DMG [$arch]"
+  codesign --sign "$IDENTITY" --timestamp "$DMG"
+
+  # spctl on a Personal-Team-signed DMG is informational only — it will likely
+  # say "rejected" because the build is not notarized. Run it anyway so the
+  # user can see what Gatekeeper will say on their own machine.
+  echo "==> What spctl will say on the build machine [$arch]"
+  spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG" || true
+  spctl --assess --type execute --verbose=2 "$APP_PATH" || true
+  echo "==> Done [$arch]: $DMG"
+done
