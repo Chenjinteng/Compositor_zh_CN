@@ -9,6 +9,10 @@
 > - The fork has **no affiliation with** or **authorization from** [Robbie Tilton](https://github.com/robbietilton) or [Wonder Assembly LLC](https://www.wonderassembly.com); all trademarks and product names belong to the original author.
 >
 > **Credits**: thanks to Robbie Tilton for creating and open-sourcing Compositor — the Chinese fork only exists because his work was worth reading in your own language. For the official build, see [robbietilton.com/compositor](https://robbietilton.com/compositor) or [the upstream GitHub Releases page](https://github.com/robbietilton/Compositor/releases).
+>
+> **About updates**: this fork does **not** provide auto-update. The Help menu's "自取更新…" entry is just a shortcut that opens [this fork's Releases page](https://github.com/Chenjinteng/Compositor_zh_CN/releases) in your browser — there is no live signing and no Sparkle ed25519 update channel. The reason is straightforward: this is a personal-use branch, so the maintainer has no obligation and no motivation to run an online distribution pipeline; upstream's "translations are on hold" stance also makes auto-update pointless for a no-PR localization.
+>
+> For a new build, follow [@Chenjinteng/Compositor_zh_CN](https://github.com/Chenjinteng/Compositor_zh_CN/releases) on GitHub — every DMG shows up there.
 
 Adobe Photoshop costs too much and tools like GIMP don’t feel familiar enough for me to stay in flow. That’s why I built Compositor.
 
