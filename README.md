@@ -11,6 +11,10 @@
 > - 与原作者及其所属 [Wonder Assembly LLC](https://www.wonderassembly.com) **没有任何合作关系或授权**,所有商标、产品名归原作者所有
 >
 > **致谢**:感谢 [Robbie Tilton](https://github.com/robbietilton) 创作并开源了 Compositor。这个 fork 是站在他的肩膀上,翻译只是为了让他的出色工作也能用中文顺手一点。如果你是寻找官方版本,请访问 [robbietilton.com/compositor](https://robbietilton.com/compositor) 或 [上游 GitHub](https://github.com/robbietilton/Compositor)。
+>
+> **关于更新**:本 fork **不提供自动更新**。Help 菜单里的"自取更新…"项只是跳转到本仓库 [Releases 页](https://github.com/Chenjinteng/Compositor_zh_CN/releases)的入口——不会在线签名、不会跑 Sparkle ed25519 更新通道。原因很简单:这是个人自用分支,作者没有义务也没有动力去维护一套在线分发服务;上游也明确写明 translations are on hold,自动更新对一个不开 PR 的本地化分支来说意义不大。
+>
+> 需要新版本时,**自行关注 [@Chenjinteng/Compositor_zh_CN](https://github.com/Chenjinteng/Compositor_zh_CN/releases)** 即可——每次构建的 DMG 都会出现在那里。
 
 Adobe Photoshop 太贵,GIMP 等工具又不够顺手,我没法靠它们保持心流。这正是我打造 Compositor 的原因。
 
