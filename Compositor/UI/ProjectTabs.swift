@@ -254,8 +254,8 @@ private struct NewTabDropSlot: View {
                 style: StrokeStyle(lineWidth: targeted ? 2 : 1, dash: targeted ? [] : [4, 3])))
             .contentShape(Capsule())
             .fixedSize()
-            .help("Drop to open in a new canvas")
-            .accessibilityLabel("Drop into new canvas")
+            .help(L("Drop to open in a new canvas"))
+            .accessibilityLabel(L("Drop into new canvas"))
             .onDrop(of: [UTType.fileURL.identifier, UTType.image.identifier, ProjectWorkspace.layerType], delegate:
                 ProjectTabDropDelegate(workspace: workspace, destination: nil, targeted: $targeted))
     }
@@ -381,7 +381,7 @@ struct NewProjectDropTarget: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(targeted ? Color.accentColor : .clear, lineWidth: 2))
-            .help(targeted ? "Open in a new project tab" : "New canvas (⌘N) · Drop images here for new tabs")
+            .help(targeted ? L("Open in a new project tab") : L("New canvas (⌘N) · Drop images here for new tabs"))
             .onDrop(of: [UTType.fileURL.identifier, UTType.image.identifier, ProjectWorkspace.layerType], delegate:
                 ProjectTabDropDelegate(workspace: workspace, destination: nil, targeted: $targeted))
     }

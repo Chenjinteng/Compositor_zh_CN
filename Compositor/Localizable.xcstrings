@@ -14100,6 +14100,42 @@
           }
         }
       }
+    },
+    "A new version of %@ is available!": {
+      "comment": "Sparkle update alert: title.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 有新版本可用!"
+          }
+        }
+      }
+    },
+    "Automatically download and install updates in the future": {
+      "comment": "Sparkle update alert: suppression button title (1.4.9 added this).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今后自动下载并安装更新"
+          }
+        }
+      }
+    },
+    "New canvas (⌘N) · Drop images here for new tabs": {
+      "comment": "Project tabs: new-canvas placeholder hint.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新建画布(⌘N)· 把图片拖到此处即可作为新标签打开"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

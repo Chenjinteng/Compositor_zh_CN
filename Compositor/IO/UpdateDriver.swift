@@ -21,7 +21,7 @@ import Sparkle
         let downloaded = state.stage != .notDownloaded
         let alert = NSAlert()
         alert.icon = NSApp.applicationIconImage
-        alert.messageText = "A new version of \(name) is available!"
+        alert.messageText = String(format: String(localized: "A new version of %@ is available!", comment: "Update alert: title."), name)
         alert.informativeText = downloaded
             ? "\(name) \(appcastItem.displayVersionString) is ready to install — you have \(current)."
             : "\(name) \(appcastItem.displayVersionString) is now available — you have \(current). Would you like to download it now?"
@@ -32,7 +32,7 @@ import Sparkle
         alert.addButton(withTitle: "Skip This Version")
         if let updater, updater.allowsAutomaticUpdates {
             alert.showsSuppressionButton = true
-            alert.suppressionButton?.title = "Automatically download and install updates in the future"
+            alert.suppressionButton?.title = L("Automatically download and install updates in the future")
             alert.suppressionButton?.state = updater.automaticallyDownloadsUpdates ? .on : .off
         }
         alert.layout()
