@@ -14136,6 +14136,78 @@
           }
         }
       }
+    },
+    "Install and Relaunch": {
+      "comment": "Update alert: primary button when update is already downloaded.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安装并重启"
+          }
+        }
+      }
+    },
+    "Install Update": {
+      "comment": "Update alert: primary button to download + install.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安装更新"
+          }
+        }
+      }
+    },
+    "Remind Me Later": {
+      "comment": "Update alert: dismiss this update, prompt again later.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "稍后提醒"
+          }
+        }
+      }
+    },
+    "Skip This Version": {
+      "comment": "Update alert: never prompt for this exact version again.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跳过此版本"
+          }
+        }
+      }
+    },
+    "%1$@ %2$@ is ready to install — you have %3$@.": {
+      "comment": "Update alert: informative text when an update is already downloaded. Args: app name, new version, current version.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@ 已下载就绪,可以安装 — 你当前是 %3$@。"
+          }
+        }
+      }
+    },
+    "%1$@ %2$@ is now available — you have %3$@. Would you like to download it now?": {
+      "comment": "Update alert: informative text when update needs to be downloaded. Args: app name, new version, current version.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@ 已发布 — 你当前是 %3$@。想现在下载吗?"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

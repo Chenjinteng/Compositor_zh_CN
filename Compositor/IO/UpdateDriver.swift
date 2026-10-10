@@ -23,13 +23,13 @@ import Sparkle
         alert.icon = NSApp.applicationIconImage
         alert.messageText = String(format: String(localized: "A new version of %@ is available!", comment: "Update alert: title."), name)
         alert.informativeText = downloaded
-            ? "\(name) \(appcastItem.displayVersionString) is ready to install — you have \(current)."
-            : "\(name) \(appcastItem.displayVersionString) is now available — you have \(current). Would you like to download it now?"
+            ? String(format: String(localized: "%1$@ %2$@ is ready to install — you have %3$@.", comment: "Update alert: informative text when the update is already downloaded."), name, appcastItem.displayVersionString, current)
+            : String(format: String(localized: "%1$@ %2$@ is now available — you have %3$@. Would you like to download it now?", comment: "Update alert: informative text when the update still needs to be downloaded."), name, appcastItem.displayVersionString, current)
         let changes = Self.changes(in: appcastItem)
         if !changes.isEmpty { alert.accessoryView = Self.list(changes) }
-        alert.addButton(withTitle: downloaded ? "Install and Relaunch" : "Install Update")
-        alert.addButton(withTitle: "Remind Me Later")
-        alert.addButton(withTitle: "Skip This Version")
+        alert.addButton(withTitle: downloaded ? L("Install and Relaunch") : L("Install Update"))
+        alert.addButton(withTitle: L("Remind Me Later"))
+        alert.addButton(withTitle: L("Skip This Version"))
         if let updater, updater.allowsAutomaticUpdates {
             alert.showsSuppressionButton = true
             alert.suppressionButton?.title = L("Automatically download and install updates in the future")
