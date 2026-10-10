@@ -17,6 +17,13 @@ set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP=Compositor
+# The built .app's product name (matches PRODUCT_NAME in pbxproj for the main target) — kept
+# separate from $APP because the .xcodeproj, scheme, and .xcarchive directory still use the
+# original "Compositor" name (xcodebuild derives .xcarchive from the scheme, not PRODUCT_NAME),
+# while the .app inside the archive is "Compositor 汉化版.app". Keeping these in sync prevents
+# the same-app-name collision that a user with both the upstream and the fork installed
+# would otherwise hit in /Applications.
+APP_PRODUCT_NAME="Compositor 汉化版"
 TEAM=FJYQT2JA5U
 IDENTITY="Apple Development"
 # Personal Team re-signs expire after 7 days, so give the work dir a fork-specific
@@ -53,7 +60,7 @@ for arch in arm64 x86_64; do
   # copy out. We deliberately do not use `xcodebuild -exportArchive` here — its
   # only valid signing methods for macOS are app-store / developer-id / package,
   # none of which accept a Personal Team signing identity.
-  APP_PATH="$WORK_ARCH/$APP.xcarchive/Products/Applications/$APP.app"
+  APP_PATH="$WORK_ARCH/$APP.xcarchive/Products/Applications/$APP_PRODUCT_NAME.app"
   codesign --verify --deep --strict --verbose=2 "$APP_PATH"
 
   echo "==> Building the DMG window [$arch]"
@@ -79,10 +86,10 @@ for arch in arm64 x86_64; do
     background=(--background "$LOW")
   fi
   create-dmg \
-    --volname "$APP" \
+    --volname "$APP_PRODUCT_NAME" \
     --window-pos 200 120 --window-size 600 380 \
     --icon-size 128 --text-size 13 \
-    --icon "$APP.app" "$APP_X" "$ICON_Y" --hide-extension "$APP.app" \
+    --icon "$APP_PRODUCT_NAME.app" "$APP_X" "$ICON_Y" --hide-extension "$APP_PRODUCT_NAME.app" \
     --app-drop-link "$APPLICATIONS_X" "$ICON_Y" \
     "${background[@]}" \
     "$DMG" "$STAGE"
