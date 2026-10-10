@@ -82,7 +82,7 @@ brew install --cask robbietilton-compositor
 - 画布大小、图像大小和裁剪
 - 300% 缩放以上时,在画布角落有一个 Navigator 缩略导航:全文档迷你视图,框出当前视野;点击或拖动直接定位(View › Navigator)
 - 缩小查看时的高质量降采样,放大查看时的像素网格
-- 支持导入 JPEG、PNG、HEIC、TIFF、SVG、相机 RAW(需先走 develop 一步)、Photoshop PSD 和 PSB(8 位 RGB,不支持 CMYK)。Photoshop 文件夹、蒙版、混合模式、填充矩形/椭圆,以及简单的水平文字保持可编辑;其他矢量和竖排文字转为像素。应用前会显示转换报告
+- 支持导入 JPEG、PNG、HEIC、WebP、TIFF、SVG、相机 RAW(需先走 develop 一步)、Photoshop PSD 和 PSB(8 位 RGB,不支持 CMYK)。Photoshop 文件夹、蒙版、混合模式、填充矩形/椭圆,以及简单的水平文字保持可编辑;其他矢量和竖排文字转为像素。应用前会显示转换报告
 - 大文档:内存预算随 Mac 调整,过大的 Photoshop 文件将图层裁切到画布以保证可打开
 - 导出 PNG(⇧⌘E)、导出 JPEG(⇧⌥⌘S),以及导出为(⇧⌥⌘W)PDF / PNG / JPEG,可选按打印尺寸缩放,带实时预览、JPEG 画质与文件大小;复制合并
 - 保存项目的同时可继续工作

@@ -4,9 +4,9 @@
 # Chenjinteng/Compositor_zh_CN holding Compositor.dmg, then commits an
 # appcast.xml pointing at it so Sparkle can auto-update installed copies.
 #
-# Run release.sh first. Needs the Sparkle signing key in the login keychain and
-# `gh` signed in.
-# Release notes: RELEASE_NOTES="…" ./scripts/publish.sh
+# Run release.sh first. Needs the Sparkle signing key in the login keychain and `gh` signed in.
+# Release notes, a change a line: RELEASE_NOTES=$'First change\nSecond change' ./scripts/publish.sh
+# They're listed on the GitHub Release and in the update alert (the feed item's <changes>).
 set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
@@ -42,8 +42,17 @@ cp "$SOURCE" "$DMG"
 echo "==> Signing the update for Sparkle"
 signature=$("$SIGN_UPDATE" "$DMG")
 
+changes=("${(@f)${RELEASE_NOTES:-}}")
+changes=(${changes:#})
+[[ "${RELEASE_NOTES:-}" != *']]>'* ]] || { echo "RELEASE_NOTES can't contain ]]>."; exit 1; }
+notes="$APP $VERSION"
+(( ${#changes} )) && notes=$(printf -- '- %s\n' "${changes[@]}")
+changes_xml=""
+(( ${#changes} )) && changes_xml="
+      <changes><![CDATA[${(pj:\n:)changes}]]></changes>"
+
 echo "==> Creating GitHub Release $TAG"
-gh release create "$TAG" "$DMG" --repo "$REPO" --title "$APP $VERSION" --notes "${RELEASE_NOTES:-$APP $VERSION}"
+gh release create "$TAG" "$DMG" --repo "$REPO" --title "$APP $VERSION" --notes "$notes"
 
 echo "==> Publishing the update feed"
 cat > "$PROJECT_DIR/appcast.xml" <<XML
@@ -57,7 +66,7 @@ cat > "$PROJECT_DIR/appcast.xml" <<XML
       <sparkle:version>$BUILD</sparkle:version>
       <sparkle:shortVersionString>$VERSION</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>$MINIMUM</sparkle:minimumSystemVersion>
-      <link>https://github.com/$REPO/releases/tag/$TAG</link>
+      <link>https://github.com/$REPO/releases/tag/$TAG</link>$changes_xml
       <enclosure url="https://github.com/$REPO/releases/download/$TAG/$APP.dmg" $signature type="application/octet-stream"/>
     </item>
   </channel>

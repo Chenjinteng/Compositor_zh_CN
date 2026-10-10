@@ -159,6 +159,8 @@ nonisolated struct FilterJob: @unchecked Sendable {
     /// Persistent histogram clipping indicators. Preview only; committing leaves these off.
     var showsShadowClipping = false
     var showsHighlightClipping = false
+    /// What Camera Raw's adaptive sliders read from `image`, when known already: measured once for a session's previews.
+    var cameraRawBrightness: CameraRawTables.Brightness? = nil
     /// Point-color range preview. −1 leaves the grade alone.
     var visualizesPointColor = -1
     /// Option-drag on Sharpening Masking. Preview only.
@@ -210,7 +212,8 @@ nonisolated enum PixelFilter {
         case .blackWhite: image = try settings.blackWhite.apply(job.image)
         case .colorBalance: image = try settings.colorBalance.apply(job.image)
         case .cameraRaw: image = try settings.cameraRaw.apply(job.image, clipping: job.cameraRawClipping, scale: job.scale, seed: job.seed,
-                                                                visualizePointColor: job.visualizesPointColor, sharpenMask: job.showsSharpenMask)
+                                                                visualizePointColor: job.visualizesPointColor, sharpenMask: job.showsSharpenMask,
+                                                                brightness: job.cameraRawBrightness)
         // Grain sits in layer pixels; the job's seed gives each application its own pattern.
         case .grain: image = try settings.grain.apply(job.image, unitsPerPixel: 1 / job.scale, seed: job.seed)
         case .dither: image = try settings.dither.apply(job.image)
@@ -373,6 +376,15 @@ final class FilterEdit {
     @ObservationIgnored var pendingTransform: LayerTransform?
     /// Reject a render started before the blur's padded pixel grid changed.
     @ObservationIgnored var previewSourceVersion: UInt64 = 0
+    /// Camera Raw's adaptive sliders read the picture before any change, which stays the same while the panel is open:
+    /// measured once from the preview's source, again only when that changes.
+    @ObservationIgnored private var cameraRawBrightness: (version: UInt64, value: CameraRawTables.Brightness)?
+    var previewBrightness: CameraRawTables.Brightness {
+        if let cached = cameraRawBrightness, cached.version == previewSourceVersion { return cached.value }
+        let value = CameraRawTables.brightness(of: previewSource)
+        cameraRawBrightness = (previewSourceVersion, value)
+        return value
+    }
     /// The settings `preparedPreview` was made with, for the automatic filters that have settings of their own.
     @ObservationIgnored var preparedSettings: FilterSettings?
     @ObservationIgnored var pending: FilterJob?
@@ -490,6 +502,7 @@ final class FilterEdit {
         job.showsHighlightClipping = showsHighlightClipping
         job.visualizesPointColor = pointColorVisualizeIndex
         job.showsSharpenMask = cameraRawSharpenMask
+        if kind == .cameraRaw { job.cameraRawBrightness = previewBrightness }
         return job
     }
 }
