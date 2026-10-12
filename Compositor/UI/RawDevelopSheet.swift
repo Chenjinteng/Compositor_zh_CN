@@ -43,19 +43,19 @@ struct RawDevelopSheet: View {
                 slider("Temperature", value: $settings.temperature, range: 2000...12000, unit: " K", precision: 0)
                 slider("Tint", value: $settings.tint, range: -150...150, unit: "", precision: 0)
                 slider("Boost", value: $settings.boost, range: 0...1, unit: "", precision: 2)
-                slider("Noise Reduction", value: $settings.noiseReduction, range: 0...1, unit: "", precision: 2)
+                slider(L("Noise Reduction"), value: $settings.noiseReduction, range: 0...1, unit: "", precision: 2)
                     .disabled(!settings.supportsNoiseReduction)
-                    .help(settings.supportsNoiseReduction ? "Smooths grain, at the cost of fine detail"
-                                                          : "Not available for this camera")
+                    .help(settings.supportsNoiseReduction ? L("Smooths grain, at the cost of fine detail")
+                                                          : L("Not available for this camera"))
                 HStack(spacing: 20) {
-                    Toggle("Lens Correction", isOn: $settings.lensCorrection)
+                    Toggle(L("Lens Correction"), isOn: $settings.lensCorrection)
                         .disabled(!settings.supportsLensCorrection)
-                        .help(settings.supportsLensCorrection ? "Removes the lens's distortion and vignetting"
-                                                              : "This file has no lens profile")
-                    Toggle("Highlight Recovery", isOn: $settings.highlightRecovery)
+                        .help(settings.supportsLensCorrection ? L("Removes the lens's distortion and vignetting")
+                                                              : L("This file has no lens profile"))
+                    Toggle(L("Highlight Recovery"), isOn: $settings.highlightRecovery)
                         .disabled(!settings.supportsHighlightRecovery)
-                        .help(settings.supportsHighlightRecovery ? "Brings back detail in bright areas the camera partly clipped"
-                                                                 : "Not available for this camera")
+                        .help(settings.supportsHighlightRecovery ? L("Brings back detail in bright areas the camera partly clipped")
+                                                                 : L("Not available for this camera"))
                 }
                 .padding(.leading, 120)
 

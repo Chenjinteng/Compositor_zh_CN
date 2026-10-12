@@ -14208,6 +14208,138 @@
           }
         }
       }
+    },
+    "Preserve Transparency": {
+      "comment": "Gaussian Blur filter: Keep the layer's outline and transparency unchanged while blurring its colors.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保留透明度"
+          }
+        }
+      }
+    },
+    "Blur only the colors, keeping the layer's outline and transparency as they are": {
+      "comment": "Gaussian Blur Preserve Transparency toggle help.",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只模糊颜色,保持图层的轮廓和透明度不变"
+          }
+        }
+      }
+    },
+    "Highlight Recovery": {
+      "comment": "Camera Raw detail: highlight recovery toggle (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高光恢复"
+          }
+        }
+      }
+    },
+    "Brings back detail in bright areas the camera partly clipped": {
+      "comment": "Camera Raw Highlight Recovery toggle help (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把相机轻微过曝区域的细节还原出来"
+          }
+        }
+      }
+    },
+    "This file has no lens profile": {
+      "comment": "Camera Raw Lens Correction toggle help, unavailable state (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这个文件没有镜头配置文件"
+          }
+        }
+      }
+    },
+    "Smooths grain, at the cost of fine detail": {
+      "comment": "Camera Raw Noise Reduction toggle help (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "磨平颗粒,但会损失部分细节"
+          }
+        }
+      }
+    },
+    "Not available for this camera": {
+      "comment": "Camera Raw toggle help, fallback for unsupported cameras (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "该相机不支持此功能"
+          }
+        }
+      }
+    },
+    "Choose a JPEG, PNG, HEIC, HEIF, TIFF, WebP, or Photoshop (PSD) file.": {
+      "comment": "ImageImporter unsupported file error description (HEIF added in 1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请选择 JPEG、PNG、HEIC、HEIF、TIFF、WebP 或 Photoshop (PSD) 文件。"
+          }
+        }
+      }
+    },
+    "Depth": {
+      "comment": "Export As sheet: PNG 16-bit toggle row label (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "位深度"
+          }
+        }
+      }
+    },
+    "16 bits per channel": {
+      "comment": "Export As sheet: PNG 16-bit toggle label (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每通道 16 位"
+          }
+        }
+      }
+    },
+    "Keep the 16-bit layers' full precision, in a file about twice the size": {
+      "comment": "Export As sheet: PNG 16-bit toggle help (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保留 16 位图层的全部精度,文件约为两倍大小"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

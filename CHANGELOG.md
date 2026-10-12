@@ -10,6 +10,33 @@ fork tag 跟上游版本的对应表:
 | 1.4.7 | `675d8a4` (publish `af30c45`) | `1.4.7_zh` → `5dc435b` | 1146 |
 | 1.4.8 | `24ef288` (publish `22c7b8d`) | `1.4.8_zh` → `59fa9cd` | 1175 |
 | 1.4.9 | `0ab3ff5` (publish `b4bfdea`) | `1.4.9_zh` → `5e5383f` | 1184 |
+| 1.4.10 | `a1bd74c` (publish `f01e298`) | `1.4.10_zh` → (本 PR 后) | 1195 |
+
+---
+
+## Compositor 1.4.10(2026-10-11)— 上游
+
+publish commit: [`f01e298`](https://github.com/robbietilton/Compositor/commit/f01e298)(`a1bd74c` 上 appcast.xml)
+
+### 用户能直接看到的变化
+
+- **16-bit 图层全程不降级**([`bdcedf2`](https://github.com/robbietilton/Compositor/commit/bdcedf2),[`d9cdb81`](https://github.com/robbietilton/Compositor/commit/d9cdb81),[`6aea90a`](https://github.com/robbietilton/Compositor/commit/6aea90a),[`2b9603f`](https://github.com/robbietilton/Compositor/commit/2b9603f),[`f01e298`](https://github.com/robbietilton/Compositor/commit/f01e298)):导入 / adjustments / Liquify / Smudge / Blur / Hue/Saturation 全部保留 16-bit 精度,Blur 绘画不再环带
+- **Content-Aware Fill / Spot Healing** 用多尺度 PatchMatch 重做([`23913d3`](https://github.com/robbietilton/Compositor/commit/23913d3),[`39d1257`](https://github.com/robbietilton/Compositor/commit/39d1257)):纹理延续到填充边缘,边缘过渡自然
+- **文件夹导入为图层**([`b2a0c45`](https://github.com/robbietilton/Compositor/commit/b2a0c45)):File › Import Image / 拖入文件夹 / 拖到 Dock 都转成 tab 里一组图层
+- **Gaussian Blur · Preserve Transparency**([`9a0ad3e`](https://github.com/robbietilton/Compositor/commit/9a0ad3e)):默认 5 px,新 toggle 让模糊不污染图层边缘/透明度
+- **CAMERA RAW 新三段**([`248d4d4`](https://github.com/robbietilton/Compositor/commit/248d4d4)):Noise Reduction / Lens Correction / Highlight Recovery 加进 RAW develop 弹窗
+- **HEIF 照片导入**([`70b3e14`](https://github.com/robbietilton/Compositor/commit/70b3e14)):`.hif` / `.heif`(Canon、Sony、Fuji)走 ImageImporter
+- **Layers panel 收窄模式**([`16b1c45`](https://github.com/robbietilton/Compositor/commit/16b1c45),[`0a5c8d9`](https://github.com/robbietilton/Compositor/commit/0a5c8d9)):最窄状态下所有控件仍在 panel 内
+- **新应用图标**([`ce5ea67`](https://github.com/robbietilton/Compositor/commit/ce5ea67)):彩页掀起到透明底
+- 新增 `Document/DeepLayers.swift` + `Rendering/DeepPixels.{c,h}` + `Rendering/PatchPixels.{c,h}`,删 `Rendering/ContentFill.{c,h}`;CI 改 4min 并行 + Screenshots scheme + tests 截图
+
+### 对 fork 汉化的影响
+
+- **Raw develop 新 3 段**:`RawDevelopSheet.swift` 加 `Noise Reduction` / `Lens Correction` / `Highlight Recovery` 三个独立控件(Noise Reduction 与 Lens Correction 复用 .xcstrings 已有的 `降噪` / `镜头校正` key),批量增 8 条 zh-Hans:`Highlight Recovery` / `Brings back detail in bright areas the camera partly clipped` / `This file has no lens profile` / `Smooths grain, at the cost of fine detail` / `Not available for this camera` 共 5 条 RAW tooltip + `Preserve Transparency` / `Blur only the colors, keeping the layer's outline and transparency as they are` 2 条 Gaussian Blur tooltip + `Choose a JPEG, PNG, HEIC, HEIF, TIFF, WebP, or Photoshop (PSD) file.` ImageImporter 错误描述
+- **导出 16-bit PNG**:`ExportAsSheet.swift` 新增 `Depth` 行(`位深度`)+ `16 bits per channel` toggle(`每通道 16 位`)+ `.help("Keep the 16-bit layers' full precision, in a file about twice the size")`(`保留 16 位图层的全部精度,文件约为两倍大小`)
+- xcstrings 1184 → **1195** keys(+ 11 条,详见 `docs/zh-Hans-localization.md` Batch C-21)
+- `MARKETING_VERSION` 1.4.9_zh → 1.4.10_zh(pbxproj 6 处);bundle ID 仍是 fork 的 `cn.jintengchen.compositor[.tests|.uitests]`
+- 冲突 5 处(`.gitignore` / `project.pbxproj` / `FilterSheet.swift` / `NativeLayerList.swift` / `appcast.xml`)见 `docs/zh-Hans-localization.md` Batch C-21 merge commit
 
 ---
 
@@ -119,8 +146,8 @@ publish commit: [`e64f749`](https://github.com/robbietilton/Compositor/commit/e6
 
 ## fork 跟踪笔记
 
-- 上游 main 当前 `b4bfdea Publish update feed for Compositor 1.4.9`(2026-10-08 之后)
-- 上游没有正式的 `v1.4.7` / `v1.4.8` / `v1.4.9` git tag——只在 main 分支以 commit 形式发布;`Publish update feed for ...` commit 更新 appcast.xml 让 Sparkle 知道有新版
+- 上游 main 当前 `f01e298 Blur tool on a 16-bit layer: no banding while painting`(2026-10-11 之后,`a1bd74c` 是 publish commit)
+- 上游没有正式的 `v1.4.7` / `v1.4.8` / `v1.4.9` / `v1.4.10` git tag——只在 main 分支以 commit 形式发布;`Publish update feed for ...` commit 更新 appcast.xml 让 Sparkle 知道有新版
 - 上游 README 自 1.4.8 起加了 "translations are on hold" 段:`Compositor is English only for now, and translation pull requests aren't being accepted`——所以 fork **不会** PR 任何翻译回上游
 - fork 同步 1.4.x 时,pbxproj 6 处 `MARKETING_VERSION` + `PRODUCT_BUNDLE_IDENTIFIER` 保留 fork 标识(`cn.jintengchen.compositor` 替代上游 `com.wonderassembly.compositor`,Personal Team 不能再用上游 bundle ID)
 - 详细同步流程和踩坑:见 `docs/zh-Hans-localization.md` 末尾

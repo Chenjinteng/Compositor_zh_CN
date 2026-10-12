@@ -214,14 +214,77 @@ FilterKind 新加 `case scanlines = "Scanlines"` 的 xcstrings key:`扫描线`(�
 
 合并上同样影响:`DOC/ColorPalette.swift` 的 `ColorPickerTarget.title` 已经改为 `"Color Picker (xxx)"` 格式;`exportJPEG()` 整体被替换为 `exportAs()`.后续 batch 给这些加 zh-Hans 包装。
 
+## Batch C-19 / C-20 — merge upstream 1.4.9 + 汉化 UpdateDriver / ProjectTabs / ColorPaletteControls (`429154a`/`5741215`)
+
+合并上游 `b4bfdea` (Compositor 1.4.9) — 23 个 commit,新增 `UpdateDriver.swift` / `CameraRawTables.swift` + `.bin` 资源。
+
+- `MARKETING_VERSION` 1.4.8_zh → 1.4.9_zh(pbxproj 6 处)
+- bundle ID 仍是 `cn.jintengchen.compositor[.tests|.uitests]`
+- `.xcstrings` 1175 → 1184 keys(+ 9 条)— `UpdateDriver` 全套 + `ProjectTabs` 全套 + `ColorPaletteControls` 的 a11y 修正
+
+`UpdateDriver.swift` 替代 Sparkle 自带弹窗,title / 4 个 button / 2 个 informative 模板 / suppression button title 全部走 `String(format: String(localized:))`。`ColorPaletteControls` Batch C-20 修了一个把 `String` 走 verbatim 的回退路径(`"White · Reveal"` → 用 `String(format:)` + catalog)。
+
+## Batch C-21 — merge upstream 1.4.10 + RAW/PNG16/HEIF 汉化 (`7f508f5` merge + 本批 L() 汉化)
+
+合并上游 `f01e298` (Compositor 1.4.10) — 19 个 commit、`PROJECT_VERSION` 45、新增 7 个文件(`Document/DeepLayers.swift`、`Rendering/DeepPixels.{c,h}`、`Rendering/PatchPixels.{c,h}`、`CompositorUITests/ScreenshotTests.swift`)、删 3 个(`CompositorUITests/CompositorUITests.swift`、`CompositorUITestsLaunchTests.swift`、`Rendering/ContentFill.{c,h}`)。
+
+- `MARKETING_VERSION` 1.4.9_zh → 1.4.10_zh(pbxproj 6 处)
+- bundle ID 仍是 `cn.jintengchen.compositor[.tests|.uitests]`
+- 1.4.10 真新加 UI 字符串 11 条(剔除 CI filter 名 `CIBlendWithAlphaMask`)
+- `.xcstrings` 1184 → **1195** keys(+ 11 条)
+
+### 冲突 5 处解法(`7f508f5`)
+
+- `.gitignore`:保留 fork 的 `default.profraw` / `outputs/`,合入上游新加的 `/HDR_*.md`
+- `project.pbxproj`:6 处 `MARKETING_VERSION`(app+tests+uitests × Debug+Release)统一改 `1.4.10_zh`;`PRODUCT_BUNDLE_IDENTIFIER` 全部改回 `cn.jintengchen.compositor[.tests|.uitests]`;app target `PRODUCT_NAME` 仍是 `"Compositor 汉化版"`(test/uitest target 维持 `$(TARGET_NAME)` 不需要 fork 区分)
+- `appcast.xml`:保留 fork 注释段,**删掉上游新加的 1.4.10 `<item>`** — fork 不走 Sparkle auto-update(`Help > 自取更新…` 跳 GitHub Releases 手装)
+- `FilterSheet.swift` (gaussianBlur case):
+  - HEAD 已 `L("Radius")` 包裹 → 保留
+  - 上游新加 `Toggle("Preserve Transparency", ...)` + `.help("Blur only the colors, ...")` → 全部 `L()` 包
+- `NativeLayerList.swift`(Layer cell update):
+  - HEAD 已对 dimensions 行的 "Text · Double-click to edit" / "Adjustment · Double-click to edit" / "Folder" 包 `L()` → 保留
+  - 上游新加 `depthTag` / `depthTagFits` / `layer.depthLabel` 三行 16-bit 标签 plumbing → 完整合并
+
+### 1.4.10 新字符串汉化(本批 L() wrap + xcstrings)
+
+| 文件 | key | zh-Hans | 备注 |
+| --- | --- | --- | --- |
+| `UI/FilterSheet.swift` | `Preserve Transparency` | 保留透明度 | Gaussian Blur 新 toggle label |
+| `UI/FilterSheet.swift` | `Blur only the colors, keeping the layer's outline and transparency as they are` | 只模糊颜色,保持图层的轮廓和透明度不变 | Gaussian Blur toggle `.help()` |
+| `UI/RawDevelopSheet.swift` | `Noise Reduction` | 降噪(已有) | 滑块 label |
+| `UI/RawDevelopSheet.swift` | `Smooths grain, at the cost of fine detail` | 磨平颗粒,但会损失部分细节 | Noise Reduction available tooltip |
+| `UI/RawDevelopSheet.swift` | `Lens Correction` | 镜头校正(已有,与 FilterKind.lensCorrection 共享 key) | Toggle label |
+| `UI/RawDevelopSheet.swift` | `This file has no lens profile` | 这个文件没有镜头配置文件 | Lens Correction unavailable tooltip |
+| `UI/RawDevelopSheet.swift` | `Highlight Recovery` | 高光恢复 | 新 toggle label |
+| `UI/RawDevelopSheet.swift` | `Brings back detail in bright areas the camera partly clipped` | 把相机轻微过曝区域的细节还原出来 | Highlight Recovery available tooltip |
+| `UI/RawDevelopSheet.swift`(×2) | `Not available for this camera` | 该相机不支持此功能 | RawDevelopSheet 通用 fallback tooltip |
+| `IO/ImageImporter.swift` | `Choose a JPEG, PNG, HEIC, HEIF, TIFF, WebP, or Photoshop (PSD) file.` | 请选择 JPEG、PNG、HEIC、HEIF、TIFF、WebP 或 Photoshop (PSD) 文件。 | `ImageImportError.unsupported` 的 localizedDescription;1.4.10 在列表里加了 HEIF |
+| `UI/ExportAsSheet.swift` | `Depth` | 位深度 | PNG 16-bit toggle 行 label |
+| `UI/ExportAsSheet.swift` | `16 bits per channel` | 每通道 16 位 | toggle label |
+| `UI/ExportAsSheet.swift` | `Keep the 16-bit layers' full precision, in a file about twice the size` | 保留 16 位图层的全部精度,文件约为两倍大小 | toggle `.help()` |
+
+### 本批未覆盖的 1.4.10 字面量(不汉化 / 留给后续)
+
+- `NativeLayerList.swift` `dimensions.stringValue = "Clipped to \(sourceName)"` 和对应 `.toolTip = "Clipping mask based on ..."` 不是 1.4.10 新加的(本来就在 1.4.9),zh_cn 一直没动过;留待后续统一覆盖图层右键菜单项时一块包
+- `RawImporter.swift` / `RawDevelopSheet.swift` 旧的 RAW slider header (`Exposure` / `Temperature` / `Tint` / `Boost`)和 `Removes the lens's distortion and vignetting` 1.4.10 没动,保留英文 — 历史遗留
+- `ImageImporter` 的 `.unreadable` / `.tooLarge` 错误描述不是 1.4.10 新加的,留待 Batch C-22+ 跟"已知未本地化"统一治理时改
+- C 代码 (`DeepPixels.c` / `PatchPixels.c` / `HealPixels.c`) 没有任何 NSLocalizedString 系 UI 字符串,只有算法日志 — 不需要 catalog
+- `CompositorUITests/ScreenshotTests.swift` 是测试代码,不在 zh-Hans 翻译范围
+
+### 1.4.10 没有进入 .xcstrings 但已 merge 进代码库的注释 / doc / 资源
+
+- `ContentFill.c/.h` 删除(`PatchPixels.c` 替代)— 无 UI 文字
+- `appcast.xml` `Localizable.xcstrings` 本来就没参与(它是 XML,不走 String Catalog)
+- `docs/project-format.md` 仅改 `documentBudget` 一行说明,无 UI 字符串
+
 ### 当前状态
 
 - fork: `git@github.com:Chenjinteng/Compositor_zh_CN.git`
-- branch: `zh_cn` HEAD = `8227a83`
-- tag: `1.4.8_zh` → `8227a83`
-- `MARKETING_VERSION = 1.4.8_zh`
-- `.xcstrings` 1175 keys
-- DMG: `dist/Compositor-1.4.7_zh.dmg` (6.84 MB;1.4.8_zh DMG 尚未打)
+- branch: `zh_cn` HEAD = (本批 merge 后)
+- tag: `1.4.10_zh` → 本批汉化 commit
+- `MARKETING_VERSION = 1.4.10_zh`
+- `.xcstrings` 1195 keys
+- DMG: `dist/Compositor-1.4.9_zh.dmg`(6.84 MB;1.4.10_zh DMG 待打)— 编译验证步骤见"流水线参考"
 - 签名: Authority `Apple Development: chenjinteng_in_92@hotmail.com (FDQLLU43U7)` TeamIdentifier `FJYQT2JA5U`(Personal Team)
 
 ## 已知未本地化

@@ -119,9 +119,9 @@ struct ExportAsSheet: View {
                 }
                 if format == .png, deepRaster != nil {
                     GridRow {
-                        Text("Depth")
-                        Toggle("16 bits per channel", isOn: $sixteenBit)
-                            .help("Keep the 16-bit layers' full precision, in a file about twice the size")
+                        Text(L("Depth"))
+                        Toggle(L("16 bits per channel"), isOn: $sixteenBit)
+                            .help(L("Keep the 16-bit layers' full precision, in a file about twice the size"))
                     }
                 }
                 if format == .pdf {
