@@ -770,7 +770,17 @@ extension EditorSession {
             // These rasterize the layer to 8-bit instead: Content-Aware Fill makes new pixels from scratch; Dither's
             // result is a few levels by design (three runs read between would mix its patterns into colors); Remove
             // Background would find the subject three times over.
+            //
+            // Camera Raw additionally falls into this category for the 1.4.10_zh fork: even with
+            // `com.apple.security.cs.disable-library-validation` set, the closure `(CGImage) -> CGImage` that
+            // Camera Raw's `FilterJob` runs through `DeepLayer.run` ends up reading
+            // `DeepPixels.c:60` (`lo[x*4+c]`) on a buffer whose `bytesPerRow` is one alignment stride short, leading
+            // to EXC_BAD_ACCESS on the gap between two CG Image regions. We don't have a fix for that on the fork
+            // (Robbie's notarized Developer ID DMG does NOT exhibit it), so we trade Camera Raw's 16-bit output for
+            // 8-bit output on a 16-bit layer to keep the app stable. The visible filter result still goes through
+            // Camera Raw's CIRAWFilter pipeline, just on a dithered 8-bit copy instead of the layer's deep pixels.
             let rasterizes = edit.kind == .contentAwareFill || edit.kind == .dither || edit.kind == .removeBackground
+                || edit.kind == .cameraRaw
             let deep = rasterizes ? nil : try DeepLayer.flattened(edit.original)
             let deepGrid = keepsOutline ? nil : edit.grownImage.flatMap { grownImage in
                 edit.grownInside.map { (size: CGSize(width: grownImage.width, height: grownImage.height), inside: $0) }
