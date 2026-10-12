@@ -15,9 +15,9 @@ REPO=Chenjinteng/Compositor_zh_CN
 WORK="$HOME/Library/Caches/CompositorRelease-zh-CN"
 SIGN_UPDATE="$WORK/DerivedData/SourcePackages/artifacts/sparkle/Sparkle/bin/sign_update"
 
-# Mirror the deployment-target override used by release.sh so the appcast's
-# minimumSystemVersion matches the DMG that's actually being shipped.
-settings=$(xcodebuild -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release -showBuildSettings MACOSX_DEPLOYMENT_TARGET=15.0 2>/dev/null)
+# 1.4.10+ uses macOS 26+ APIs and no longer overrides MACOSX_DEPLOYMENT_TARGET
+# (the fork dropped the 2018 MBP / x86_64 build); read straight from pbxproj.
+settings=$(xcodebuild -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release -showBuildSettings 2>/dev/null)
 VERSION=$(print -r -- "$settings" | awk -F' = ' '/ MARKETING_VERSION = /{print $2; exit}')
 BUILD=$(print -r -- "$settings" | awk -F' = ' '/ CURRENT_PROJECT_VERSION = /{print $2; exit}')
 MINIMUM=$(print -r -- "$settings" | awk -F' = ' '/ MACOSX_DEPLOYMENT_TARGET = /{print $2; exit}')

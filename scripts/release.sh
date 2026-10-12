@@ -39,11 +39,13 @@ echo "==> $APP $VERSION ($BUILD)"
 rm -rf "$WORK"
 mkdir -p "$WORK" "$DIST"
 
-# Per-architecture DMGs (arm64 + x86_64). The project's deployment target
-# (26.0) is overridden to 15.0 so the x86_64 slice runs on the MBP 2018
-# (Sequoia 15.7.7). publish.sh must mirror this override to keep the appcast
-# in sync with the DMG.
-for arch in arm64 x86_64; do
+# arm64-only build. 1.4.10 introduced APIs (@available(macOS 26.0, *) on
+# CIRAWFilter.isHighlightRecoverySupported / isHighlightRecoveryEnabled) that
+# no longer compile under the previous MACOSX_DEPLOYMENT_TARGET=15.0 override
+# this script used to ship x86_64 DMGs to the 2018 MBP (Sequoia 15.7.7).
+# The fork now requires macOS 26.0 or newer; publish.sh mirrors this and the
+# produced appcast's minimumSystemVersion stays at 26.0.
+for arch in arm64; do
   WORK_ARCH="$WORK/$arch"
   rm -rf "$WORK_ARCH"
   mkdir -p "$WORK_ARCH"
@@ -53,8 +55,7 @@ for arch in arm64 x86_64; do
     -project "$PROJECT_DIR/$APP.xcodeproj" -scheme "$APP" -configuration Release \
     -destination "generic/platform=macOS" \
     -archivePath "$WORK_ARCH/$APP.xcarchive" -derivedDataPath "$WORK_ARCH/DerivedData" \
-    ARCHS="$arch" \
-    MACOSX_DEPLOYMENT_TARGET=15.0
+    ARCHS="$arch"
 
   # The archive already runs codesign during `xcodebuild archive`; just verify and
   # copy out. We deliberately do not use `xcodebuild -exportArchive` here — its
