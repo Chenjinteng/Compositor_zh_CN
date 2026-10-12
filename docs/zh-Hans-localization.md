@@ -245,6 +245,22 @@ FilterKind 新加 `case scanlines = "Scanlines"` 的 xcstrings key:`扫描线`(�
   - HEAD 已对 dimensions 行的 "Text · Double-click to edit" / "Adjustment · Double-click to edit" / "Folder" 包 `L()` → 保留
   - 上游新加 `depthTag` / `depthTagFits` / `layer.depthLabel` 三行 16-bit 标签 plumbing → 完整合并
 
+### 合并后顺手修(`e97d98b`)
+
+merge commit 之后跑 `xcodebuild ... build` 报:
+
+```
+note: GenerateStringSymbols ... Localizable.xcstrings
+** BUILD FAILED **
+this string key would generate the same symbol as ...
+```
+
+根因:fork 上次 `e9e4a0b Disable String Catalog symbol generation on Compositor target`(PBXNativeTarget "Compositor" Debug+Release 的 `STRING_CATALOG_GENERATE_SYMBOLS = NO`)— 因为 `Localizable.xcstrings` 含 `'Foo'` 与 `'Foo…'` 这种 sheet-title vs menu-item 的近重复键,Xcode 15+ 的 symbol generator 把它们当成重复符号。此次 1.4.10 merge 把这两行从 NO 重置为 YES,触发回归。
+
+修复:把 `8F311FBB`(app target Debug)和 `8F311FBC`(app target Release)两个 PBXNativeTarget "Compositor" 配置的 `STRING_CATALOG_GENERATE_SYMBOLS` 改回 NO。**PBXProject 级(`8F311FB8`/`8F311FB9`)的 YES 不动** —— Project 级 config 不参与生成,留着无害。
+
+**未来 sync 提醒**:任何 1.4.x → 1.4.y merge,merge 后立即跑 `xcodebuild ... build` 验证,只要 Symbol generator 报错就检查这两行,90% 是又被上游 flip 回来了。
+
 ### 1.4.10 新字符串汉化(本批 L() wrap + xcstrings)
 
 | 文件 | key | zh-Hans | 备注 |
