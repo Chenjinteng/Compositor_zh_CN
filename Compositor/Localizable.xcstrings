@@ -8234,13 +8234,13 @@
       }
     },
     "Develop %@": {
-      "comment": "Camera Raw: develop image. %@ is the URL last path component.",
+      "comment": "Camera Raw: develop image. %@ is the URL last path component. Stays English-flavoured to mirror Adobe Camera Raw's 'Develop' tab; falls back to 显影 on zh-Hans.",
       "extractionState": "manual",
       "localizations": {
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Develop %@"
+            "value": "显影 %@"
           }
         }
       }

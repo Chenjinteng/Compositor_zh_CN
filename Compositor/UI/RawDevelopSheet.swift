@@ -19,7 +19,7 @@ struct RawDevelopSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Develop “\(url.lastPathComponent)”").font(.title2.bold())
+            Text(String(format: L("Develop %@"), url.lastPathComponent)).font(.title2.bold())
             ZStack {
                 RoundedRectangle(cornerRadius: 6).fill(Color.black.opacity(0.35))
                 if let preview {
@@ -31,7 +31,7 @@ struct RawDevelopSheet: View {
                     // Import pressed: the full frame takes a second or more to develop.
                     VStack(spacing: 8) {
                         ProgressView().controlSize(.regular)
-                        Text("Importing…").foregroundStyle(.secondary)
+                        Text(L("Importing…")).foregroundStyle(.secondary)
                     }
                     .padding(16).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 10))
                 } else if working { ProgressView().controlSize(.small) }
