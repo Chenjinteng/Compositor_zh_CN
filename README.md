@@ -4,8 +4,67 @@
 > 英文版本见 [README_en_US.md](README_en_US.md)。
 
 ---
+## 一、本 fork 自用说明(非上游内容)
 
-## 一、上游 README 翻译
+> ⚠️ **声明**:本 fork 为个人自用分支,汉化借助 AI 工具辅助完成,本人并非专业本地化或开发者。译文如有不准确或不够地道之处,欢迎提交 issue 反馈指正;不接受挑刺式批评。
+
+### 立场
+
+- 本分支**仅供个人使用**,不会进行任何形式的传播、推广或商业化分发
+- **不会**向上游 [robbietilton/Compositor](https://github.com/robbietilton/Compositor) 提交翻译 PR 或合并请求(尊重上游 README 关于 "translations are on hold" 的声明)
+- 与原作者及其所属 [Wonder Assembly LLC](https://www.wonderassembly.com) **没有任何合作关系或授权**,所有商标、产品名归原作者所有
+
+### 致谢
+
+感谢 [Robbie Tilton](https://github.com/robbietilton) 创作并开源了 Compositor。这个 fork 是站在他的肩膀上,翻译只是为了让他的出色工作也能用中文顺手一点。如果你是寻找官方版本,请访问 [robbietilton.com/compositor](https://robbietilton.com/compositor) 或 [上游 GitHub](https://github.com/robbietilton/Compositor)。
+
+### 关于自动更新
+
+本 fork **不提供自动更新**。Help 菜单里的"自取更新…"项只是跳转到本仓库 [Releases 页](https://github.com/Chenjinteng/Compositor_zh_CN/releases)的入口 —— 不会在线签名、不会跑 Sparkle ed25519 更新通道。原因很简单:这是个人自用分支,作者没有义务也没有动力去维护一套在线分发服务;上游也明确写明 translations are on hold,自动更新对一个不开 PR 的本地化分支来说意义不大。
+
+需要新版本时,**自行关注 [@Chenjinteng/Compositor_zh_CN](https://github.com/Chenjinteng/Compositor_zh_CN/releases)** 即可 —— 每次构建的 DMG 都会出现在那里。
+
+### 本 fork 的部署目标
+
+`scripts/release.sh` 构建 **arm64-only DMG**(本仓库原生目标),不输出 universal DMG 也不再单独打 x86_64 切片。
+
+| 设备 | 系统 | 架构 | 对应 DMG |
+|---|---|---|---|
+| Mac mini(开发机,本仓库所在) | macOS 27.0.1 | arm64 | `dist/Compositor-<version>-arm64.dmg` |
+
+工程文件 `project.pbxproj` 的 `MACOSX_DEPLOYMENT_TARGET = 26.0` / `ARCHS = arm64` 是终态,脚本层不再覆盖。
+
+### ⚠️ 1.4.10+ 已不再支持 macOS < 26 / x86_64
+
+1.4.10 上游新增 `CIRAWFilter.isHighlightRecoverySupported` / `isHighlightRecoveryEnabled`
+两个 API,Apple 标注为 `@available(macOS 26.0, *)`。本 fork 之前的
+`MACOSX_DEPLOYMENT_TARGET = 15.0` 覆盖(为 MacBook Pro 13-inch 2018 跑 Sequoia 15.7.7
+而设)在 1.4.10+ 已经无法满足编译 —— 即用 `@available` 包一层也只是空转,代价高于收益。
+
+同步放弃项:
+
+- **不再生成 `dist/Compositor-<version>-x86_64.dmg`**(`scripts/release.sh` 改为 arm64 单构)
+- 2018 MBP 13(x86_64)不再分发新版本;2018 MBP 上仍可继续用 fork `1.4.9_zh` 及更早,不再升级
+- 若后续某天 Apple 把这些 API backport 到更早 macOS 版本,可重新恢复 x86_64 构建;改动只限
+  `release.sh` 的 `for arch` 循环和 `MACOSX_DEPLOYMENT_TARGET` override,代码本体不动
+
+### 从源码构建(fork 流程)
+
+- `scripts/release.sh` 走 fork 改过的逻辑:**Personal Team 自动签名 + arm64-only**,`dist/Compositor-<version>-arm64.dmg` 即产物
+- 与上游 README 的"开发者 ID 签名 + 公证"流程不同 —— fork 是不分发个人用的版本,只需要 build host 上能跑
+- 第三方依赖与上游一致:登录钥匙串里的 `Apple Development` 证书 + `brew install create-dmg`
+- spctl 对 Personal-Team 签名包报 `rejected`(没 notarize),在本机双击时会提示"未识别开发者",右键 → 打开 一次通过即可
+
+### 跑 release.sh
+
+```sh
+./scripts/release.sh
+```
+
+跑完 `dist/` 下出一个 DMG,arm64 单一架构,Personal Team 签名。
+---
+
+## 二、上游 README 翻译
 
 > Adobe Photoshop 太贵,GIMP 等工具又不够顺手,我没法靠它们保持心流。这正是我打造 Compositor 的原因。
 >
@@ -111,63 +170,3 @@ brew install --cask robbietilton-compositor
 
 MIT —— 见 [LICENSE](LICENSE)。
 
----
-
-## 二、本 fork 自用说明(非上游内容)
-
-> ⚠️ **声明**:本 fork 为个人自用分支,汉化借助 AI 工具辅助完成,本人并非专业本地化或开发者。译文如有不准确或不够地道之处,欢迎提交 issue 反馈指正;不接受挑刺式批评。
-
-### 立场
-
-- 本分支**仅供个人使用**,不会进行任何形式的传播、推广或商业化分发
-- **不会**向上游 [robbietilton/Compositor](https://github.com/robbietilton/Compositor) 提交翻译 PR 或合并请求(尊重上游 README 关于 "translations are on hold" 的声明)
-- 与原作者及其所属 [Wonder Assembly LLC](https://www.wonderassembly.com) **没有任何合作关系或授权**,所有商标、产品名归原作者所有
-
-### 致谢
-
-感谢 [Robbie Tilton](https://github.com/robbietilton) 创作并开源了 Compositor。这个 fork 是站在他的肩膀上,翻译只是为了让他的出色工作也能用中文顺手一点。如果你是寻找官方版本,请访问 [robbietilton.com/compositor](https://robbietilton.com/compositor) 或 [上游 GitHub](https://github.com/robbietilton/Compositor)。
-
-### 关于自动更新
-
-本 fork **不提供自动更新**。Help 菜单里的"自取更新…"项只是跳转到本仓库 [Releases 页](https://github.com/Chenjinteng/Compositor_zh_CN/releases)的入口 —— 不会在线签名、不会跑 Sparkle ed25519 更新通道。原因很简单:这是个人自用分支,作者没有义务也没有动力去维护一套在线分发服务;上游也明确写明 translations are on hold,自动更新对一个不开 PR 的本地化分支来说意义不大。
-
-需要新版本时,**自行关注 [@Chenjinteng/Compositor_zh_CN](https://github.com/Chenjinteng/Compositor_zh_CN/releases)** 即可 —— 每次构建的 DMG 都会出现在那里。
-
-### 本 fork 的部署目标
-
-`scripts/release.sh` 构建 **arm64-only DMG**(本仓库原生目标),不输出 universal DMG 也不再单独打 x86_64 切片。
-
-| 设备 | 系统 | 架构 | 对应 DMG |
-|---|---|---|---|
-| Mac mini(开发机,本仓库所在) | macOS 27.0.1 | arm64 | `dist/Compositor-<version>-arm64.dmg` |
-
-工程文件 `project.pbxproj` 的 `MACOSX_DEPLOYMENT_TARGET = 26.0` / `ARCHS = arm64` 是终态,脚本层不再覆盖。
-
-### ⚠️ 1.4.10+ 已不再支持 macOS < 26 / x86_64
-
-1.4.10 上游新增 `CIRAWFilter.isHighlightRecoverySupported` / `isHighlightRecoveryEnabled`
-两个 API,Apple 标注为 `@available(macOS 26.0, *)`。本 fork 之前的
-`MACOSX_DEPLOYMENT_TARGET = 15.0` 覆盖(为 MacBook Pro 13-inch 2018 跑 Sequoia 15.7.7
-而设)在 1.4.10+ 已经无法满足编译 —— 即用 `@available` 包一层也只是空转,代价高于收益。
-
-同步放弃项:
-
-- **不再生成 `dist/Compositor-<version>-x86_64.dmg`**(`scripts/release.sh` 改为 arm64 单构)
-- 2018 MBP 13(x86_64)不再分发新版本;2018 MBP 上仍可继续用 fork `1.4.9_zh` 及更早,不再升级
-- 若后续某天 Apple 把这些 API backport 到更早 macOS 版本,可重新恢复 x86_64 构建;改动只限
-  `release.sh` 的 `for arch` 循环和 `MACOSX_DEPLOYMENT_TARGET` override,代码本体不动
-
-### 从源码构建(fork 流程)
-
-- `scripts/release.sh` 走 fork 改过的逻辑:**Personal Team 自动签名 + arm64-only**,`dist/Compositor-<version>-arm64.dmg` 即产物
-- 与上游 README 的"开发者 ID 签名 + 公证"流程不同 —— fork 是不分发个人用的版本,只需要 build host 上能跑
-- 第三方依赖与上游一致:登录钥匙串里的 `Apple Development` 证书 + `brew install create-dmg`
-- spctl 对 Personal-Team 签名包报 `rejected`(没 notarize),在本机双击时会提示"未识别开发者",右键 → 打开 一次通过即可
-
-### 跑 release.sh
-
-```sh
-./scripts/release.sh
-```
-
-跑完 `dist/` 下出一个 DMG,arm64 单一架构,Personal Team 签名。
