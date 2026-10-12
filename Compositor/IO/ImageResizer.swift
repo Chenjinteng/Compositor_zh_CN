@@ -50,17 +50,22 @@ actor ImageResizer {
                 usedPixels += width * height
                 guard let source = snapshot.images[layer.id] else { throw ProjectError.missingImage }
                 let asset = try autoreleasepool {
+                    // A 16-bit layer is resampled from its 16-bit pixels, at 16 bits (`DeepLayer`).
+                    let deep = try DeepLayer.flattened(source)
                     guard let context = CGContext(data: nil, width: width, height: height,
-                        bitsPerComponent: 8, bytesPerRow: width * 4, space: CGColorSpace(name: CGColorSpace.sRGB)!,
-                        bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { throw ExportError.render }
+                        bitsPerComponent: deep == nil ? 8 : 16, bytesPerRow: width * (deep == nil ? 4 : 8),
+                        space: CGColorSpace(name: CGColorSpace.sRGB)!,
+                        bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+                            | (deep == nil ? 0 : CGBitmapInfo.byteOrder16Little.rawValue)) else { throw ExportError.render }
                     context.translateBy(x: 0, y: CGFloat(height))
                     context.scaleBy(x: 1, y: -1)
                     context.translateBy(x: -left, y: -top)
                     context.scaleBy(x: sx, y: sy)
                     var sourceTransform = layer.transform
                     sourceTransform.sampling = options.sampling
-                    LayerRenderer.draw(source.image, transform: sourceTransform, center: sourceTransform.center, in: context)
+                    LayerRenderer.draw(deep ?? source.image, transform: sourceTransform, center: sourceTransform.center, in: context)
                     guard let image = context.makeImage() else { throw ExportError.render }
+                    if deep != nil { return try DeepLayer.asset(image, name: source.name) }
                     let factor = min(1, 96 / CGFloat(max(width, height)))
                     let tw = max(1, Int(CGFloat(width) * factor)), th = max(1, Int(CGFloat(height) * factor))
                     guard let thumb = CGContext(data: nil, width: tw, height: th, bitsPerComponent: 8,

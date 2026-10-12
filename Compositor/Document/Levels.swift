@@ -205,8 +205,17 @@ extension EditorSession {
         isProjectBusy = true
         defer { levels = nil; isProjectBusy = false; brushRevision += 1 }
         let job = LevelsJob(image: edit.original.image, settings: edit.settings, selection: edit.selection, mapping: edit.mapping)
+        let deep: CGImage?
+        do { deep = try DeepLayer.flattened(edit.original) } catch { brushError = error.localizedDescription; return }
         do {
             let asset = try await Task.detached(priority: .userInitiated) {
+                // A 16-bit layer keeps its precision (`DeepLayer.run`).
+                if let deep {
+                    let result = try DeepLayer.run(deep) { half in
+                        try LevelsFilter.run(LevelsJob(image: half, settings: job.settings, selection: job.selection, mapping: job.mapping))
+                    }
+                    return try DeepLayer.asset(result, name: "Levels")
+                }
                 let image = try LevelsFilter.run(job)
                 return ImportedImage(image: image, thumbnail: try PixelAdjust.thumbnail(of: image), name: "Levels")
             }.value

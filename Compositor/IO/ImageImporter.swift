@@ -10,6 +10,32 @@ nonisolated struct ImportedImage: @unchecked Sendable {
     let thumbnail: CGImage
     let name: String
     var raster: RasterSnapshot? = nil
+    /// A 16-bit layer's pixels at 16 bits a channel (`DeepLayer`); `image` is then its dithered 8-bit copy. Once the
+    /// layer's painted, these are its `raster`'s base, with the strokes' 8-bit patches over them: read the whole layer
+    /// at 16 bits with `DeepLayer.flattened`.
+    var deep: CGImage? = nil
+}
+
+/// A folder brought in as images: the ones directly inside it, not its subfolders'.
+nonisolated enum ImageFolder {
+    /// A plain folder: not a file, and not a package such as a Compositor project.
+    static func matches(_ url: URL) -> Bool {
+        guard url.isFileURL, url.pathExtension.lowercased() != "comp",
+              let values = try? url.resourceValues(forKeys: [.isDirectoryKey, .isPackageKey]) else { return false }
+        return values.isDirectory == true && values.isPackage != true
+    }
+
+    /// The importable images directly inside `folder`, in the Finder's name order ("2" before "10").
+    static func images(in folder: URL) -> [URL] {
+        let contents = (try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: [.isRegularFileKey],
+                                                                      options: [.skipsHiddenFiles])) ?? []
+        return contents.filter { url in
+            guard (try? url.resourceValues(forKeys: [.isRegularFileKey]))?.isRegularFile == true,
+                  let type = UTType(filenameExtension: url.pathExtension) else { return false }
+            return UTType.importableImages.contains { type.conforms(to: $0) }
+        }
+        .sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
+    }
 }
 
 nonisolated enum ImageImportError: LocalizedError {
@@ -17,7 +43,7 @@ nonisolated enum ImageImportError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unreadable: "The image could not be read. It may be damaged or unavailable."
-        case .unsupported: "Choose a JPEG, PNG, HEIC, TIFF, WebP, or Photoshop (PSD) file."
+        case .unsupported: "Choose a JPEG, PNG, HEIC, HEIF, TIFF, WebP, or Photoshop (PSD) file."
         case .tooLarge: "This import exceeds the current \(DocumentLimits.documentBudgetMegapixels)-megapixel document budget or \(DocumentLimits.maxSide.formatted())-pixel side limit."
         }
     }
@@ -27,6 +53,13 @@ actor ImageImporter {
     static let shared = ImageImporter()
     // Created only on first import, never during empty-app launch.
     private lazy var context = CIContext(options: [.cacheIntermediates: false])
+    /// For sources with more than 8 bits a channel: half-float in linear light throughout, so nothing is rounded
+    /// before the final dithered 8 bits (as `RawImporter` develops).
+    private lazy var wideContext = CIContext(options: [
+        .cacheIntermediates: false,
+        .workingFormat: CIFormat.RGBAh,
+        .workingColorSpace: CGColorSpace(name: CGColorSpace.extendedLinearSRGB)!,
+    ])
     private let sRGB = CGColorSpace(name: CGColorSpace.sRGB)!
 
     /// An SVG drawn once into pixels, by macOS's own SVG renderer: fitted to `fitting` (the canvas) when there is one,
@@ -57,7 +90,7 @@ actor ImageImporter {
                   let identifier = CGImageSourceGetType(source) as String?,
                   let type = UTType(identifier) else { throw ImageImportError.unreadable }
             let photoshop = flattenedPhotoshop ? [UTType.photoshopImage, .photoshopLargeImage] : []
-            guard ([UTType.jpeg, .png, .heic, .tiff, .webP] + photoshop).contains(where: { type.conforms(to: $0) }) else {
+            guard ([UTType.jpeg, .png, .heic, .heif, .tiff, .webP] + photoshop).contains(where: { type.conforms(to: $0) }) else {
                 throw ImageImportError.unsupported
             }
             guard let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any],
@@ -72,6 +105,15 @@ actor ImageImporter {
             }
             let orientation = (properties[kCGImagePropertyOrientation] as? Int32) ?? 1
             let oriented = CIImage(cgImage: decoded).oriented(forExifOrientation: orientation)
+            // More than 8 bits a channel (16-bit PNG and TIFF, 10-bit HEIF, float): a 16-bit layer, which keeps them
+            // (`DeepLayer`), shown and edited through a copy rounded to 8 with a fine noise, so gradients don't step.
+            let wide = decoded.bitsPerComponent > 8
+            if wide {
+                guard let deep = wideContext.createCGImage(oriented, from: oriented.extent, format: .RGBA16, colorSpace: sRGB) else {
+                    throw ImageImportError.unreadable
+                }
+                return try DeepLayer.asset(deep, name: url.deletingPathExtension().lastPathComponent)
+            }
             guard let image = context.createCGImage(oriented, from: oriented.extent, format: .RGBA8, colorSpace: sRGB) else {
                 throw ImageImportError.unreadable
             }

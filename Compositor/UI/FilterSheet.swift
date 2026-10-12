@@ -87,6 +87,8 @@ struct FilterSheet: View {
                     .fixedSize(horizontal: false, vertical: true)
             case .gaussianBlur:
                 control(L("Radius"), \.radius, range: 0.1...250, unit: "px", decimals: 1, logarithmic: true)
+                Toggle(L("Preserve Transparency"), isOn: flag(\.preserveTransparency))
+                    .help(L("Blur only the colors, keeping the layer's outline and transparency as they are"))
             case .motionBlur:
                 control(L("Angle"), \.angle, range: -90...90, unit: "°", decimals: 0, logarithmic: false)
                 control(L("Distance"), \.distance, range: 1...2000, unit: "px", decimals: 0, logarithmic: true)

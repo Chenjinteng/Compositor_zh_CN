@@ -806,6 +806,22 @@ final class EditorSession {
     private var pendingImports: [ImportRequest] = []
 
     func importImages(_ urls: [URL], at point: CGPoint? = nil) async {
+        // A folder brings in the images directly inside it, in name order. Its sandbox grant covers them, so it's
+        // held until they're all in.
+        var folders: [URL] = []
+        var empty: [String] = []
+        let urls = urls.flatMap { url -> [URL] in
+            guard ImageFolder.matches(url) else { return [url] }
+            if url.startAccessingSecurityScopedResource() { folders.append(url) }
+            let images = ImageFolder.images(in: url)
+            if images.isEmpty { empty.append(url.lastPathComponent) }
+            return images
+        }
+        defer { for folder in folders { folder.stopAccessingSecurityScopedResource() } }
+        if !empty.isEmpty {
+            let message = empty.map { "“\($0)” has no images to import." }.joined(separator: "\n")
+            importError = [importError, message].compactMap { $0 }.joined(separator: "\n\n")
+        }
         guard !urls.isEmpty else { return }
         if brushStroke != nil { await finishBrush() }
         cancelCrop()
@@ -845,11 +861,10 @@ final class EditorSession {
                     guard let settings = await developRaw(url) else { continue }
                     defer { if rawImporting { endRawDevelop() } }
                     // Seconds of work: off the main actor, or pressing Import freezes the window.
-                    guard let developed = await RawImporter.Queue.shared.develop(url, settings: settings, limit: nil)
+                    // A 16-bit layer: a RAW's latitude stays for later Levels, Curves and Camera Raw (`DeepLayer`).
+                    guard let developed = await RawImporter.Queue.shared.develop(url, settings: settings, limit: nil, sixteenBit: true)
                     else { throw ImageImportError.unreadable }
-                    let thumbnail = try PixelAdjust.thumbnail(of: developed)
-                    insert(ImportedImage(image: developed, thumbnail: thumbnail,
-                                         name: url.deletingPathExtension().lastPathComponent), centeredAt: point)
+                    insert(try DeepLayer.asset(developed, name: url.deletingPathExtension().lastPathComponent), centeredAt: point)
                 } else if UTType(filenameExtension: url.pathExtension)?.conforms(to: .svg) == true {
                     let asset = try await ImageImporter.shared.decodeSVG(url, fitting: document?.size,
                                                                          remainingPixels: DocumentLimits.documentPixelBudget - usedPixels)

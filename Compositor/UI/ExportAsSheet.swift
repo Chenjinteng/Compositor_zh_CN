@@ -4,6 +4,8 @@ import SwiftUI
 /// as it will be written. A light take on Photoshop's Export As: one image, the settings that matter, and its size.
 struct ExportAsSheet: View {
     let raster: ExportRaster
+    /// The same flattened at 16 bits a channel, when the document has a 16-bit layer to keep.
+    let deepRaster: ExportRaster?
     let session: EditorSession
     let finish: ((data: Data, format: ExportFormat)?) -> Void
     @State private var format: ExportFormat
@@ -13,9 +15,10 @@ struct ExportAsSheet: View {
     /// JPEG's quality from the last export, which the next one starts from.
     private static let qualityKey = "jpegExportQuality"
 
-    init(raster: ExportRaster, session: EditorSession, format: ExportFormat,
+    init(raster: ExportRaster, deepRaster: ExportRaster? = nil, session: EditorSession, format: ExportFormat,
          finish: @escaping ((data: Data, format: ExportFormat)?) -> Void) {
         self.raster = raster
+        self.deepRaster = deepRaster
         self.session = session
         self.finish = finish
         var start = JPEGOptions()
@@ -34,13 +37,18 @@ struct ExportAsSheet: View {
         var options: JPEGOptions
         var width: Int
         var height: Int
+        var sixteenBit: Bool
     }
     struct Encoded {
         let settings: Settings
         let data: Data
         let preview: CGImage
     }
-    private var settings: Settings { Settings(format: format, options: options, width: width, height: height) }
+    private var settings: Settings {
+        Settings(format: format, options: options, width: width, height: height, sixteenBit: sixteenBit && format == .png && deepRaster != nil)
+    }
+    /// A PNG at 16 bits a channel: off by default, it's about twice the size.
+    @State private var sixteenBit = false
     @State private var result: Encoded?
     @State private var error: String?
     private var isReady: Bool { result?.settings == settings && error == nil }
@@ -109,6 +117,13 @@ struct ExportAsSheet: View {
                         }
                     }
                 }
+                if format == .png, deepRaster != nil {
+                    GridRow {
+                        Text("Depth")
+                        Toggle("16 bits per channel", isOn: $sixteenBit)
+                            .help("Keep the 16-bit layers' full precision, in a file about twice the size")
+                    }
+                }
                 if format == .pdf {
                     GridRow {
                         Text(L("Page"))
@@ -157,7 +172,8 @@ struct ExportAsSheet: View {
             error = nil
             do {
                 try await Task.sleep(for: .milliseconds(200))
-                let sized = try await ImageExporter.shared.resized(raster, width: requested.width, height: requested.height)
+                let source = requested.sixteenBit ? deepRaster ?? raster : raster
+                let sized = try await ImageExporter.shared.resized(source, width: requested.width, height: requested.height)
                 let data: Data, preview: CGImage
                 switch requested.format {
                 case .jpeg:

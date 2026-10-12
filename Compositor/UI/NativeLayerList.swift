@@ -769,6 +769,10 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
     private let thumbnail = LayerThumbnailButton()
     private let maskThumbnail = LayerThumbnailButton()
     private let disabledMaskMark = MaskDisabledMark(labelWithString: "╱")
+    /// "16-Bits" after the size of a layer keeping 16 bits a channel (`DeepLayer`); gone once it's rasterized to 8.
+    private let depthTag = LayerTag()
+    /// Holds the tag inside the row while it shows; hidden, it gives its room back to the size.
+    private var depthTagFits: NSLayoutConstraint!
     /// Between the thumbnails: the chain while layer and mask are linked, empty (still clickable) once unlinked.
     private let linkButton = NSButton()
     private var maskGap: NSLayoutConstraint!
@@ -842,6 +846,8 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         disabledMaskMark.font = .systemFont(ofSize: 32, weight: .medium)
         disabledMaskMark.textColor = .systemRed
         disabledMaskMark.isHidden = true
+        depthTag.toolTip = "16-bit layer: keeps 16 bits a channel"
+        depthTag.isHidden = true
         nameLabel.lineBreakMode = .byTruncatingTail
         // One line, whatever the name holds: a text layer named after a paragraph would otherwise grow the row.
         nameLabel.usesSingleLineMode = true
@@ -850,7 +856,7 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         nameLabel.wantsLayer = true
         dimensions.font = .systemFont(ofSize: 10)
         dimensions.textColor = .secondaryLabelColor
-        for view in [eye, disclosure, thumbnail, linkButton, maskThumbnail, disabledMaskMark, nameLabel, dimensions] {
+        for view in [eye, disclosure, thumbnail, linkButton, maskThumbnail, disabledMaskMark, depthTag, nameLabel, dimensions] {
             view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(view)
         }
@@ -893,15 +899,22 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
             maskThumbnail.centerXAnchor.constraint(equalTo: maskSlot.centerXAnchor),
             maskThumbnail.centerYAnchor.constraint(equalTo: topAnchor, constant: 26),
             maskThumbnailWidth, maskThumbnailHeight,
+            // Inside the 2 pt selection outline, touching it on the right and bottom.
             disabledMaskMark.centerXAnchor.constraint(equalTo: maskThumbnail.centerXAnchor),
             disabledMaskMark.centerYAnchor.constraint(equalTo: maskThumbnail.centerYAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: maskSlot.trailingAnchor, constant: 5),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 9),
             dimensions.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            dimensions.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            dimensions.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3)
+            dimensions.trailingAnchor.constraint(lessThanOrEqualTo: nameLabel.trailingAnchor),
+            dimensions.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3),
+            depthTag.leadingAnchor.constraint(equalTo: dimensions.trailingAnchor, constant: 5),
+            depthTag.centerYAnchor.constraint(equalTo: dimensions.centerYAnchor)
         ])
+        depthTagFits = depthTag.trailingAnchor.constraint(lessThanOrEqualTo: nameLabel.trailingAnchor)
+        // A narrow panel truncates the size before the tag.
+        dimensions.lineBreakMode = .byTruncatingTail
+        dimensions.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
@@ -972,6 +985,9 @@ private final class LayerCell: NSTableCellView, NSTextFieldDelegate {
         if renaming, layerID != layer.id { restoreLabel() }
         if !renaming { nameLabel.stringValue = (layer.maskSourceID == nil ? "" : "↳ ") + layer.name }
         dimensions.stringValue = layer.liveText != nil ? L("Text · Double-click to edit") : layer.adjustment != nil ? L("Adjustment · Double-click to edit") : layer.isGroup ? L("Folder") : layer.sizeLabel
+        depthTag.text = layer.depthLabel ?? ""
+        depthTag.isHidden = layer.depthLabel == nil || layer.maskSourceID != nil
+        depthTagFits.isActive = !depthTag.isHidden
         if let source = layer.maskSourceID {
             let sourceName = session.document?.layers.first(where: { $0.id == source })?.name ?? "Missing source"
             dimensions.stringValue = "Clipped to \(sourceName)"
@@ -1361,7 +1377,24 @@ private final class EyeSwipeButton: NSButton {
         }
     }
 }
-private final class MaskDisabledMark: NSTextField {
+/// A small rounded tag after a layer's size, naming something about its pixels ("16-Bits"). Clicks go to the row.
+private final class LayerTag: NSView {
+    var text = "" { didSet { if text != oldValue { invalidateIntrinsicContentSize(); needsDisplay = true } } }
+    private var attributed: NSAttributedString {
+        NSAttributedString(string: text, attributes: [.font: NSFont.systemFont(ofSize: 9, weight: .medium),
+                                                      .foregroundColor: NSColor.secondaryLabelColor])
+    }
+    override var intrinsicContentSize: NSSize { NSSize(width: ceil(attributed.size().width) + 10, height: 14) }
+    override func draw(_ dirtyRect: NSRect) {
+        NSColor.quaternaryLabelColor.setFill()
+        NSBezierPath(roundedRect: bounds, xRadius: bounds.height / 2, yRadius: bounds.height / 2).fill()
+        let text = attributed, size = text.size()
+        text.draw(at: NSPoint(x: (bounds.width - size.width) / 2, y: (bounds.height - size.height) / 2))
+    }
+    override func hitTest(_ point: NSPoint) -> NSView? { nil }
+}
+
+final class MaskDisabledMark: NSTextField {
     override func hitTest(_ point: NSPoint) -> NSView? { nil }
 }
 
@@ -1383,5 +1416,10 @@ extension ImageLayer {
         let percent = Double(size.width) / Double(pixels) * 100
         guard abs(percent - 100) >= 0.05 else { return text }
         return text + " · " + percent.formatted(.number.precision(.fractionLength(0...1))) + "%"
+    }
+
+    /// The tag after the size of a layer keeping 16 bits a channel (`DeepLayer`); nil once it's rasterized to 8.
+    var depthLabel: String? {
+        asset?.deep == nil || liveText != nil || adjustment != nil || isGroup ? nil : "16-Bits"
     }
 }

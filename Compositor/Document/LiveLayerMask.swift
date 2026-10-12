@@ -158,9 +158,12 @@ extension EditorSession {
 
 
 extension EditorSession {
-    func drawLiveComposite(_ document: CanvasDocument, in context: CGContext, onSurface: Bool = false) {
+    /// `sixteenBit`: into a 16-bit context (a merge with a 16-bit layer), adjustments and clipping stacks keep 16 bits.
+    func drawLiveComposite(_ document: CanvasDocument, in context: CGContext, onSurface: Bool = false, sixteenBit: Bool = false) {
         if !onSurface, document.layers.contains(where: { $0.adjustment != nil }) {
-            AdjustmentSurface.draw(in: context) { self.drawLiveComposite(document, in: $0, onSurface: true) }
+            AdjustmentSurface.draw(in: context, sixteenBit: sixteenBit) {
+                self.drawLiveComposite(document, in: $0, onSurface: true, sixteenBit: sixteenBit)
+            }
             return
         }
         let records = Dictionary(uniqueKeysWithValues: document.layers.map { ($0.id, $0) })
@@ -185,6 +188,7 @@ extension EditorSession {
             if SeparableBlend.needsSurface(mode), SeparableBlend.draw(mode, in: ctx, body: { drawLayer(.normal, $0) }) { return }
             drawLayer(mode, ctx)
         }
+        live.sixteenBit = sixteenBit
         live.adjustment = { records[$0]?.adjustment }
         live.adjustmentOpacity = { records[$0]?.effectiveOpacity(in: records) ?? 1 }
         live.adjustmentClip = { id, ctx in

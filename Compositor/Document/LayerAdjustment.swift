@@ -147,6 +147,22 @@ nonisolated struct LayerAdjustment: Codable, Equatable, Sendable {
     }
     /// `region` is the part of the document `image` covers (the whole image at one unit per pixel when
     /// omitted), so Grain's pattern stays fixed in the document however the canvas splits its drawing.
+    /// Its color lookup, for those whose channels mix, to apply at 16 bits (`DeepLayer.lookup`); nil for the rest.
+    var sixteenBitLookup: (cube: Data, dimension: Int)? {
+        switch kind {
+        case .hsv: (HueSaturationFilter.cube(resolvedHSV), HueSaturationFilter.dimension)
+        case .blackWhite, .colorBalance, .gradientMap: GPUAdjustment.cube(for: self).map { ($0, GPUAdjustment.dimension) }
+        default: nil
+        }
+    }
+
+    /// `apply` on 16-bit pixels (`DeepLayer`): through its color lookup when its channels mix, otherwise run three times
+    /// and read between (`DeepLayer.run`).
+    func applySixteenBit(_ image: CGImage, region: CGRect? = nil, scale: CGFloat = 1) throws -> CGImage {
+        if let lookup = sixteenBitLookup { return try DeepLayer.lookup(image, cube: lookup.cube, dimension: lookup.dimension) }
+        return try DeepLayer.run(image) { try apply($0, region: region, scale: scale) }
+    }
+
     func apply(_ image: CGImage, region: CGRect? = nil, scale: CGFloat = 1) throws -> CGImage {
         switch kind {
         case .hsv:

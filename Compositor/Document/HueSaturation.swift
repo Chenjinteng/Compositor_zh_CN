@@ -539,12 +539,32 @@ extension EditorSession {
         defer { isProjectBusy = false }
         let job = HueSaturationJob(image: edit.original.image, settings: settings,
                                    selection: edit.selection, pixelToDocument: edit.pixelToDocument, thumbnail: true)
-        guard let adjusted = await adjustedPixels(job),
-              let index = document?.layers.firstIndex(where: { $0.id == edit.layerID }),
+        // A 16-bit layer keeps its precision (`DeepLayer`).
+        let asset: ImportedImage
+        let deep: CGImage?
+        do { deep = try DeepLayer.flattened(edit.original) } catch { brushError = error.localizedDescription; return }
+        if let deep {
+            do {
+                asset = try await Task.detached(priority: .userInitiated) {
+                    // Through its color lookup at 16 bits: its channels mix, which the three runs of `DeepLayer.run` misread.
+                    var result = try DeepLayer.lookup(deep, cube: HueSaturationFilter.cube(job.settings),
+                                                      dimension: HueSaturationFilter.dimension)
+                    if let selection = job.selection {
+                        result = try PixelAdjust.blend(result, over: deep, through: selection, pixelToDocument: job.pixelToDocument,
+                                                       isMask: false, sixteenBit: true)
+                    }
+                    return try DeepLayer.asset(result, name: edit.original.name)
+                }.value
+            } catch { brushError = error.localizedDescription; return }
+        } else {
+            guard let adjusted = await adjustedPixels(job) else { return }
+            asset = ImportedImage(image: adjusted.image, thumbnail: adjusted.thumbnail ?? adjusted.image, name: edit.original.name)
+        }
+        guard let index = document?.layers.firstIndex(where: { $0.id == edit.layerID }),
               let current = document?.layers[index], current.asset?.image === edit.original.image else { return }
         beginEdit("Hue/Saturation")
         document?.layers[index] = ImageLayer(id: current.id,
-            asset: ImportedImage(image: adjusted.image, thumbnail: adjusted.thumbnail ?? adjusted.image, name: current.name),
+            asset: ImportedImage(image: asset.image, thumbnail: asset.thumbnail, name: current.name, deep: asset.deep),
             name: current.name, isVisible: current.isVisible, transform: current.transform, parentID: current.parentID,
             isGroup: false, opacity: current.opacity, blendMode: current.blendMode, mask: current.mask, maskSourceID: current.maskSourceID,
             effects: current.effects)

@@ -61,12 +61,15 @@ final class ProjectController {
         guard let snapshot = session.projectSnapshot() else { return }
         do {
             let raster = try await ImageExporter.shared.render(snapshot)
+            // With a 16-bit layer in it, a PNG can be written at 16 bits a channel too.
+            let deepRaster = snapshot.images.values.contains { $0.deep != nil }
+                ? try await ImageExporter.shared.render(snapshot, sixteenBit: true) : nil
             let chosen: (data: Data, format: ExportFormat)? = await withCheckedContinuation { continuation in
                 let sheet = NSWindow()
                 sheet.styleMask = [.titled, .fullSizeContentView]
                 sheet.title = "Export As"
                 sheet.contentViewController = NSHostingController(rootView: ExportAsSheet(
-                    raster: raster, session: session, format: start ?? lastExportFormat) { chosen in
+                    raster: raster, deepRaster: deepRaster, session: session, format: start ?? lastExportFormat) { chosen in
                     window.endSheet(sheet)
                     sheet.orderOut(nil)
                     // Release the hosted view and its closure after dismissal.

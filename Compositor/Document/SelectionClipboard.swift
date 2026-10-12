@@ -40,12 +40,15 @@ extension EditorSession {
 
     /// The active layer's pixels (or mask as opaque gray) exactly as they sit on the canvas,
     /// clipped to the selection (soft edges kept), or the whole canvas without one.
-    func renderSelectedPixels(from layer: ImageLayer, mask: Bool) throws -> (image: CGImage, region: CGRect)? {
+    /// `sixteenBit`: a 16-bit layer's pixels lifted at 16 bits (`DeepLayer`).
+    func renderSelectedPixels(from layer: ImageLayer, mask: Bool, sixteenBit: Bool = false) throws -> (image: CGImage, region: CGRect)? {
         guard let document else { return nil }
         let clip = try selection?.clip(canvas: document.size)
         if clip != nil, clip?.coverage == nil { return nil }
         guard let region = selectionCopyRegion() else { return nil }
-        let context = try BrushRaster.context(width: Int(region.width), height: Int(region.height), mask: false)
+        let deep = sixteenBit && !mask ? try layer.asset.flatMap { try DeepLayer.flattened($0) } : nil
+        let context = deep == nil ? try BrushRaster.context(width: Int(region.width), height: Int(region.height), mask: false)
+                                  : try DeepLayer.context(width: Int(region.width), height: Int(region.height))
         context.translateBy(x: -region.minX, y: -region.minY)
         clip?.apply(to: context)
         let transform = displayedTransform(for: layer)
@@ -54,7 +57,7 @@ extension EditorSession {
             context.setFillColor(gray: placement == nil ? 0 : LayerMask.background(of: owned.asset.thumbnail), alpha: 1)
             context.fill(region)
             LayerRenderer.drawCoverage(owned.asset.image, transform: placement ?? transform, in: context)
-        } else if !mask, let image = layer.asset?.image {
+        } else if !mask, let image = deep ?? layer.asset?.image {
             LayerRenderer.draw(image, transform: transform, center: transform.center, in: context)
         } else { return nil }
         guard let image = context.makeImage() else { throw ExportError.render }
