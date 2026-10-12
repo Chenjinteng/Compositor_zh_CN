@@ -8,6 +8,17 @@
     <true/>
     <key>com.apple.security.network.client</key>
     <true/>
+    <!-- Personal Team signing has no `xcrun notarytool` step, so it never gets the
+         entitlements Apple injects on notarized Developer ID binaries. With hardened
+         runtime + library validation on, Image I/O and Core Image helper dylibs that
+         CIRAWFilter transitively pulls in (HEIF, ProRAW, image I/O plugins) hit a code-
+         signing-wall, return uninitialized CGImage strides, and propagate into
+         DeepLayer.run's three-rolling-deep resolution → Compositor/Rendering/DeepPixels.c:60
+         crashes with EXC_BAD_ACCESS on the gap between two CG Image regions. Notarized
+         Developer ID builds get this entitlement for free. We add it explicitly so the
+         Personal Team DMG survives Camera Raw on 1.4.10+. -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
     <!-- Sparkle installs updates through its helper services, which a sandboxed app reaches by name. -->
     <key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
     <array>
