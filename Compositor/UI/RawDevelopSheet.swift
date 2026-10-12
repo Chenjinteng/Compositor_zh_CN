@@ -39,10 +39,10 @@ struct RawDevelopSheet: View {
             .frame(width: 560, height: 340)
 
             Group {
-                slider("Exposure", value: $settings.exposure, range: -3...3, unit: " EV", precision: 2)
-                slider("Temperature", value: $settings.temperature, range: 2000...12000, unit: " K", precision: 0)
-                slider("Tint", value: $settings.tint, range: -150...150, unit: "", precision: 0)
-                slider("Boost", value: $settings.boost, range: 0...1, unit: "", precision: 2)
+                slider(L("Exposure"), value: $settings.exposure, range: -3...3, unit: " EV", precision: 2)
+                slider(L("Temperature"), value: $settings.temperature, range: 2000...12000, unit: " K", precision: 0)
+                slider(L("Tint"), value: $settings.tint, range: -150...150, unit: "", precision: 0)
+                slider(L("Boost"), value: $settings.boost, range: 0...1, unit: "", precision: 2)
                 slider(L("Noise Reduction"), value: $settings.noiseReduction, range: 0...1, unit: "", precision: 2)
                     .disabled(!settings.supportsNoiseReduction)
                     .help(settings.supportsNoiseReduction ? L("Smooths grain, at the cost of fine detail")
@@ -60,10 +60,10 @@ struct RawDevelopSheet: View {
                 .padding(.leading, 120)
 
                 HStack {
-                    Button("Reset") { settings.reset() }.disabled(settings.isAsShot)
+                    Button(L("Reset")) { settings.reset() }.disabled(settings.isAsShot)
                     Spacer()
-                    Button("Cancel") { session.finishRawDevelop(nil) }.keyboardShortcut(.cancelAction)
-                    Button("Import") { session.finishRawDevelop(settings) }.keyboardShortcut(.defaultAction)
+                    Button(L("Cancel")) { session.finishRawDevelop(nil) }.keyboardShortcut(.cancelAction)
+                    Button(L("Import")) { session.finishRawDevelop(settings) }.keyboardShortcut(.defaultAction)
                 }
             }
             .disabled(session.rawImporting)

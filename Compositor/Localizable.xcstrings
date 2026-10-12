@@ -14340,6 +14340,18 @@
           }
         }
       }
+    },
+    "Removes the lens's distortion and vignetting": {
+      "comment": "Camera Raw Lens Correction toggle help, available state (1.4.10).",
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "消除该镜头造成的畸变与暗角"
+          }
+        }
+      }
     }
   },
   "version": "1.1"
